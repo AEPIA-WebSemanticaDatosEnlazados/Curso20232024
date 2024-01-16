@@ -4,6 +4,30 @@ Asignatura: Web Semántica y Datos Enlazados.
 
 Autor: Raúl Barba Rojas.
 
+## Estructura del repositorio
+
+En este repositorio se encuentran todos los recursos relacionados con el proyecto final de la asignatura. Concretamente, la estructura en carpetas se organiza del siguiente modo:
+
+- 📂 data: este directorio contiene los datos utilizados en el proyecto. Tanto los originales, como los generados como resultado del proceso de transformación de datos y generación de datos en RDF.
+
+    - 📂 original: este directorio contiene los datos originales (fuentes de datos originales) utilizados en el proyecto. Los datos pertenecen al Cabildo de Tenerife y pueden utilizarse bajo la licencia CC-By 4.0, por lo que en este sentido se atribuye todo el crédito al Cabildo de Tenerife por la recolección y publicación de estos conjuntos de datos tan útiles.
+
+        - 📊 centros-deportivos-y-de-ocio-en-tenerife.csv: este fichero contiene los datos de la primera fuente de datos empleada, sobre centros deportivos y de ocio en Tenerife, en formato CSV. Proceden del Cabildo de Tenerife, y nos acogemos a la licencia para poder utilizarlos, dando todo el crédito al Cabildo de Tenerife.
+
+        - 📊 centros-educativos-y-culturales-en-tenerife.csv: este fichero contiene los datos de la segunda fuente de datos empleada, sobre centros educativos y culturales en Tenerife, en formato CSV. Proceden del Cabildo de Tenerife, y nos acogemos a la licencia para poder utilizarlos, dando todo el crédito al Cabildo de Tenerife.
+
+- 📂 eda: este directorio contiene información sobre el análisis exploratorio de datos realizado. Concretamente, contiene un subdirectorio con imágenes relacionadas con el análisis realizado, así como un notebook de Python con el código necesario para generar dichas imágenes. Este análisis también se realizó con Open Refine, aunque el proyecto final de Open Refine no se incluye en este directorio.
+
+    - 📂 imgs: este directorio contiene las imágenes más destacadas generadas en el análisis de datos (no contiene todas, pues muchas de las imágenes no se persisten, únicamente se persiste el proceso realizado para llegar a sus resultados en la memoria).
+
+        - 🖼️ data_distribution.png: esta figura representa la distribución de datos de algunas variables de interés del conjunto de datos, y permite adquirir una mayor comprensión de los mismos.
+
+        - 🖼️ nulls_distribution.png: esta figura muestra la distribución de valores faltantes en las diferentes variables del conjunto de datos, lo que es especialmente útil para analizar posibles problemas en los datos.
+
+    - 📓 exploratory_data_analysis.ipynb: el notebook de Python con el código necesario para adquirir ciertos insights de utilidad, desarrollados en el análisis de datos realizado.
+
+- ℹ️ README.md: un fichero con toda la información sobre el proyecto final de la asignatura, incluyendo la estructura del repositorio, así como la memoria desarrollada del proyecto.
+
 ## Introducción
 
 En este documento se presenta la memoria del proyecto final de esta asignatura sobre la web semántica y los datos enlazados del *Máster Universitario en Investigación en Inteligencia Artificial de la AEPIA*.
