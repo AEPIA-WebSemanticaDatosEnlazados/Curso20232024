@@ -291,17 +291,28 @@ Así, el primero de los pasos fue la especificación de requisitos que debían c
 
 Tras la definición de estos requisitos, se llevó a cabo la creación de un glosario de términos con los aspectos necesarios para dar soporte semántico a los datos que se obtuvieron de las fuentes de datos. Se definen en la siguiente tabla:
 
-\begin{table}[]
-\begin{tabular}{|l|}
-\hline
-\textbf{Clases}                                                                                                                                                                                                                                                                                                                         \\ \hline
-Centro (Instalación, Edificio, Estructura), Actividad, Localización (Dirección, Lugar), Municipio (Ciudad, Pueblo)                                                                                                                                                                                                                      \\ \hline
-\textbf{Propiedades}                                                                                                                                                                                                                                                                                                                    \\ \hline
-Nombre del centro (nombre), Tipo de actividad, tipo de centro, tipo de vía, descripción de tipo de vía, número de dirección, referencia de dirección, código postal de municipio, nombre de municipio, código de municipio, web, email, teléfono, fax, longitud, latitud, fecha de creación de centro, fecha de actualización de centro \\ \hline
-\end{tabular}
-\end{table}
+| **Término**  | **Ontología**                            | **Clase**      |
+|--------------|------------------------------------------|----------------|
+| Centro       | https://schema.org/                      | CivicStructure |
+|              | https://saref.etsi.org/saref4city/       | Facility       |
+|              | http://vivoweb.org/ontology/core#        | Building       |
+| Dirección    | http://www.w3.org/ns/locn#               | Address        |
+|              | http://www.w3.org/2006/vcard/ns#         | Address        |
+| Localización | http://www.w3.org/2003/01/geo/wgs84_pos# | Point          |
+| Municipio    | http://schema.org/                       | Place          |
+|              | http://rdfs.co/juso/                     | Township       |                                                                                                                                                                                                                  
 
 Como se puede ver, en esta etapa previa a la implementación de la ontología se ha creado un glosario con términos y sus sinónimos (descritos entre paréntesis), de modo que se puedan buscar estos conceptos en ontologías ya existentes (si puede ser, ontologías estándares en este dominio) en la web semántica.
 
-Así, tras definir el glosario de términos, se buscaron estos conceptos en vocabularios existentes, obteniendo el resultado descrito en la siguiente tabla (en blanco para casos donde no se encontró una ontología existente para cubrir el concepto):
+Así, tras definir el glosario de términos, se buscaron estos conceptos en vocabularios existentes, obteniendo el resultado descrito en la siguiente tablas (en blanco para casos donde no se encontró una ontología existente para cubrir el concepto). La primera de ellas muestra las clases encontradas (dentro de sus respectivas ontologías) que podrían ayudarnos a cubrir los conceptos que requerimos, mientras que la segunda está referida a las propiedades:
 
+| **Término**  | **Ontología**                            | **Clase**      |
+|--------------|------------------------------------------|----------------|
+| Centro       | https://schema.org/                      | CivicStructure |
+|              | https://saref.etsi.org/saref4city/       | Facility       |
+|              | http://vivoweb.org/ontology/core#        | Building       |
+| Dirección    | http://www.w3.org/ns/locn#               | Address        |
+|              | http://www.w3.org/2006/vcard/ns#         | Address        |
+| Localización | http://www.w3.org/2003/01/geo/wgs84_pos# | Point          |
+| Municipio    | http://schema.org/                       | Place          |
+|              | http://rdfs.co/juso/                     | Township       |
