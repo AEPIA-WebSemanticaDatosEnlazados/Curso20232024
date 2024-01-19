@@ -263,3 +263,45 @@ Siguiendo las guías descritas en la asignatura, existen diferentes pasos que se
     4.1. **Patrón de URI para individuos**: https://tenerifecenters.com/resources/<resource_type>/<resource_identifier>. En el caso de individuos del conjunto de datos, empleamos el patrón anterior, en el que empleamos la ruta "resources" para, dentro de ella, indicando el tipo de recurso y el identificador del mismo, poder referirnos a un individuo concreto del conjunto de datos. Este identificador único debería ser la combinación de `nombre` y `direccion_nombre_via`, que debe ser única para todas las instancias del conjunto de datos.
 
     4.2. **Patrón para términos ontológicos**: en lo que respecta a términos de la ontología (donde podríamos tener propiedades y clases, por ejemplo), se define el siguiente patrón de URIs: https://tenerifecenters.com/ontology/centers#<term_name>. Como se puede ver, dentro de la ruta de "ontology" disponemos de un fichero con la ontología, en el que se definen los diferentes elementos ontológicos cuyo nombre debemos especificar (#<term_name>) para poder referirnos a ellos y poder emplearlos una vez definido el vocabulario.
+
+
+#### Desarrollo del vocabulario
+
+El desarrollo del vocabulario implicó la realización de diferentes tareas:
+
+1. **Especificación de requisitos**: primeramente, se llevó a cabo la especificación de requisitos que el vocabulario a crear debía cumplir.
+
+2. **Extracción de términos**: tras lo anterior, se llevó a cabo la extracción de términos, empleando los requisitos anteriores, pero también los datos y su esquema. Además, este glosario de términos se extendió con los sinónimos de los términos identificados, para desarrollar un vocabulario lo más completo posible.
+
+3. **Elaboración de la conceptualización**: finalmente, se elaboró la conceptualización considerando todo lo anterior, estableciendo las jerarquías necesarias, las relaciones entre elementos ontológicos, etc.
+
+4. **Búsqueda de ontologías**: se emplearon herramientas propias de la web semántica, como LOV, para buscar ontologías existentes en el dominio deseado.
+
+5. **Selección de ontologías**: la selección de ontologías se llevó a cabo teniendo en cuenta lo bien que cubren el dominio en que trabajamos, posibles problemas que puede conllevar su empleo, así como su utilización en otros conjuntos de datos enlazados.
+
+6. **Implementación de la ontología**: la implementación de la ontología, parte clave de todo el proceso, se llevó a cabo a través de la herramienta Protégé.
+
+7. **Evaluación de la ontología**: finalmente, se llevó a cabo la evaluación de la ontología con herramientas existentes, como el razonador de Protégé.
+
+Así, el primero de los pasos fue la especificación de requisitos que debían cumplirse en la ontología a desarrollar:
+
+- **Reutilización de conceptos y diseños ya existentes**: primeramente, se definió el requisito de emplear, en la medida de lo posible, conceptos ya existentes que puedan re-utilizarse de otros vocabularios, o que permitan crear enlaces para la mayor disponibilidad del conjunto de datos enlazados a generar. 
+
+- **Implementación del vocabulario en formato soportado por Open Refine**: por otro lado, se tiene el requisito de implementar el vocabulario en un formato estandarizado, como podría ser un fichero en sintaxis RDF/XML o Turtle (creado con herramientas como Protégé), de modo que pueda cargarse en Open Refine (de extremada importancia la carga desde fichero, pues no se dispone de un dominio ni de un servidor que aloje este vocabulario para que Open Refine lo utilice).
+
+Tras la definición de estos requisitos, se llevó a cabo la creación de un glosario de términos con los aspectos necesarios para dar soporte semántico a los datos que se obtuvieron de las fuentes de datos. Se definen en la siguiente tabla:
+
+\begin{table}[]
+\begin{tabular}{|l|}
+\hline
+\textbf{Clases}                                                                                                                                                                                                                                                                                                                         \\ \hline
+Centro (Instalación, Edificio, Estructura), Actividad, Localización (Dirección, Lugar), Municipio (Ciudad, Pueblo)                                                                                                                                                                                                                      \\ \hline
+\textbf{Propiedades}                                                                                                                                                                                                                                                                                                                    \\ \hline
+Nombre del centro (nombre), Tipo de actividad, tipo de centro, tipo de vía, descripción de tipo de vía, número de dirección, referencia de dirección, código postal de municipio, nombre de municipio, código de municipio, web, email, teléfono, fax, longitud, latitud, fecha de creación de centro, fecha de actualización de centro \\ \hline
+\end{tabular}
+\end{table}
+
+Como se puede ver, en esta etapa previa a la implementación de la ontología se ha creado un glosario con términos y sus sinónimos (descritos entre paréntesis), de modo que se puedan buscar estos conceptos en ontologías ya existentes (si puede ser, ontologías estándares en este dominio) en la web semántica.
+
+Así, tras definir el glosario de términos, se buscaron estos conceptos en vocabularios existentes, obteniendo el resultado descrito en la siguiente tabla (en blanco para casos donde no se encontró una ontología existente para cubrir el concepto):
+
