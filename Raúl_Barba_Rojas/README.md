@@ -289,25 +289,97 @@ Así, el primero de los pasos fue la especificación de requisitos que debían c
 
 - **Implementación del vocabulario en formato soportado por Open Refine**: por otro lado, se tiene el requisito de implementar el vocabulario en un formato estandarizado, como podría ser un fichero en sintaxis RDF/XML o Turtle (creado con herramientas como Protégé), de modo que pueda cargarse en Open Refine (de extremada importancia la carga desde fichero, pues no se dispone de un dominio ni de un servidor que aloje este vocabulario para que Open Refine lo utilice).
 
+Además, la ontología a desarrollar debía satisfacer ciertas cuestiones (preguntas de compentencia) para garantizar su capacidad de representar la semántica de los datos de que se dispone:
+
+1. PC1. ¿Cuál es el nombre del centro?
+
+2. PC2. ¿Qué tipo de centro es (a un alto nivel de abstracción: es deportivo/ocio, es educativo, etc.)?
+
+3. PC3. ¿Qué actividad lleva a cabo el centro?
+
+4. PC4. ¿Dónde se encuentra el centro (dirección completa con código postal si se tiene)?
+
+5. PC5. ¿A qué municipio pertenece el centro?
+
+6. PC6. ¿Qué datos de contacto tiene el centro (email, fax, web, teléfono)?
+
+7. PC7. ¿Dónde se encuentra geo-localizado el centro?
+
+8. PC8. ¿Cuáles son las fechas de creación y última actualización de cada centro en el conjunto de datos?
+
+
 Tras la definición de estos requisitos, se llevó a cabo la creación de un glosario de términos con los aspectos necesarios para dar soporte semántico a los datos que se obtuvieron de las fuentes de datos. Se definen en la siguiente tabla:
 
-| **Clases**                                                                                                                                                                                                                                                                                                                              |
-|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Centro (Instalación, Edificio, Estructura), Localización (Dirección, Lugar), Municipio (Ciudad, Pueblo)                                                                                                                                                                                                                                 |
-| **Propiedades**                                                                                                                                                                                                                                                                                                                         |
-| Nombre del centro (nombre), Tipo de actividad, tipo de centro, tipo de vía, descripción de tipo de vía, número de dirección, referencia de dirección, código postal de municipio, nombre de municipio, código de municipio, web, email, teléfono, fax, longitud, latitud, fecha de creación de centro, fecha de actualización de centro |     |                                                                                                                                                                                                                  
+| **Clases**                                                                                                                                                                                                                                                                                        |
+|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Centro (Instalación, Edificio, Estructura), Actividad, Dirección, Municipio (Ciudad, Pueblo), Geolocalización                                                                                                                                                                                     |
+| **Propiedades**                                                                                                                                                                                                                                                                                   |
+| Nombre del centro (nombre), Tipo de actividad, dirección de vía, referencia de dirección, código postal de municipio, nombre de municipio, código de municipio, web, email, teléfono, fax, centro localizado en, longitud, latitud, fecha de creación de centro, fecha de actualización de centro |                                                                                                
+
 
 Como se puede ver, en esta etapa previa a la implementación de la ontología se ha creado un glosario con términos y sus sinónimos (descritos entre paréntesis), de modo que se puedan buscar estos conceptos en ontologías ya existentes (si puede ser, ontologías estándares en este dominio) en la web semántica.
 
-Así, tras definir el glosario de términos, se buscaron estos conceptos en vocabularios existentes, obteniendo el resultado descrito en la siguiente tablas (en blanco para casos donde no se encontró una ontología existente para cubrir el concepto). La primera de ellas muestra las clases encontradas (dentro de sus respectivas ontologías) que podrían ayudarnos a cubrir los conceptos que requerimos, mientras que la segunda está referida a las propiedades:
+Así, tras definir el glosario de términos, se buscaron estos conceptos en vocabularios existentes. Primeramente, se creó la siguiente tabla para los términos del glosario relacionados con clases de la ontología:
 
-| **Término**  | **Ontología**                            | **Clase**      |
+| **Término**  | **Ontología (URI)**                      | **Clase**      |
 |--------------|------------------------------------------|----------------|
-| Centro       | https://schema.org/                      | CivicStructure |
+| Centro       |                                          |                |
+| Edificio     | https://schema.org/                      | CivicStructure |
 |              | https://saref.etsi.org/saref4city/       | Facility       |
 |              | http://vivoweb.org/ontology/core#        | Building       |
+| Actividad    |                                          | Activity       |
 | Dirección    | http://www.w3.org/ns/locn#               | Address        |
 |              | http://www.w3.org/2006/vcard/ns#         | Address        |
-| Localización | http://www.w3.org/2003/01/geo/wgs84_pos# | Point          |
-| Municipio    | http://schema.org/                       | Place          |
+|              | https://schema.org/                      | PostalAddress  |
+| Municipio    | http://schema.org/                       | City           |
 |              | http://rdfs.co/juso/                     | Township       |
+
+
+Considerando los anteriores, se observa lo siguiente:
+
+1. **Términos sin ontología encontrada**: para algunos términos no se encontró una ontología que diera soporte semántico a los datos del conjunto de datos (en la mayoría de casos porque, aunque existían clases con ese nombre - como Actividad, no tenían el significado que se le quiere dar en esta ontología para responder las preguntas de competencia).
+
+2. **Términos con varias ontologías encontradas**: algunos términos disponen de múltiples clases que dan buena cobertura a los términos en el dominio concreto que se está trabajando, por lo que se debe tomar la decisión de qué ontologías usar. Para ello (se explica en el párrafo siguiente), se tomaron criterios relacionados con las propiedades y si éstas dan soporte a los conceptos de este dominio, así como su utilización (si son utilizadas en mayor o menor medida, pues la popularidad es un buen criterio de desempate).
+
+De este modo, se optó por emplear las siguientes ontologías para cada término:
+
+| **Término**     | **Ontología (URI)**                                              | **Clase**      |
+|-----------------|------------------------------------------------------------------|----------------|
+| Centro          | https://tenerifecenters.com/ontology/centers# (ontología propia) | Center         |
+| Edificio        | https://schema.org/                                              | CivicStructure |
+| Actividad       | https://tenerifecenters.com/ontology/centers# (ontología propia) | Activity       |
+| Dirección       | https://schema.org/                                              | PostalAddress  |
+| Municipio       | https://schema.org/                                              | City           |
+| Geolocalización | https://tenerifecenters.com/ontology/centers# (ontología propia) | Place          |
+
+Las principales razones detrás de estas decisiones son las siguientes:
+
+1. En aquellos casos (como en Centro o Actividad) donde no se encontró ninguna ontología con un concepto que cubriese bien las necesidades semánticas en este dominio, se decidió crear clases (con las propiedades necesarias para dar el soporte semántico y crear el conjunto de datos enlazados) para darles soporte semántico.
+
+2. En aquellos casos donde había múltiples elecciones, se decidió optar por la ontología schema, que es muy popular para representar edificios, zonas y lugares geográficos en general, y además permitía cubrir todas las necesidades semánticas del dominio (no harían falta más, sino únicamente emplear esta ontología empleando su flexibilidad para el caso concreto de este problema).
+
+
+Así pues, el siguiente paso a la hora de desarrollar la ontología fue el de especificar con claridad las propiedades empleadas (y las ontologías correspondientes) para dar soporte semántico al conjunto de datos. En este sentido, el conjunto de propiedades empleado (tras filtrar por las ontologías seleccionadas - que realmente fueron seleccionadas teniendo en cuenta las propiedades y el soporte a las necesidades del problema planteado) queda definido a continuación:
+
+| **Término**                              | **Ontología (URI)**              | **Propiedad** | **Comentario**                                                                                                                                                                                                             |
+|------------------------------------------|----------------------------------|---------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Nombre del centro                        | http://purl.org/dc/elements/1.1/ | title         | Se utilizaría dentro de la clase Center de la ontología propia (https://tenerifecenters.com/ontology/centers#Center)                                                                                                       |
+| Tipo de actividad                        | http://purl.org/dc/elements/1.1/ | title         | Dentro de la clase Activity de la ontología propia (https://tenerifecenters.com/ontology/centers#Activity) se utilizaría esta propiedad para definir el nombre de la actividad (que realmente indica el tipo de la misma). |
+| Tipo de centro                           | http://dbpedia.org/ontology/     | type          | Se utilizaría dentro de la clase Center de la ontología propia (https://tenerifecenters.com/ontology/centers#Center)                                                                                                       |
+| Dirección de centro                      | http://schema.org/               | streetAddress | Se utilizaría dentro de la clase PostalAddress de la ontología schema.                                                                                                                                                     |
+| Referencia de dirección                  | http://schema.org/               | description   | Se utilizaría dentro de la clase PostalAddress de la ontología schema.                                                                                                                                                     |
+| Código postal                            | http://schema.org/               | postalCode    | Se utilizaría dentro de la clase PostalAddress de la ontología schema.                                                                                                                                                     |
+| Email                                    | http://schema.org/               | email         | Se utilizaría dentro de la clase PostalAddress de la ontología schema.                                                                                                                                                     |
+| Teléfono                                 | http://schema.org/               | telephone     | Se utilizaría dentro de la clase PostalAddress de la ontología schema.                                                                                                                                                     |
+| Fax                                      | http://schema.org/               | faxNumber     | Se utilizaría dentro de la clase PostalAddress de la ontología schema.                                                                                                                                                     |
+| Web                                      | http://schema.org/               | url           | Se utilizaría dentro de la clase PostalAddress de la ontología schema.                                                                                                                                                     |
+| Pertenece a munipio                      | http://schema.org/               | containedIn   | Se utilizaría dentro de la clase Center (que es de la ontología propia y que hereda de CivicStructure)                                                                                                                     |
+| Código de municipio                      | http://schema.org/               | identifier    | Se utilizaría dentro de la clase City de la ontología schema.                                                                                                                                                              |
+| Nombre de municipio                      | http://schema.org/               | name          | Se utilizaría dentro de la clase City de la ontología schema.                                                                                                                                                              |
+| Centro localizado en                     | http://schema.org/               | areaServed    | Se utilizaría dentro de la clase PostalAddress de la ontología schema.                                                                                                                                                     |
+| Longitud                                 | http://schema.org/               | longitude     | Se utilizaría dentro de la clase Place de la ontología schema.                                                                                                                                                             |
+| Latitud                                  | http://schema.org/               | latitude      | Se utilizaría dentro de la clase Place de la ontología schema.                                                                                                                                                             |
+| Fecha de creación del objeto             | http://purl.org/dc/terms/        | created       | Se utilizaría dentro de la clase Center (que es de la ontología propia y que hereda de CivicStructure)                                                                                                                     |
+| Fecha de última actualización del objeto | http://purl.org/dc/terms/        | modified      | Se utilizaría dentro de la clase Center (que es de la ontología propia y que hereda de CivicStructure)                                                                                                                     |
+
+
