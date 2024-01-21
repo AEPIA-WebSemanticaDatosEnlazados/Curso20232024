@@ -383,3 +383,29 @@ Así pues, el siguiente paso a la hora de desarrollar la ontología fue el de es
 | Fecha de última actualización del objeto | http://purl.org/dc/terms/        | modified      | Se utilizaría dentro de la clase Center (que es de la ontología propia y que hereda de CivicStructure)                                                                                                                     |
 
 
+Así, tras el diseño anterior, la ontología desde un alto nivel de abstracción se puede describir mediante el siguiente diagrama:
+
+![Diagrama de ontología](ontology/tcOntologyDesign.png)
+
+El significado, a grandes rasgos, de las clases empleadas es el siguiente (nótese cómo en el caso de las clases importadas/re-utilizadas de otras ontologías, el significado se mantiene):
+
+1. **Center**: esta clase representa el concepto de centro de actividades. Dado que existen diferentes actividades (o tipos de actividades) que se pueden hacer, el centro tiene no sólo un nombre, sino también su actividad asociada y el tipo de centro en sí mismo (deporte-ocio o cultural-educativo, etc.). Esta clase hereda de `CivicStructure` para poder emplear la flexibilidad y la capacidad semántica de la ontología `schema`, que permite representar completamente la localización geográfica del centro.
+
+2. **Activity**: esta clase representa la actividad que el centro lleva a cabo. Por ejemplo, actividades como "enseñanza infantil" son actividades válidas que un centro puede llevar a cabo.
+
+3. **PostalAddress**: esta clase representa la dirección postal donde se localiza el centro. Asimismo, se relaciona con la clase `Place`, que indica el punto geográfico exacto (longitud y latitud) donde se encuentra el centro.
+
+4. **Place**: esta clase permite representar lugares en general y geolocalizarlos. Gracias a la capacidad de geolocalización, nos sirve para representar el punto exacto donde se ubica un centro determinado.
+
+5. **City**: esta clase nos permite representar el concepto de municipio, pues permite representar tanto pueblos como ciudades, y almacenar la información necesaria (por ejemplo, el código identificador del municipio o su nombre).
+
+Para llevar a cabo la implementación de la ontología, se empleó la herramienta **Protégé**, conocida por sus capacidades de creación de ontologías. Dado que en la ontología se reutilizan clases de otras ontologías existentes, el proceso de implementación englobó dos tareas:
+
+1. **Importación de recursos de ontologías existentes**: primeramente, se importaron recursos de ontologías ya existentes, como las clases `CivicStructure`, `Place`, `PostalAddress` o `City` de la ontología `schema`. Si bien pudieran haberse importado únicamente los recursos necesarios (estas clases y las propiedades definidas en la tabla anterior), se importaron enteramente las ontologías empleadas, para facilitar la extensibilidad y mantenibilidad en el tiempo de nuestra ontología (por ejemplo, por si quisiéramos almacenar más información que ya soportan las ontologías existentes - lo cuál es más que probable, pues las ontologías empleadas son una buena conceptualización del dominio).
+
+2. **Implementación de los recursos no cubiertos**: para aquellas clases y propiedades no cubiertas en las ontologías reutilizadas, se llevó a cabo su implementación en protégé, agregando durante su implementación las anotaciones que facilitan la comprensión, lectura y posterior utilización de la ontología. Estas anotaciones utilizadas incluyeron: `rdfs:label` (describiendo el nombre del recurso ontológico definido), `rdfs:comment` (explicando para qué sirve dicho recurso ontológico) y `rdfs:isDefinedBy` (explicando dónde está la definición del recurso ontológico).
+
+La principal razón detrás de la utilización de protégé fue esencialmente doble. Por un lado, es una herramienta ampliamente utilizada, por lo que tiene gran soporte (y esto es más que útil para la implementación) y comunidad. Por otro lado, también permitía exportar la ontología generada a un fichero en formato RDF/XML, que puede ser importado en Open Refine para la creación del conjunto de datos enlazados, por lo que esencialmente esta herramienta cumplía de sobra con los requisitos necesarios en la implementación.
+
+Tras la implementación, se empleó el razonador automático de Protégé (realmente se empleó el razonador Hermit 1.4.3.456) para la evaluación de la ontología, que demostró estar correctamente construida.
+
