@@ -256,7 +256,7 @@ Siguiendo las guías descritas en la asignatura, existen diferentes pasos que se
 
     3.1. **Ruta para términos ontológicos**: https://tenerifecenters.com/ontology/centers#. En dicha ruta, observamos como empleamos el símbolo "#" para referirnos a un elemento ontológico concreto (el "#" sería eliminado al hacer la petición, se obtendría el fichero completo, y se buscaría dentro del fichero el identificador que está separado por el símbolo "#").
 
-    3.2. **Ruta para individuos del conjunto de datos**:  https://tenerifecenters.com/resources/center/. En este segundo caso, observamos como empleamos una ruta diferente a la anterior, para establecer la separación entre recursos ontológicos e instancias del conjunto de datos. Además, en este caso, empleamos el símbolo "/" para identificar los individuos (centros), pues el conjunto de datos es dinámico y relativamente grande.
+    3.2. **Ruta para individuos del conjunto de datos**:  https://tenerifecenters.com/resources/. En este segundo caso, observamos como empleamos una ruta diferente a la anterior, para establecer la separación entre recursos ontológicos e instancias del conjunto de datos. Además, en este caso, empleamos el símbolo "/" para identificar los individuos (centros), pues el conjunto de datos es dinámico y relativamente grande.
 
 4. **Definición de patrones**: finalmente, se definen los patrones para los diferentes elementos de interés:
 
@@ -439,4 +439,27 @@ Por otro lado, cabe destacar que todas las columnas se dejaron como tipo texto, 
 
 Tras lo anterior, se llevó a cabo la creación de un esqueleto RDF de Open Refine para el conjunto de datos ya limpiado, considerando la ontología definida (y las ontologías en que se apoya). Para ello, simplemente se empleó la extensión de RDF de Open Refine (por su simplicidad) y se empleó la interfaz de usuario para agregar las clases y propiedades, dando soporte semántico al conjunto de datos de que se dispone.
 
-El conjunto de datos RDF resultante puede encontrarse dentro de la carpeta `data/rdf` con la sintaxis RDF/XML.
+Este proceso permitió dar el soporte semántico a los datos de que se dispone de las fuentes de datos (ya transformadas y limpiadas), al menos en una primera instancia (pues el esqueleto RDF se tuvo que editar para llevar a cabo el enlace de los datos).
+
+#### Enlazado de datos
+
+El enlazado de datos del conjunto de datos (ya con soporte semántico) obtenido hasta el momento se llevó a cabo empleando las funcionalidades de Open Refine.
+
+Concretamente, se comenzó por definir qué columnas son más susceptibles de llevar a cabo el enlazado de datos. Tras un intensivo análisis, se tomó la decisión de utilizar la columna `municipio_nombre` como 
+la columna a partir de la cuál llevar a cabo el enlazado de datos.
+
+Tras este primer paso, se continuó el proceso añadiendo un nuevo servicio de reconciliación. Concretamente, se empleó un servicio de reconciliación basado en SPARQL endpoints. Se probaron diferentes ontologías, pero finalmente se encontró una reconciliación satisfactoria utilizando `wikidata`. El resultado del proceso de reconciliación no fue un resultado inmediato, puesto que se deshabilitó la opción de `auto-match` cuando el grado de confianza es elevado. La principal razón tras esa decisión es simple: dado que el conjunto de datos es relativamente pequeño (2000 instancias aproximadamente), se puede comprobar manualmente el posible match en aquellos casos donde no esté claro. Así, de forma automática Open Refine fue capaz de hacer match sobre los municipios de aproximadamente 1700 centros. Los 300 restantes tuvieron la misma problemática: múltiples instancias de wikidata permitían un match con los municipios de estos centros restantes. Concretamente:
+
+- **La Matanza de Acentejo**: Open Refine no consideró el match perfecto porque en el conjunto de datos el municipio tiene el nombre de `La Matanza` (cuando realmente el nombre completo es el anterior). Así, se llevó a cabo este enlace manual al municipio correspondiente de wikidata.
+
+- **San Miguel de Abona**: Open Refine tampoco consideró match perfecto para los casos en los que el municipio era `San Miguel`, debido a que, realmente, el nombre completo del municipio es San Miguel de Abona. Por lo que este problema también fue resuelto de forma semi-automática para todos los centros con esta casuística.
+
+- **San Cristóbal de La Laguna**: este caso fue exactamente análogo a los anteriores y tampoco conseguió el match perfecto, debido a que el conjunto de datos emplea el valor `La Laguna` para referirse a este municipio (la comprobación es sencilla, pues basta con buscar en un servicio como Google Maps las direcciones referidas dentro de este municipio para entender que es exactamente el mismo, pero con un nombre abreviado en este caso). Nuevamente, se llevó a cabo el match semi-automático para todos los centros en los que se producía esta casuística.
+
+Tras lo anterior, todavía no se disponía de ningún enlace de datos real, sino simplemente se había llevado a cabo el match de los valores de los municipios de los centros con instancias reales de los municipios en otro conjunto de datos, pero era todavía necesario crear el enlace de forma explícita. Para ello, se creó una columna nueva en el conjunto de datos denominada `municipio_linked`, que, como explica su nombre, es el municipio enlazado en el conjunto de datos de wikidata. Para crear el enlace, se modificó el esqueleto RDF de la siguiente manera:
+
+- Aprovechando la definición del municipio a través de la clase `schema:City`, se agregó una propiedad más a cada municipio: `owl:sameAs`, propiedad que nos permite llevar a cabo el enlace de instancias, pues, por ejemplo, podríamos decir que el municipio `La Laguna`(no sólo la cadena, sino la instancia de `schema:City` correspondiente en la ontología) es el mismo que el municipio de Wikidata `San Cristobal de La Laguna`, creando el enlace a través de las URIs de ambos municipios (en diferentes conjuntos de datos).
+
+- Para verificar el enlace, se generó el conjunto de datos en sintaxis Turtle y se llevó a cabo una lectura manual de los primeros 20 centros y sus municipios, comprobando los enlaces establecidos a través de la propiedad `owl:sameAs`, para verificar que el enlazado de datos se realizó correctamente.
+
+De este modo, gracias al proceso de enlazado de datos se generó un conjunto de datos enlazados conectado al resto de la web semántica, y que se encuentra disponible dentro de la carpeta `data/rdf` de este mismo proyecto.

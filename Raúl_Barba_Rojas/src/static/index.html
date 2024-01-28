@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tenerife Centers</title>
+    <link rel="stylesheet" type="text/css" href="static/style.css">
+</head>
+<body>
+    <div class="welcome-section">
+        <h1>Tenerife Centers: Actividades a tu alcance</h1>
+    </div>
+
+    <div id="center-container" class="center-container">
+        <h2 class="header-title">1. Búsqueda de centros</h2>
+        <p>En esta sección puedes buscar todos los centros de Tenerife, incluso con la posibilidad de aplicar filtros</p>
+        
+        <div class="filter-container">
+            <label for="center-type-select" class="filter-label">• Tipo de centro:</label>
+            <select id="center-type-select" class="center-type-select">
+                <option value="todos">Todos</option>
+                <option value="cultura-educacion">Cultura/Educación</option>
+                <option value="deporte-ocio">Deporte/Ocio</option>
+            </select>
+        </div>
+
+        <button id="load-data-btn" class="centers-btn">Buscar</button>
+
+        <div class="center-list">
+            <!-- Dynamically loaded elements will go here -->
+            <!-- Example of an element -->
+            <div class="center">
+                <span class="name">Element Name</span>
+                <span class="activity">Short description</span>
+            </div>
+            <!-- Repeat for each element -->
+        </div>
+    </div>
+    <script src="static/behaviour.js"></script>
+</body>
+</html>
