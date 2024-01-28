@@ -9,7 +9,12 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function fetchData() {
-    fetch('http://localhost:8000/centers')
+    const selectedType = document.getElementById('center-type-select').value;
+    const url = `http://localhost:8000/centers?center_type=${selectedType}`;
+    console.log(url)
+
+    console.log(url)
+    fetch(url)
         .then(response => response.json())
         .then(data => {
             displayData(data);
@@ -17,23 +22,86 @@ function fetchData() {
         .catch(error => console.error('Error:', error));
 }
 
+
 function displayData(data) {
     const elementsList = document.querySelector('.center-list');
-    // Clear previous data in the list
     elementsList.innerHTML = '';
 
     data.forEach(item => {
-        // Create a new div for each center
+        // Adjust the optional data for the item
+        if(item.postal_code == null){
+            item.postal_code = 'Código postal desconocido'
+        }
+
+        if(item.telephone == null){
+            item.telephone = 'Teléfono desconocido'
+        }
+
+        if(item.fax == null){
+            item.fax = 'Fax desconocido'
+        }
+
+        if(item.email == null){
+            item.email = 'Correo electrónico desconocido'
+        }
+
+        if(item.web == null){
+            item.web = 'Web desconocida'
+        }
+
+        if(item.creation_date == null){
+            item.web = 'Fecha de creación desconocida'
+        }
+
+        if(item.update_date == null){
+            item.web = 'Fecha de actualización desconocida'
+        }
+
+
+        // Container for the item and its description
+        const itemContainer = document.createElement('div');
+        itemContainer.classList.add('item-container');
+
+        // The item
         const centerDiv = document.createElement('div');
         centerDiv.classList.add('center');
-
-        // Assuming each item is an object with 'name' and 'activity' properties
         centerDiv.innerHTML = `
             <span class="name">${item.name}</span>
             <span class="activity">${item.activity}</span>
         `;
 
-        // Append the new div to the elements list
-        elementsList.appendChild(centerDiv);
+        // Description block for the item
+        const descriptionDiv = document.createElement('div');
+        descriptionDiv.classList.add('description');
+        descriptionDiv.style.display = 'none'; // Initially hidden
+        descriptionDiv.innerHTML = `
+        <p class="center-item-detail-headers">➤ Dirección: <span class="center-item-detail-responses">${item.street_address}</span></p>
+            <p class="center-item-detail-headers">➤ Código Postal: <span class="center-item-detail-responses">${item.postal_code}</span></p>
+            <p class="center-item-detail-headers">➤ Web: <span class="center-item-detail-responses">${item.web}</span></p>
+            <p class="center-item-detail-headers">➤ Email: <span class="center-item-detail-responses">${item.email}</span></p>
+            <p class="center-item-detail-headers">➤ Teléfono: <span class="center-item-detail-responses">${item.telephone}</span></p>
+            <p class="center-item-detail-headers">➤ Fax: <span class="center-item-detail-responses">${item.fax}</span></p>
+            <p class="center-item-detail-headers">➤ Municipio: <span class="center-item-detail-responses">${item.city_name} (<a href="${item.city_linked_uri}">more</a>)</span></p>
+            <hr>
+            <p class="center-item-detail-headers">➤ Fecha de creación: <span class="center-item-detail-responses">${new Date(item.creation_date).toISOString().split('T')[0]}</span></p>
+            <p class="center-item-detail-headers">➤ Última actualización: <span class="center-item-detail-responses">${new Date(item.update_date).toISOString().split('T')[0]}</span></p>
+        `;
+
+        itemContainer.appendChild(centerDiv);
+        itemContainer.appendChild(descriptionDiv);
+
+        // Toggle visibility of the description on click
+        centerDiv.addEventListener('click', function() {
+            const isVisible = descriptionDiv.style.display === 'block';
+            if (isVisible) {
+                descriptionDiv.style.display = 'none';
+                descriptionDiv.classList.remove('description-visible');
+            } else {
+                descriptionDiv.style.display = 'block';
+                descriptionDiv.classList.add('description-visible');
+            }
+        });
+
+        elementsList.appendChild(itemContainer);
     });
 }

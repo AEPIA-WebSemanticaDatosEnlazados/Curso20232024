@@ -54,19 +54,79 @@ def get_home_page():
     return FileResponse('static/index.html')
 
 
-@app.get('/centers/')
-def get_centers():
+@app.get('/centers')
+def get_centers(center_type: str = None):
     """
         Function to retrieve the centers of the dataset.
+
+        -----------
+        # Arguments
+
+        - `center_type`: `str`
+            - The type of center to be used in the query.\
+            This parameter is optional and defaults to `None`,\
+            meaning that no filtering will be done.
     """
-    query = '''
-        SELECT ?name ?activity_name
-        WHERE { 
+    center_type_restriction = '' if center_type is None or center_type == 'ALL' else \
+        f'?center dbpedia:type "{center_type}"'
+
+    print(center_type_restriction)
+
+    query = f'''
+        PREFIX schema: <http://schema.org/>
+        PREFIX dc: <http://purl.org/dc/elements/1.1/>
+        PREFIX tc: <https://tenerifecenters.com/ontology/centers#>
+        PREFIX owl: <http://www.w3.org/2002/07/owl#>
+        PREFIX dbpedia: <http://dbpedia.org/resource/>
+
+        SELECT ?name ?activity_name ?city_name ?city_linked_uri ?streetAddress ?postalCode ?web ?email ?telephone ?fax ?creation_date ?update_date
+        WHERE {{ 
             ?center a tc:Center .
             ?center dc:title ?name .
             ?center tc:hasActivity ?activity .
             ?activity dc:title ?activity_name .
-        }
+            {center_type_restriction}
+
+            OPTIONAL {{
+                ?center schema:containedIn ?city .
+                ?city a schema:City .
+                ?city schema:name ?city_name .
+                ?city owl:sameAs ?city_linked_uri .
+            }}
+
+            OPTIONAL {{
+                ?center schema:address ?address .
+                ?address schema:streetAddress ?streetAddress .
+
+                OPTIONAL {{
+                    ?address schema:postalCode ?postalCode .
+                }}
+
+                OPTIONAL {{
+                    ?address schema:url ?web
+                }}
+
+                OPTIONAL {{
+                    ?address schema:email ?email
+                }}
+
+                OPTIONAL {{
+                    ?address schema:telephone ?telephone
+                }}
+
+                OPTIONAL {{
+                    ?address schema:faxNumber ?fax
+                }}
+
+                OPTIONAL {{
+                    ?center dc:created ?creation_date
+                }}
+
+                OPTIONAL {{
+                    ?center dc:modified ?update_date
+                }}
+            }}
+        }}
     '''
     centers = []
 
@@ -74,7 +134,17 @@ def get_centers():
         centers.append(
             {
                 'name' : row[0],
-                'activity' : row[1]
+                'activity' : row[1],
+                'city_name' : row[2],
+                'city_linked_uri' : row[3],
+                'street_address' : row[4],
+                'postal_code' : row[5],
+                'web' : row[6],
+                'email' : row[7],
+                'telephone' : row[8],
+                'fax' : row[9],
+                'creation_date' : row[10],
+                'update_date' : row[11]
             }
         )
 

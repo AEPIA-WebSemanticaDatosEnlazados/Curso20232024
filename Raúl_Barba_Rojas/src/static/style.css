@@ -95,3 +95,35 @@
     font-size: 14px;
     cursor: pointer;
 }
+
+.item-container {
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    overflow: hidden; /* Ensures the child elements adhere to the container's border */
+}
+
+.description {
+    background-color: white; /* Light gray background */
+    border-top: 1px solid #ddd; /* Separating line */
+    display: none; /* Initially hidden */
+    padding: 0; /* No padding when hidden */
+    margin: 0; /* No margin when hidden */
+}
+
+/* Add a new class for when the description is visible */
+.description-visible {
+    padding: 10px; /* Apply padding only when visible */
+}
+
+.center-item-detail-headers {
+    color: darkcyan;
+    font-weight: bold;
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+.center-item-detail-responses {
+    color: rgb(9, 72, 72);
+    font-weight: bold;
+}
