@@ -70,8 +70,6 @@ def get_centers(center_type: str = None):
     center_type_restriction = '' if center_type is None or center_type == 'ALL' else \
         f'?center dbpedia:type "{center_type}"'
 
-    print(center_type_restriction)
-
     query = f'''
         PREFIX schema: <http://schema.org/>
         PREFIX dc: <http://purl.org/dc/elements/1.1/>
@@ -79,13 +77,18 @@ def get_centers(center_type: str = None):
         PREFIX owl: <http://www.w3.org/2002/07/owl#>
         PREFIX dbpedia: <http://dbpedia.org/resource/>
 
-        SELECT ?name ?activity_name ?city_name ?city_linked_uri ?streetAddress ?postalCode ?web ?email ?telephone ?fax ?creation_date ?update_date
+        SELECT ?name ?activity_name ?city_name ?city_linked_uri ?streetAddress ?postalCode ?web ?email ?telephone ?fax ?creation_date ?update_date ?center_type ?longitude ?latitude
         WHERE {{ 
             ?center a tc:Center .
             ?center dc:title ?name .
             ?center tc:hasActivity ?activity .
             ?activity dc:title ?activity_name .
+            ?center dbpedia:type ?center_type .
+            ?center schema:longitude ?longitude .
+            ?center schema:latitude ?latitude .
             {center_type_restriction}
+
+
 
             OPTIONAL {{
                 ?center schema:containedIn ?city .
@@ -97,40 +100,31 @@ def get_centers(center_type: str = None):
             OPTIONAL {{
                 ?center schema:address ?address .
                 ?address schema:streetAddress ?streetAddress .
+                ?address schema:postalCode ?postalCode .
+            }}
 
-                OPTIONAL {{
-                    ?address schema:postalCode ?postalCode .
-                }}
+            OPTIONAL {{
+                ?center schema:web ?web .
+            }}
 
-                OPTIONAL {{
-                    ?address schema:url ?web
-                }}
+            OPTIONAL {{
+                ?center schema:email ?email .
+            }}
 
-                OPTIONAL {{
-                    ?address schema:email ?email
-                }}
+            OPTIONAL {{
+                ?center schema:telephone ?telephone .
+            }}
 
-                OPTIONAL {{
-                    ?address schema:telephone ?telephone
-                }}
-
-                OPTIONAL {{
-                    ?address schema:faxNumber ?fax
-                }}
-
-                OPTIONAL {{
-                    ?center dc:created ?creation_date
-                }}
-
-                OPTIONAL {{
-                    ?center dc:modified ?update_date
-                }}
+            OPTIONAL {{
+                ?center schema:fax ?fax .
             }}
         }}
     '''
     centers = []
 
+    count = 0
     for row in g.query(query):
+        count += 1
         centers.append(
             {
                 'name' : row[0],
@@ -144,8 +138,12 @@ def get_centers(center_type: str = None):
                 'telephone' : row[8],
                 'fax' : row[9],
                 'creation_date' : row[10],
-                'update_date' : row[11]
+                'update_date' : row[11],
+                'center_type' : row[12],
+                'longitude' : row[13],
+                'latitude' : row[14]
             }
         )
 
+    print(count)
     return centers

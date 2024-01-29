@@ -1,4 +1,9 @@
+var map;
+var mapMarkers = [];
+
 document.addEventListener('DOMContentLoaded', function() {
+    initializeMap();
+
     // Load data when the page is loaded
     fetchData();
 
@@ -11,9 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
 function fetchData() {
     const selectedType = document.getElementById('center-type-select').value;
     const url = `http://localhost:8000/centers?center_type=${selectedType}`;
-    console.log(url)
 
-    console.log(url)
     fetch(url)
         .then(response => response.json())
         .then(data => {
@@ -22,13 +25,64 @@ function fetchData() {
         .catch(error => console.error('Error:', error));
 }
 
+function initializeMap() {
+    map = L.map('map').setView([28.291565, -16.629130], 10);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+}
+
+function clearMarkers() {
+    for (var i = 0; i < mapMarkers.length; i++) {
+        map.removeLayer(mapMarkers[i]);
+    }
+    mapMarkers = []; // Clear the corrected array
+}
+
+function plotPoints(bluePoints, purplePoints) {
+    if (!map) {
+        initializeMap();
+    }
+
+    clearMarkers();
+
+    var blueIcon = L.AwesomeMarkers.icon({
+        icon: 'circle',
+        markerColor: 'blue'
+    });
+
+    var purpleIcon = L.AwesomeMarkers.icon({
+        icon: 'circle',
+        markerColor: 'purple'
+    });
+
+    bluePoints.forEach(function(point) {
+        var marker = L.marker([point.latitude, point.longitude], {icon: blueIcon})
+            .addTo(map)
+            .bindPopup(point.name);
+        mapMarkers.push(marker);
+    });
+
+    purplePoints.forEach(function(point) {
+        var marker = L.marker([point.latitude, point.longitude], {icon: purpleIcon})
+            .addTo(map)
+            .bindPopup(point.name);
+        mapMarkers.push(marker);
+    });
+}
+
 
 function displayData(data) {
     const elementsList = document.querySelector('.center-list');
     elementsList.innerHTML = '';
 
+    let culturalCenters = [];
+    let sportCenters = [];
+
     data.forEach(item => {
         // Adjust the optional data for the item
+        if(item.street_address == null){
+            item.postal_code = 'Dirección desconocida'
+        }
+
         if(item.postal_code == null){
             item.postal_code = 'Código postal desconocido'
         }
@@ -103,5 +157,14 @@ function displayData(data) {
         });
 
         elementsList.appendChild(itemContainer);
+
+        // Adding item to map centers lists
+        if(item.center_type == 'ocio_deporte'){
+            sportCenters.push(item);
+        }else{
+            culturalCenters.push(item);
+        }
     });
+
+    plotPoints(sportCenters, culturalCenters);
 }

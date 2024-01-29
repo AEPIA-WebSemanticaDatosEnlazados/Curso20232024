@@ -127,3 +127,14 @@
     color: rgb(9, 72, 72);
     font-weight: bold;
 }
+
+.map-container {
+    width: 80%; /* Adjust as needed */
+    margin: 0 auto; /* Center the map container */
+    height: 500px; /* Adjust height as needed */
+}
+
+.map {
+    width: 100%; /* Make the map fill its container */
+    height: 100%; /* Adjust the height to fill its container */
+}

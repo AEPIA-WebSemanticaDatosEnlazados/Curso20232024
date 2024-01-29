@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tenerife Centers</title>
     <link rel="stylesheet" type="text/css" href="static/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
 </head>
 <body>
     <div class="welcome-section">
@@ -35,6 +40,17 @@
             </div>
             <!-- Repeat for each element -->
         </div>
+    </div>
+
+    <br>
+
+    
+    <div id="map-container" class="map-container">
+        <h2 class="header-title">2. Localización de centros</h2>
+        <p>En esta sección puedes encontrar la geolocalización de los centros resultantes de la búsqueda anterior.</p>
+        <div id="map" class="map"></div>
+    </div>
+
     </div>
     <script src="static/behaviour.js"></script>
 </body>
