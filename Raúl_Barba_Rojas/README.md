@@ -549,7 +549,7 @@ De este modo, para llevar a cabo la explotación de los datos generados (licenci
         PREFIX owl: <http://www.w3.org/2002/07/owl#>
         PREFIX dbpedia: <http://dbpedia.org/resource/>
 
-SELECT ?name ?activity_name ?city_name ?city_linked_uri ?streetAddress ?postalCode ?web ?email ?telephone ?fax ?creation_date ?update_date ?center_type ?longitude ?latitude
+    SELECT ?name ?activity_name ?city_name ?city_linked_uri ?streetAddress ?postalCode ?web ?email ?telephone ?fax ?creation_date ?update_date ?center_type ?longitude ?latitude
         WHERE { 
             ?center a tc:Center .
             ?center dc:title ?name .
