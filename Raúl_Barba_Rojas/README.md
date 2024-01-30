@@ -30,25 +30,27 @@ En este repositorio se encuentran todos los recursos relacionados con el proyect
 
     - 📓 exploratory_data_analysis.ipynb: el notebook de Python con el código necesario para adquirir ciertos insights de utilidad, desarrollados en el análisis de datos realizado.
 
-    - 📂 ontology: este directorio contiene información relacionada con la ontología empleada para dar soporte semántico a los datos.
+- 📂 ontology: este directorio contiene información relacionada con la ontología empleada para dar soporte semántico a los datos.
 
-        - 🖼️ tcOntologyDesign.png: esta figura describe la ontología que da soporte a los datos, incluyendo en las clases propias (las no reutilizadas de otras fuentes), las propiedades a emplear para dar el soporte semántico que se requiere.
+    - 🖼️ tcOntologyDesign.png: esta figura describe la ontología que da soporte a los datos, incluyendo en las clases propias (las no reutilizadas de otras fuentes), las propiedades a emplear para dar el soporte semántico que se requiere.
 
-        - 📊 centers.ttl: el archivo obtenido con Protégé tras implementar, mediante dicha herramienta, la ontología que da soporte semántico a los datos de este conjunto de datos.
+    - 📊 centers.ttl: el archivo obtenido con Protégé tras implementar, mediante dicha herramienta, la ontología que da soporte semántico a los datos de este conjunto de datos.
 
-    - 📂 src: esta carpeta contiene todo el código necesario para poner en marcha la aplicación de explotación de los datos enlazados generados. Para ello, existen varios pasos a tener en cuenta:
+- 📂 src: esta carpeta contiene todo el código necesario para poner en marcha la aplicación de explotación de los datos enlazados generados. Para ello, existen varios pasos a tener en cuenta:
 
-        - **Entorno virtual**: primeramente, se recomienda instalar un entorno virtual de Python para poder trabajar con la aplicación. Esto se puede hacer de forma sencilla con el siguiente comando (asumiendo que tenemos Python instalado): `python -m venv venv`. Dicho entorno puede activarse de varias formas dependiendo del sistema operativo (en Windows: asumiendo que estamos en un directorio que contiene la carpeta `venv` podríamos ejecutar el siguiente comando: `venv/Scripts/activate`; si estuviéramos en una distribución Linux podríamos utilizar este otro comando: `source venv/bin/activate`. En cualquier caso, se puede buscar en Internet para el comando exacto en función de la distribución del sistema operativo que se esté empleando).
+    - **Entorno virtual**: primeramente, se recomienda instalar un entorno virtual de Python para poder trabajar con la aplicación. Esto se puede hacer de forma sencilla con el siguiente comando (asumiendo que tenemos Python instalado): `python -m venv venv`. Dicho entorno puede activarse de varias formas dependiendo del sistema operativo (en Windows: asumiendo que estamos en un directorio que contiene la carpeta `venv` podríamos ejecutar el siguiente comando: `venv/Scripts/activate`; si estuviéramos en una distribución Linux podríamos utilizar este otro comando: `source venv/bin/activate`. En cualquier caso, se puede buscar en Internet para el comando exacto en función de la distribución del sistema operativo que se esté empleando).
 
-        - **Dependencias**: tras ello, se deben instalar varias dependencias de la aplicación:
+    - **Dependencias**: tras ello, se deben instalar varias dependencias de la aplicación:
 
-            - **Uvicorn**: `pip install uvicorn`.
+        - **Uvicorn**: `pip install uvicorn`.
 
-            - **FastAPI**: `pip install fastapi`.
+        - **FastAPI**: `pip install fastapi`.
 
-            - **rdflib**: `pip install rdf lib`.
+        - **rdflib**: `pip install rdf lib`.
 
-        - **Ejecución**: para ejecutar la aplicación, basta con meterse en el directorio `src` y ejecutar el siguiente comando: `uvicorn api:app`. El anterior comando creará una instancia de la aplicación web que explota los datos enlazados generados, por lo que podremos acceder a ella con el navegador en la dirección indicada por consola, normalmente: `http://127.0.0.1:8000`.
+    - **Ejecución**: para ejecutar la aplicación, basta con meterse en el directorio `src` y ejecutar el siguiente comando: `uvicorn api:app`. El anterior comando creará una instancia de la aplicación web que explota los datos enlazados generados, por lo que podremos acceder a ella con el navegador en la dirección indicada por consola, normalmente: `http://127.0.0.1:8000`.
+
+- 📂 openrefine: este directorio contiene el archivo comprimido con el proyecto de Open Refine que se empleó para llevar a cabo el proceso de análisis, transformación, limpieza y generación de datos enlazados.
 
 - ℹ️ README.md: un fichero con toda la información sobre el proyecto final de la asignatura, incluyendo la estructura del repositorio, así como la memoria desarrollada del proyecto.
 
