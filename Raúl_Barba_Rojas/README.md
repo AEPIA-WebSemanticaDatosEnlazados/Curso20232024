@@ -82,7 +82,7 @@ En esta sección de la memoria se describe detalladamente el proceso seguido par
 
 - **Enlazado**: en esta subsección se describe la forma en la que se llevó a cabo el enlazado de los datos, indicando con qué fuentes externas se han enlazado los datos, así como la herramienta y el proceso seguido para enlazar los datos.
 
-- **Publicación**: TBD
+- **Publicación**: también se ofrece una breve sección de publicación, donde se muestra una reflexión sobre la publicación de conjuntos de datos y cómo se ha intentado aplicar en este proyecto.
 
 
 ### Selección de la fuente de datos
