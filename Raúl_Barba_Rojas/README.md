@@ -544,10 +544,10 @@ De este modo, para llevar a cabo la explotación de los datos generados (licenci
     ```sparql
 
     PREFIX schema: <http://schema.org/>
-        PREFIX dc: <http://purl.org/dc/elements/1.1/>
-        PREFIX tc: <https://tenerifecenters.com/ontology/centers#>
-        PREFIX owl: <http://www.w3.org/2002/07/owl#>
-        PREFIX dbpedia: <http://dbpedia.org/resource/>
+    PREFIX dc: <http://purl.org/dc/elements/1.1/>
+    PREFIX tc: <https://tenerifecenters.com/ontology/centers#>
+    PREFIX owl: <http://www.w3.org/2002/07/owl#>
+    PREFIX dbpedia: <http://dbpedia.org/resource/>
 
     SELECT ?name ?activity_name ?city_name ?city_linked_uri ?streetAddress ?postalCode ?web ?email ?telephone ?fax ?creation_date ?update_date ?center_type ?longitude ?latitude
         WHERE { 
@@ -590,12 +590,57 @@ De este modo, para llevar a cabo la explotación de los datos generados (licenci
         }
     ```
 
+    Así, gracias a esta query en SparQL y a la utilización de JavaScript en el front-end, podemos conseguir toda la información necesaria (que, de hecho, tiene el soporte semántico que le hemos dado con la ontología) para poder mostrarla al usuario y cubrir sus necesidades de información (explotación de los datos enlazados).
 
-3. **Conclusiones de implementación**:
-
-    - filtros, etc.
-
-    - posibles nuevas funcionalidades: más filtros, selección individual de centros, etc.
+3. **Conclusiones de implementación**: para finalizar la implementación, cabe destacar que permite dar respuesta a todo lo que inicialmente se planteaba en el diseño de la ontología, por lo que también permite verificar que la ontología desarrollada da el soporte semántico que los datos requerían. Además de eso, también merece la pena destacar que este sistema, si bien avanzado en cierto modo, no deja de ser un prototipo  y podría ampliarse o mejorarse con más funcionalidades: por ejemplo, más filtros o tipos de filtros, permitir buscar centros individualmente, calcular distancias entre centros, calcular zonas con mayor densidad de centros... Las posibilidades son prácticamente ilimitadas en lo que respecta a la explotación (en este caso nos ceñimos a dar respuesta a las cuestiones planteadas en el diseño de la ontología, pero fácilmente podríamos ir más allá y crear un sistema bastante más avanzado).
 
 ### Conclusiones
 
+A modo de conclusión, existen varios aspectos que me gustaría destacar. Primeramente, podemos observar que, a lo largo de este proyecto, se ha llevado a cabo el proceso completo de generación de datos enlazados, desde la generación de la idea del propio proyecto y búsqueda de datos relacionados con ella, hasta el enlazado de datos y su profunda explotación.
+
+En este sentido, considero que el proyecto ha sido completo, pues hemos observado diferentes casuísticas que debemos considerar en proyectos de este calibre, incluyendo la licencia de los datos, el análisis de los mismos (que dirige el resto del proceso), la importancia del establecimiento de una estrategia de nombrado de recursos... De todo el proceso, destaco la parte de diseño y desarrollo de la ontología, puesto que fue una de las que más tiempo llevó. Una de las razones de que esta parte tuviera un mayor peso en el tiempo es, sin duda, debido al gran tamaño de la web semántica y el desconocimiento de gran parte de la misma, lo que conlleva un estudio concienzudo de diversas ontologías existentes (y el análisis subyacente de si permiten o no cubrir las necesidades semánticas que tenía este proyecto). Así, todo ese estudio, así como la implementación de la ontología fue, sin duda, uno de los retos más apasionantes que se tuvieron que acometer en el desarrollo de este proyecto.
+
+Por otro lado, otro de los aspectos que me gustaría destacar es la explotación de los datos y la importancia de disponer de conjuntos de datos de suficiente calidad. En este proyecto, se llevó a cabo un proceso profundo de transformación y limpieza que permitió arreglar problemas de calidad importantes en los datos (sobre todo a nivel de inconsistencias), y gracias a dicho proceso se consiguió una explotación de los datos que permite resolver todas las necesidades especificadas. Para cada centro, el usuario es capaz de obtener todo tipo de información, incluyendo la geolocalización del centro y, además, se muestra en un mapa real, dinámico e interactivo, de modo que el usuario puede saber cómo de cerca o lejos está de otros lugares de su interés (o incluso de otros centros). En este sentido, la web semántica y los datos enlazados son francamente útil, pues gracias al enlazado de datos podríamos incluso explotar datos que no estaban originalmente en el conjunto de datos (por ejemplo, podríamos situar los municipios en el mapa por geolocalización, incluso cuando no disponíamos inicialmente de esa información, gracias al enlazado de datos realizado - en este caso, con WikiData).
+
+En resumen, la web semántica y los datos enlazados abren todo un mundo de posibilidades en el que podemos poner al servicio de la sociedad (recordemos que estos datos son de un ente público, y están publicados precisamente para dar servicio a las personas) un abánico de posibilidades que se nos abren gracias a esta capacidad de dar un soporte semántico a los datos (por ejemplo, con ontologías y modelos estándar y reutilizables, como se llevó a cabo en este proyecto) y de enlazado con otros conjuntos, para resolver las necesidades de nuestra sociedad.
+
+### Bibliografía
+
+Para la realización de este proyecto se han empleado muchos recursos bibliográficos, principalmente recursos web. A continuación se muestra un listado con los recursos más importantes empleados para desarrollar el proyecto:
+
+1. **Página web de datos abiertos del Cabildo de Tenerife**: https://datos.tenerife.es/es/datos/conjuntos-de-datos
+
+2. **Casos de estudio de utilización de Open Refine**: se emplearon varios recursos relacionados con casos concretos de estudio basados en el empleo de Open Refine:
+
+    - Petrova-Antonova, Dessislava & Tancheva, Rumyana. (2020). Data Cleaning: A Case Study with OpenRefine and Trifacta Wrangler. 10.1007/978-3-030-58793-2_3. 
+
+    - Using OpenRefine. Ruben Verborgh , Max De Wilde.
+
+    - Repositorio de Github con tutoriales de Open Refine: https://github.com/OpenRefine/OpenRefine/wiki/External-Resources
+
+
+3. **Recursos sobre Python**: también se emplearon diversos recursos referidos al lenguaje de programación empleado para la aplicación de explotación de los datos generados:
+
+    - **Referencia oficial de Python**: https://docs.python.org/3/reference/index.html
+
+    - **Referencia de RDFLib en Python**: https://rdflib.readthedocs.io/en/stable/
+
+    - **Referencia de FastAPI en Python**: https://fastapi.tiangolo.com/
+
+4. **Recursos sobre front-end web**: también se emplearon diversos recursos orientados a aprender y emplear tecnologías front-end:
+
+    - **Referencia de HTML**: https://htmlreference.io/
+
+    - **Referencia de JS**: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference
+
+    - **Referencia de Leaflet**: https://leafletjs.com/reference.html
+
+    - **Referencia de CSS**: https://cssreference.io/
+
+5. **Recursos sobre diseño y desarrollo de ontologías**: con respecto a las ontologías, también se emplearon diversos recursos bibliográficos para poder entenderlas profundamente:
+
+    - **Entregable 4.1. del proyecto READY4SmartCities**: https://www.dropbox.com/s/r65gpvkndtibiul/R4SC%20-%20D4.1%20-%20Requirements%20and%20guidelines%20for%20energy%20data%20generation.pdf?dl=0
+
+    - **Referencia de Protégé**: https://protegeproject.github.io/protege/
+
+Además de las anteriores, también se emplearon los diversos recursos que se ofrecen en la página del curso, incluyendo los propios vídeos didácticos de las unidades, pero también lecturas y otros recursos que han ayudado significativamente en el desarrollo de este proyecto.
