@@ -523,12 +523,19 @@ De este modo, para llevar a cabo la explotación de los datos generados (licenci
 
     Concretamente, el ejemplo anterior muestra como el usuario ha filtrado su búsqueda por centros culturales o educativos, obteniendo como consecuencia de dicho filtro centros de enseñanza especializada, institutos, centro de educación primaria, entre muchos otros. Para cada uno de estos centros, la aplicación web de explotación de los datos enlazados permite obtener información adicional (en caso tal de que el usuario quiera saber más sobre un centro concreto). Para ello, el usuario puede clickar uno de los centros (a elección), lo que abrirá un desplegable con información adicional sobre el centro, incluyendo dirección y código postal, datos de contacto (web, email, teléfono o fax - si existieran) e incluso el municipio al que pertenece el centro. Además, gracias a la potencia de la web semántica y los datos enlazados, la aplicación proporciona un enlace (URI) a la página de wikidata que contiene información sobre dicho municipio. Estas funcionalidades se muestran en las tres figuras siguientes (las dos primeras sobre la información adicional que la aplicación muestra sobre el centro, y la tercera con información adicional sobre el municipio, gracias al enlazado de datos realizado):
 
-    ![Información adicional de centro (I)](frontend_demo_imgs/home_1.png)
+    ![Información adicional de centro (I)](frontend_demo_imgs/home_3.png)
 
-    ![Información adicional de centro (II)](frontend_demo_imgs/home_1.png)
+    ![Información adicional de centro (II)](frontend_demo_imgs/home_4.png)
 
-    ![Información del municipio en WikiData](frontend_demo_imgs/home_1.png)
+    ![Información del municipio en WikiData](frontend_demo_imgs/wikidata.png)
 
+    - **Bloque 2**: el segundo de los bloques nos permite (geo)localizar los centros en un mapa de Tenerife real. De este modo, el sistema de explotación de los datos enlazados generados es capaz de mostrar los centros buscados por el usuario con colores basados en tipo. Así, los centros en **color azul** son centros deportivos/ocio, mientras que los centros en **color morado** son centros culturales/educativos. Además, el sistema permite obtener el nombre de un centro (clickando sobre su posición en el mapa), y se adapta completamente al filtro seleccionado por el usuario (si el usuario eligió centros deportivos, únicamente se mostrarán centros deportivos y, por tanto, ubicaciones azules sobre el mapa de Tenerife). El mapa es también ampliable en caso tal de que el usuario quiera ver zonas concretas cerca del centro (como si fuera Google Maps). Estas funcionalidades se muestran en las siguientes figuras:
+
+    ![Mapa de Tenerife con centros deportivos y culturales](frontend_demo_imgs/home_2.png) 
+
+    ![Mapa de Tenerife con centros culturales únicamente](frontend_demo_imgs/home_5.png) 
+
+    ![Mapa de Tenerife ampliado para observar la localización de un centro y sus alrededores](frontend_demo_imgs/home_6.png) 
 
 2. **API**:
 
