@@ -122,9 +122,7 @@ def get_centers(center_type: str = None):
     '''
     centers = []
 
-    count = 0
     for row in g.query(query):
-        count += 1
         centers.append(
             {
                 'name' : row[0],
@@ -145,5 +143,4 @@ def get_centers(center_type: str = None):
             }
         )
 
-    print(count)
     return centers

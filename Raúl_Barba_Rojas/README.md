@@ -16,6 +16,10 @@ En este repositorio se encuentran todos los recursos relacionados con el proyect
 
         - 📊 centros-educativos-y-culturales-en-tenerife.csv: este fichero contiene los datos de la segunda fuente de datos empleada, sobre centros educativos y culturales en Tenerife, en formato CSV. Proceden del Cabildo de Tenerife, y nos acogemos a la licencia para poder utilizarlos, dando todo el crédito al Cabildo de Tenerife.
 
+    - 📂 rdf: este directorio contiene el conjunto de datos final generado tras todo el proceso realizado en el proyecto.
+
+        - 📊 ProyectoFinal.ttl: este fichero contiene el conjunto de datos enlazados obtenido tras todo el proceso realizado en el proyecto (en sintaxis Turtle).
+
 - 📂 eda: este directorio contiene información sobre el análisis exploratorio de datos realizado. Concretamente, contiene un subdirectorio con imágenes relacionadas con el análisis realizado, así como un notebook de Python con el código necesario para generar dichas imágenes. Este análisis también se realizó con Open Refine, aunque el proyecto final de Open Refine no se incluye en este directorio.
 
     - 📂 imgs: este directorio contiene las imágenes más destacadas generadas en el análisis de datos (no contiene todas, pues muchas de las imágenes no se persisten, únicamente se persiste el proceso realizado para llegar a sus resultados en la memoria).
@@ -25,6 +29,26 @@ En este repositorio se encuentran todos los recursos relacionados con el proyect
         - 🖼️ nulls_distribution.png: esta figura muestra la distribución de valores faltantes en las diferentes variables del conjunto de datos, lo que es especialmente útil para analizar posibles problemas en los datos.
 
     - 📓 exploratory_data_analysis.ipynb: el notebook de Python con el código necesario para adquirir ciertos insights de utilidad, desarrollados en el análisis de datos realizado.
+
+    - 📂 ontology: este directorio contiene información relacionada con la ontología empleada para dar soporte semántico a los datos.
+
+        - 🖼️ tcOntologyDesign.png: esta figura describe la ontología que da soporte a los datos, incluyendo en las clases propias (las no reutilizadas de otras fuentes), las propiedades a emplear para dar el soporte semántico que se requiere.
+
+        - 📊 centers.ttl: el archivo obtenido con Protégé tras implementar, mediante dicha herramienta, la ontología que da soporte semántico a los datos de este conjunto de datos.
+
+    - 📂 src: esta carpeta contiene todo el código necesario para poner en marcha la aplicación de explotación de los datos enlazados generados. Para ello, existen varios pasos a tener en cuenta:
+
+        - **Entorno virtual**: primeramente, se recomienda instalar un entorno virtual de Python para poder trabajar con la aplicación. Esto se puede hacer de forma sencilla con el siguiente comando (asumiendo que tenemos Python instalado): `python -m venv venv`. Dicho entorno puede activarse de varias formas dependiendo del sistema operativo (en Windows: asumiendo que estamos en un directorio que contiene la carpeta `venv` podríamos ejecutar el siguiente comando: `venv/Scripts/activate`; si estuviéramos en una distribución Linux podríamos utilizar este otro comando: `source venv/bin/activate`. En cualquier caso, se puede buscar en Internet para el comando exacto en función de la distribución del sistema operativo que se esté empleando).
+
+        - **Dependencias**: tras ello, se deben instalar varias dependencias de la aplicación:
+
+            - **Uvicorn**: `pip install uvicorn`.
+
+            - **FastAPI**: `pip install fastapi`.
+
+            - **rdflib**: `pip install rdf lib`.
+
+        - **Ejecución**: para ejecutar la aplicación, basta con meterse en el directorio `src` y ejecutar el siguiente comando: `uvicorn api:app`. El anterior comando creará una instancia de la aplicación web que explota los datos enlazados generados, por lo que podremos acceder a ella con el navegador en la dirección indicada por consola, normalmente: `http://127.0.0.1:8000`.
 
 - ℹ️ README.md: un fichero con toda la información sobre el proyecto final de la asignatura, incluyendo la estructura del repositorio, así como la memoria desarrollada del proyecto.
 
@@ -474,3 +498,47 @@ Tras lo anterior, todavía no se disponía de ningún enlace de datos real, sino
 - Para verificar el enlace, se generó el conjunto de datos en sintaxis Turtle y se llevó a cabo una lectura manual de los primeros 20 centros y sus municipios, comprobando los enlaces establecidos a través de la propiedad `owl:sameAs`, para verificar que el enlazado de datos se realizó correctamente.
 
 De este modo, gracias al proceso de enlazado de datos se generó un conjunto de datos enlazados conectado al resto de la web semántica, y que se encuentra disponible dentro de la carpeta `data/rdf` de este mismo proyecto.
+
+#### Publicación de datos
+
+Si bien se intentó llevar a cabo la publicación de datos, se encontraron dificultades para poder cargar los datos en una plataforma de Open Linked Data que, sin coste asociado, permitiera publicar los datos. De este modo, los datos se subieron en este repositorio (dentro de la carpeta `ontology`), por lo que están accesibles (si bien no muy encontrables) al resto de potenciales usuarios (lógicamente el problema que tenemos con este enfoque es que, aunque podamos distribuir el fichero con los datos, no es fácil poder compartir la "consciencia" sobre la existencia de los datos al resto de la web semántica).
+
+Cabe destacar que estos datos generados son accesibles en Internet desde este repositorio (público), pero están accesibles bajo la licencia CC BY 4.0, y dando todo el crédito de las fuentes de datos originales al Cabildo de Tenerife, pues están en posesión de dichos datos (bajo la misma licencia que la que se utiliza para la publicación de los datos enlazados generados).
+
+### Explotación
+
+Finalmente, se llevó a cabo la explotación de los datos enlazados generados. Para ello, existían múltiples opciones:
+
+1. **Creación de endpoint SparQL**: la primera opción sería crear un endpoint SparQL accesible para poder acceder y consultar los datos (lo que también permitiría resolver el problema de la publicación en caso de que estuviera disponible para el resto de la web semántica). Sin embargo, no se dispone de ningún dominio público, por lo que esta opción fue rápidamente descartada (sí se podría haber creado una instancia local de servidor SparQL, pero no sería accesible desde el resto de la web semántica, por lo que este acercamiento no ofrecía ventajas claras).
+
+2. **Utilización de un fichero con los datos enlazados**: la otra posibilidad consiste directamente en la utilización de los datos enlazados (generados con Open Refine y todo el proceso anterior) para la creación de una aplicación que los explote. Dado que se dispone de este conjunto de datos, se optó por esta segunda vía.
+
+De este modo, para llevar a cabo la explotación de los datos generados (licencia CC BY 4.0, que es la misma que los datos de entrada, tal y como se describió en el apartado de Análisis de Datos) se decidió crear un prototipo de aplicación web que permitiera conocer la información de cada centro a demanda del usuario. La página web funciona del siguiente modo:
+
+1. **Funcionamiento de la web**: esencialmente la página web tiene dos bloques que nos permiten realizar diferentes acciones y visualizar diferente información.
+
+    - **Bloque 1**: el primero de los bloques permite al usuario realizar la búsqueda de centros de diferentes tipos en Tenerife. Concretamente, los tipos son deporte/ocio o cultural/educativo (o ambos). Así, a elección del usuario y mediante una interfaz simple (botón de búsqueda), el usuario puede buscar centros en función de sus necesidades. Esta funcionalidad se muestra en la figura siguiente:
+
+    [!Selección de centros](frontend_demo_imgs/home_1.png)
+
+    Concretamente, el ejemplo anterior muestra como el usuario ha filtrado su búsqueda por centros culturales o educativos, obteniendo como consecuencia de dicho filtro centros de enseñanza especializada, institutos, centro de educación primaria, entre muchos otros. Para cada uno de estos centros, la aplicación web de explotación de los datos enlazados permite obtener información adicional (en caso tal de que el usuario quiera saber más sobre un centro concreto). Para ello, el usuario puede clickar uno de los centros (a elección), lo que abrirá un desplegable con información adicional sobre el centro, incluyendo dirección y código postal, datos de contacto (web, email, teléfono o fax - si existieran) e incluso el municipio al que pertenece el centro. Además, gracias a la potencia de la web semántica y los datos enlazados, la aplicación proporciona un enlace (URI) a la página de wikidata que contiene información sobre dicho municipio. Estas funcionalidades se muestran en las tres figuras siguientes (las dos primeras sobre la información adicional que la aplicación muestra sobre el centro, y la tercera con información adicional sobre el municipio, gracias al enlazado de datos realizado):
+
+    [!Información adicional de centro (I)](frontend_demo_imgs/home_1.png)
+
+    [!Información adicional de centro (II)](frontend_demo_imgs/home_1.png)
+
+    [!Información del municipio en WikiData](frontend_demo_imgs/home_1.png)
+
+
+2. **API**:
+
+    - **Endpoints disponibles**: 
+
+    - **Queries SparQL**:
+
+
+3. **Conclusiones**:
+
+    - filtros, etc.
+
+    - posibles nuevas funcionalidades: más filtros, selección individual de centros, etc.
