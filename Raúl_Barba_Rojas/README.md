@@ -537,15 +537,65 @@ De este modo, para llevar a cabo la explotación de los datos generados (licenci
 
     ![Mapa de Tenerife ampliado para observar la localización de un centro y sus alrededores](frontend_demo_imgs/home_6.png) 
 
-2. **API**:
+2. **Descripción técnica**: a nivel más técnico, pero sin entrar en todo detalle (pues no es el objetivo de esta memoria), la solución técnica de esta aplicación de explotación de los datos enlazados pasó por la creación de un sistema full-stack, donde el back-end es una API implementada con *FastAPI* en Python, mientras que el front-end está implementado a través de HTML5, JavaScript y CSS. En términos de la API, existen un par de aspectos de interés:
 
-    - **Endpoints disponibles**: 
+    - **Endpoints disponibles**: la API tiene dos endpoints disponibles. El primero de ellos `/` se corresponde con la página principal, y permite retornar el HTML (con el Javascript y el CSS) para que el usuario pueda visualizar la página. El segundo de ellos `/centers` permite obtener centros en base a una consulta del usuario (con el filtro sobre el tipo de centro). Así, la API retorna una respuesta JSON con la lista de centros encontrados que cumplen ciertos requisitos, descritos por una query SparQL que se implementó a través de la librería `rdflib`. Así, con esta librería se cargó el grafo asociado al conjunto de datos generado, y sobre dicho grafo se realizan consultas SparQL. Concretamente, la consulta empleada para retornar los centros es la siguiente (realmente, es una modificación de esta consulta para introducir el filtro dinámicamente en Python, pero la idea es realmente la misma - se puede consultar el código exacto en el fichero `api.py` de la carpeta `src`):
 
-    - **Queries SparQL**:
+    ```sparql
+
+    PREFIX schema: <http://schema.org/>
+        PREFIX dc: <http://purl.org/dc/elements/1.1/>
+        PREFIX tc: <https://tenerifecenters.com/ontology/centers#>
+        PREFIX owl: <http://www.w3.org/2002/07/owl#>
+        PREFIX dbpedia: <http://dbpedia.org/resource/>
+
+SELECT ?name ?activity_name ?city_name ?city_linked_uri ?streetAddress ?postalCode ?web ?email ?telephone ?fax ?creation_date ?update_date ?center_type ?longitude ?latitude
+        WHERE { 
+            ?center a tc:Center .
+            ?center dc:title ?name .
+            ?center tc:hasActivity ?activity .
+            ?activity dc:title ?activity_name .
+            ?center dbpedia:type ?center_type .
+            ?center schema:longitude ?longitude .
+            ?center schema:latitude ?latitude .
+
+            OPTIONAL {
+                ?center schema:containedIn ?city .
+                ?city a schema:City .
+                ?city schema:name ?city_name .
+                ?city owl:sameAs ?city_linked_uri .
+            }
+
+            OPTIONAL {
+                ?center schema:address ?address .
+                ?address schema:streetAddress ?streetAddress .
+                ?address schema:postalCode ?postalCode .
+            }
+
+            OPTIONAL {
+                ?center schema:web ?web .
+            }
+
+            OPTIONAL {
+                ?center schema:email ?email .
+            }
+
+            OPTIONAL {
+                ?center schema:telephone ?telephone .
+            }
+
+            OPTIONAL {
+                ?center schema:fax ?fax .
+            }
+        }
+    ```
 
 
-3. **Conclusiones**:
+3. **Conclusiones de implementación**:
 
     - filtros, etc.
 
     - posibles nuevas funcionalidades: más filtros, selección individual de centros, etc.
+
+### Conclusiones
+
