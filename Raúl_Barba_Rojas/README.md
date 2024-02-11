@@ -349,7 +349,7 @@ Así, tras definir el glosario de términos, se buscaron estos conceptos en voca
 
 | **Término**  | **Ontología (URI)**                      | **Clase**      |
 |--------------|------------------------------------------|----------------|
-| Centro       |                                          |                |
+| Centro       |                                          | Center         |
 | Edificio     | https://schema.org/                      | CivicStructure |
 |              | https://saref.etsi.org/saref4city/       | Facility       |
 |              | http://vivoweb.org/ontology/core#        | Building       |
