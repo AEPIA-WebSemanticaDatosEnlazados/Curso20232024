@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tenerife Centers</title>
+    <link rel="stylesheet" type="text/css" href="static/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+</head>
+<body>
+    <div class="welcome-section">
+        <h1>Tenerife Centers: Actividades a tu alcance</h1>
+    </div>
+
+    <div id="center-container" class="center-container">
+        <h2 class="header-title">1. Búsqueda de centros</h2>
+        <p>En esta sección puedes buscar todos los centros de Tenerife, incluso con la posibilidad de aplicar ciertos filtros en tu búsqueda.</p>
+        
+        <div class="filter-container">
+            <label for="center-type-select" class="filter-label">• Tipo de centro:</label>
+            <select id="center-type-select" class="center-type-select">
+                <option value="ALL">Todos</option>
+                <option value="cultural/educativo">Cultura/Educación</option>
+                <option value="ocio_deporte">Deporte/Ocio</option>
+            </select>
+        </div>
+
+        <button id="load-data-btn" class="centers-btn">Buscar</button>
+
+        <div class="center-list">
+            <!-- Dynamically loaded elements will go here -->
+            <!-- Example of an element -->
+            <div class="center">
+                <span class="name">Centro</span>
+                <span class="activity">Actividad</span>
+            </div>
+            <!-- Repeat for each element -->
+        </div>
+    </div>
+
+    <br>
+
+    
+    <div id="map-container" class="map-container">
+        <h2 class="header-title">2. Localización de centros</h2>
+        <p>En esta sección puedes encontrar la geolocalización de los centros resultantes de la búsqueda anterior.</p>
+        <div id="map" class="map"></div>
+    </div>
+
+    </div>
+    <script src="static/behaviour.js"></script>
+</body>
+</html>

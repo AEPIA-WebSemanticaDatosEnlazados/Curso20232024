@@ -1,0 +1,140 @@
+.welcome-section {
+    background: linear-gradient(to top, darkcyan, turquoise, darkcyan);
+    color: white; /* Darker text color for contrast */
+    text-align: center;
+    padding: 40px 0;
+    margin-bottom: 30px;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    border: 1px solid #a8c0c0; /* Border to enhance the metallic feel */
+}
+
+.welcome-section h1 {
+    font-size: 2.5em;
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px #666; /* Text shadow for depth */
+}
+
+
+.header-title {
+    color : darkcyan;
+}
+
+.centers-btn {
+    background-color: #048194;
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 14px;
+    border-radius: 12px;
+    border-color: darkcyan;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.center-container {
+    width: 80%; /* Adjust as needed */
+    margin: 0 auto;
+}
+
+.center-list {
+    max-height: 300px; /* Adjust based on your needs */
+    overflow-y: scroll;
+    border: 4px solid darkcyan;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    overflow: hidden; /* This will ensure the child elements stay within the parent border */
+}
+
+.name {
+    font-weight: bold;
+    margin-right: 10px;
+    padding: 50px 10px;
+    background: linear-gradient(to top, darkcyan, turquoise, darkcyan);
+    color: white; /* White text */
+    flex-basis: 20%; /* Adjust based on your preference */
+    text-align: center; /* Center the text */
+}
+
+.activity {
+    flex-grow: 1;
+    padding: 50px 20px;
+    background-color: white;
+    color: darkcyan;
+    font-weight: bold;
+    text-align: center; /* Center the text */
+}
+
+.filter-container {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.filter-label {
+    margin-right: 10px;
+    color: darkcyan;
+    font-weight: bold;
+}
+
+.center-type-select {
+    background-color: white;
+    color: #333;
+    padding: 8px 10px;
+    border-radius: 12px;
+    border: 2px solid darkcyan;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.item-container {
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    overflow: hidden; /* Ensures the child elements adhere to the container's border */
+}
+
+.description {
+    background-color: white; /* Light gray background */
+    border-top: 1px solid #ddd; /* Separating line */
+    display: none; /* Initially hidden */
+    padding: 0; /* No padding when hidden */
+    margin: 0; /* No margin when hidden */
+}
+
+/* Add a new class for when the description is visible */
+.description-visible {
+    padding: 10px; /* Apply padding only when visible */
+}
+
+.center-item-detail-headers {
+    color: darkcyan;
+    font-weight: bold;
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+.center-item-detail-responses {
+    color: rgb(9, 72, 72);
+    font-weight: bold;
+}
+
+.map-container {
+    width: 80%; /* Adjust as needed */
+    margin: 0 auto; /* Center the map container */
+    height: 500px; /* Adjust height as needed */
+}
+
+.map {
+    width: 100%; /* Make the map fill its container */
+    height: 100%; /* Adjust the height to fill its container */
+}
