@@ -155,10 +155,39 @@ A partir del paso anterior se obtienen una serie de términos que nos permiten d
 A continuación se muestra un primer esquema con la estructura de nuestra ontología. Para este esquema se han utilizado 
 los términos definidos previamente y se aclaran las relaciones que deben haber entre los términos
 
-<img width="500" height="300" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/Captura.JPG">
+<img width="600" height="300" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/Captura.JPG">
 
+#### Búsqueda de ontologías y selección de ontologías
 
+La busqueda de ontologías se ha centrado en https://schema.org. Schema.org es un proyecto de colaboración en la web que 
+proporciona un conjunto de vocabularios de esquemas para estructurar datos en la web.
 
+Esta ontología nos ha permitido encontrar una gran cantidad de 
+
+| Términos             | URI                               |
+|----------------------|-----------------------------------|
+| Multa                | -                                 |
+| Calificación         | https://schema.org/Rating         |
+| Lugar                | https://schema.org/Place          |
+| Fecha                | https://schema.org/Date           |
+| Importe              | https://schema.org/MonetaryAmount |
+| Descuento            | -                                 |
+| Puntos               | https://schema.org/Integer        |
+| Denunciante          | -                                 |
+| Causa multa          | -                                 |
+| Velocidad límite     | https://schema.org/Integer        |
+| Velocidad infracción | https://schema.org/Integer        |
+| Coordenadas          | -                                 |
+
+Como se puede observar, siete de nuestros términos reciclados a partir de ontologías ya existentes, en este caso todas 
+procendentes de **Schema.org**. Como se puede observar en la tabla anterior, hay ciertos términos a los cuales no se les ha 
+encontrado ninguna ontología. 
+
+Destaca el término **coordenadas**, en este caso se ha encontrado la ontología https://schema.org/GeoCoordinates
+pero no es valida en este caso ya que Schema.org utiliza una métrica WGS84 para las coordenadas mientras que nuestros 
+datos tienen una métrica ETRS89. Lo mismo ocurre con https://www.w3.org/2003/01/geo/
+
+#### Implementación de la ontología
 
 
 
