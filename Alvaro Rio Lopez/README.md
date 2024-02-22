@@ -155,7 +155,7 @@ A partir del paso anterior se obtienen una serie de términos que nos permiten d
 A continuación se muestra un primer esquema con la estructura de nuestra ontología. Para este esquema se han utilizado 
 los términos definidos previamente y se aclaran las relaciones que deben haber entre los términos
 
-<img width="390" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/Captura.JPG">
+<img width="500" height="600" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/Captura.JPG">
 
 
 
