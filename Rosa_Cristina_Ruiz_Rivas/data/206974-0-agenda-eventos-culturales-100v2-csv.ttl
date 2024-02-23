@@ -1,0 +1,1974 @@
+@prefix schema: <http://schema.org/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix onto: <http://culture.linkeddata.es/lov/ontology/Event#> .
+<http://culture.linkeddata.es/25%20años%20de%20viajes%20y%20canciones> a schema:CivicStructure;
+onto:hasID "000012274360" .
+<http://culture.linkeddata.es/4ª%20Exposición%20participativa%20de%20los%20socios%20de%20AEDA> a schema:CivicStructure;
+onto:hasID "000012276278" .
+<http://culture.linkeddata.es/À%20deux%20roues,%20la%20vie!> a schema:CivicStructure;
+onto:hasID "000012265599" .
+<http://culture.linkeddata.es/A%20Fish%20in%20the%20Bathtub> a schema:CivicStructure;
+onto:hasID "000012266432" .
+<http://culture.linkeddata.es/A%20todo%20tren%202:%20Sí,%20les%20ha%20pasado%20otra%20vez> a schema:CivicStructure;
+onto:hasID "000012271614" .
+<http://culture.linkeddata.es/Abracadabra:%20magos%20de%20la%20lectura> onto:hasID "000012233751";
+a schema:CivicStructure,schema:CivicStructure;
+onto:hasID "000012233716" .
+<http://culture.linkeddata.es/Abuso%20sexual%20infantil%20y%20en%20adolescentes> a schema:CivicStructure;
+onto:hasID "000012263377" .
+<http://culture.linkeddata.es/lov/Acamedyresine> a schema:CivicStructure;
+onto:hasID "000012260694" .
+<http://culture.linkeddata.es/lov/Achis!!!> a schema:CivicStructure;
+onto:hasID "000012266656" .
+<http://culture.linkeddata.es/Actividades%20en%20el%20centro%20juvenil%20'Carabanchel%20Alto'.%20Febrero%202024> a schema:CivicStructure;
+onto:hasID "000012271801" .
+<http://culture.linkeddata.es/Actividades%20en%20el%20centro%20juvenil%20'Chamberí'.%20Febrero%202024> a schema:CivicStructure;
+onto:hasID "000012271790" .
+<http://culture.linkeddata.es/Actividades%20en%20el%20centro%20juvenil%20'El%20Aleph'%20(Villa%20de%20Vallecas).%20Febrero%202024> a schema:CivicStructure;
+onto:hasID "000012271937" .
+<http://culture.linkeddata.es/Actividades%20en%20el%20centro%20juvenil%20'El%20Sitio%20de%20mi%20recreo'%20(Villa%20de%20Vallecas).%20Febrero%202024> a schema:CivicStructure;
+onto:hasID "000012271931" .
+<http://culture.linkeddata.es/Actividades%20en%20el%20centro%20juvenil%20'Hontalbilla'%20(Fuencarral%20-%20El%20Pardo).%20Febrero%202024> a schema:CivicStructure;
+onto:hasID "000012271896" .
+<http://culture.linkeddata.es/Actividades%20en%20el%20centro%20juvenil%20'Pipo%20Velasco'.%20Febrero%202024.> a schema:CivicStructure;
+onto:hasID "000012272855" .
+<http://culture.linkeddata.es/Actividades%20en%20el%20centro%20juvenil%20'Tetuán%20Punto%20Joven'.%20Febrero%202024> a schema:CivicStructure;
+onto:hasID "000012271570" .
+<http://culture.linkeddata.es/Actividades%20mensuales%20de%20los%20centros%20de%20mayores%20del%20distrito%20Centro> a schema:CivicStructure;
+onto:hasID "000012130154" .
+<http://culture.linkeddata.es/Actividades%20mensuales%20de%20los%20centros%20de%20mayores%20del%20distrito%20Hortaleza> a schema:CivicStructure;
+onto:hasID "000012177480" .
+<http://culture.linkeddata.es/Actividades%20mensuales%20de%20los%20centros%20de%20mayores%20del%20distrito%20Vicálvaro> a schema:CivicStructure;
+onto:hasID "000012263426" .
+<http://culture.linkeddata.es/Actuación%20Infantil:%20%60El%20Mejor%20Regalo´> a schema:CivicStructure;
+onto:hasID "000012255862" .
+<http://culture.linkeddata.es/Actuación%20Infantil:%20%60Viva%20el%20Carnaval´> a schema:CivicStructure;
+onto:hasID "000012263799" .
+<http://culture.linkeddata.es/Actuación:%20Improrrisas> a schema:CivicStructure;
+onto:hasID "000012277484" .
+<http://culture.linkeddata.es/Al%20rojo%20vivo> a schema:CivicStructure;
+onto:hasID "000012266415";
+a schema:CivicStructure;
+onto:hasID "000012281441" .
+<http://culture.linkeddata.es/Al%20Tran%20Tran%20%20Trovadores%20Urbanos> a schema:CivicStructure;
+onto:hasID "000012279229" .
+<http://culture.linkeddata.es/lov/Aladdin> a schema:CivicStructure;
+onto:hasID "000012276459" .
+<http://culture.linkeddata.es/Alegría%20fría> a schema:CivicStructure;
+onto:hasID "000012226938" .
+<http://culture.linkeddata.es/lov/Alemania> a schema:CivicStructure;
+onto:hasID "000012258034" .
+<http://culture.linkeddata.es/lov/Aletas> a schema:CivicStructure;
+onto:hasID "000012266458" .
+<http://culture.linkeddata.es/Alfabetización%20Digital%20para%20Personas%20Mayores:%20¡Reconectados!> a schema:CivicStructure;
+onto:hasID "000012257937" .
+<http://culture.linkeddata.es/Alma%20Flamenca> a schema:CivicStructure;
+onto:hasID "000012263131" .
+<http://culture.linkeddata.es/Almavera%20(sonata%20para%20violín%20y%20títeres)> a schema:CivicStructure;
+onto:hasID "000012278863" .
+<http://culture.linkeddata.es/Alokaito%20-%20Kaito> a schema:CivicStructure;
+onto:hasID "000012256031" .
+<http://culture.linkeddata.es/Alter%20ego> a schema:CivicStructure;
+onto:hasID "000012234932" .
+<http://culture.linkeddata.es/Amor%20Sin%20Valentín> a schema:CivicStructure;
+onto:hasID "000012279241" .
+<http://culture.linkeddata.es/Angélica%20Lidell%20/%20Atra%20Bilis%20'VUDÚ%20(3318)%20Blixen'> a schema:CivicStructure;
+onto:hasID "000012094733" .
+<http://culture.linkeddata.es/lov/Annette> a schema:CivicStructure;
+onto:hasID "000012265629" .
+<http://culture.linkeddata.es/Antonio,%20me%20aburro> a schema:CivicStructure;
+onto:hasID "000012262355" .
+<http://culture.linkeddata.es/Año%20Nuevo%20Chino%202024> a schema:CivicStructure;
+onto:hasID "000012271591" .
+<http://culture.linkeddata.es/Aperitivo%20con%20científicas> a schema:CivicStructure;
+onto:hasID "000012264010" .
+<http://culture.linkeddata.es/Aprende%20a%20identificar%20las%20mariposas%20de%20Madrid> a schema:CivicStructure;
+onto:hasID "000012225328" .
+<http://culture.linkeddata.es/Aquí%20no%20hay%20quien%20muera> a schema:CivicStructure;
+onto:hasID "000012274325" .
+<http://culture.linkeddata.es/Aquí%20no%20paga%20nadie> a schema:CivicStructure;
+onto:hasID "000012265105" .
+<http://culture.linkeddata.es/Aquí%20y%20Ahora> a schema:CivicStructure;
+onto:hasID "000012265148" .
+<http://culture.linkeddata.es/Árboles%20en%20la%20ciudad%20de%20Madrid:%20Entornos%20saludables> a schema:CivicStructure;
+onto:hasID "000012226114" .
+<http://culture.linkeddata.es/Árboles%20exóticos%20de%20El%20Retiro> a schema:CivicStructure;
+onto:hasID "000011970764" .
+<http://culture.linkeddata.es/Árboles%20notables%20del%20Vivero> a schema:CivicStructure;
+onto:hasID "000012225163" .
+<http://culture.linkeddata.es/Árboles%20singulares%20de%20la%20Casa%20de%20Campo> a schema:CivicStructure;
+onto:hasID "000012039159" .
+<http://culture.linkeddata.es/Archipiélago%20de%20los%20desastres> a schema:CivicStructure;
+onto:hasID "000012042044" .
+<http://culture.linkeddata.es/Arigato.%20Cuento%20que%20te%20canto> a schema:CivicStructure;
+onto:hasID "000012263043" .
+<http://culture.linkeddata.es/Arsénico%20por%20compasión> a schema:CivicStructure;
+onto:hasID "000012258059" .
+<http://culture.linkeddata.es/Arte%20y%20tiempo> a schema:CivicStructure;
+onto:hasID "000012277007" .
+<http://culture.linkeddata.es/Artrics%20-%20Laboratorio%20de%20Creación%202023/24> a schema:CivicStructure;
+onto:hasID "000012128952" .
+<http://culture.linkeddata.es/Asanas,%20la%20milenaria%20búsqueda%20del%20bienestar> a schema:CivicStructure;
+onto:hasID "000012227053" .
+<http://culture.linkeddata.es/Audición%20de%20música%20clásica> a schema:CivicStructure;
+onto:hasID "000012273572" .
+<http://culture.linkeddata.es/Audio%20Day%20Parix> a schema:CivicStructure;
+onto:hasID "000012265178" .
+<http://culture.linkeddata.es/Audiodrama%20colectivo:%20Inventos,%20patentes,%20investigaciones%20y%20descrubrimientos> a schema:CivicStructure;
+onto:hasID "000012280160" .
+<http://culture.linkeddata.es/Baile%20de%20Mayores%20en%20Centros%20Culturales%20Distrito%20Latina> a schema:CivicStructure;
+onto:hasID "000010633173";
+a schema:CivicStructure;
+onto:hasID "000010634056" .
+<http://culture.linkeddata.es/Ballet%20Ara%20de%20Madrid> a schema:CivicStructure;
+onto:hasID "000012274353" .
+<http://culture.linkeddata.es/Best%20Secret%20Place> a schema:CivicStructure;
+onto:hasID "000012271727" .
+<http://culture.linkeddata.es/Biciaves:%20Itinerarios%20ornitológicos%20en%20bici> a schema:CivicStructure;
+onto:hasID "000012278495" .
+<http://culture.linkeddata.es/Biciengendros%20contra%20el%20cambio%20climático> a schema:CivicStructure;
+onto:hasID "000012233465" .
+<http://culture.linkeddata.es/Billy's%20Joy> a schema:CivicStructure;
+onto:hasID "000012042023" .
+<http://culture.linkeddata.es/BIS/%20Jornadas%20de%20Intercambio%20de%20Semillas%202024> a schema:CivicStructure;
+onto:hasID "000012273496" .
+<http://culture.linkeddata.es/Bodas%20de%20Sangre> a schema:CivicStructure;
+onto:hasID "000012278049" .
+<http://culture.linkeddata.es/Bodas%20de%20sangre.> a schema:CivicStructure;
+onto:hasID "000012240266" .
+<http://culture.linkeddata.es/lov/Borsch> onto:hasID "000012223913";
+a schema:CivicStructure,schema:CivicStructure;
+onto:hasID "000012254016" .
+<http://culture.linkeddata.es/Bossa%20Mayor> a schema:CivicStructure;
+onto:hasID "000012279939" .
+<http://culture.linkeddata.es/Brasil%20cerca> a schema:CivicStructure;
+onto:hasID "000012266313" .
+<http://culture.linkeddata.es/BROTHERS%20IN%20BAND> a schema:CivicStructure;
+onto:hasID "000012240587" .
+<http://culture.linkeddata.es/Buscando%20la%20luz%20(paisajes/flores)%20(Fotografía)> a schema:CivicStructure;
+onto:hasID "000012273539" .
+<http://culture.linkeddata.es/Cada%20mochuelo%20a%20su%20Dehesa%20de%20la%20Villa> a schema:CivicStructure;
+onto:hasID "000012270690" .
+<http://culture.linkeddata.es/Calderón%20todo%20lo%20abarca> onto:hasID "000012254552";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/lov/Camargo> a schema:CivicStructure;
+onto:hasID "000012235672" .
+<http://culture.linkeddata.es/lov/Camarón> a schema:CivicStructure;
+onto:hasID "000012256055" .
+<http://culture.linkeddata.es/Camino%20largo%20de%20vuelta%20a%20casa> a schema:CivicStructure;
+onto:hasID "000012041977" .
+<http://culture.linkeddata.es/Campamento%20Urbano%20de%20Semana%20Santa%202024.%20Distrito%20Arganzuela> a schema:CivicStructure;
+onto:hasID "000012272947" .
+<http://culture.linkeddata.es/Campamento%20Urbano%20de%20Semana%20Santa%202024.%20Distrito%20Villaverde> a schema:CivicStructure;
+onto:hasID "000012280149" .
+<http://culture.linkeddata.es/Canciones%20de%20nuestra%20vida> a schema:CivicStructure;
+onto:hasID "000012274243" .
+<http://culture.linkeddata.es/Canciones%20para%20una%20tarde%20de%20carnaval> a schema:CivicStructure;
+onto:hasID "000012271660" .
+<http://culture.linkeddata.es/Cantos%20de%20la%20otra%20orilla> onto:hasID "000012281643";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/Canto-cuento%20infantil%20con%20teatro%20de%20sombras:%20'EL%20GATO%20PIPO'> a schema:CivicStructure;
+onto:hasID "000012270534" .
+<http://culture.linkeddata.es/Capítulo%20X:%20Máquinas%20sónicas%20(el%20ruido%20y%20sus%20dispositivos)> a schema:CivicStructure;
+onto:hasID "000012266436" .
+<http://culture.linkeddata.es/Capturas%20de%20la%20vida> a schema:CivicStructure;
+onto:hasID "000012274326" .
+<http://culture.linkeddata.es/Cara%20quiere%20volar> a schema:CivicStructure;
+onto:hasID "000012277056" .
+<http://culture.linkeddata.es/Carmen,%20nada%20de%20nadie> a schema:CivicStructure;
+onto:hasID "000012041951" .
+<http://culture.linkeddata.es/Carnaval%20de%20la%20ópera> a schema:CivicStructure;
+onto:hasID "000012267821" .
+<http://culture.linkeddata.es/Carnaval%20en%20el%20Zoo> a schema:CivicStructure;
+onto:hasID "000012276084" .
+<http://culture.linkeddata.es/Carnaval%20en%20la%20pista%20del%20circo> a schema:CivicStructure;
+onto:hasID "000012271762" .
+<http://culture.linkeddata.es/Carnaval%20en%20Puente%20de%20Vallecas> a schema:CivicStructure;
+onto:hasID "000012268840";
+a schema:CivicStructure;
+onto:hasID "000012268850";
+a schema:CivicStructure;
+onto:hasID "000012268844" .
+<http://culture.linkeddata.es/Carnaval%20en%20Vicálvaro> a schema:CivicStructure;
+onto:hasID "000012272241" .
+<http://culture.linkeddata.es/Carnaval%20querido> a schema:CivicStructure;
+onto:hasID "000012256032" .
+<http://culture.linkeddata.es/Carnavales%202024%20-%20Distrito%20de%20Villaverde> a schema:CivicStructure;
+onto:hasID "000012254240" .
+<http://culture.linkeddata.es/Carnaval:%20Chirigota%20%60Los%20Quemaos´> a schema:CivicStructure;
+onto:hasID "000012266236" .
+<http://culture.linkeddata.es/Carne%20trémula> a schema:CivicStructure;
+onto:hasID "000012266318" .
+<http://culture.linkeddata.es/Carretera%20perdida> a schema:CivicStructure;
+onto:hasID "000012266419";
+a schema:CivicStructure;
+onto:hasID "000012281448" .
+<http://culture.linkeddata.es/Celebrando%20el%20carnaval> a schema:CivicStructure;
+onto:hasID "000012254546" .
+<http://culture.linkeddata.es/Centro%20de%20Interpretación%20del%20Paisaje%20de%20la%20Luz> a schema:CivicStructure;
+onto:hasID "000011875736" .
+<http://culture.linkeddata.es/Cerro%20Garabitas> a schema:CivicStructure;
+onto:hasID "000012110841" .
+<http://culture.linkeddata.es/César%20Rodríguez> a schema:CivicStructure;
+onto:hasID "000012270333" .
+<http://culture.linkeddata.es/Charanga%20/%20pasacalles> a schema:CivicStructure;
+onto:hasID "000012277474" .
+<http://culture.linkeddata.es/Charlas%20de%20didáctica%20coral%20y%20vocal> a schema:CivicStructure;
+onto:hasID "000012269295" .
+<http://culture.linkeddata.es/Charlas%20en%20inglés%20-%20Ciclo%20III:%20El%20eterno%20femenino,%20la%20presencia%20de%20la%20mujer%20en%20la%20ciencia%20y%20la%20literatura> a schema:CivicStructure;
+onto:hasID "000012240955";
+a schema:CivicStructure;
+onto:hasID "000012122966" .
+<http://culture.linkeddata.es/Charlas%20en%20inglés%20-%20Ciclo%20II:%20Distopías:%20orígenes%20y%20ejemplos%20de%20las%20más%20famosas> onto:hasID "000012240879";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/lov/Chinas> a schema:CivicStructure;
+onto:hasID "000012276060" .
+<http://culture.linkeddata.es/Ciberseguridad%20y%20gestión%20de%20riesgos%20en%20internet> a schema:CivicStructure;
+onto:hasID "000012095360" .
+<http://culture.linkeddata.es/Ciclo%20Bienestar%20y%20Biblioteca:%20La%20Psicología%20en%20la%20Física%20Cuántica> a schema:CivicStructure;
+onto:hasID "000012280185" .
+<http://culture.linkeddata.es/Ciclo%20de%20conferencias%20'Reinas%20de%20España':%20Ana%20de%20Austria-Margarita%20de%20Austria> a schema:CivicStructure;
+onto:hasID "000012184415" .
+<http://culture.linkeddata.es/Ciclo%20de%20conferencias%20'Reinas%20de%20España':%20Isabel%20de%20Borbón-Mariana%20de%20Austria> a schema:CivicStructure;
+onto:hasID "000012184416" .
+<http://culture.linkeddata.es/Ciclo%20de%20conferencias%20'Reinas%20de%20España':%20María%20Luisa%20de%20Orleans-Mariana%20de%20Neoburgo> a schema:CivicStructure;
+onto:hasID "000012184417" .
+<http://culture.linkeddata.es/Ciclo%20de%20conferencias%20'Reinas%20de%20España':%20María%20Tudor-Isabel%20de%20Valois> a schema:CivicStructure;
+onto:hasID "000012184414" .
+<http://culture.linkeddata.es/Cierto:%20'CITA%20CON%20LA%20COPLA'> a schema:CivicStructure;
+onto:hasID "000012270442" .
+<http://culture.linkeddata.es/Cine%20infantil:%20Gru,%20mi%20villano%20favorito> a schema:CivicStructure;
+onto:hasID "000012258660" .
+<http://culture.linkeddata.es/Cine%20infantil:%20Ice%20Age%203.%20El%20origen%20de%20los%20dinosaurios> a schema:CivicStructure;
+onto:hasID "000012259006" .
+<http://culture.linkeddata.es/Cine%20infantil:%20Sonic%202%20la%20película> a schema:CivicStructure;
+onto:hasID "000012272650" .
+<http://culture.linkeddata.es/Cine%20infantil:%20Tadeo%20Jones%203.%20La%20tabla%20esmeralda> a schema:CivicStructure;
+onto:hasID "000012263446" .
+<http://culture.linkeddata.es/Cinefórum%20Madrid%20Salud:%20Hijos%20de%20los%20hombres> a schema:CivicStructure;
+onto:hasID "000012240634" .
+<http://culture.linkeddata.es/lov/Cipì> a schema:CivicStructure;
+onto:hasID "000012274361" .
+<http://culture.linkeddata.es/CIRQUE%20HIRSUTE%20%7C%20«Aux%20Étoiles!»(¡A%20las%20estrellas!)> a schema:CivicStructure;
+onto:hasID "000012277037" .
+<http://culture.linkeddata.es/Clara%20Cruz> onto:hasID "000012268745";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/Clásico%20español> a schema:CivicStructure;
+onto:hasID "000012270255" .
+<http://culture.linkeddata.es/Clásicos%20del%20Espronceda%20'Bola%20de%20Fuego'.> a schema:CivicStructure;
+onto:hasID "000012266855" .
+<http://culture.linkeddata.es/Club%20de%20lectura> a schema:CivicStructure;
+onto:hasID "000012161947";
+a schema:CivicStructure;
+onto:hasID "000012161974" .
+<http://culture.linkeddata.es/Club%20de%20lectura%20de%20novela%20negra> a schema:CivicStructure;
+onto:hasID "000012200322" .
+<http://culture.linkeddata.es/Club%20de%20lectura%20en%20francés> a schema:CivicStructure;
+onto:hasID "000012174986" .
+<http://culture.linkeddata.es/Club%20de%20lectura%20en%20inglés> a schema:CivicStructure;
+onto:hasID "000012174822" .
+<http://culture.linkeddata.es/Club%20de%20lectura%20en%20inglés%20'Reading%20club'> a schema:CivicStructure;
+onto:hasID "000012100150";
+a schema:CivicStructure;
+onto:hasID "000012100147";
+a schema:CivicStructure;
+onto:hasID "000012102508";
+a schema:CivicStructure;
+onto:hasID "000012099969","000012103180";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/Club%20de%20lectura%20temática%202ª%20edición:%20'El%20Viajero'.> a schema:CivicStructure;
+onto:hasID "000012263137";
+a schema:CivicStructure;
+onto:hasID "000012266867" .
+<http://culture.linkeddata.es/Club%20de%20lectura%20'Lecturas%20compartidas'> a schema:CivicStructure;
+onto:hasID "000012141320" .
+<http://culture.linkeddata.es/Club%20de%20lectura%20(infantil).%20Jueves%205%20de%20octubre%20de%202023%20a%20jueves%2023%20de%20mayo%20de%202024> a schema:CivicStructure;
+onto:hasID "000012173064" .
+<http://culture.linkeddata.es/Club%20de%20lectura%20(infantil).%20Lunes%209%20de%20octubre%20de%202023%20a%2020%20de%20mayo%20de%202024.> a schema:CivicStructure;
+onto:hasID "000012172832" .
+<http://culture.linkeddata.es/Club%20de%20lectura%20(infantil).%20Miércoles%2011%20de%20octubre%20de%202023%20a%20miércoles%2022%20de%20mayo%20de%202024> a schema:CivicStructure;
+onto:hasID "000012173493" .
+<http://culture.linkeddata.es/Club%20de%20novela%20Negra> a schema:CivicStructure;
+onto:hasID "000012081215" .
+<http://culture.linkeddata.es/Cluedo%20de%20árboles%20en%20Fuente%20del%20Berro> onto:hasID "000012279391";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/Colectivo%20de%20artistas%20de%20Cuenca> a schema:CivicStructure;
+onto:hasID "000012274367" .
+<http://culture.linkeddata.es/Coloquio%20de%20mujeres> onto:hasID "000012280668";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/Como%20yo%20os%20amo> a schema:CivicStructure;
+onto:hasID "000012272935" .
+<http://culture.linkeddata.es/Compañía%20Lupe%20y%20Luisa:%20En%20el%20bosque> a schema:CivicStructure;
+onto:hasID "000012266584" .
+<http://culture.linkeddata.es/lov/Cómplices> a schema:CivicStructure;
+onto:hasID "000012272217" .
+<http://culture.linkeddata.es/Concierto%20de%20las%20Orquestas%20de%20las%20EEMM%20Manuel%20Vázquez%20Montalbán,%20C.%20Alonso%20Bernaola%20y%20F.%20Chueca> a schema:CivicStructure;
+onto:hasID "000012266908" .
+<http://culture.linkeddata.es/Concierto%20recital> a schema:CivicStructure;
+onto:hasID "000012263713" .
+<http://culture.linkeddata.es/Concierto:%20Rondalla%20Banguilad> a schema:CivicStructure;
+onto:hasID "000012272161" .
+<http://culture.linkeddata.es/Concierto:%20'CARNAVAL%20LÍRICO'> a schema:CivicStructure;
+onto:hasID "000012270557" .
+<http://culture.linkeddata.es/Concurso%20de%20disfraces> a schema:CivicStructure;
+onto:hasID "000012277502" .
+<http://culture.linkeddata.es/Concurso%20de%20máscaras%20y%20antifaces%20de%20carnaval> a schema:CivicStructure;
+onto:hasID "000012276904" .
+<http://culture.linkeddata.es/Concurso%20nuevos%20talentos> a schema:CivicStructure;
+onto:hasID "000012263961" .
+<http://culture.linkeddata.es/Conferencia%20performativa:%20Jorge%20Carrión%20y%20Taller%20Estampa> a schema:CivicStructure;
+onto:hasID "000012270731" .
+<http://culture.linkeddata.es/Conferencia%20y%20lectura%20de%20poesías> onto:hasID "000012263772";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/Conferencias:%20De%20Arte%20e%20Historia> a schema:CivicStructure;
+onto:hasID "000012257911" .
+<http://culture.linkeddata.es/Conferencia.%20Charlas%20y%20encuentros%20sobre%20la%20historia%20de%20Madrid.%20Modernas%20y%20yeyés> a schema:CivicStructure;
+onto:hasID "000010590577" .
+<http://culture.linkeddata.es/Conferencia:%20Ciclo%20pintoras%20de%20la%20historia.%20El%20siglo%20XX%20hacia%20la%20modernidad.%20Tamara%20de%20Lempicka,%20Georgia%20O'Keeffe%20y%20Frida%20Kahlo> a schema:CivicStructure;
+onto:hasID "000010606981" .
+<http://culture.linkeddata.es/Conferencia:%20Clase%20magistral:%20'El%20Carnaval%20y%20su%20fotografía'.> a schema:CivicStructure;
+onto:hasID "000012265098" .
+<http://culture.linkeddata.es/Conferencia:%20El%20arte%20gótico> a schema:CivicStructure;
+onto:hasID "000012270834" .
+<http://culture.linkeddata.es/Conferencia:%20El%20arte%20románico> onto:hasID "000012270825";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/Conferencia:%20El%20Madrid%20de%20los%20Espías> a schema:CivicStructure;
+onto:hasID "000012270849" .
+<http://culture.linkeddata.es/Conferencia:%20El%20Renacimiento%20y%20el%20Manierismo%20en%20España> onto:hasID "000012270838";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/Conferencia:%20'ISABEL%20LA%20CATÓLICA'> a schema:CivicStructure;
+onto:hasID "000012270548" .
+<http://culture.linkeddata.es/Conferencia:%20%60El%20Autocuidado.%20Sesión%202:%20El%20%20Autocuidado%20Emocional´> a schema:CivicStructure;
+onto:hasID "000012257957" .
+<http://culture.linkeddata.es/Conociendo%20China> a schema:CivicStructure;
+onto:hasID "000012243151" .
+<http://culture.linkeddata.es/lov/Conseguido> a schema:CivicStructure;
+onto:hasID "000012267915" .
+<http://culture.linkeddata.es/Construye%20un%20divertido%20juego%20de%20mesa:%20'El%20Mancala'> onto:hasID "000012274700";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/Conversaciones%20con%20mamá> a schema:CivicStructure;
+onto:hasID "000012271426" .
+<http://culture.linkeddata.es/Conversaciones%20en%20inglés> a schema:CivicStructure;
+onto:hasID "000012088094" .
+<http://culture.linkeddata.es/Coro%20con%20Ton%20y%20Son> a schema:CivicStructure;
+onto:hasID "000012267813" .
+<http://culture.linkeddata.es/Coro%20Rociero%20Valdebernardo.%20Rumbas,%20sevillanas%20y%20flamenco.> onto:hasID "000012263157";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/Crea%20y%20recrea> a schema:CivicStructure;
+onto:hasID "000012272909" .
+<http://culture.linkeddata.es/Creación%20de%20marionetas%20de%20Java%20y%20sombras%20chinescas%20para%20recibir%20el%20Nuevo%20Año%20Chino%20del%20Dragón> a schema:CivicStructure;
+onto:hasID "000012273473";
+a schema:CivicStructure;
+onto:hasID "000012273474" .
+<http://culture.linkeddata.es/Croatian%20Amor%20&amp;%20Iceboy%20Violet> onto:hasID "000012127886";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/Cuentacuentos%20bilingüe%20español-chino%20'La%20historia%20de%20Nian'> a schema:CivicStructure;
+onto:hasID "000012277790" .
+<http://culture.linkeddata.es/Cuentacuentos%20con%20pictogramas:%20'DICEN%20Y%20CUENTAN'> a schema:CivicStructure;
+onto:hasID "000012270533" .
+<http://culture.linkeddata.es/Cuentacuentos%20con%20pictogramas:%20'TIP%20TIP%20ZOP'> a schema:CivicStructure;
+onto:hasID "000012270501" .
+<http://culture.linkeddata.es/Cuentacuentos%20en%20inglés%20%20%60Zog´> a schema:CivicStructure;
+onto:hasID "000012233892" .
+<http://culture.linkeddata.es/Cuentacuentos%20en%20inglés%20%60Little%20Red%20Riding%20Hood´> a schema:CivicStructure;
+onto:hasID "000012233916" .
+<http://culture.linkeddata.es/Cuentacuentos%20'No%20soy%20un%20extraterrestre'%20por%20Luz%20Zorzona> a schema:CivicStructure;
+onto:hasID "000012238632" .
+<http://culture.linkeddata.es/Cuentacuentos:%20Historias%20increíbles%20de%20mujeres%20que%20hacen%20ciencia> a schema:CivicStructure;
+onto:hasID "000012264022" .
+<http://culture.linkeddata.es/Cuentacuentos:%20'LA%20GRAN%20AVENTURA%20DE%20LOS%20ANIMALES'> a schema:CivicStructure;
+onto:hasID "000012270502" .
+<http://culture.linkeddata.es/Cuentacuentos:%20'Mi%20alma%20siempre%20te%20querrá'%20de%20María%20Ferrándiz> onto:hasID "000012266868";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/Cuéntame%20un%20cuento> a schema:CivicStructure;
+onto:hasID "000012150824" .
+<http://culture.linkeddata.es/Cuento%20que%20te%20canto> a schema:CivicStructure;
+onto:hasID "000012266406" .
+<http://culture.linkeddata.es/Cuentos%20de%20amor%20y%20mal%20amor> a schema:CivicStructure;
+onto:hasID "000012265175" .
+<http://culture.linkeddata.es/Cuentos%20en%20alta%20mar> a schema:CivicStructure;
+onto:hasID "000012272664" .
+<http://culture.linkeddata.es/Cuentos%20vivientes.%20Homenaje%20a%20Italo%20Calvino> a schema:CivicStructure;
+onto:hasID "000012234370" .
+<http://culture.linkeddata.es/Curso%20de%20formación%20a%20familias%20de%20Primaria.%20Distrito%20Retiro.%202024.> a schema:CivicStructure;
+onto:hasID "000012262199" .
+<http://culture.linkeddata.es/Curso%20de%20formación%20a%20familias%20de%20Secundaria.%20Distrito%20Retiro.%202024.> a schema:CivicStructure;
+onto:hasID "000012262113" .
+<http://culture.linkeddata.es/Curso%20presencial%20de%20escritura%20creativa> a schema:CivicStructure;
+onto:hasID "000012266875" .
+<http://culture.linkeddata.es/Cursos%20trimestrales> a schema:CivicStructure;
+onto:hasID "000012270478" .
+<http://culture.linkeddata.es/Danza:%20Expresarte%20y%20Valcárcel> a schema:CivicStructure;
+onto:hasID "000012272167" .
+<http://culture.linkeddata.es/Danza:%20%60De%20Raíces%20y%20Ramas´> a schema:CivicStructure;
+onto:hasID "000012256522" .
+<http://culture.linkeddata.es/De%20cantos%20de%20sirena%20a%20la%20paloma> onto:hasID "000012277744";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/De%20la%20cuna%20a%20la%20luna> a schema:CivicStructure;
+onto:hasID "000012276313" .
+<http://culture.linkeddata.es/De%20Río%20a%20Madrid> a schema:CivicStructure;
+onto:hasID "000012267243" .
+<http://culture.linkeddata.es/De%20Villaverde%20a%20Casa%20de%20Campo> a schema:CivicStructure;
+onto:hasID "000012230752" .
+<http://culture.linkeddata.es/Decir%20Si%20o%20No> a schema:CivicStructure;
+onto:hasID "000012095354" .
+<http://culture.linkeddata.es/lov/Descarados> a schema:CivicStructure;
+onto:hasID "000012050485" .
+<http://culture.linkeddata.es/Descendientes%20del%20Loong> a schema:CivicStructure;
+onto:hasID "000012270363" .
+<http://culture.linkeddata.es/Descifrando%20la%20masculinidad> a schema:CivicStructure;
+onto:hasID "000012269512" .
+<http://culture.linkeddata.es/Descubre%20El%20Retiro> a schema:CivicStructure;
+onto:hasID "000011876324" .
+<http://culture.linkeddata.es/Descubre%20el%20Vivero%20de%20Estufas%20del%20Retiro> a schema:CivicStructure;
+onto:hasID "000011725146";
+a schema:CivicStructure;
+onto:hasID "000011724761";
+a schema:CivicStructure;
+onto:hasID "000011769476" .
+<http://culture.linkeddata.es/Descubre%20las%20aves%20del%20Retiro%20en%20familia> a schema:CivicStructure;
+onto:hasID "000012231575" .
+<http://culture.linkeddata.es/Descubre%20los%20verdaderos%20y%20Grandes%20enigmas%20de%20la%20ciencia> a schema:CivicStructure;
+onto:hasID "000012265157" .
+<http://culture.linkeddata.es/Descubre%20Pradolongo> a schema:CivicStructure;
+onto:hasID "000012274723" .
+<http://culture.linkeddata.es/lov/Desvelos> a schema:CivicStructure;
+onto:hasID "000012253781" .
+<http://culture.linkeddata.es/Días%20No%20Lectivos%2022%20y%2023%20de%20Febrero%20-%20Campamento%20Urbano%20Villaverde> a schema:CivicStructure;
+onto:hasID "000012259026" .
+<http://culture.linkeddata.es/Días%20sin%20cole,%2022%20y%2023%20de%20febrero%20de%202024%20del%20Distrito%20de%20Chamartín> a schema:CivicStructure;
+onto:hasID "000012254145" .
+<http://culture.linkeddata.es/Diego%20Rivera%20Gibert%20y%20Enrique%20LaPaz> a schema:CivicStructure;
+onto:hasID "000012281510" .
+<http://culture.linkeddata.es/Disfraza%20T> a schema:CivicStructure;
+onto:hasID "000012265466";
+a schema:CivicStructure;
+onto:hasID "000012265474";
+a schema:CivicStructure;
+onto:hasID "000012265463" .
+<http://culture.linkeddata.es/Documental%20'Un%20viaje%20inesperado'%20de%20María%20Guerra> a schema:CivicStructure;
+onto:hasID "000012280207" .
+<http://culture.linkeddata.es/lov/Dream> a schema:CivicStructure;
+onto:hasID "000012041980" .
+<http://culture.linkeddata.es/Duel%20reality> a schema:CivicStructure;
+onto:hasID "000012253884" .
+<http://culture.linkeddata.es/Dúo%20Canalla%20en%20concierto> a schema:CivicStructure;
+onto:hasID "000012271413" .
+<http://culture.linkeddata.es/Edu%20el%20mago> a schema:CivicStructure;
+onto:hasID "000012270331" .
+<http://culture.linkeddata.es/El%20arquitecto%20Ventura%20Rodríguez> a schema:CivicStructure;
+onto:hasID "000012277233" .
+<http://culture.linkeddata.es/El%20bosque%20encantado.%20Hadas,%20gnomos,%20duendes%20y%20otras%20criaturas%20mágicas> a schema:CivicStructure;
+onto:hasID "000012234468";
+a schema:CivicStructure;
+onto:hasID "000012234455" .
+<http://culture.linkeddata.es/El%20brujo%20Malaespina%20y%20otros%20cuentos> a schema:CivicStructure;
+onto:hasID "000012269457" .
+<http://culture.linkeddata.es/El%20burgués%20gentilhombre%20de%20Moliere%20%20Cía.%20Los%20Hojalata> onto:hasID "000012277839";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/El%20camino%20de%20la%20fuente> a schema:CivicStructure;
+onto:hasID "000012271732" .
+<http://culture.linkeddata.es/El%20canto%20de%20la%20Sibila> a schema:CivicStructure;
+onto:hasID "000012246069" .
+<http://culture.linkeddata.es/El%20cine%20iluminado%20de%20Sandra%20Davis> a schema:CivicStructure;
+onto:hasID "000012267002" .
+<http://culture.linkeddata.es/El%20día%20que%20Dorita%20perdió%20su%20nariz> a schema:CivicStructure;
+onto:hasID "000012268628" .
+<http://culture.linkeddata.es/El%20fantasma%20del%20paraíso> a schema:CivicStructure;
+onto:hasID "000012265631" .
+<http://culture.linkeddata.es/El%20Guinyol%20-%20Arturo%20y%20Blancaflor%20-%20Pengim-Penjam%20(Cataluña)> a schema:CivicStructure;
+onto:hasID "000012244306" .
+<http://culture.linkeddata.es/El%20intruso> onto:hasID "000012265674";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/El%20largo%20camino%20Los%20sueños%20de%20Fausto> onto:hasID "000012223911";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/El%20largo%20camino%20(historias%20de%20Ucrania)> a schema:CivicStructure;
+onto:hasID "000012254000" .
+<http://culture.linkeddata.es/El%20pequeño%20Merlín> a schema:CivicStructure;
+onto:hasID "000012276248" .
+<http://culture.linkeddata.es/El%20perro%20del%20teniente> a schema:CivicStructure;
+onto:hasID "000012042019" .
+<http://culture.linkeddata.es/El%20pulso%20del%20sueño> a schema:CivicStructure;
+onto:hasID "000012272303" .
+<http://culture.linkeddata.es/El%20Retiro%20a%20través%20de%20sus%20jardines> a schema:CivicStructure;
+onto:hasID "000012048645" .
+<http://culture.linkeddata.es/El%20sastrecillo%20valiente> a schema:CivicStructure;
+onto:hasID "000012271643" .
+<http://culture.linkeddata.es/El%20Senyor%20ha%20fet%20en%20mi%20meravelles> a schema:CivicStructure;
+onto:hasID "000012271725" .
+<http://culture.linkeddata.es/El%20Teatro%20Español%20de%20Madrid,%20el%20teatro%20más%20antiguo%20de%20Europa%20(1583-2023)> a schema:CivicStructure;
+onto:hasID "000012041940" .
+<http://culture.linkeddata.es/El%20toro%20que%20mató%20a%20Juan%20'El%20Chiqui'> a schema:CivicStructure;
+onto:hasID "000012263058" .
+<http://culture.linkeddata.es/Elaboración%20de%20comederos%20de%20aves> a schema:CivicStructure;
+onto:hasID "000011771354" .
+<http://culture.linkeddata.es/lov/Elefantes> a schema:CivicStructure;
+onto:hasID "000012263964" .
+<http://culture.linkeddata.es/Elena%20Ley> a schema:CivicStructure;
+onto:hasID "000012265655" .
+<http://culture.linkeddata.es/lov/Embarazosas> onto:hasID "000012266292";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/Emilia,%20esa%20señora> a schema:CivicStructure;
+onto:hasID "000012276377" .
+<http://culture.linkeddata.es/En%20bici%20por%20el%20Bosque%20Metropolitano> a schema:CivicStructure;
+onto:hasID "000012273319";
+a schema:CivicStructure;
+onto:hasID "000012273322";
+a schema:CivicStructure;
+onto:hasID "000012273318";
+a schema:CivicStructure;
+onto:hasID "000012273321";
+a schema:CivicStructure;
+onto:hasID "000012273311";
+a schema:CivicStructure;
+onto:hasID "000012273323";
+a schema:CivicStructure;
+onto:hasID "000012273505" .
+<http://culture.linkeddata.es/En%20buenas%20manos> a schema:CivicStructure;
+onto:hasID "000012279511" .
+<http://culture.linkeddata.es/En%20Clave%20de%20Sí> onto:hasID "000012281173";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/Encendidas%20(Homenaje%20a%20Paca%20Aguirre)> onto:hasID "000012262380";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/Encuentro%20de%20compañías%20emergentes> a schema:CivicStructure;
+onto:hasID "000012254521" .
+<http://culture.linkeddata.es/Encuentro%20de%20Comparsas%20y%20Chirigotas> a schema:CivicStructure;
+onto:hasID "000012278868" .
+<http://culture.linkeddata.es/Encuentro%20de%20coros> onto:hasID "000012259020";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/Encuentro%20poético%20de%20Andalucía%20y%20Madrid> a schema:CivicStructure;
+onto:hasID "000012280201" .
+<http://culture.linkeddata.es/Enrique%20Bernaldo%20De%20Quirós%20Y%20Laura%20Pérez> a schema:CivicStructure;
+onto:hasID "000012281298" .
+<http://culture.linkeddata.es/Ensanchar%20la%20puerta.%20Novísimo%20galerismo%20en%20Madrid> a schema:CivicStructure;
+onto:hasID "000012272314" .
+<http://culture.linkeddata.es/Entierro%20de%20la%20sardina> onto:hasID "000012265533";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/Entre%20parques:%20del%20Cerro%20del%20Tío%20Pío%20a%20la%20ruta%20escultórica%20Palomeras> a schema:CivicStructure;
+onto:hasID "000012268790" .
+<http://culture.linkeddata.es/Entreparques.%20De%20Concha%20Espina%20a%20Plaza%20de%20Castilla> a schema:CivicStructure;
+onto:hasID "000012278896";
+a schema:CivicStructure;
+onto:hasID "000012278889" .
+<http://culture.linkeddata.es/Entreparques.%20Del%20Cerro%20del%20Tío%20Pío%20a%20Ruta%20Escultórica%20de%20Palomeras> onto:hasID "000012278881";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/Entreparques.%20Del%20Parque%20de%20Aluche%20a%20Madrid%20Río> a schema:CivicStructure;
+onto:hasID "000012278885" .
+<http://culture.linkeddata.es/Entreparques.%20Del%20Parque%20del%20Oeste%20a%20Madrid%20Río> a schema:CivicStructure;
+onto:hasID "000012278992" .
+<http://culture.linkeddata.es/lov/Entretejidas> a schema:CivicStructure;
+onto:hasID "000012085203" .
+<http://culture.linkeddata.es/Ernesto%20Artillo%20con%20Rocío%20Molina,%20Niños%20de%20Elche,%20Yerai%20Cortés%20y%20Andrés%20Marín.%20Tablao> a schema:CivicStructure;
+onto:hasID "000012126104" .
+<http://culture.linkeddata.es/Es%20la%20hora%20de%20la%20cachiporra%20-%20Le%20Guignol%20Orthopédique%20(Madrid)> a schema:CivicStructure;
+onto:hasID "000012244351" .
+<http://culture.linkeddata.es/Es%20peligroso%20asomarse%20al%20exterior> a schema:CivicStructure;
+onto:hasID "000012041955" .
+<http://culture.linkeddata.es/Escenas%20teatrales> a schema:CivicStructure;
+onto:hasID "000012218821" .
+<http://culture.linkeddata.es/Escuela%20de%20Teatro.%20Teatro%20Municipal%20de%20Vallecas> onto:hasID "000011826266";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/Escuela%20del%20oyente:%20V%20siglos%20de%20música%20clásica> a schema:CivicStructure;
+onto:hasID "000012263731" .
+<http://culture.linkeddata.es/Espacio%20P.O.M.> onto:hasID "000012128069";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/Espejito,%20espejito,%20ojito%20que%20soy%20yo> a schema:CivicStructure;
+onto:hasID "000012267798" .
+<http://culture.linkeddata.es/lov/ESTAMPA2> a schema:CivicStructure;
+onto:hasID "000012234425";
+a schema:CivicStructure;
+onto:hasID "000012234429" .
+<http://culture.linkeddata.es/Esther%20Merino> onto:hasID "000012267125";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/Estrenos%20Cineteca> a schema:CivicStructure;
+onto:hasID "000012277528" .
+<http://culture.linkeddata.es/Eva%20Mª%20Mera%20Jiménez:%20'Juana%20I%20de%20Castilla%20(apodada%20'La%20Loca)'.> a schema:CivicStructure;
+onto:hasID "000012266537" .
+<http://culture.linkeddata.es/Excelencias%20italianas> a schema:CivicStructure;
+onto:hasID "000012140095" .
+<http://culture.linkeddata.es/Experimento%20IMAGINA> a schema:CivicStructure;
+onto:hasID "000012207165" .
+<http://culture.linkeddata.es/EXPOSICIÓN%20%20'REALISM%20SHOW'%20%20COLECTIVO%20ARTE%20INICIAL> a schema:CivicStructure;
+onto:hasID "000012280138" .
+<http://culture.linkeddata.es/Exposición%20Colección%20de%20ilustraciones%20el%20periódico%20ABC%20de%201905> a schema:CivicStructure;
+onto:hasID "000012267279" .
+<http://culture.linkeddata.es/Exposición%20de%20acuarelas> onto:hasID "000012270527";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/Exposición%20de%20arte%20DIVERSA> a schema:CivicStructure;
+onto:hasID "000012266732" .
+<http://culture.linkeddata.es/Exposición%20de%20Dibujos:%20'LA%20BÚSQUEDA%20DE%20LAS%20FORMAS%20A%20TRAVÉS%20DEL%20POSADO'> a schema:CivicStructure;
+onto:hasID "000012270538" .
+<http://culture.linkeddata.es/Exposición%20de%20fotografía%20%60A%20Little%20Mix´> a schema:CivicStructure;
+onto:hasID "000012263831" .
+<http://culture.linkeddata.es/Exposición%20de%20pintura%20y%20fotografía> onto:hasID "000012266797";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/Exposición%20de%20pintura%20'Límites'> a schema:CivicStructure;
+onto:hasID "000012274446" .
+<http://culture.linkeddata.es/Exposición%20de%20Pintura%20%60La%20Ley%20del%20Espejo,%20La%20Magia%20Hecha%20Arte,%20Crónica%20De%20Una%20Loca,%20Luego%20Cuerda´> a schema:CivicStructure;
+onto:hasID "000012279204" .
+<http://culture.linkeddata.es/Exposición%20de%20pintura:%20Magia%20antipática%201.2> a schema:CivicStructure;
+onto:hasID "000012266786" .
+<http://culture.linkeddata.es/Exposición%20del%20IV%20concurso%20de%20fotografía%20'Próxima%20estación:%20Madrid'> a schema:CivicStructure;
+onto:hasID "000012120493" .
+<http://culture.linkeddata.es/Exposición%20Helena%20Segovia> a schema:CivicStructure;
+onto:hasID "000012268714" .
+<http://culture.linkeddata.es/Exposición%20Sonia%20Mansberger> a schema:CivicStructure;
+onto:hasID "000012268692" .
+<http://culture.linkeddata.es/Exposición%20Tallas%20y%20Maderitas> a schema:CivicStructure;
+onto:hasID "000012270285" .
+<http://culture.linkeddata.es/Exposición%20'Atocha:%20quinientos%20años%20de%20historia%20de%20Madrid'> a schema:CivicStructure;
+onto:hasID "000012129664" .
+<http://culture.linkeddata.es/Exposición:%20'EL%20ARTE%20DE%20LOS%20COLORES'> a schema:CivicStructure;
+onto:hasID "000012270469" .
+<http://culture.linkeddata.es/E.T.%20el%20Extraterrestre> onto:hasID "000012261722";
+a schema:CivicStructure,schema:CivicStructure;
+onto:hasID "000012261567" .
+<http://culture.linkeddata.es/Fallen%20Leaves> a schema:CivicStructure;
+onto:hasID "000012267096" .
+<http://culture.linkeddata.es/Fantastibulosas%20aventuras%20con%20Roal%20Dahl> a schema:CivicStructure;
+onto:hasID "000012233576";
+a schema:CivicStructure;
+onto:hasID "000012233575" .
+<http://culture.linkeddata.es/Fauna%20del%20Huerto> a schema:CivicStructure;
+onto:hasID "000011771324" .
+<http://culture.linkeddata.es/Félix%20'El%20gato'> a schema:CivicStructure;
+onto:hasID "000012274356" .
+<http://culture.linkeddata.es/Feria%20Agroecológica> a schema:CivicStructure;
+onto:hasID "000011945789" .
+<http://culture.linkeddata.es/Festival%20Alicia%20de%20Larrocha> a schema:CivicStructure;
+onto:hasID "000012274564" .
+<http://culture.linkeddata.es/Festival%20de%20Folclore%20Infantil%20y%20Juvenil%202024> a schema:CivicStructure;
+onto:hasID "000012273530" .
+<http://culture.linkeddata.es/Filosofía%20y%20Política> a schema:CivicStructure;
+onto:hasID "000012234905";
+a schema:CivicStructure;
+onto:hasID "000012234903";
+a schema:CivicStructure;
+onto:hasID "000012234908" .
+<http://culture.linkeddata.es/lov/Flamenco> a schema:CivicStructure;
+onto:hasID "000012256003" .
+<http://culture.linkeddata.es/Folclore%20tradicional%20y%20castellano%20de%20dulzaina%20y%20tamboril> a schema:CivicStructure;
+onto:hasID "000012274322" .
+<http://culture.linkeddata.es/Francisco%20Jiménez%20'El%20Curro'> onto:hasID "000012256175";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/From%20Spain%20With%20Design> onto:hasID "000012258028";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/Fuente%20del%20Berro> a schema:CivicStructure;
+onto:hasID "000012279425" .
+<http://culture.linkeddata.es/lov/Funambulista> a schema:CivicStructure;
+onto:hasID "000012241705" .
+<http://culture.linkeddata.es/Funciones%20Accesibles%202023/24> a schema:CivicStructure;
+onto:hasID "000012086617" .
+<http://culture.linkeddata.es/Gac%20Movie> a schema:CivicStructure;
+onto:hasID "000012267233" .
+<http://culture.linkeddata.es/Gag%20movie> a schema:CivicStructure;
+onto:hasID "000012279739" .
+<http://culture.linkeddata.es/Gala%20de%20ballet%20clásico> a schema:CivicStructure;
+onto:hasID "000012259052" .
+<http://culture.linkeddata.es/Gala%20Internacional%20de%20Magia%20en%20escena> a schema:CivicStructure;
+onto:hasID "000012241076" .
+<http://culture.linkeddata.es/Gala%20Internacional%20de%20magia%20en%20escena> a schema:CivicStructure;
+onto:hasID "000012263958" .
+<http://culture.linkeddata.es/Gala%20Lírica%20Lo%20Mejor%20de%20la%20Zarzuela%20Castiza> a schema:CivicStructure;
+onto:hasID "000012276934" .
+<http://culture.linkeddata.es/Ganas%20de%20reñir> a schema:CivicStructure;
+onto:hasID "000012273559" .
+<http://culture.linkeddata.es/Gestión%20emocional%20para%20mujeres> a schema:CivicStructure;
+onto:hasID "000012233642" .
+<http://culture.linkeddata.es/Gigantes%20y%20Cabezudos> a schema:CivicStructure;
+onto:hasID "000012278866" .
+<http://culture.linkeddata.es/lov/Gilda> a schema:CivicStructure;
+onto:hasID "000012266413";
+a schema:CivicStructure;
+onto:hasID "000012281435" .
+<http://culture.linkeddata.es/Gran%20Baile%20de%20Carnaval%20con%20concurso%20de%20disfraces%20y%20Orquesta%20Tierra> onto:hasID "000012266299";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/Gran%20Convoy> a schema:CivicStructure;
+onto:hasID "000012246978";
+a schema:CivicStructure;
+onto:hasID "000012248211" .
+<http://culture.linkeddata.es/Gran%20fiesta%20de%20Carnaval%20en%20el%20patio%20del%20Centro%20Cultural%20Gloria%20Fuertes> onto:hasID "000012266647";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/Grupo%20Arte%20y%20Estilo> a schema:CivicStructure;
+onto:hasID "000012280275" .
+<http://culture.linkeddata.es/Grupo%20retablo> a schema:CivicStructure;
+onto:hasID "000012268721" .
+<http://culture.linkeddata.es/Guerras%20de%20religión%20en%20Francia%20(Siglos%20XVI%20-%20XVII)> a schema:CivicStructure;
+onto:hasID "000012278183" .
+<http://culture.linkeddata.es/Guirnalda%20con%20luz%20de%20led> a schema:CivicStructure;
+onto:hasID "000012256020" .
+<http://culture.linkeddata.es/Gustavo%20Corral> a schema:CivicStructure;
+onto:hasID "000012270379" .
+<http://culture.linkeddata.es/Gymkana%20por%20el%20Parque%20de%20Pradolongo> a schema:CivicStructure;
+onto:hasID "000012273485" .
+<http://culture.linkeddata.es/lov/Güeros> a schema:CivicStructure;
+onto:hasID "000012225184" .
+<http://culture.linkeddata.es/lov/Hércules> a schema:CivicStructure;
+onto:hasID "000012270390" .
+<http://culture.linkeddata.es/Heroínas%20de%20la%20ópera> a schema:CivicStructure;
+onto:hasID "000012270891" .
+<http://culture.linkeddata.es/Hilvanando%20historias> onto:hasID "000012276982";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/Historia%20de%20la%20Tierra%20y%20la%20vida> onto:hasID "000012277353";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/Historia%20de%20un%20servicio%20en%20la%20sombra:%20la%20limpieza%20y%20recogida%20de%20residuos%20en%20la%20ciudad%20de%20Madrid> a schema:CivicStructure;
+onto:hasID "000012227486" .
+<http://culture.linkeddata.es/Historia%20de%20una%20oveja> a schema:CivicStructure;
+onto:hasID "000012042050" .
+<http://culture.linkeddata.es/Historias%20de%20amor%20de%20la%20historia> a schema:CivicStructure;
+onto:hasID "000012263488" .
+<http://culture.linkeddata.es/Historias%20que%20lleva%20el%20viento> onto:hasID "000012270266";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/Homenaje%20a%20las%20víctimas%20del%2011M> a schema:CivicStructure;
+onto:hasID "000012270955" .
+<http://culture.linkeddata.es/Hoy%20hablamos%20de...%20el%20carnaval%20en%20Madrid> a schema:CivicStructure;
+onto:hasID "000012269380" .
+<http://culture.linkeddata.es/Huellas%20de%20D.%20Santiago%20Ramón%20y%20Cajal%20en%20la%20Hemeroteca%20Municipal%20de%20Madrid> a schema:CivicStructure;
+onto:hasID "000012243224" .
+<http://culture.linkeddata.es/Huellas%20y%20Sombras> a schema:CivicStructure;
+onto:hasID "000012257974" .
+<http://culture.linkeddata.es/Huerto%20familiar> a schema:CivicStructure;
+onto:hasID "000011970930";
+a schema:CivicStructure;
+onto:hasID "000011970931" .
+<http://culture.linkeddata.es/I%20Concurso%20de%20Relatos%20Biblioteca%20Miguel%20Delibes> a schema:CivicStructure;
+onto:hasID "000012132263" .
+<http://culture.linkeddata.es/Ian%20Cheng> a schema:CivicStructure;
+onto:hasID "000012280871" .
+<http://culture.linkeddata.es/lov/Ignífugas> a schema:CivicStructure;
+onto:hasID "000012269565" .
+<http://culture.linkeddata.es/II%20Ciclo%20de%20Médicos%20Escritores%20de%20ASEMEYA:%20Obras%20literarias%20de%20Paloma%20Soria> a schema:CivicStructure;
+onto:hasID "000012280175" .
+<http://culture.linkeddata.es/III%20Festival%20de%20Carnaval%20de%20Carabanchel> a schema:CivicStructure;
+onto:hasID "000012279800" .
+<http://culture.linkeddata.es/III%20Olimpiadas%20urbanas%20vallecanas> a schema:CivicStructure;
+onto:hasID "000012279439" .
+<http://culture.linkeddata.es/Iker%20Karrera%20'The%20room%20where%20it%20happens'> a schema:CivicStructure;
+onto:hasID "000012125802" .
+<http://culture.linkeddata.es/Increíble%20Mundo%20Insecto> a schema:CivicStructure;
+onto:hasID "000012042672" .
+<http://culture.linkeddata.es/Instrucciones%20para%20sobrevivir%20en%20lo%20oscuro> a schema:CivicStructure;
+onto:hasID "000012042006" .
+<http://culture.linkeddata.es/Invernadero%20de%20La%20Arganzuela> a schema:CivicStructure;
+onto:hasID "000012273560" .
+<http://culture.linkeddata.es/lov/Investigactiva> onto:hasID "000012235770";
+a schema:CivicStructure,schema:CivicStructure;
+onto:hasID "000012235772" .
+<http://culture.linkeddata.es/Itinerario%20Ornitológico%20Monte%20de%20El%20Pardo> a schema:CivicStructure;
+onto:hasID "000012233847";
+a schema:CivicStructure;
+onto:hasID "000012233854" .
+<http://culture.linkeddata.es/Itinerario%20Ornitológico%20Parque%20del%20Manzanares%20%3F%20Madrid%20Río> a schema:CivicStructure;
+onto:hasID "000012233842" .
+<http://culture.linkeddata.es/Itinerario%20Ornitológico%20Parque%20del%20Oeste> a schema:CivicStructure;
+onto:hasID "000012233848";
+a schema:CivicStructure;
+onto:hasID "000012233856" .
+<http://culture.linkeddata.es/Itinerario%20Ornitológico%20Parque%20Emperatriz%20María%20de%20Austria> onto:hasID "000012233841";
+a schema:CivicStructure,schema:CivicStructure;
+onto:hasID "000012233851" .
+<http://culture.linkeddata.es/Itinerario%20Ornitológico%20Parque%20Enrique%20Tierno%20Galván> a schema:CivicStructure;
+onto:hasID "000012233839" .
+<http://culture.linkeddata.es/Itinerario%20Ornitológico%20Parque%20Forestal%20de%20Valdebebas%20%3F%20Felipe%20VI> a schema:CivicStructure;
+onto:hasID "000012233845" .
+<http://culture.linkeddata.es/Itinerario%20Ornitológico%20Parque%20Juan%20Carlos%20I> onto:hasID "000012233844";
+a schema:CivicStructure,schema:CivicStructure;
+onto:hasID "000012233849" .
+<http://culture.linkeddata.es/IV%20Anïmales%20Mixtøs> a schema:CivicStructure;
+onto:hasID "000012043830" .
+<http://culture.linkeddata.es/IV%20Plataforma> onto:hasID "000012043844";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/Jabones%20caseros> a schema:CivicStructure;
+onto:hasID "000012274207" .
+<http://culture.linkeddata.es/Jack%20and%20the%20Giant> a schema:CivicStructure;
+onto:hasID "000012267047" .
+<http://culture.linkeddata.es/lov/Jaleo> a schema:CivicStructure;
+onto:hasID "000012280637" .
+<http://culture.linkeddata.es/Jam%20musical%20participativa> a schema:CivicStructure;
+onto:hasID "000012267818" .
+<http://culture.linkeddata.es/Jan%20Martens> a schema:CivicStructure;
+onto:hasID "000012042053" .
+<http://culture.linkeddata.es/Jardín%20El%20Capricho> a schema:CivicStructure;
+onto:hasID "000012234101","000012234100";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/Jardín%20El%20Capricho:%20público%20familiar> a schema:CivicStructure;
+onto:hasID "000012234105" .
+<http://culture.linkeddata.es/Jardines%20escondidos.%20De%20Nuevos%20Ministerios%20al%20Museo%20Sorolla> a schema:CivicStructure;
+onto:hasID "000012279182" .
+<http://culture.linkeddata.es/Jardines%20escondidos.%20De%20Ópera%20a%20Atocha> a schema:CivicStructure;
+onto:hasID "000012279180";
+a schema:CivicStructure;
+onto:hasID "000012279181" .
+<http://culture.linkeddata.es/Jasón%20Matilla> a schema:CivicStructure;
+onto:hasID "000012270345" .
+<http://culture.linkeddata.es/Jay%20-%20Jay%20Johanson%20'Fetish'> a schema:CivicStructure;
+onto:hasID "000012126257" .
+<http://culture.linkeddata.es/Jazz%20Jondo%20en%20concierto> onto:hasID "000012263782";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/Jingle%20Django> a schema:CivicStructure;
+onto:hasID "000012278867" .
+<http://culture.linkeddata.es/John%20Waters:%20buscando%20la%20belleza%20en%20la%20basura> a schema:CivicStructure;
+onto:hasID "000012265717" .
+<http://culture.linkeddata.es/Jon%20Anton%20%3F%20Live%20Experience> a schema:CivicStructure;
+onto:hasID "000012267932" .
+<http://culture.linkeddata.es/Jornada%20Cultural%20y%20de%20Ocio%20Infantil%20con%20motivo%20del%20Carnaval.> a schema:CivicStructure;
+onto:hasID "000012279456" .
+<http://culture.linkeddata.es/Jornada%20de%20Huerto> a schema:CivicStructure;
+onto:hasID "000012265849" .
+<http://culture.linkeddata.es/Jornada%20de%20intercambio%20de%20semillas> a schema:CivicStructure;
+onto:hasID "000011945813" .
+<http://culture.linkeddata.es/Jornada%20de%20Puertas%20Abiertas> a schema:CivicStructure;
+onto:hasID "000012280873" .
+<http://culture.linkeddata.es/Jornadas.%20Aprende%20a%20bailar%20Marinera> a schema:CivicStructure;
+onto:hasID "000012198749" .
+<http://culture.linkeddata.es/Jornadas.%20Los%20interrogantes%20de%20la%20Filosofía> a schema:CivicStructure;
+onto:hasID "000012108509" .
+<http://culture.linkeddata.es/Jornadas.%20Ritmos%20Latinos%20y%20Bailes%20Americanos%20(Nivel%20Medio)> a schema:CivicStructure;
+onto:hasID "000012198718" .
+<http://culture.linkeddata.es/Juanfe%20Pérez> a schema:CivicStructure;
+onto:hasID "000012255990" .
+<http://culture.linkeddata.es/Jugando%20a%20ser> a schema:CivicStructure;
+onto:hasID "000012232146" .
+<http://culture.linkeddata.es/Jugar%20el%20arte%20en%20familia> onto:hasID "000012265163";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/Jugar%20el%20circo%202024.%20Luz> onto:hasID "000012262997";
+a schema:CivicStructure;
+onto:hasID "000012262999";
+a schema:CivicStructure,schema:CivicStructure;
+onto:hasID "000012263000" .
+<http://culture.linkeddata.es/Julia%20Murillo> a schema:CivicStructure;
+onto:hasID "000012265114" .
+<http://culture.linkeddata.es/Kafka:%20cuentos%20en%20directo> a schema:CivicStructure;
+onto:hasID "000012279339" .
+<http://culture.linkeddata.es/Killer%20(El%20asesino%20del%20taladro)> a schema:CivicStructure;
+onto:hasID "000012265617" .
+<http://culture.linkeddata.es/La%20Baldufa> a schema:CivicStructure;
+onto:hasID "000012042041" .
+<http://culture.linkeddata.es/La%20brigada%20de%20la%20cocina> a schema:CivicStructure;
+onto:hasID "000012281118" .
+<http://culture.linkeddata.es/La%20caligrafía%20china%20¡Celebramos%20el%20Año%20Nuevo%20del%20dragón!> a schema:CivicStructure;
+onto:hasID "000012273578" .
+<http://culture.linkeddata.es/La%20cenicienta%20que%20no%20quería%20comer%20perdices> a schema:CivicStructure;
+onto:hasID "000012270359" .
+<http://culture.linkeddata.es/La%20Chistera%20Producciones,%20presenta%20'Me%20parto%20de%20magia'> a schema:CivicStructure;
+onto:hasID "000012265115" .
+<http://culture.linkeddata.es/La%20Cordobesa> onto:hasID "000012274355";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/La%20Dehesa%20en%20guerra:%20un%20momento%20crucial%20en%20la%20historia> a schema:CivicStructure;
+onto:hasID "000012222776" .
+<http://culture.linkeddata.es/La%20Distancia%20entre%20A%20y%20B%20es%20la%20misma%20que%20entre%20B%20y%20A> a schema:CivicStructure;
+onto:hasID "000012007674" .
+<http://culture.linkeddata.es/La%20gran%20fábula%20del%20capital> a schema:CivicStructure;
+onto:hasID "000012092333" .
+<http://culture.linkeddata.es/La%20Gran%20Fiesta%20de%20las%20Pelucas> a schema:CivicStructure;
+onto:hasID "000012278869" .
+<http://culture.linkeddata.es/La%20isla%20del%20tesoro> a schema:CivicStructure;
+onto:hasID "000012276317" .
+<http://culture.linkeddata.es/La%20Jose> a schema:CivicStructure;
+onto:hasID "000012255969" .
+<http://culture.linkeddata.es/La%20leyenda%20del%20m%3Fr%3Fi%3For,%20símbolo%20de%20la%20primavera> a schema:CivicStructure;
+onto:hasID "000012274220" .
+<http://culture.linkeddata.es/La%20lucha%20por%20la%20vida> a schema:CivicStructure;
+onto:hasID "000012041968" .
+<http://culture.linkeddata.es/La%20magia%20Bartolomé%20por%20Paco%20G%20y%20Gabriel%20Tortarolo> a schema:CivicStructure;
+onto:hasID "000012262423" .
+<http://culture.linkeddata.es/La%20Mina%20Tres:%20evento%20de%20diseño,%20ilustración%20y%20dibujo> onto:hasID "000012166824";
+a schema:CivicStructure,schema:CivicStructure;
+onto:hasID "000012166823";
+a schema:CivicStructure;
+onto:hasID "000012166820" .
+<http://culture.linkeddata.es/La%20mochila%20del%20juglar> a schema:CivicStructure;
+onto:hasID "000012255981" .
+<http://culture.linkeddata.es/La%20música%20del%20reciclaje> a schema:CivicStructure;
+onto:hasID "000012269622" .
+<http://culture.linkeddata.es/La%20naturaleza%20es%20vida> a schema:CivicStructure;
+onto:hasID "000012276998" .
+<http://culture.linkeddata.es/La%20odisea%20de%20Azulina> onto:hasID "000012276078";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/La%20Panditeca> a schema:CivicStructure;
+onto:hasID "000012097842" .
+<http://culture.linkeddata.es/La%20rama%20en%20el%20gesto.%20Árboles%20y%20apuntes%20de%20la%20Dehesa,%20por%20Atauri%20y%20Elena%20Ardao> a schema:CivicStructure;
+onto:hasID "000012226729" .
+<http://culture.linkeddata.es/La%20Ratonera.> a schema:CivicStructure;
+onto:hasID "000012268572" .
+<http://culture.linkeddata.es/La%20Regenta> a schema:CivicStructure;
+onto:hasID "000012050475" .
+<http://culture.linkeddata.es/La%20Reina%20Isabel%20de%20Farnesio%20y%20el%20mecenazgo%20artístico%20de%20las%20mujeres> a schema:CivicStructure;
+onto:hasID "000012269498" .
+<http://culture.linkeddata.es/La%20representación%20del%20amor%20en%20el%20arte> a schema:CivicStructure;
+onto:hasID "000012270252" .
+<http://culture.linkeddata.es/La%20Tapia%20I:%20cerca%20histórica> a schema:CivicStructure;
+onto:hasID "000011881529" .
+<http://culture.linkeddata.es/La%20Tertulia%20Literaria%20Hispanoamericana%20Rafael%20Montesinos:%20Versos%20Entrevistados> onto:hasID "000012242835";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/La%20urraca%20Paca> a schema:CivicStructure;
+onto:hasID "000012280876" .
+<http://culture.linkeddata.es/La%20vendedora%20de%20palabras> a schema:CivicStructure;
+onto:hasID "000012269597" .
+<http://culture.linkeddata.es/La%20voluntad%20de%20creer> a schema:CivicStructure;
+onto:hasID "000012171237" .
+<http://culture.linkeddata.es/La%20voz%20de%20Lola> a schema:CivicStructure;
+onto:hasID "000012269490" .
+<http://culture.linkeddata.es/Laboratorio%20de%20Técnicas%20de%20Estudio%20y%20Clases%20de%20Apoyo> a schema:CivicStructure;
+onto:hasID "000012105682" .
+<http://culture.linkeddata.es/Laboratorio:%20'HABLAR%20EN%20PÚBLICO'> a schema:CivicStructure;
+onto:hasID "000012270444" .
+<http://culture.linkeddata.es/Laia%20Molins%20y%20Jofre%20Fité%20Duo> onto:hasID "000012262425";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/Laia%20Molins%20y%20Jofre%20Fité%20Dúo> a schema:CivicStructure;
+onto:hasID "000012262878" .
+<http://culture.linkeddata.es/Las%20aventuras%20de%20Mandarina%20y%20Serafín> a schema:CivicStructure;
+onto:hasID "000012259092" .
+<http://culture.linkeddata.es/Las%20cautivas> onto:hasID "000012042038";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/Las%20chicas%20están%20bien> a schema:CivicStructure;
+onto:hasID "000012262707" .
+<http://culture.linkeddata.es/Las%20dos%20en%20punto> a schema:CivicStructure;
+onto:hasID "000012267814" .
+<http://culture.linkeddata.es/Las%20mujeres%20de%20la%20generación%20del%2027> a schema:CivicStructure;
+onto:hasID "000012266310" .
+<http://culture.linkeddata.es/Las%20ocho%20montañas> onto:hasID "000012267094";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/Las%20piedras%20de%20los%20dioses> a schema:CivicStructure;
+onto:hasID "000012277203" .
+<http://culture.linkeddata.es/Las%20verbenas%20desiertas.%20Apariciones%20y%20desapariciones%20en%20el%20arte%20contemporáneo> a schema:CivicStructure;
+onto:hasID "000012265603" .
+<http://culture.linkeddata.es/Le%20Parody%20y%20Tunipanea> a schema:CivicStructure;
+onto:hasID "000012271714" .
+<http://culture.linkeddata.es/Lectura%20performativa:%20María%20Velasco%20y%20Miren%20Iza%20(Tulsa)> a schema:CivicStructure;
+onto:hasID "000012270737" .
+<http://culture.linkeddata.es/Lecturas%20dramatizadas> a schema:CivicStructure;
+onto:hasID "000011675620" .
+<http://culture.linkeddata.es/Let's%20practice%20english> a schema:CivicStructure;
+onto:hasID "000012109832" .
+<http://culture.linkeddata.es/Literatura%20escénica:%20Eloy%20Fernández%20Porta,%20Miriam%20Reyes%20y%20Eloi%20El%20Bon%20Noi> a schema:CivicStructure;
+onto:hasID "000012270728" .
+<http://culture.linkeddata.es/Llévame%20a%20Benidorm> a schema:CivicStructure;
+onto:hasID "000012262863" .
+<http://culture.linkeddata.es/Lope%20y%20compañía> a schema:CivicStructure;
+onto:hasID "000012276231" .
+<http://culture.linkeddata.es/lov/LOQUILLO> a schema:CivicStructure;
+onto:hasID "000012248327" .
+<http://culture.linkeddata.es/Lorenzo%20Durán> a schema:CivicStructure;
+onto:hasID "000012268758" .
+<http://culture.linkeddata.es/Lorenzo%20Sandoval:%20Ecología%20acústica> a schema:CivicStructure;
+onto:hasID "000012266452" .
+<http://culture.linkeddata.es/Los%20amigos%20de%20ellos%20dos> a schema:CivicStructure;
+onto:hasID "000012042056" .
+<http://culture.linkeddata.es/Los%20artistas%20y%20su%20palabra> a schema:CivicStructure;
+onto:hasID "000012119586";
+a schema:CivicStructure;
+onto:hasID "000012119585","000012119583";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/Los%20Bárbaros%20'Obra%20Imposible'> a schema:CivicStructure;
+onto:hasID "000012103138" .
+<http://culture.linkeddata.es/Los%20cuentos%20de%20la%20tribu> a schema:CivicStructure;
+onto:hasID "000012271754" .
+<http://culture.linkeddata.es/Los%20Dioses%20y%20Dios> a schema:CivicStructure;
+onto:hasID "000012276334" .
+<http://culture.linkeddata.es/Los%20gritos%20del%20alma> a schema:CivicStructure;
+onto:hasID "000012246987" .
+<http://culture.linkeddata.es/Los%20Gumins> onto:hasID "000012265160";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/Los%20hábitos%20de%20un%20rebelde> onto:hasID "000012263554";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/Los%20hijos%20+%20Mamántula> onto:hasID "000012261698";
+a schema:CivicStructure,schema:CivicStructure;
+onto:hasID "000012261564";
+a schema:CivicStructure;
+onto:hasID "000012261697" .
+<http://culture.linkeddata.es/Los%20hongos> a schema:CivicStructure;
+onto:hasID "000012225193" .
+<http://culture.linkeddata.es/Los%20más%20pequeños%20también%20plantamos> onto:hasID "000012231581";
+a schema:CivicStructure,schema:CivicStructure;
+onto:hasID "000012231577" .
+<http://culture.linkeddata.es/Los%20Miserables.> onto:hasID "000012261847";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/Los%20objetos%20que%20pueblan%20nuestra%20ciudad> onto:hasID "000012278849";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/Los%20paseantes:%20ocho%20rutas%20para%20redescubrir%20Madrid> a schema:CivicStructure;
+onto:hasID "000012265642" .
+<http://culture.linkeddata.es/Los%20Quemaos> onto:hasID "000012262800";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/Los%20Quemaos.%20Retiro> a schema:CivicStructure;
+onto:hasID "000012263023" .
+<http://culture.linkeddata.es/Los%20secretos%20escondidos%20de%20los%20cuentos> a schema:CivicStructure;
+onto:hasID "000012265169" .
+<http://culture.linkeddata.es/Los%20sobornados> a schema:CivicStructure;
+onto:hasID "000012266422";
+a schema:CivicStructure;
+onto:hasID "000012281471" .
+<http://culture.linkeddata.es/Los%20sueños%20de%20Fausto> a schema:CivicStructure;
+onto:hasID "000012279498" .
+<http://culture.linkeddata.es/Los%20susurros%20del%20jardín> a schema:CivicStructure;
+onto:hasID "000012277811" .
+<http://culture.linkeddata.es/Los%20últimos%20días%20de%20Pompeya> a schema:CivicStructure;
+onto:hasID "000012162194" .
+<http://culture.linkeddata.es/Loscil%20&amp;%20Lawrence%20English> a schema:CivicStructure;
+onto:hasID "000012092337" .
+<http://culture.linkeddata.es/Ludovico%20te%20queremos> a schema:CivicStructure;
+onto:hasID "000012254543" .
+<http://culture.linkeddata.es/LYS%20VILLALBA%20Y%20LLUÍS%20ALEXANDRE%20CASANOVAS%20BLANCO%20«TRES%20ENSAYOS%20DE%20PAISAJE»> a schema:CivicStructure;
+onto:hasID "000012096560" .
+<http://culture.linkeddata.es/L%3FAlakran%20'Inactuales'> a schema:CivicStructure;
+onto:hasID "000012261573" .
+<http://culture.linkeddata.es/Mabi%20Revuelta%20y%20Elena%20Duque> a schema:CivicStructure;
+onto:hasID "000012271755" .
+<http://culture.linkeddata.es/Madrid%20a%20Tempo.%20Marzo> a schema:CivicStructure;
+onto:hasID "000012253762" .
+<http://culture.linkeddata.es/Madrid%20Design%20Festival%202024> a schema:CivicStructure;
+onto:hasID "000012213981" .
+<http://culture.linkeddata.es/Madrid%20es%20Moda> a schema:CivicStructure;
+onto:hasID "000012273499" .
+<http://culture.linkeddata.es/Madrid%20Río%20Tramo%20II:%20Del%20Puente%20de%20Toledo%20a%20los%20Puentes%20Gemelos%20de%20Invernadero%20y%20Matadero> a schema:CivicStructure;
+onto:hasID "000012278781";
+a schema:CivicStructure;
+onto:hasID "000012278783";
+a schema:CivicStructure;
+onto:hasID "000012278782" .
+<http://culture.linkeddata.es/Madrid%20Río%20Tramo%20I:%20Del%20Puente%20del%20Rey%20al%20Puente%20de%20Andorra> a schema:CivicStructure;
+onto:hasID "000012278605";
+a schema:CivicStructure;
+onto:hasID "000012278603";
+a schema:CivicStructure;
+onto:hasID "000012278607" .
+<http://culture.linkeddata.es/Madrid,%20musa%20de%20las%20letras> onto:hasID "000012035526";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/Magia%20de%20cerca> a schema:CivicStructure;
+onto:hasID "000012263960";
+a schema:CivicStructure;
+onto:hasID "000012240880" .
+<http://culture.linkeddata.es/Magia%20de%20cine> onto:hasID "000012266402";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/Magia%20de%20cine%20por%20Carlos%20Puggi.> a schema:CivicStructure;
+onto:hasID "000012265119" .
+<http://culture.linkeddata.es/Mago%20David%20Navares:%20La%20magia%20de%20un%20trotamundos> a schema:CivicStructure;
+onto:hasID "000012266335" .
+<http://culture.linkeddata.es/Mago%20Iván%20Santacruz:%20'Magia%20chula%20con%20Iván%20Santacruz'> onto:hasID "000012266583";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/Mago%20Tután:%20El%20conquistador%20de%20la%20magicomedia> a schema:CivicStructure;
+onto:hasID "000012266337" .
+<http://culture.linkeddata.es/Malas%20compañías> a schema:CivicStructure;
+onto:hasID "000012272668" .
+<http://culture.linkeddata.es/lov/Malú> a schema:CivicStructure;
+onto:hasID "000012214668" .
+<http://culture.linkeddata.es/Manteo%20del%20pelele> a schema:CivicStructure;
+onto:hasID "000012278870" .
+<http://culture.linkeddata.es/Manual%20para%20armar%20un%20sueño> a schema:CivicStructure;
+onto:hasID "000012041962" .
+<http://culture.linkeddata.es/María%20Jerez%20y%20Tamaro%20Arroyo> a schema:CivicStructure;
+onto:hasID "000012271759" .
+<http://culture.linkeddata.es/lov/Marina> onto:hasID "000012270625";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/Mariposas%20que%20vuelven%20a%20volar%20en%20un%20mundo%20de%20colores,%20de%20Cristina%20Alonso.%20Presentación%20de%20poemario> a schema:CivicStructure;
+onto:hasID "000012260017" .
+<http://culture.linkeddata.es/Maris%20Stella,%20un%20sueño%20de%20todos> a schema:CivicStructure;
+onto:hasID "000012233485" .
+<http://culture.linkeddata.es/Martín%20Perilla> onto:hasID "000012267808";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/Martin%20Perilla> a schema:CivicStructure;
+onto:hasID "000012273575" .
+<http://culture.linkeddata.es/Más%20que%20Magia> a schema:CivicStructure;
+onto:hasID "000012281564" .
+<http://culture.linkeddata.es/Máscaras%20de%20Carnaval> a schema:CivicStructure;
+onto:hasID "000012271616" .
+<http://culture.linkeddata.es/lov/Masquerade> onto:hasID "000012266322";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/Mastretta%20&amp;%20Sorin,%20presenta%20'Concierto%20Nuevo'> a schema:CivicStructure;
+onto:hasID "000012265122" .
+<http://culture.linkeddata.es/lov/Matria> a schema:CivicStructure;
+onto:hasID "000012276066" .
+<http://culture.linkeddata.es/Mayores%20Conectados> a schema:CivicStructure;
+onto:hasID "000012254071" .
+<http://culture.linkeddata.es/McKENZIE%20WARK%20%20«PAISAJES%20DEL%20PENSAMIENTO%20%20CONTEMPORÁNEO»> a schema:CivicStructure;
+onto:hasID "000012094748" .
+<http://culture.linkeddata.es/Me%20parto%20de%20magia> a schema:CivicStructure;
+onto:hasID "000012267934" .
+<http://culture.linkeddata.es/Me%20quiero%20tal%20y%20como%20soy> onto:hasID "000012270567";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/Mediterráneo%202> a schema:CivicStructure;
+onto:hasID "000012260703" .
+<http://culture.linkeddata.es/Mejor%20las%20de%20chocolate> a schema:CivicStructure;
+onto:hasID "000012266861" .
+<http://culture.linkeddata.es/Mi%20abuela%20no%20se%20llama%20Carmen> a schema:CivicStructure;
+onto:hasID "000012050512" .
+<http://culture.linkeddata.es/Miguel%20Marchán> a schema:CivicStructure;
+onto:hasID "000012267137" .
+<http://culture.linkeddata.es/MIKEL%20IZAL> a schema:CivicStructure;
+onto:hasID "000012116491" .
+<http://culture.linkeddata.es/lov/MINDFULNESS> onto:hasID "000012270503";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/Mirador%20Madrid> a schema:CivicStructure;
+onto:hasID "000011717104" .
+<http://culture.linkeddata.es/Mis%20Papás.%20Mis%20Mamás> onto:hasID "000012209089";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/Molina's%20Ferozz> a schema:CivicStructure;
+onto:hasID "000012266439" .
+<http://culture.linkeddata.es/lov/Momentos> onto:hasID "000012276121";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/Momentos%20en%20color.%20Exposición%20de%20acuarelas> a schema:CivicStructure;
+onto:hasID "000012242435" .
+<http://culture.linkeddata.es/Mona%20Omrani.%20El%20poder%20de%20la%20acuarela> a schema:CivicStructure;
+onto:hasID "000012246744" .
+<http://culture.linkeddata.es/lov/Monet> a schema:CivicStructure;
+onto:hasID "000012030146" .
+<http://culture.linkeddata.es/Monográfico%20V%20-%20Interpretación%20ante%20cámara%20de%20cine> a schema:CivicStructure;
+onto:hasID "000012254824" .
+<http://culture.linkeddata.es/Monográfico%20VI%20-%20Dirección%20escénica> a schema:CivicStructure;
+onto:hasID "000012277954" .
+<http://culture.linkeddata.es/Monólogo:%20'CUENTOS%20PARA%20UN%20DESCOSÍO'> a schema:CivicStructure;
+onto:hasID "000012270443" .
+<http://culture.linkeddata.es/Monólogo:%20'LA%20VOZ%20HUMANA'%20de%20Jean%20Cocteau.> a schema:CivicStructure;
+onto:hasID "000012270519" .
+<http://culture.linkeddata.es/Mrs.%20Robinson%20La%20canción%20lenta%20del%20guateque> onto:hasID "000012277838";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/Mujer%20tenías%20que%20ser> a schema:CivicStructure;
+onto:hasID "000012269638" .
+<http://culture.linkeddata.es/Mujer%20y%20deporte> a schema:CivicStructure;
+onto:hasID "000012280666" .
+<http://culture.linkeddata.es/lov/Mujeres> a schema:CivicStructure;
+onto:hasID "000012272924" .
+<http://culture.linkeddata.es/Mujeres%20Árbol.%20Exposición> a schema:CivicStructure;
+onto:hasID "000011700097" .
+<http://culture.linkeddata.es/Mujeres%20en%20el%20XIX:%20reinas,%20escritoras%20y%20mujeres%20omitidas%20de%20la%20historia> a schema:CivicStructure;
+onto:hasID "000012248766" .
+<http://culture.linkeddata.es/Mujeres%20en%20escena> a schema:CivicStructure;
+onto:hasID "000012280665" .
+<http://culture.linkeddata.es/Mujer,%20lidera%20tu%20vida.%20Taller%20de%20empoderamiento%20femenino> a schema:CivicStructure;
+onto:hasID "000012247416" .
+<http://culture.linkeddata.es/Música%20y%20recuerdos> a schema:CivicStructure;
+onto:hasID "000012274239" .
+<http://culture.linkeddata.es/Musical:%20The%20greatest%20show%20man> a schema:CivicStructure;
+onto:hasID "000012272164" .
+<http://culture.linkeddata.es/Músicas%20improvisadas> a schema:CivicStructure;
+onto:hasID "000012274733" .
+<http://culture.linkeddata.es/Música:%20%60Concierto%20de%20Carnaval´> a schema:CivicStructure;
+onto:hasID "000012256667" .
+<http://culture.linkeddata.es/Música:%20'La%20voz%20luminosa%20de%20México'.> a schema:CivicStructure;
+onto:hasID "000012262421" .
+<http://culture.linkeddata.es/Nanuk%20en%20el%20bosque%20de%20las%20emociones> a schema:CivicStructure;
+onto:hasID "000012266750" .
+<http://culture.linkeddata.es/Negu%20Hurbilak> a schema:CivicStructure;
+onto:hasID "000012261570";
+a schema:CivicStructure;
+onto:hasID "000012261684";
+a schema:CivicStructure;
+onto:hasID "000012261679";
+a schema:CivicStructure;
+onto:hasID "000012261683" .
+<http://culture.linkeddata.es/NIVHEK%20a.k.a.%20GROUPER> a schema:CivicStructure;
+onto:hasID "000012162198" .
+<http://culture.linkeddata.es/No%20hay%20ladrón%20que%20por%20bien%20no%20venga> a schema:CivicStructure;
+onto:hasID "000012270275" .
+<http://culture.linkeddata.es/No%20va%20a%20quedar%20nada%20de%20todo%20esto> a schema:CivicStructure;
+onto:hasID "000012078464" .
+<http://culture.linkeddata.es/Nosotras.%20Una%20mirada%20interior> a schema:CivicStructure;
+onto:hasID "000012206677" .
+<http://culture.linkeddata.es/lov/Nostalgia> a schema:CivicStructure;
+onto:hasID "000012274242" .
+<http://culture.linkeddata.es/Novela%20Negra%20Francesa.%20Distopía,%20ciencia%20ficción%20y%20suspense.> a schema:CivicStructure;
+onto:hasID "000012242024" .
+<http://culture.linkeddata.es/NUBIYAN%20TWIST> onto:hasID "000012103177";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/Nuestra%20amiga%20la%20luna%20+%20Alegrías%20riojanas> a schema:CivicStructure;
+onto:hasID "000012260898";
+a schema:CivicStructure;
+onto:hasID "000012258037";
+a schema:CivicStructure;
+onto:hasID "000012260899" .
+<http://culture.linkeddata.es/lov/Nuye> a schema:CivicStructure;
+onto:hasID "000012253877" .
+<http://culture.linkeddata.es/Observación%20de%20estrellas%20desde%20la%20Dehesa> a schema:CivicStructure;
+onto:hasID "000012263732" .
+<http://culture.linkeddata.es/Ogami%20Press%20y%20Juan%20de%20Andrés%20Arias> a schema:CivicStructure;
+onto:hasID "000012271757" .
+<http://culture.linkeddata.es/OpenLAB%2303%20Mentes%20Sintéticas> a schema:CivicStructure;
+onto:hasID "000012070509" .
+<http://culture.linkeddata.es/lov/Oraison> a schema:CivicStructure;
+onto:hasID "000012253880" .
+<http://culture.linkeddata.es/Orquesta%20de%20cuerda%20y%20Orquesta%20sinfónica> a schema:CivicStructure;
+onto:hasID "000012273532" .
+<http://culture.linkeddata.es/Orquesta%20sinfónica%20Forum%20Musikae> onto:hasID "000012259037";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/Pablo%20García> a schema:CivicStructure;
+onto:hasID "000012263070" .
+<http://culture.linkeddata.es/Paisaje%20y%20geomorfología%20de%20la%20Casa%20de%20Campo> a schema:CivicStructure;
+onto:hasID "000011970610" .
+<http://culture.linkeddata.es/Palabras%20suaves%20(Smooth%20Talk)> a schema:CivicStructure;
+onto:hasID "000012266428" .
+<http://culture.linkeddata.es/Papá%20quiero%20ser%20caballera> a schema:CivicStructure;
+onto:hasID "000012271246" .
+<http://culture.linkeddata.es/lov/Paraíso> a schema:CivicStructure;
+onto:hasID "000012050516" .
+<http://culture.linkeddata.es/Parix.%20Una%20escuela%20para%20el%20libro%20español> a schema:CivicStructure;
+onto:hasID "000012151480" .
+<http://culture.linkeddata.es/Parque%20de%20Berlín> onto:hasID "000012279533";
+a schema:CivicStructure,schema:CivicStructure;
+onto:hasID "000012279532" .
+<http://culture.linkeddata.es/Parque%20Enrique%20Tierno%20Galván> a schema:CivicStructure;
+onto:hasID "000012279512";
+a schema:CivicStructure;
+onto:hasID "000012279514" .
+<http://culture.linkeddata.es/Pasacalles%20con%20la%20charanga%20por%20el%20Barrio%20del%20Aeropuerto%20y%20orquesta%20en%20el%20Centro%20de%20Mayores> a schema:CivicStructure;
+onto:hasID "000012266655" .
+<http://culture.linkeddata.es/Pasacalles%20Fin%20de%20Fiesta> a schema:CivicStructure;
+onto:hasID "000012278865" .
+<http://culture.linkeddata.es/Paseo%20ornitológico> a schema:CivicStructure;
+onto:hasID "000011777688" .
+<http://culture.linkeddata.es/Pastores%20por%20un%20día> a schema:CivicStructure;
+onto:hasID "000012224220";
+a schema:CivicStructure;
+onto:hasID "000012224221" .
+<http://culture.linkeddata.es/Payasos:%20Terapia%20Clown> onto:hasID "000012272639";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/Pedaleando%20en%20verde:%20en%20bici%20desde%20la%20Dehesa%20a%20la%20Quinta%20de%20los%20Molinos> onto:hasID "000012278130";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/Película%20del%20hierro%20y%20la%20nieve> onto:hasID "000012265607";
+a schema:CivicStructure,schema:CivicStructure;
+onto:hasID "000012265743" .
+<http://culture.linkeddata.es/Perdida%20en%20la%20isla> a schema:CivicStructure;
+onto:hasID "000012265498" .
+<http://culture.linkeddata.es/lov/Performance> a schema:CivicStructure;
+onto:hasID "000012266417";
+a schema:CivicStructure;
+onto:hasID "000012281443" .
+<http://culture.linkeddata.es/Periferia%20de%20la%20noche> a schema:CivicStructure;
+onto:hasID "000012125247" .
+<http://culture.linkeddata.es/Petanca%20vecinal> onto:hasID "000012242699";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/lov/Piripiratas> onto:hasID "000012265099";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/lov/Pitusa> a schema:CivicStructure;
+onto:hasID "000012268486" .
+<http://culture.linkeddata.es/Planeta%20cósmico> a schema:CivicStructure;
+onto:hasID "000012262198" .
+<http://culture.linkeddata.es/Planta%20de%20Compostaje%20de%20Migas%20Calientes> onto:hasID "000012271947";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/Plantas%20callejeras%20del%20parque%20Ginzo%20de%20Limia%20a%20Plaza%20de%20Castilla> a schema:CivicStructure;
+onto:hasID "000012272063","000012272064";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/Plazas%20del%20Madrid%20Antiguo%20I> a schema:CivicStructure;
+onto:hasID "000012242062" .
+<http://culture.linkeddata.es/lov/Polaris> a schema:CivicStructure;
+onto:hasID "000012254563" .
+<http://culture.linkeddata.es/Poliana%20Lima%20«The%20Common%20Ground»> a schema:CivicStructure;
+onto:hasID "000012092617" .
+<http://culture.linkeddata.es/lov/Pomporerá> a schema:CivicStructure;
+onto:hasID "000012256707" .
+<http://culture.linkeddata.es/Por%20el%20amor%20el%20arte:%20Claudel%20y%20Rodin> a schema:CivicStructure;
+onto:hasID "000012270247" .
+<http://culture.linkeddata.es/Por%20un%20nuevo%20paradigma%20educativo%20(con%20Trinidad%20Lara)> a schema:CivicStructure;
+onto:hasID "000012276501" .
+<http://culture.linkeddata.es/lov/Pregón> a schema:CivicStructure;
+onto:hasID "000012278856" .
+<http://culture.linkeddata.es/Premios%20Nacionales%20Cultura%20Viva> a schema:CivicStructure;
+onto:hasID "000012269083" .
+<http://culture.linkeddata.es/Presentación%20de%20Almazuela> a schema:CivicStructure;
+onto:hasID "000012120115" .
+<http://culture.linkeddata.es/lov/Procesos> onto:hasID "000012266446";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/Programa%20Chicas%20y%20tecnología:%20'Technovation'%20Senior> a schema:CivicStructure;
+onto:hasID "000012128765" .
+<http://culture.linkeddata.es/Prometeo%20en%20el%20jardín.%20La%20investigación%20en%20ciencias%20humanas%20y%20sociales%20al%20servicio%20de%20la%20sociedad> onto:hasID "000012116712";
+a schema:CivicStructure,schema:CivicStructure;
+onto:hasID "000012116713";
+a schema:CivicStructure;
+onto:hasID "000012116714" .
+<http://culture.linkeddata.es/Propuestas%20VEGAP> a schema:CivicStructure;
+onto:hasID "000012183067" .
+<http://culture.linkeddata.es/Protocolo%20del%20Quebranto> onto:hasID "000012223909";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/Protocolo%20del%20quebranto> a schema:CivicStructure;
+onto:hasID "000012253997" .
+<http://culture.linkeddata.es/Protocolo%20o%20tendencia%20en%20la%20mesa> a schema:CivicStructure;
+onto:hasID "000012136840" .
+<http://culture.linkeddata.es/Puntos%20de%20intercambio%20gratuitos%20de%20libros%20en%20los%20Centros%20Culturales%20de%20Barajas> a schema:CivicStructure;
+onto:hasID "000011975802" .
+<http://culture.linkeddata.es/Quien%20pide%20el%20último,%20pide%20mejor> a schema:CivicStructure;
+onto:hasID "000012263162" .
+<http://culture.linkeddata.es/Quinta%20de%20Los%20Molinos> onto:hasID "000012234001";
+a schema:CivicStructure,schema:CivicStructure;
+onto:hasID "000012234000";
+a schema:CivicStructure;
+onto:hasID "000012234002" .
+<http://culture.linkeddata.es/Quinta%20de%20Torre%20Arias> a schema:CivicStructure;
+onto:hasID "000012244337";
+a schema:CivicStructure;
+onto:hasID "000012244332" .
+<http://culture.linkeddata.es/Radical%20Game%20Design> a schema:CivicStructure;
+onto:hasID "000012278853" .
+<http://culture.linkeddata.es/Raíces%20y%20alas.%20Pasado,%20presente%20y%20futuro%20de%20la%20agricultura%20urbana%20madrileña> a schema:CivicStructure;
+onto:hasID "000012226648" .
+<http://culture.linkeddata.es/Rastros%20y%20huellas> a schema:CivicStructure;
+onto:hasID "000012042646" .
+<http://culture.linkeddata.es/RAÜL%20REFREE%20/%20MARIA%20MAZZOTTA%20«San%20Paolo%20di%20Galatina%20»> a schema:CivicStructure;
+onto:hasID "000012092595" .
+<http://culture.linkeddata.es/Realidad%20aumentada%20analógica> a schema:CivicStructure;
+onto:hasID "000012279810" .
+<http://culture.linkeddata.es/Rebeldes%20del%20arte> a schema:CivicStructure;
+onto:hasID "000012233710";
+a schema:CivicStructure;
+onto:hasID "000012233708" .
+<http://culture.linkeddata.es/Recital%20de%20viola%20y%20piano> onto:hasID "000012244021";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/Recital%20poético%20'Alfiles%20de%20la%20esperanza'%20de%20Juan%20J.%20Ramírez> a schema:CivicStructure;
+onto:hasID "000012279202" .
+<http://culture.linkeddata.es/Recital%20poético:%20Alejandro%20Simón%20Partal> a schema:CivicStructure;
+onto:hasID "000012270734" .
+<http://culture.linkeddata.es/Recital%20y%20conferencia%20de%20poesía> a schema:CivicStructure;
+onto:hasID "000012265587" .
+<http://culture.linkeddata.es/Recital:%20Jon%20Andión> onto:hasID "000012270725";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/Recorriendo%20el%20mundo> a schema:CivicStructure;
+onto:hasID "000012233720";
+a schema:CivicStructure;
+onto:hasID "000012233721" .
+<http://culture.linkeddata.es/Recorriendo%20los%20paisajes%20eslovenos%20a%20través%20de%20la%20literatura> onto:hasID "000012281739";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/Reflejos%20Pictóricos> a schema:CivicStructure;
+onto:hasID "000012274303" .
+<http://culture.linkeddata.es/Reforestación%20(dentro%20del%20Programa%20de%20Intervención%20por%20la%20Biodiversidad)> a schema:CivicStructure;
+onto:hasID "000012225338" .
+<http://culture.linkeddata.es/Remedial%20English> a schema:CivicStructure;
+onto:hasID "000012099523";
+a schema:CivicStructure;
+onto:hasID "000012103148","000012099067";
+a schema:CivicStructure,schema:CivicStructure;
+onto:hasID "000012099249";
+a schema:CivicStructure;
+onto:hasID "000012102110" .
+<http://culture.linkeddata.es/Renaturalización%20del%20Manzanares> a schema:CivicStructure;
+onto:hasID "000012279036" .
+<http://culture.linkeddata.es/Residencias%20artísticas%20Living%20Museum> a schema:CivicStructure;
+onto:hasID "000012114303" .
+<http://culture.linkeddata.es/lov/Resignificando> a schema:CivicStructure;
+onto:hasID "000012266448" .
+<http://culture.linkeddata.es/Riesgo%20de%20las%20tecnologías%20en%20la%20infancia%20y%20adolescencia> a schema:CivicStructure;
+onto:hasID "000012263373","000012281044";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/Riesgos%20de%20Internet%20y%20uso%20de%20nuevas%20tecnologías> a schema:CivicStructure;
+onto:hasID "000012246104" .
+<http://culture.linkeddata.es/Ritmos%20desde%20Cuba> a schema:CivicStructure;
+onto:hasID "000012271180" .
+<http://culture.linkeddata.es/Roberta%20González.%20Una%20pequeña%20colección%20madrileña.> a schema:CivicStructure;
+onto:hasID "000012111764" .
+<http://culture.linkeddata.es/Robot%20dreams> a schema:CivicStructure;
+onto:hasID "000012271645" .
+<http://culture.linkeddata.es/Rocío%20+%20Descartes> a schema:CivicStructure;
+onto:hasID "000012277498" .
+<http://culture.linkeddata.es/Romeo%20y%20Julieta.%20Un%20ensayo%20sobre%20la%20frustración> a schema:CivicStructure;
+onto:hasID "000012271386" .
+<http://culture.linkeddata.es/Ronda%20de%20libros> a schema:CivicStructure;
+onto:hasID "000012233889";
+a schema:CivicStructure;
+onto:hasID "000012233888" .
+<http://culture.linkeddata.es/Run%20baby%20run> a schema:CivicStructure;
+onto:hasID "000012041959" .
+<http://culture.linkeddata.es/Ruta%20del%20agua> a schema:CivicStructure;
+onto:hasID "000012244209" .
+<http://culture.linkeddata.es/Rutas%20de%20Invierno%20-%20Rutas%20Ambientales%202023-24> a schema:CivicStructure;
+onto:hasID "000012240306" .
+<http://culture.linkeddata.es/Salida%20Cultural%20al%20Centro%20Cultural%20Coreano> a schema:CivicStructure;
+onto:hasID "000012280001" .
+<http://culture.linkeddata.es/San%20Isidro.%20400%20aniversario%20de%20su%20canonización> a schema:CivicStructure;
+onto:hasID "000012119418" .
+<http://culture.linkeddata.es/San%20Vicente%20Ferrer%2034> a schema:CivicStructure;
+onto:hasID "000012280204" .
+<http://culture.linkeddata.es/Santiago%20Latorre%20&amp;%20Colin%20Self%20'Architecture%20of%20Friendship'> a schema:CivicStructure;
+onto:hasID "000012126101" .
+<http://culture.linkeddata.es/Scape%20room:%20El%20poder%20está%20en%20tus%20manos> onto:hasID "000012271401";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/lov/Scarpper> onto:hasID "000012281428";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/Senda%20botánica> a schema:CivicStructure;
+onto:hasID "000011900120" .
+<http://culture.linkeddata.es/Senda%20'El%20agua%20en%20el%20Retiro.> onto:hasID "000012265509";
+a schema:CivicStructure,schema:CivicStructure;
+onto:hasID "000012265510" .
+<http://culture.linkeddata.es/Senda%20'Conoce%20Las%20aves%20del%20Retiro'> a schema:CivicStructure;
+onto:hasID "000012265772" .
+<http://culture.linkeddata.es/Senda%20'Los%20animales%20del%20bosque'> onto:hasID "000012265844";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/Senda%20'Los%20ecosistemas'> a schema:CivicStructure;
+onto:hasID "000012266084" .
+<http://culture.linkeddata.es/Senda%20'Señales%20de%20la%20primavera'> a schema:CivicStructure;
+onto:hasID "000012265435" .
+<http://culture.linkeddata.es/Senderismo%20al%20Centro%20de%20Avifauna> onto:hasID "000012224218";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/Senderismo%20Encinar%20de%20San%20Pedro> a schema:CivicStructure;
+onto:hasID "000011881517" .
+<http://culture.linkeddata.es/SER%20SUEÑO:%20Un%20duermevela%20con%20Apichatpong> a schema:CivicStructure;
+onto:hasID "000012223906" .
+<http://culture.linkeddata.es/Sexo,%20drogas,%20rock%20'n'%20roll,%20y%20política.%20Instituto%20Santamarca,%201975%3F1985> a schema:CivicStructure;
+onto:hasID "000012265610" .
+<http://culture.linkeddata.es/Sharon%20Eyal.%20Love%20Chapter%20II> a schema:CivicStructure;
+onto:hasID "000012125796" .
+<http://culture.linkeddata.es/Shiatsu%20de%2012%20a%2013:30%20h> onto:hasID "000012245420";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/Shiatsu%20de%2018%20a%2019:30%20h> a schema:CivicStructure;
+onto:hasID "000012237358" .
+<http://culture.linkeddata.es/Show%20de%20magia> a schema:CivicStructure;
+onto:hasID "000012271715" .
+<http://culture.linkeddata.es/Silverio%20Belmonte> a schema:CivicStructure;
+onto:hasID "000012279606" .
+<http://culture.linkeddata.es/Silverio%20Belmonte%20Va%20por%20usted!> a schema:CivicStructure;
+onto:hasID "000012279226" .
+<http://culture.linkeddata.es/SÍLVIA%20PÉREZ%20CRUZ> a schema:CivicStructure;
+onto:hasID "000012205899" .
+<http://culture.linkeddata.es/Silvia%20Sanjuan%20en%20concierto> a schema:CivicStructure;
+onto:hasID "000012265754" .
+<http://culture.linkeddata.es/Simona,%20Esfera%20de%20amor> a schema:CivicStructure;
+onto:hasID "000012092602" .
+<http://culture.linkeddata.es/Sinfonía%20Cromática> a schema:CivicStructure;
+onto:hasID "000012274346" .
+<http://culture.linkeddata.es/Sofia%20Zholovoba%20Y%20Sergio%20Berlinches> a schema:CivicStructure;
+onto:hasID "000012276847" .
+<http://culture.linkeddata.es/Sonreír%20a%20la%20vida> a schema:CivicStructure;
+onto:hasID "000012256177" .
+<http://culture.linkeddata.es/Spy%20Kids%202.%20La%20isla%20de%20los%20sueños%20perdidos> a schema:CivicStructure;
+onto:hasID "000012261721";
+a schema:CivicStructure;
+onto:hasID "000012258040" .
+<http://culture.linkeddata.es/STN:%20Embarque%20en%20otra%20parte> a schema:CivicStructure;
+onto:hasID "000012265104" .
+<http://culture.linkeddata.es/Sueña%20despierta> a schema:CivicStructure;
+onto:hasID "000012271478" .
+<http://culture.linkeddata.es/Sustratos%20de%20cactáceas%20y%20suculentas> a schema:CivicStructure;
+onto:hasID "000012232299" .
+<http://culture.linkeddata.es/Swing%20en%20la%20biblioteca.%20Sesión%20Balboa> a schema:CivicStructure;
+onto:hasID "000012279173" .
+<http://culture.linkeddata.es/Symphonos%2024%20'Verbena'> a schema:CivicStructure;
+onto:hasID "000012254517" .
+<http://culture.linkeddata.es/Tadafuq/Fluir:%20Artistas%20palestinos%20en%20movimiento> a schema:CivicStructure;
+onto:hasID "000012277501" .
+<http://culture.linkeddata.es/Takote%20(Fotografía)> a schema:CivicStructure;
+onto:hasID "000012273581" .
+<http://culture.linkeddata.es/Tallar%20de%20danza%20africana> onto:hasID "000012256027";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/Taller%20audición%20bandas%20sonoras> a schema:CivicStructure;
+onto:hasID "000012200474" .
+<http://culture.linkeddata.es/Taller%20de%20ajedrez%20avanzado> a schema:CivicStructure;
+onto:hasID "000012185548";
+a schema:CivicStructure;
+onto:hasID "000012184853" .
+<http://culture.linkeddata.es/Taller%20de%20ajedrez%20iniciación> onto:hasID "000012186560";
+a schema:CivicStructure,schema:CivicStructure;
+onto:hasID "000012184864","000012184519";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/Taller%20de%20ajedrez%20(infantil-juvenil)%20Avanzado> a schema:CivicStructure;
+onto:hasID "000012239870";
+a schema:CivicStructure;
+onto:hasID "000012147245";
+a schema:CivicStructure;
+onto:hasID "000012145459" .
+<http://culture.linkeddata.es/Taller%20de%20ajedrez%20(infantil-juvenil)%20Iniciación> a schema:CivicStructure;
+onto:hasID "000012145677";
+a schema:CivicStructure;
+onto:hasID "000012146892";
+a schema:CivicStructure;
+onto:hasID "000012152784";
+a schema:CivicStructure;
+onto:hasID "000012239594" .
+<http://culture.linkeddata.es/Taller%20de%20alfabetización%20informacional%20(Ordenadores)> a schema:CivicStructure;
+onto:hasID "000012249108";
+a schema:CivicStructure;
+onto:hasID "000012249165","000012249143";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/Taller%20de%20castañuelas> a schema:CivicStructure;
+onto:hasID "000012251361" .
+<http://culture.linkeddata.es/Taller%20de%20creación%20de%20cómic%20infantil> a schema:CivicStructure;
+onto:hasID "000012182797" .
+<http://culture.linkeddata.es/Taller%20de%20creación%20de%20cómic%20juvenil> onto:hasID "000012256304";
+a schema:CivicStructure,schema:CivicStructure;
+onto:hasID "000012256064" .
+<http://culture.linkeddata.es/Taller%20de%20Creación%20de%20Instrumentos%20Musicales%20Reciclados> a schema:CivicStructure;
+onto:hasID "000012278858" .
+<http://culture.linkeddata.es/Taller%20de%20creación%20literaria> a schema:CivicStructure;
+onto:hasID "000012250427";
+a schema:CivicStructure;
+onto:hasID "000012261262" .
+<http://culture.linkeddata.es/Taller%20de%20creatividad:%20Los%20latidos%20de%20Mubaki> a schema:CivicStructure;
+onto:hasID "000012263996" .
+<http://culture.linkeddata.es/Taller%20de%20dibujo%20para%20familias,%20con%20Gustavo%20Mazali> a schema:CivicStructure;
+onto:hasID "000012277716" .
+<http://culture.linkeddata.es/Taller%20de%20Escritura%20Creativa> a schema:CivicStructure;
+onto:hasID "000012257915" .
+<http://culture.linkeddata.es/Taller%20de%20Estudio%20y%20Apoyo%20Escolar> a schema:CivicStructure;
+onto:hasID "000012115333" .
+<http://culture.linkeddata.es/Taller%20de%20Haiku%20Libreyazul.%20Sobre%20el%20amor.> a schema:CivicStructure;
+onto:hasID "000012277364" .
+<http://culture.linkeddata.es/Taller%20de%20historia%20de%20Madrid> a schema:CivicStructure;
+onto:hasID "000012130224" .
+<http://culture.linkeddata.es/Taller%20de%20Historia%20y%20Arte%20de%20Madrid> a schema:CivicStructure;
+onto:hasID "000012255264";
+a schema:CivicStructure;
+onto:hasID "000012254710";
+a schema:CivicStructure;
+onto:hasID "000012255710" .
+<http://culture.linkeddata.es/Taller%20de%20huerta%20ecológica.%20Día%20internacional%20de%20las%20legumbres> a schema:CivicStructure;
+onto:hasID "000012272991" .
+<http://culture.linkeddata.es/Taller%20de%20juego%20intergeneracional> a schema:CivicStructure;
+onto:hasID "000012279814" .
+<http://culture.linkeddata.es/Taller%20de%20juegos%20(infantil)> onto:hasID "000012251589";
+a schema:CivicStructure,schema:CivicStructure;
+onto:hasID "000012106310";
+a schema:CivicStructure;
+onto:hasID "000012245049";
+a schema:CivicStructure;
+onto:hasID "000012106945" .
+<http://culture.linkeddata.es/Taller%20de%20manualidades%20(infantil)> a schema:CivicStructure;
+onto:hasID "000012215130";
+a schema:CivicStructure;
+onto:hasID "000012160922" .
+<http://culture.linkeddata.es/Taller%20de%20maquillaje%20de%20Carnaval> a schema:CivicStructure;
+onto:hasID "000012277479" .
+<http://culture.linkeddata.es/Taller%20de%20máscaras%20de%20carnaval> a schema:CivicStructure;
+onto:hasID "000012277510" .
+<http://culture.linkeddata.es/Taller%20de%20meditación> a schema:CivicStructure;
+onto:hasID "000012272384" .
+<http://culture.linkeddata.es/Taller%20de%20memoria> a schema:CivicStructure;
+onto:hasID "000012100456" .
+<http://culture.linkeddata.es/Taller%20de%20Pelucas%20Creativas%20para%20público%20infantil> a schema:CivicStructure;
+onto:hasID "000012278861" .
+<http://culture.linkeddata.es/Taller%20de%20Poesía> a schema:CivicStructure;
+onto:hasID "000012180509";
+a schema:CivicStructure;
+onto:hasID "000012180935";
+a schema:CivicStructure;
+onto:hasID "000012171743";
+a schema:CivicStructure;
+onto:hasID "000012182033";
+a schema:CivicStructure;
+onto:hasID "000012239503" .
+<http://culture.linkeddata.es/Taller%20de%20Psicología%20y%20crecimiento%20personal> a schema:CivicStructure;
+onto:hasID "000012244479";
+a schema:CivicStructure;
+onto:hasID "000012224300";
+a schema:CivicStructure;
+onto:hasID "000012219532";
+a schema:CivicStructure;
+onto:hasID "000012235784";
+a schema:CivicStructure;
+onto:hasID "000012199205" .
+<http://culture.linkeddata.es/Taller%20de%20semilleros%20para%20plantas%20nutricias%20de%20mariposas> a schema:CivicStructure;
+onto:hasID "000012273596" .
+<http://culture.linkeddata.es/Taller%20de%20Zentangle> a schema:CivicStructure;
+onto:hasID "000012088099" .
+<http://culture.linkeddata.es/Taller%20infantil:%20Maquillaje%20de%20Carnaval> onto:hasID "000011146823";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/Taller%20La%20ITV%20de%20la%20bici> a schema:CivicStructure;
+onto:hasID "000012278255";
+a schema:CivicStructure;
+onto:hasID "000012278253";
+a schema:CivicStructure;
+onto:hasID "000012278249" .
+<http://culture.linkeddata.es/Taller%20Musical%20a%20cargo%20de%20la%20Escuela%20EnClavedeSí> a schema:CivicStructure;
+onto:hasID "000012275991" .
+<http://culture.linkeddata.es/Taller%20Vuela%20como%20un%20Pájaro%20del%20Manzanares> a schema:CivicStructure;
+onto:hasID "000012278862" .
+<http://culture.linkeddata.es/Taller%20'Clic,%20clac,%20¡a%20reciclar!'> a schema:CivicStructure;
+onto:hasID "000012198646" .
+<http://culture.linkeddata.es/Taller%20'Impúlsate%20con%20las%20tecnologías%20digitales'%20por%20Uneweb> onto:hasID "000012235155";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/Taller%20'Vigilantes%20del%20suelo'> a schema:CivicStructure;
+onto:hasID "000012266075" .
+<http://culture.linkeddata.es/Talleres%20dinámicos%20para%20colectivos%20específicos.%20L-ABE%20(2023-2024)> a schema:CivicStructure;
+onto:hasID "000012078223" .
+<http://culture.linkeddata.es/Talleres%20dinámicos.%20L-ABE%20(2023-2024)> a schema:CivicStructure;
+onto:hasID "000012092330" .
+<http://culture.linkeddata.es/Talleres%20familiares> a schema:CivicStructure;
+onto:hasID "000011945810" .
+<http://culture.linkeddata.es/Talleres%20Familiares%20Divulgativos%20-%20Paleo%20en%20el%20Barrio> a schema:CivicStructure;
+onto:hasID "000012276642" .
+<http://culture.linkeddata.es/Talleres%20Gente%20Menuda> a schema:CivicStructure;
+onto:hasID "000012227156" .
+<http://culture.linkeddata.es/Talleres%20infantiles.%20Asalto%20a%20la%20lectura> a schema:CivicStructure;
+onto:hasID "000012269731" .
+<http://culture.linkeddata.es/Talleres%20XenoVisual%20Studies%20Center> a schema:CivicStructure;
+onto:hasID "000012263517" .
+<http://culture.linkeddata.es/Taller.%20Con%20los%20ojos%20cerrados:%20%20La%20accesibilidad%20como%20herramienta%20creativa%20en%20las%20Artes%20Escénicas.> a schema:CivicStructure;
+onto:hasID "000012266454" .
+<http://culture.linkeddata.es/Taller:%20Brinkadeira> a schema:CivicStructure;
+onto:hasID "000012268707" .
+<http://culture.linkeddata.es/Taller:%20De%20Relajación> a schema:CivicStructure;
+onto:hasID "000012263809" .
+<http://culture.linkeddata.es/Taller:%20La%20Regenta%20a%20escena> a schema:CivicStructure;
+onto:hasID "000012266456" .
+<http://culture.linkeddata.es/Taller:%20Máscaras%20de%20Carnaval> onto:hasID "000010861785";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/Teatro%20infantil%20musical:%20'Crispina%20y%20Molinilla'.> a schema:CivicStructure;
+onto:hasID "000012262422" .
+<http://culture.linkeddata.es/Teatro%20infantil:%20'La%20princesa%20y%20el%20dragón'> a schema:CivicStructure;
+onto:hasID "000012262420" .
+<http://culture.linkeddata.es/Teatro-Danza:%20'Matriz'> a schema:CivicStructure;
+onto:hasID "000012266754" .
+<http://culture.linkeddata.es/Teatro:%20Pinocho%20menudo%20viaje> a schema:CivicStructure;
+onto:hasID "000012272372" .
+<http://culture.linkeddata.es/Teatro:%20'LA%20PENÚLTIMA%20EN%20CASA'> a schema:CivicStructure;
+onto:hasID "000012270441" .
+<http://culture.linkeddata.es/Teatro:%20'SECRETOS%20DE%20FAMILIA'> onto:hasID "000012270535";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/Teatro:¿Alcohol%20o%20Coaching%3F> onto:hasID "000012272379";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/Terapia%20inversa> a schema:CivicStructure;
+onto:hasID "000012262902" .
+<http://culture.linkeddata.es/Tertulia%20literaria%20del%20Centro%20Municipal%20de%20Mayores%20'Benito%20Martín%20Lozano'%20en%20la%20biblioteca> a schema:CivicStructure;
+onto:hasID "000012280212" .
+<http://culture.linkeddata.es/Tertulias%20en%20francés> a schema:CivicStructure;
+onto:hasID "000012203047";
+a schema:CivicStructure;
+onto:hasID "000012202838" .
+<http://culture.linkeddata.es/Tertulias%20en%20Inglés.> a schema:CivicStructure;
+onto:hasID "000012282823" .
+<http://culture.linkeddata.es/Tertulias%20en%20Inglés.%20Miércoles%204%20de%20octubre%20de%202023%20al%20miércoles%2029%20de%20mayo%20de%202024> a schema:CivicStructure;
+onto:hasID "000012170630" .
+<http://culture.linkeddata.es/Tertulias%20en%20latín> onto:hasID "000012123470";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/Tertulias%20filosóficas> a schema:CivicStructure;
+onto:hasID "000012250662";
+a schema:CivicStructure;
+onto:hasID "000012250773","000012251151";
+a schema:CivicStructure,schema:CivicStructure;
+onto:hasID "000012251018" .
+<http://culture.linkeddata.es/The%20pervert,s%20guide%20to%20ideology> a schema:CivicStructure;
+onto:hasID "000012225181" .
+<http://culture.linkeddata.es/Tierra%20mestiza> a schema:CivicStructure;
+onto:hasID "000012263448" .
+<http://culture.linkeddata.es/Tirando%20la%20bohemia> a schema:CivicStructure;
+onto:hasID "000012255941" .
+<http://culture.linkeddata.es/Tirar%20del%20hilo> a schema:CivicStructure;
+onto:hasID "000012265166" .
+<http://culture.linkeddata.es/Títeres:%20La%20Flauta%20Mágica> a schema:CivicStructure;
+onto:hasID "000012272646" .
+<http://culture.linkeddata.es/Títeres:%20'EL%20MISTERIO%20DEL%20CARNAVAL%20DE%20VENECIA'> a schema:CivicStructure;
+onto:hasID "000012270500" .
+<http://culture.linkeddata.es/Todas%20las%20hijas> a schema:CivicStructure;
+onto:hasID "000012050479" .
+<http://culture.linkeddata.es/Torre%20de%20aire> a schema:CivicStructure;
+onto:hasID "000012267829" .
+<http://culture.linkeddata.es/Torre%20del%20Aire> a schema:CivicStructure;
+onto:hasID "000012263055" .
+<http://culture.linkeddata.es/Trajal%20Harrell%20&amp;%20Schauspielhaus%20Zürich%20Dance%20Ensemble%20Köln%20concert> a schema:CivicStructure;
+onto:hasID "000012265144" .
+<http://culture.linkeddata.es/Trazos%20y%20puntadas> a schema:CivicStructure;
+onto:hasID "000012272872" .
+<http://culture.linkeddata.es/Tres%20vellas%20(En%20la%20romería)> a schema:CivicStructure;
+onto:hasID "000012101704" .
+<http://culture.linkeddata.es/Trinidad%20&amp;%20Two%20Vagos> onto:hasID "000012277141";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/lov/Trocitos> a schema:CivicStructure;
+onto:hasID "000012272938" .
+<http://culture.linkeddata.es/Trovadores%20urbanos> a schema:CivicStructure;
+onto:hasID "000012266326" .
+<http://culture.linkeddata.es/Un%20amor> a schema:CivicStructure;
+onto:hasID "000012262710";
+a schema:CivicStructure;
+onto:hasID "000012263789";
+a schema:CivicStructure;
+onto:hasID "000012272629" .
+<http://culture.linkeddata.es/Un%20delicado%20equilibrio> a schema:CivicStructure;
+onto:hasID "000012050482" .
+<http://culture.linkeddata.es/Un%20viaje%20por%20la%20festa> a schema:CivicStructure;
+onto:hasID "000012268511" .
+<http://culture.linkeddata.es/Una%20de%20piratas> a schema:CivicStructure;
+onto:hasID "000012272671" .
+<http://culture.linkeddata.es/Una%20Grúfa%20qué%3F> a schema:CivicStructure;
+onto:hasID "000012255987" .
+<http://culture.linkeddata.es/Una%20mirada%20psicológica%20de%20la%20novela%20'El%20último%20tren',%20de%20Hortensia%20Búa> a schema:CivicStructure;
+onto:hasID "000012263387" .
+<http://culture.linkeddata.es/Una%20tarde%20de%20cortos> a schema:CivicStructure;
+onto:hasID "000012271154" .
+<http://culture.linkeddata.es/Unas%20tardes%20en%20el%20Retiro%20y%20canciones%20de%20la%20época> a schema:CivicStructure;
+onto:hasID "000012270374" .
+<http://culture.linkeddata.es/Uso%20del%20certificado%20digital%20en%20el%20móvil> a schema:CivicStructure;
+onto:hasID "000012232639" .
+<http://culture.linkeddata.es/Vanesa%20Coloma%20&amp;%20Cía> a schema:CivicStructure;
+onto:hasID "000012256017" .
+<http://culture.linkeddata.es/Vania%20x%20Vania> a schema:CivicStructure;
+onto:hasID "000012042028" .
+<http://culture.linkeddata.es/Variedades%20de%20Folclores%20y%20Castañuelas%20Españolas> a schema:CivicStructure;
+onto:hasID "000012274359" .
+<http://culture.linkeddata.es/Venecia,%20las%20caras%20del%20carnaval'.%20Fotografías%20de%20Andrés%20Magai%20Seibt.> onto:hasID "000012265096";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/Versados%20colección> a schema:CivicStructure;
+onto:hasID "000012256188" .
+<http://culture.linkeddata.es/Vestidas%20de%20mar.%20La%20huella%20de%20Alfonsina%20Storni> a schema:CivicStructure;
+onto:hasID "000012269526" .
+<http://culture.linkeddata.es/Via%20Katlehong%20Via%20Injabulo> a schema:CivicStructure;
+onto:hasID "000012125799" .
+<http://culture.linkeddata.es/Viaje%20a%20Medina%20del%20Campo%20y%20Arévalo> onto:hasID "000012265461";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/Viaje%20a%20San%20Martín%20de%20Valdeiglesias%20y%20La%20Adrada> a schema:CivicStructure;
+onto:hasID "000012265456" .
+<http://culture.linkeddata.es/Viaje%20inmóvil> onto:hasID "000012266444";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/Viaje%20por%20los%20Carnavales%20del%20Mundo> a schema:CivicStructure;
+onto:hasID "000012278864" .
+<http://culture.linkeddata.es/VII%20Festival%20Flamenco%20Madrid%202024> a schema:CivicStructure;
+onto:hasID "000012051237" .
+<http://culture.linkeddata.es/VIII%20Muestra%20de%20Orfebrería%20Contemporánea> a schema:CivicStructure;
+onto:hasID "000012273465" .
+<http://culture.linkeddata.es/VIII%20Muestra%20de%20Orfebreria%20Contemporanea> onto:hasID "000012275931";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/VIII%20Torneo%20de%20Dramaturgia> a schema:CivicStructure;
+onto:hasID "000012262950" .
+<http://culture.linkeddata.es/Vinciane%20Despret%20'Formas%20de%20vivir,%20morir%20y%20habitar%20de%20humanos%20y%20no%20humanos'> a schema:CivicStructure;
+onto:hasID "000012094751" .
+<http://culture.linkeddata.es/Vinos%20manchegos> a schema:CivicStructure;
+onto:hasID "000012269552" .
+<http://culture.linkeddata.es/Visita%20a%20la%20exposición%20'Al%20bies.%20Las%20artistas%20y%20el%20diseño%20en%20la%20vanguardia%20español'.%20Museo%20Nacional%20de%20las%20Artes%20Decorativas> a schema:CivicStructure;
+onto:hasID "000012272146" .
+<http://culture.linkeddata.es/Visita%20a%20la%20exposición%20'Diseño%20en%20femenino.%20México%20contemporáneo'.%20Fundación%20Casa%20de%20México> a schema:CivicStructure;
+onto:hasID "000012261667";
+a schema:CivicStructure;
+onto:hasID "000012260923";
+a schema:CivicStructure;
+onto:hasID "000012260183" .
+<http://culture.linkeddata.es/Visita%20familiar%20al%20Vivero%20de%20Estufas%20y%20Nendo%20Dango> a schema:CivicStructure;
+onto:hasID "000012120026" .
+<http://culture.linkeddata.es/Visita%20guiada%20a%20la%20Quinta%20de%20los%20Molinos> a schema:CivicStructure;
+onto:hasID "000012265469" .
+<http://culture.linkeddata.es/Visita%20guiada%20exposición%20Clima%20Fitness> a schema:CivicStructure;
+onto:hasID "000012280870" .
+<http://culture.linkeddata.es/Visita%20guiada%20Periferia%20de%20la%20Noche> a schema:CivicStructure;
+onto:hasID "000012280874" .
+<http://culture.linkeddata.es/Visita%20guiada%20Quinta%20de%20los%20Molinos> a schema:CivicStructure;
+onto:hasID "000012267845" .
+<http://culture.linkeddata.es/Visitas%20a%20Matadero> a schema:CivicStructure;
+onto:hasID "000011900374" .
+<http://culture.linkeddata.es/Visitas%20a%20Matadero%20para%20grupos> a schema:CivicStructure;
+onto:hasID "000011916926" .
+<http://culture.linkeddata.es/VISITAS%20DIALOGADAS.%20«HECHO%20EN%20CASA»> a schema:CivicStructure;
+onto:hasID "000012102665" .
+<http://culture.linkeddata.es/Visitas%20guiadas%20a%20Basílica%20de%20Atocha%20y%20Panteón%20de%20España.> a schema:CivicStructure;
+onto:hasID "000012240578" .
+<http://culture.linkeddata.es/Visitas%20guiadas%20a%20CentroCentro> a schema:CivicStructure;
+onto:hasID "000011899470" .
+<http://culture.linkeddata.es/Visitas%20guiadas%20a%20la%20Biblioteca%20Iván%20de%20Vargas%20y%20a%20la%20Basílica%20Pontificia%20de%20San%20Miguel> a schema:CivicStructure;
+onto:hasID "000012130117" .
+<http://culture.linkeddata.es/Visita:%20El%20Madrid%20de%20los%20Espías> a schema:CivicStructure;
+onto:hasID "000012270855" .
+<http://culture.linkeddata.es/Viva%20el%20carnaval> a schema:CivicStructure;
+onto:hasID "000012262817" .
+<http://culture.linkeddata.es/Viva%20Mendizábal> a schema:CivicStructure;
+onto:hasID "000012265097" .
+<http://culture.linkeddata.es/Vivero:%20el%20viaje%20de%20la%20planta> a schema:CivicStructure;
+onto:hasID "000012223302" .
+<http://culture.linkeddata.es/Webinario:%20El%20cortejo%20en%20los%20artrópodos> a schema:CivicStructure;
+onto:hasID "000012225312" .
+<http://culture.linkeddata.es/Webinario:%20Insectos%20polinizadores%20en%20huertos%20urbanos> a schema:CivicStructure;
+onto:hasID "000012231356" .
+<http://culture.linkeddata.es/Webinario:%20Pasado,%20presente%20y%20futuro%20del%20Vivero%20de%20Casa%20de%20Campo> a schema:CivicStructure;
+onto:hasID "000012231373" .
+<http://culture.linkeddata.es/Wikiesfera%20&gt;%20Aprendiendo%20a%20editar%20en%20Wikipedia> a schema:CivicStructure;
+onto:hasID "000012246986" .
+<http://culture.linkeddata.es/Winterreise,%20D.911> a schema:CivicStructure;
+onto:hasID "000012278736" .
+<http://culture.linkeddata.es/XI%20Torneo%20Escolar%20de%20lectura%20en%20público> a schema:CivicStructure;
+onto:hasID "000012254524" .
+<http://culture.linkeddata.es/XXVI%20Certamen%20de%20dibujo> a schema:CivicStructure;
+onto:hasID "000012274465" .
+<http://culture.linkeddata.es/lov/Yerma> a schema:CivicStructure;
+onto:hasID "000012050509" .
+<http://culture.linkeddata.es/Yincana%20animales> a schema:CivicStructure;
+onto:hasID "000012279351" .
+<http://culture.linkeddata.es/Yincana:%20Gran%20Juego%20de%20los%20Duendes%20del%20bosque%20(especial%20familias)> onto:hasID "000012225145";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/Zarzuela%20con%20aroma%20de%20mujer> a schema:CivicStructure;
+onto:hasID "000012268914" .
+<http://culture.linkeddata.es/Zarzuela%20y%20canción%20española> a schema:CivicStructure;
+onto:hasID "000012274324" .
+<http://culture.linkeddata.es/Za!%20+%20Perrate> a schema:CivicStructure;
+onto:hasID "000012092598" .
+<http://culture.linkeddata.es/Zenvoid%20Studio%20-%20Desarrollo%20de%20videojuegos> a schema:CivicStructure;
+onto:hasID "000012159425" .
+<http://culture.linkeddata.es/Zeros%20and%20Ones> a schema:CivicStructure;
+onto:hasID "000012271723" .
+<http://culture.linkeddata.es/lov/'Alcarrás'> a schema:CivicStructure;
+onto:hasID "000012157107" .
+<http://culture.linkeddata.es/'El%20cuarto%20pasajero'> a schema:CivicStructure;
+onto:hasID "000012157112" .
+<http://culture.linkeddata.es/'Hacia%20rutas%20salvajes'> onto:hasID "000012272310";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/'Los%20renglones%20torcidos%20de%20Dios'> a schema:CivicStructure;
+onto:hasID "000012246941" .
+<http://culture.linkeddata.es/'Más%20allá%20de%20los%20sueños'> a schema:CivicStructure;
+onto:hasID "000012272306" .
+<http://culture.linkeddata.es/'A%20dormir'> a schema:CivicStructure;
+onto:hasID "000012276282" .
+<http://culture.linkeddata.es/'A%20propósito%20de%20algunas%20mujeres%20en%20Roma:%20sexo%20débil%20y%20Venus%20poderosas'.%20Conferencia> a schema:CivicStructure;
+onto:hasID "000012263030" .
+<http://culture.linkeddata.es/lov/'Animalejos'> a schema:CivicStructure;
+onto:hasID "000012201228" .
+<http://culture.linkeddata.es/'Araña,%20Arañita'> a schema:CivicStructure;
+onto:hasID "000012276289" .
+<http://culture.linkeddata.es/'Astralis%20I.%20El%20destino%20de%20León'> a schema:CivicStructure;
+onto:hasID "000012277278" .
+<http://culture.linkeddata.es/'Bailes%20en%20la%20cocina'%20de%20Natalia%20Sanguino> a schema:CivicStructure;
+onto:hasID "000012269391" .
+<http://culture.linkeddata.es/lov/'Bichos'> a schema:CivicStructure;
+onto:hasID "000012276318" .
+<http://culture.linkeddata.es/'Bienestar%20integral'> a schema:CivicStructure;
+onto:hasID "000012254169";
+a schema:CivicStructure;
+onto:hasID "000012236021","000012236172";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/'Búhos'%20de%20Diri%20Molina%20y%20Franky%20Mercado> a schema:CivicStructure;
+onto:hasID "000012280838" .
+<http://culture.linkeddata.es/'Caminando%20hacia%20tu%20esencia%20femenina'%20de%20Susana%20Gómez%20Díez> a schema:CivicStructure;
+onto:hasID "000012281842" .
+<http://culture.linkeddata.es/'Cleopatra:%20esplendor,%20tentación%20y%20poder%20en%20la%20pantalla'.%20Conferencia> a schema:CivicStructure;
+onto:hasID "000012248355" .
+<http://culture.linkeddata.es/'Como%20volverse%20Inmortal%20en%20el%20mito%20griego:%20%20azar,%20éxito,%20fracaso'.%20Conferencia> a schema:CivicStructure;
+onto:hasID "000012263063" .
+<http://culture.linkeddata.es/'Coriolano'%20de%20William%20Shakespeare%20con%20lectura%20dramatizada%20de%20Julieta%20Serrano> a schema:CivicStructure;
+onto:hasID "000012272352" .
+<http://culture.linkeddata.es/'Costa%20de%20espantos'%20por%20Javier%20Ignacio%20Sánchez%20Almazán> a schema:CivicStructure;
+onto:hasID "000012281127" .
+<http://culture.linkeddata.es/'Cuenta,%20cuenta,%20Mon%20Amour'> a schema:CivicStructure;
+onto:hasID "000012276058" .
+<http://culture.linkeddata.es/'Cuentos%20con%20pan%20y%20pimientos'> a schema:CivicStructure;
+onto:hasID "000012232559" .
+<http://culture.linkeddata.es/'Cuentos%20de%20enredos%20y%20travesuras'> a schema:CivicStructure;
+onto:hasID "000012232581" .
+<http://culture.linkeddata.es/'Cuentos%20redondos'> a schema:CivicStructure;
+onto:hasID "000012276038" .
+<http://culture.linkeddata.es/'Dancer'%20del%20director%20Steven%20Cantor%20(2016)> onto:hasID "000012234840";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/'Derechos%20y%20leyes%20de%20protección%20para%20familias%20monomarentales'> a schema:CivicStructure;
+onto:hasID "000012266999" .
+<http://culture.linkeddata.es/'El%20cartero%20(y%20Pablo%20Neruda)'%20de%20la%20director%20Michael%20Radford%20(1994)> onto:hasID "000012234837";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/'El%20libro%20blanco'%20de%20Zaira%20Jubera> a schema:CivicStructure;
+onto:hasID "000012198530" .
+<http://culture.linkeddata.es/'El%20orador%20gladiador.%20Derecho%20y%20retórica%20en%20las%20declamaciones%20latina'> onto:hasID "000012241970";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/'El%20poder%20de%20la%20Babilonia%20de%20Hammurabi%20y%20su%20dimensión%20legal'> a schema:CivicStructure;
+onto:hasID "000012233728" .
+<http://culture.linkeddata.es/'El%20porqué%20de%20los%20seres%20y%20las%20cosas'> a schema:CivicStructure;
+onto:hasID "000012276052" .
+<http://culture.linkeddata.es/'El%20redescubrimiento%20de%20las%20ciudades%20y%20tumbas%20perdidas%20de%20la%20antigua%20Mesopotamia:%20exploradores,%20viajeros%20y%20sabios'> a schema:CivicStructure;
+onto:hasID "000012233742" .
+<http://culture.linkeddata.es/'En%20abril%20especialmente'%20de%20Patricia%20Collazo%20González> a schema:CivicStructure;
+onto:hasID "000012277521" .
+<http://culture.linkeddata.es/'Entre%20marmitas%20y%20seducción:%20las%20mujeres%20en%20el%20mundo%20de%20Astérix%20y%20Obelix'.%20Conferencia> onto:hasID "000012248371";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/'Eragon'%20de%20Stefen%20Fangmeier> onto:hasID "000012269112";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/'Five%20little%20goats'> a schema:CivicStructure;
+onto:hasID "000012276476","000012276372";
+a schema:CivicStructure,schema:CivicStructure;
+onto:hasID "000012276472" .
+<http://culture.linkeddata.es/'La%20Biblia%20en%20latin:%20claves%20históricas%20de%20un%20clásico%20universal'.%20Conferencia> onto:hasID "000012263056";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/'La%20casa%20que%20duerme'> a schema:CivicStructure;
+onto:hasID "000012232604" .
+<http://culture.linkeddata.es/'La%20dama%20blanca'%20de%20Alicia%20García-Herrera> onto:hasID "000012281119";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/'La%20heredera'%20del%20director%20William%20Wyler%20(1949)> onto:hasID "000012234834";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/'La%20influencia%20anglosajona%20y%20nórdica%20en%20los%20personajes%20femeninos%20en%20la%20obra%20de%20J.%20R.%20R.%20Tolkien'.%20Conferencia> a schema:CivicStructure;
+onto:hasID "000012248376" .
+<http://culture.linkeddata.es/'La%20muerte%20en%20común'%20de%20Ana%20Carrasco-Conde> a schema:CivicStructure;
+onto:hasID "000012283421" .
+<http://culture.linkeddata.es/'La%20niña%20a%20la%20que%20le%20gustaban%20los%20lunes'%20de%20Carlos%20Daunés%20Pérez> a schema:CivicStructure;
+onto:hasID "000012239313" .
+<http://culture.linkeddata.es/'La%20retórica%20de%20los%20sofistas%20o%20cómo%20el%20lenguaje%20crea%20el%20mundo'> a schema:CivicStructure;
+onto:hasID "000012241964" .
+<http://culture.linkeddata.es/'La%20voz%20dormida'%20de%20Benito%20Zambrano> a schema:CivicStructure;
+onto:hasID "000012126970" .
+<http://culture.linkeddata.es/'La%20vuelta%20al%20mundo%20en%2080%20días'%20de%20Frank%20Coraci> a schema:CivicStructure;
+onto:hasID "000012269120" .
+<http://culture.linkeddata.es/'Lenguas%20y%20escrituras%20de%20la%20antigua%20Mesopotamia:%20la%20apasionante%20aventura%20de%20su%20desciframiento'> onto:hasID "000012233736";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/'Lincoln'%20de%20Steven%20Spielberg> a schema:CivicStructure;
+onto:hasID "000012267961" .
+<http://culture.linkeddata.es/'Lloro%20porque%20no%20tengo%20sentimientos'%20de%20Bárbara%20Mingo> onto:hasID "000012270913";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/'Los%20viajes%20de%20Gulliver'%20de%20Rob%20Letterman> onto:hasID "000012269118";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/'Más%20viejos%20que%20Titono,%20pero%20más%20sanos%20que%20una%20garrapata:%20refranes%20en%20la%20antigua%20Grecia'.%20Conferencia> a schema:CivicStructure;
+onto:hasID "000012263054" .
+<http://culture.linkeddata.es/'Me%20quiero%20tal%20y%20como%20soy'%20de%20Verónica%20Figueroa> a schema:CivicStructure;
+onto:hasID "000012281706" .
+<http://culture.linkeddata.es/lov/'Nanacuentos'> a schema:CivicStructure;
+onto:hasID "000012276292" .
+<http://culture.linkeddata.es/'Ni%20tan%20Octavia,%20ni%20tan%20Mesalina.%20Mujeres%20y%20propaganda%20en%20%3FYo,%20Claudio%3F%20.%20Conferencia> a schema:CivicStructure;
+onto:hasID "000012248373" .
+<http://culture.linkeddata.es/'Ocho%20apellidos%20vascos'%20de%20Emilio%20Martínez-Lázaro> onto:hasID "000012267958";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/'Perretes%20con%20suerte'%20de%20Sharon%20Sitzer> a schema:CivicStructure;
+onto:hasID "000012270750" .
+<http://culture.linkeddata.es/'Piedra%20contra%20tijera:%20historia%20del%20rock%20español%201991-2021'%20de%20Rubén%20González> a schema:CivicStructure;
+onto:hasID "000012281108" .
+<http://culture.linkeddata.es/'Pisando%20fuerte:%20la%20danza%20como%20espacio%20de%20acción%20femenino%20en%20la%20Roma%20antigua'.%20Conferencia> a schema:CivicStructure;
+onto:hasID "000012263059" .
+<http://culture.linkeddata.es/lov/'Pretty'> a schema:CivicStructure;
+onto:hasID "000012233055" .
+<http://culture.linkeddata.es/'Retórica%20y%20tradición%20humanista'> a schema:CivicStructure;
+onto:hasID "000012241975" .
+<http://culture.linkeddata.es/'Taxi%20a%20Gibraltar'%20de%20Alejo%20Flah> a schema:CivicStructure;
+onto:hasID "000012267962" .
+<http://culture.linkeddata.es/'Tricobezoar'%20de%20Mara%20Sarabia> a schema:CivicStructure;
+onto:hasID "000012277302" .
+<http://culture.linkeddata.es/'Tris-trás,%20un%20cuento%20verás'> a schema:CivicStructure;
+onto:hasID "000012232533" .
+<http://culture.linkeddata.es/'Vuelta%20e%20ida'%20de%20Francisco%20Layna%20Ranz> a schema:CivicStructure;
+onto:hasID "000012280190" .
+<http://culture.linkeddata.es/'Wonder%20Woman%20y%20el%20mito%20de%20las%20amazonas'.%20Conferencia> a schema:CivicStructure;
+onto:hasID "000012248377" .
+<http://culture.linkeddata.es/'World%20of%20tales'> a schema:CivicStructure;
+onto:hasID "000012276475","000012253833";
+a schema:CivicStructure,schema:CivicStructure;
+onto:hasID "000012276471" .
+<http://culture.linkeddata.es/'Yo%20quiero%20tocar%20la%20luna'%20de%20Almudena%20Ortega> a schema:CivicStructure;
+onto:hasID "000012276341";
+a schema:CivicStructure;
+onto:hasID "000012280180" .
+<http://culture.linkeddata.es/'¡Wilma,%20ábreme%20la%20puerta!:%20Mujeres%20prehistóricas%20en%20la%20ficción'.%20Conferecia> a schema:CivicStructure;
+onto:hasID "000012248370" .
+<http://culture.linkeddata.es/'¿A%20ti%20quién%20te%20limpia%20los%20zapatos%3F'%20de%20Francisco%20Ochoa%20López> a schema:CivicStructure;
+onto:hasID "000012277540" .
+<http://culture.linkeddata.es/'¿Quién%20guarda%20al%20rey%3F'%20de%20Luís%20González> a schema:CivicStructure;
+onto:hasID "000012281178" .
+<http://culture.linkeddata.es/(CANCELADO)%20Pasacalles%20con%20Charanga%20desde%20el%20Colegio%20Calderón%20de%20la%20Barca> a schema:CivicStructure;
+onto:hasID "000012266295" .
+<http://culture.linkeddata.es/(CANCELADO).Pasacalles%20con%20la%20Charanga%20Patatas%20Band%20por%20Barrio%20%20Alameda%20de%20Osuna> a schema:CivicStructure;
+onto:hasID "000012266297" .
+<http://culture.linkeddata.es/(CANCELADO).Pasacalles%20folclórico%20Grupo%20Calderón%20de%20la%20Barca%20por%20el%20Casco%20Histórico%20de%20Barajas> a schema:CivicStructure;
+onto:hasID "000012266298" .
+<http://culture.linkeddata.es/(Re)Vuelta%20al%20patio%202023-2024> onto:hasID "000012126107";
+a schema:CivicStructure .
+<http://culture.linkeddata.es/¡Abuelitos!%20Un%20homenaje%20a%20la%20tercera%20edad> a schema:CivicStructure;
+onto:hasID "000012277634";
+a schema:CivicStructure;
+onto:hasID "000012281188" .
+<http://culture.linkeddata.es/¡Aquí%20no%20paga%20nadie!> a schema:CivicStructure;
+onto:hasID "000012269712" .
+<http://culture.linkeddata.es/¡Celebramos%20el%20Año%20Nuevo%20del%20Dragón%20con%20el%20arte%20milenario%20de%20la%20Papiroflexia!> a schema:CivicStructure;
+onto:hasID "000012273457" .
+<http://culture.linkeddata.es/¡Contemplad%20estos%20tiempos%20gloriosos!> a schema:CivicStructure;
+onto:hasID "000012220560" .
+<http://culture.linkeddata.es/¡La%20maravillosa%20cara%20de%20Alicia!> a schema:CivicStructure;
+onto:hasID "000012265154" .
+<http://culture.linkeddata.es/¡Las%20plantas%20de%20la%20China!> a schema:CivicStructure;
+onto:hasID "000012274191" .
+<http://culture.linkeddata.es/¡No%20es%20el%20fin%20del%20huerto%20de%20Fermín!%20-%20Alúa%20Teatro%20(Castilla%20y%20León)> a schema:CivicStructure;
+onto:hasID "000012244457" .
+<http://culture.linkeddata.es/¡¡¡Mamááá%7C%7C%7C> a schema:CivicStructure;
+onto:hasID "000012277845" .
+<http://culture.linkeddata.es/«Bienvenido%20al%20club%20de%20la%20noche:%20%20Because%20the%20night%20belongs%20to%20us»> a schema:CivicStructure;
+onto:hasID "000012094745" .
+<http://culture.linkeddata.es/«Hace%20mucho%20que%20no%20duermo»> a schema:CivicStructure;
+onto:hasID "000012225196" .
+<http://culture.linkeddata.es/«LA%20GRAN%20FÁBULA%20DEL%20CAPITAL»%20A%20TRAVÉS%20DE%20L-ABE> a schema:CivicStructure;
+onto:hasID "000012149887" .
+<http://culture.linkeddata.es/«Los%20artistas%20y%20su%20palabra»> a schema:CivicStructure;
+onto:hasID "000012119577" .
+<http://culture.linkeddata.es/«PINTA%20MALASAÑA»%202023-2024> a schema:CivicStructure;
+onto:hasID "000012094760" .
+<http://culture.linkeddata.es/%3FLa%20guarida%20de%20Hades%3F%20de%20Rafael%20Rico%20Maesso%20y%20%3FNo%20podrás%20impedirme%20que%20sueñe%3F%20de%20Ana%20María%20Trigueros%20Martín> a schema:CivicStructure;
+onto:hasID "000012251536" .
