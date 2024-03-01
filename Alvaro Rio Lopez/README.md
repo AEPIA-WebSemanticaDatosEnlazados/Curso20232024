@@ -81,7 +81,7 @@ que son dinámicos:
 * Elección del dominio de las URIs, cabe destacar que es un dominio a nivel teorico ya que no se tiene la capacidad de hosting necesaria:
     - En este caso el dominio es: http://multas-circulacion.es/
 * Elección ruta de las URIs:
-    - Ruta para términos ontológicos: http://multas-circulacion.es/ayuntamientomadrid/ontology/denunciante#
+    - Ruta para términos ontológicos: http://multas-circulacion.es/ayuntamientomadrid/ontology/multa#
     - Ruta para individuos: http://multas-circulacion.es/ayuntamientomadrid/resource/
 * Elección patrones para clases, propiedades e individuos:
     - Patrón para términos ontológicos: http://multas-circulacion.es/ayuntamientomadrid/ontology/denunciante#<term_name>
@@ -133,7 +133,8 @@ Los requisitos funcionales son obtenidos haciendo Preguntas de Competencia, en e
 
 #### Extracción de términos
 
-A partir del paso anterior se obtienen una serie de términos que nos permiten dar sentido a nuestros datos, estos términos son:
+A partir del paso anterior se obtienen una serie de términos que nos permiten dar sentido a nuestros datos, estos 
+términos son:
 
 | Términos             | Descripción                                                               |
 |----------------------|---------------------------------------------------------------------------|
@@ -155,7 +156,11 @@ A partir del paso anterior se obtienen una serie de términos que nos permiten d
 A continuación se muestra un primer esquema con la estructura de nuestra ontología. Para este esquema se han utilizado 
 los términos definidos previamente y se aclaran las relaciones que deben haber entre los términos
 
-<img width="600" height="300" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/Captura.JPG">
+<img width="600" height="300" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/estructura.JPG">
+
+Se puede observar que la multa tiene una calificación, la cual puede ser muy grave, grave o leve, un lugar, unas 
+coordenadas que constan de longitud y latitud, un importe al cual se le puede haber aplicado un descuento o no, una 
+causa de la multa, un denunciante y una fecha.
 
 #### Búsqueda de ontologías y selección de ontologías
 
@@ -167,16 +172,17 @@ Esta ontología nos ha permitido encontrar una gran cantidad de
 | Términos             | URI                               |
 |----------------------|-----------------------------------|
 | Multa                | -                                 |
-| Calificación         | https://schema.org/Rating         |
-| Lugar                | https://schema.org/Place          |
-| Fecha                | https://schema.org/Date           |
-| Importe              | https://schema.org/MonetaryAmount |
+| Calificación         | https://schema.org/rating         |
+| Lugar                | https://schema.org/place          |
+| Lugar                | https://schema.org/city           |
+| Fecha                | https://schema.org/date           |
+| Importe              | https://schema.org/monetaryAmount |
 | Descuento            | -                                 |
-| Puntos               | https://schema.org/Integer        |
+| Puntos               | https://schema.org/integer        |
 | Denunciante          | -                                 |
 | Causa multa          | -                                 |
-| Velocidad límite     | https://schema.org/Integer        |
-| Velocidad infracción | https://schema.org/Integer        |
+| Velocidad límite     | https://schema.org/integer        |
+| Velocidad infracción | https://schema.org/integer        |
 | Coordenadas          | -                                 |
 
 Como se puede observar, siete de nuestros términos reciclados a partir de ontologías ya existentes, en este caso todas 
@@ -194,10 +200,112 @@ datos tienen una métrica ETRS89. Lo mismo ocurre con https://www.w3.org/2003/01
 
 
 
+### 2.5 Proceso de transformación
+
+Como ya se ha mencionado previamente, los datos se encuentran en un archivo csv, en concreto se tienen 213569 filas x 
+14 columnas. Para poder trabajar de forma correcta con los datos se deben pre-procesar  se le han aplicado los 
+siguientes cambios:
+
+**1.** Con los datos que se tienen es facil darse cuenta de que no se tiene ningún identificador único para cada una de las 
+filas, tanto el lugar, como el importe o incluso la hora se pueden ver repetidos. Para solucionar esto se ha añadido una
+nueva columna llamada **id**. Esta columna se ha creado desde la opción de **Edit column -> Add column based on this column**
+y, posteriormente, seleccionando el lenguaje Python/Jython, se ejecuta el siguiente código:
+```python
+import random
+
+numero_aleatorio = random.randint(1, 10000000)
+
+print(numero_aleatorio)
+```
+  Este codigo genera un número aleatorio entre el 1 y el 10.000.000, esto nos da una posibilidad de repetición del 2.1%. 
+  Se comprueba y se verifica que no hay números repetidos por lo que esta nueva columna llamada id nos sirve como identificador
+  único para cada fila.
 
 
+**2.** En los datos encontramos 3 columnas distintas para hacer indicar el momento en el que se produjo la infracción 
+(MES, ANIO, HORA). Es por ello que se decide unificar estas tres columnas en una unica columna (llamada **FECHA**) y así
+poder obtener un formato fecha correcto. Para ello, al igual que en el cambio anterior, se aplica la funcionalidad 
+**Edit column -> Add column based on this column** y se ejecuta el siguiente código con el lenguaje Python/Jython:
+
+```python
+from datetime import datetime
+
+hora = cells["HORA"].value
+
+cadena = hora.replace(".",":") + " 0" + cells["MES"].value + "-" + cells["ANIO"].value
+
+fecha_hora = datetime.strptime(cadena, "%H:%M %m-%Y")
+
+deseado = fecha_hora.strftime("%Y-%m-%d %H:%M:%S")
+
+return deseado
+```
+Este código devuelve un formato date correcto, por ejemplo: "2023-09-01 08:41:00". Posteriormente se selecciona la opción
+**Edit cells -> Common transforms -> To date**, así se consigue que los datos sean formato date y no solo un texto con la 
+estructura igual que un date.
+
+<img width="80" height="300" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/fechas.JPG">
 
 
+**3.** Las columnas IMP_BOL, PUNTOS, VEL_LIMITE, VEL_CIRCULA, son números pero en los datos originales se encuentran en 
+formato texto, es por ello que se selecciona la opción **Edit cells -> Common transforms -> To number**. Con esto se 
+consigue que estas columnas pasen a ser números.
+
+<img width="500" height="200" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/numbers.JPG">
+
+**4.** Se añade una columna nueva llamada **CIUDAD**. El objetivo de añadir
+esta nueva columna es poder asociar nuestros datos, es decir, nuestras multas, al resto de elementos que encontramos en 
+la red. Esta columna usa https://schema.org/city por lo que es una conexión directa a otros posibles datos de la red.
+Se vuelve a seleccionar **Edit column -> Add column based on this column** y, en este caso con el lenguaje GREL, se ejecuta:
+```python
+"Madrid"
+```
+Por lo que,en todas las filas su valor va a ser "Madrid".
+
+**5.** Tanto en la columna LUGAR como en la columna HECHO_BOL encontramos valores que hacen referencia a lo mismo pero no 
+estan escritos exactamente igual, por ejemplo: en la columna LUGAR encontramos "JACOMETREZO 13" y "JACOMETREZO, 13", hay
+una coma de diferencia. Estos pequeños detalles pueden infundir en posibles errores al implementación del esqueleto.
+
+Para solucionar este problema, se hace uso de la función "Cluster and edit", esta funcionalidad permite unificar estas
+diferencias que encontramos en las columnas LUGAR y HECHO_BOL. Se selecciona **Edit cells -> Cluster and edit...** y se 
+despliegan las siguientes ventanas:
+
+<img width="350" height="300" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/lugares.JPG">
+
+<img width="350" height="300" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/hecho-bol.JPG">
+
+Se seleccionan todas las opciones posibles y se presiona en "Merge selected & re-cluster". Unificando así las diferencias
+mencionadas.
+
+**6.** En el caso de las coordenadas donde se produjo la infracción, se encuentran separadas en dos columnas, COORDENADA-X y
+COORDENADA-Y. Como mejora para los datos se añade una nueva columna nueva llamada **COORDENADAS** para representar ambas
+coordenadas juntas. Esto se realiza seleccionando **Edit column -> Add column based on this column** y ejecutando:
+
+```python
+coor_x = cells["COORDENADA-X"].value
+coor_y = cells["COORDENADA-Y"].value
+
+return "(" + coor_x.strip() + "," + coor_y.strip()  +")"
+```
+Obtienendo así la nueva columna con ambas coordenadas con el formato: (4419.57,44754.23), (4419.58,44754.20), 
+(4419.56,44754.20), etc.
+
+**7.** El último cambio que se le ha realiza a los datos es, en todas las columnas que son formato text, se les aplica 
+el siguiente codigo:
+
+```python
+return value.strip()
+```
+
+El objetivo de este código es aplicarle la funcion **strip()** de python a todos los textos para así evitar ensuciar el
+esqueleto con espacios en blanco no necesarios. El objetivo de esta función es eliminar los espacios en blanco que se 
+encuentren en el principio y/o en el final del texto. Esto se realiza en las columnas CALIFICACION, LUGAR, DENUNCIANTE, 
+HECHO-BOL, COORDENADA-X y COORDENADA-Y.
+
+Una vez aplicados todos estos cambios, los datos se encuentran de la siguiente manera:
+
+
+<img width="600" height="300" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/datos_final.JPG">
 
 
 
@@ -212,4 +320,5 @@ datos tienen una métrica ETRS89. Lo mismo ocurre con https://www.w3.org/2003/01
 
 ## 5. Bibliografía
 - [Origen de los datos: Ayuntamiento de Madrid](https://datos.madrid.es/portal/site/egob/menuitem.c05c1f754a33a9fbe4b2e4b284f1a5a0/?vgnextoid=fb9a498a6bdb9410VgnVCM1000000b205a0aRCRD&vgnextchannel=374512b9ace9f310VgnVCM100000171f5a0aRCRD&vgnextfmt=default) Datos de Septiembre 2023
--     
+- [GREL](https://openrefine.org/docs/manual/grelfunctions)
+- [Schema.org](https://schema.org/)
