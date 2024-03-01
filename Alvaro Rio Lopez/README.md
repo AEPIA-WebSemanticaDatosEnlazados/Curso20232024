@@ -19,7 +19,7 @@ Indice del trabajo:
 ## 1. Introducción
 
 Del catálogo de datos publicado en el [Portal web del Ayuntamiento de Madrid](https://www.madrid.es/portal/site/munimadrid), 
-se han seleccionado datos en relación a las multas de circulación tramitadas por el ayuntamiento de Madrid en el último mes. 
+se han seleccionado datos en relación con las multas de circulación tramitadas por el ayuntamiento de Madrid en el último mes. 
 Este trabajo tiene como objetivo la transformación de estos datos (.csv) en datos enlazados, para ello se aplicarán los 
 conocimientos estudiados durante el curso. 
 
@@ -49,7 +49,7 @@ Los datos descargados se encuentran en formato .csv y se encuentran en la carpet
    * 5 No se podrá indicar, insinuar o sugerir que el Ayuntamiento de Madrid participa, patrocina o apoya la reutilización que se lleve a cabo con la información.
    * 6 En caso de información anonimizada por protección de datos personales u otros motivos, está expresamente prohibido realizar labores de re-identificación de personas a partir de estos datos y otras fuentes de datos e información posibles, pasadas, actuales o futuras.
 
-Es por ello que, como se indican en los puntos 1 y 2, la obtención de los datos es citada en la bibliografia de este documento 
+Es por ello que, como se indican en los puntos 1 y 2, la obtención de los datos es citada en la bibliografía de este documento 
 indicando su origen y su fecha de obtención. Para mayor detalle sobre las condiciones de uso se puede revisar la web 
 [Condiciones generales para la modalidad general de puesta a disposición de los documentos reutilizables del Ayuntamiento de Madrid](https://datos.madrid.es/portal/site/egob/menuitem.3efdb29b813ad8241e830cc2a8a409a0/?vgnextoid=108804d4aab90410VgnVCM100000171f5a0aRCRD&vgnextchannel=b4c412b9ace9f310VgnVCM100000171f5a0aRCRD&vgnextfmt=default)
 
@@ -78,7 +78,7 @@ Para seleccionar la estrategia de nombrado de los datos haremos uso de # y /, co
 utilizaremos '#' para la redirección a los elementos que no se espera que tengan muchos cambios y '/' para los datos 
 que son dinámicos:
 
-* Elección del dominio de las URIs, cabe destacar que es un dominio a nivel teorico ya que no se tiene la capacidad de hosting necesaria:
+* Elección del dominio de las URIs, cabe destacar que es un dominio a nivel teórico, ya que no se tiene la capacidad de hosting necesaria:
     - En este caso el dominio es: http://multas-circulacion.es/
 * Elección ruta de las URIs:
     - Ruta para términos ontológicos: http://multas-circulacion.es/ayuntamientomadrid/ontology/multa#
@@ -154,7 +154,7 @@ términos son:
 #### Conceptualización de la ontología
 
 A continuación se muestra un primer esquema con la estructura de nuestra ontología. Para este esquema se han utilizado 
-los términos definidos previamente y se aclaran las relaciones que deben haber entre los términos
+los términos definidos previamente y se aclaran las relaciones que debe haber entre los términos
 
 <img width="600" height="300" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/estructura.JPG">
 
@@ -189,8 +189,8 @@ Como se puede observar, siete de nuestros términos reciclados a partir de ontol
 procendentes de **Schema.org**. Como se puede observar en la tabla anterior, hay ciertos términos a los cuales no se les ha 
 encontrado ninguna ontología. 
 
-Destaca el término **coordenadas**, en este caso se ha encontrado la ontología https://schema.org/GeoCoordinates
-pero no es valida en este caso ya que Schema.org utiliza una métrica WGS84 para las coordenadas mientras que nuestros 
+Destaca el término **coordenadas**, en este caso se ha encontrado la ontología https://schema.org/GeoCoordinates,
+pero no es válida en este caso, ya que Schema.org utiliza una métrica WGS84 para las coordenadas mientras que nuestros 
 datos tienen una métrica ETRS89. Lo mismo ocurre con https://www.w3.org/2003/01/geo/
 
 #### Implementación de la ontología
@@ -203,7 +203,7 @@ datos tienen una métrica ETRS89. Lo mismo ocurre con https://www.w3.org/2003/01
 ### 2.5 Proceso de transformación
 
 Como ya se ha mencionado previamente, los datos se encuentran en un archivo csv, en concreto se tienen 213569 filas x 
-14 columnas. Para poder trabajar de forma correcta con los datos se deben pre-procesar  se le han aplicado los 
+14 columnas. Para poder trabajar de forma correcta con los datos se deben pre-procesar se le han aplicado los 
 siguientes cambios:
 
 **1.** Con los datos que se tienen es facil darse cuenta de que no se tiene ningún identificador único para cada una de las 
@@ -260,19 +260,19 @@ Se vuelve a seleccionar **Edit column -> Add column based on this column** y, en
 ```python
 "Madrid"
 ```
-Por lo que,en todas las filas su valor va a ser "Madrid".
+Por lo que, en todas las filas su valor va a ser "Madrid".
 
-**5.** Tanto en la columna LUGAR como en la columna HECHO_BOL encontramos valores que hacen referencia a lo mismo pero no 
-estan escritos exactamente igual, por ejemplo: en la columna LUGAR encontramos "JACOMETREZO 13" y "JACOMETREZO, 13", hay
-una coma de diferencia. Estos pequeños detalles pueden infundir en posibles errores al implementación del esqueleto.
+**5.** Tanto en la columna LUGAR como en la columna HECHO_BOL encontramos valores que hacen referencia a lo mismo, pero no 
+están escritos exactamente igual, por ejemplo: en la columna LUGAR encontramos "JACOMETREZO 13" y "JACOMETREZO, 13", hay
+una coma de diferencia. Estos pequeños detalles pueden infundir en posibles errores al implementar del esqueleto.
 
 Para solucionar este problema, se hace uso de la función "Cluster and edit", esta funcionalidad permite unificar estas
 diferencias que encontramos en las columnas LUGAR y HECHO_BOL. Se selecciona **Edit cells -> Cluster and edit...** y se 
 despliegan las siguientes ventanas:
 
-<img width="600" height="300" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/lugares.JPG">
+<img width="550" height="300" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/lugares.JPG">
 
-<img width="600" height="300" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/hecho-bol.JPG">
+<img width="550" height="300" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/hecho-bol.JPG">
 
 Se seleccionan todas las opciones posibles y se presiona en "Merge selected & re-cluster". Unificando así las diferencias
 mencionadas.
@@ -290,7 +290,7 @@ return "(" + coor_x.strip() + "," + coor_y.strip()  +")"
 Obtienendo así la nueva columna con ambas coordenadas con el formato: (4419.57,44754.23), (4419.58,44754.20), 
 (4419.56,44754.20), etc.
 
-**7.** El último cambio que se le ha realiza a los datos es, en todas las columnas que son formato text, se les aplica 
+**7.** El último cambio que se le ha realizado a los datos es, en todas las columnas que son formato text, se les aplica 
 el siguiente codigo:
 
 ```python
@@ -302,19 +302,62 @@ esqueleto con espacios en blanco no necesarios. El objetivo de esta función es 
 encuentren en el principio y/o en el final del texto. Esto se realiza en las columnas CALIFICACION, LUGAR, DENUNCIANTE, 
 HECHO-BOL, COORDENADA-X y COORDENADA-Y.
 
-Una vez aplicados todos estos cambios, los datos se encuentran de la siguiente manera:
-
+Una vez aplicados todos estos cambios, los datos están completos y tienen la siguiente estructura:
 
 <img width="800" height="300" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/datos_final.JPG">
 
+El siguiente paso es construir el RDF, para ello se deben añadir los distintos prefijos. Todo esto ha sido posible gracias
+a la extensión de "RDF extension", en este caso la versión 1.4.0. La instalación de dicha extensión es sencilla, desde la
+propia página oficial de OpenRefine se puede encontrar la extensión para RDF en formato zip.
+
+Se debe descargar este archivo zip y, en la ruta donde se encuentre el programa se debe crear una nueva carpeta llamada 
+**extensions**. Dentro de esta carpeta se debe descomprimir el archivo zip. Una vez hecho esto, se vuelve a ejecutar OpenRefine
+y aparece la opción de RDF necesaria para poder continuar.
+
+Para continuar con la construcción del esqueleto RDF presionamos la opción **RDF -> Edit RDF skeleton** donde se encuentran 
+las herramientas necesarias para completar nuestro esqueleto:
 
 
+<img width="400" height="300" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/edit_skeleton_empty.JPG">
 
+Lo primero que se debe hacer es añadir los prefijos que se van a necesitar, estos prefijos han sido definidos en el 
+apartado 2.4. En este caso son:
 
+- onto -> http://multas-circulacion.es/ayuntamientomadrid/ontology/multa#
+- schema -> https://schema.org/)
 
+En el caso del prefijo **onto**, al no ser un vocabulario existente, se debe seleccionar la opción "Add prefix only". Por 
+otro lado, en el caso de **schema**, seleccionamos la opción "Try fetching vocabulary terms from the Web" (la cual viene por
+defecto), esta opción nos importará toda la ontología schema, la cual ya se encuentra publicada.
 
+Además de definir los prefijos necesarios, se debe modificar la base URI para el nombrado de individuos, en este caso 
+se pone la URI: http://multas-circulacion.es/ayuntamientomadrid/resource/
 
+El siguiente paso es definir el tipo de los individuos, seleccionamos la opción "Add type" y definimos que el tipo es:
+**onto:Multa**. Con esto se está indicando que todos nuestros individuos son multas.
 
+Para continuar, para poder definir las URIs, seleccionamos la opción "(Row index) URI". Es en este momento donde se encuentra
+utilidad a la columna **id** (la cual ha sido añadida a los datos como se explica en el apartado anterior). Se selecciona la
+columna **id** y especificamos el valor que debe tener la expresión como se ve en la siguiente imagen:
+
+<img width="350" height="300" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/uri.JPG">
+
+Esto nos asegura unas URIs únicas para cada recurso. Obteniendo así URIs con la siguiente estructura:
+
+http://multas-circulacion.es/ayuntamientomadrid/resource/Multa/7841835
+
+Por último, se deben añadir propiedades a los recursos. Como ya hemos mencionado previamente se van a tener dos tipos de
+propiedades, las basadas en la ontología que se está creando llamada **onto** y la ontología **schema**. Después de 
+todos estos pasos, el esqueleto se ve de la siguiente manera:
+
+<img width="400" height="300" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/skeleton.png">
+
+Una vez aplicado todo esto se descarga el RDF tanto en formato Turtle como en formato RDF/XML desde la opción "Export", 
+que genera dos archivos, **202309detalle-csv.rdf** y **202309detalle-csv.ttl**. Estos archivos se encuentran en DataGenerate.zip.
+
+Se habría preferido crear un directorio (al igual que existe Images, Dataset, etc.) pero no ha sido posible por el tamaño
+de los archivos, en el caso del archivo .rdf, se encuentran más de 3.200.000 lineas en el documento. Cuando se intenta hacer un push salta un error, ya que los archivos superan los 100.00 MB, es por eso 
+que se comprime el directorio y se sube de esa manera.
 
 
 
@@ -322,3 +365,4 @@ Una vez aplicados todos estos cambios, los datos se encuentran de la siguiente m
 - [Origen de los datos: Ayuntamiento de Madrid](https://datos.madrid.es/portal/site/egob/menuitem.c05c1f754a33a9fbe4b2e4b284f1a5a0/?vgnextoid=fb9a498a6bdb9410VgnVCM1000000b205a0aRCRD&vgnextchannel=374512b9ace9f310VgnVCM100000171f5a0aRCRD&vgnextfmt=default) Datos de Septiembre 2023
 - [GREL](https://openrefine.org/docs/manual/grelfunctions)
 - [Schema.org](https://schema.org/)
+- [RDF extension](https://github.com/stkenny/grefine-rdf-extension)
