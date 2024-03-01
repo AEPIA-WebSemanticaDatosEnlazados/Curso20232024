@@ -251,7 +251,7 @@ estructura igual que un date.
 formato texto, es por ello que se selecciona la opción **Edit cells -> Common transforms -> To number**. Con esto se 
 consigue que estas columnas pasen a ser números.
 
-<img width="700" height="200" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/numbers.JPG">
+<img width="800" height="200" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/numbers.JPG">
 
 **4.** Se añade una columna nueva llamada **CIUDAD**. El objetivo de añadir
 esta nueva columna es poder asociar nuestros datos, es decir, nuestras multas, al resto de elementos que encontramos en 
@@ -270,9 +270,9 @@ Para solucionar este problema, se hace uso de la función "Cluster and edit", es
 diferencias que encontramos en las columnas LUGAR y HECHO_BOL. Se selecciona **Edit cells -> Cluster and edit...** y se 
 despliegan las siguientes ventanas:
 
-<img width="500" height="300" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/lugares.JPG">
+<img width="600" height="300" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/lugares.JPG">
 
-<img width="500" height="300" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/hecho-bol.JPG">
+<img width="600" height="300" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/hecho-bol.JPG">
 
 Se seleccionan todas las opciones posibles y se presiona en "Merge selected & re-cluster". Unificando así las diferencias
 mencionadas.
@@ -305,7 +305,7 @@ HECHO-BOL, COORDENADA-X y COORDENADA-Y.
 Una vez aplicados todos estos cambios, los datos se encuentran de la siguiente manera:
 
 
-<img width="700" height="300" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/datos_final.JPG">
+<img width="800" height="300" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/datos_final.JPG">
 
 
 
