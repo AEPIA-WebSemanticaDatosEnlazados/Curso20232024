@@ -244,6 +244,8 @@ Este código devuelve un formato date correcto, por ejemplo: "2023-09-01 08:41:0
 **Edit cells -> Common transforms -> To date**, así se consigue que los datos sean formato date y no solo un texto con la 
 estructura igual que un date.
 
+Cabe destacar que, al no tener información del día en el que se produjo la infracción, todas las fechas indican el día 01.
+
 <img width="80" height="200" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/fechas.JPG">
 
 
@@ -356,8 +358,44 @@ Una vez aplicado todo esto se descarga el RDF tanto en formato Turtle como en fo
 que genera dos archivos, **202309detalle-csv.rdf** y **202309detalle-csv.ttl**. Estos archivos se encuentran en DataGenerate.zip.
 
 Se habría preferido crear un directorio (al igual que existe Images, Dataset, etc.) pero no ha sido posible por el tamaño
-de los archivos, en el caso del archivo .rdf, se encuentran más de 3.200.000 lineas en el documento. Cuando se intenta hacer un push salta un error, ya que los archivos superan los 100.00 MB, es por eso 
+de los archivos, en el caso del archivo .rdf, se encuentran más de 3.200.000 líneas en el documento. Cuando se intenta hacer un push salta un error, ya que los archivos superan los 100.00 MB, es por eso 
 que se comprime el directorio y se sube de esa manera.
+
+### 2.6 Enlazado
+
+Con los datos que se tienen, no hay ningún campo que nos aporte un enlazado cooherente, no tendría sentido enlazar estos
+datos respecto a un número como puedo ser el importe de la multa o respecto a una velocidad. Es por ello que se añadió la
+columna **CIUDAD**.
+
+Como ya se ha mencionado previamente, la columna **CIUDAD** tiene siempre el valor "Madrid". Esto permite enlazar las 
+multas a la ciudad de Madrid y, a su vez, saber la calle exacta donde se produjo la infracción, al importe que tiene, 
+etc (información que se obtiene de los datos con el esqueleto RDF generado).
+
+El proceso de enlazado se puede hacer desde la herramienta OpenRefine. Se selecciona la columna **CIUDAD** y posteriormente,
+se selecciona la funcionalidad **Reconcile -> Start reconciling...**. Lo que despliega la siguiente ventana:
+
+<img width="400" height="300" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/reconcile.JPG">
+
+En este caso se puede seleccionar la opción "Wikidata reconci.link (en)" y no es necesario añadir un nuevo servicio de 
+reconciliación. Esta reconciliación asociará nuestro campo **CIUDAD** a través de [Wikidata](https://datos.gob.es/es/blog/wikidata-una-base-de-datos-de-conocimiento-libre-y-abierto#:~:text=%C2%BFQu%C3%A9%20es%20wikidata%3F,datos%20de%20otros%20repositorios%20digitales.). 
+Una vez seleccionada la opción "Wikidata reconci.link (en)", aparecen todas las posibles opciones para 
+reconciliar a partir de la columna **CIUDAD** como se muestra a continuación.
+
+<img width="400" height="300" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/reconcile_ciudad.JPG">
+
+Una vez completado el proceso de reconciliación, se puede visualizar el resultado obtenido, para ello se selecciona la 
+función **Edit column -> Add column based on this column** en la columna **CIUDAD**. Dentro de las opciones para crear 
+la columna, se indica que el resultado debe ser de la forma "http://www.wikidate.org/entity/ + cell.recon.match.id" y 
+que el nombre de la columna es **CIUDAD-URI**. En este caso, tras aplicar la reconciliación junto con wikidata, 
+el resultado final es: "http://www.wikidate.org/entity/Q2807".
+
+Para que el proceso de reconciliación se haya realizado correctamente toda la columna **CIUDAD-URI** debe tener el mismo 
+valor, ese valor es "http://www.wikidate.org/entity/Q2807". Se comprueba que así es por lo que la reconciliación se ha 
+realizado correctamente.
+
+
+
+
 
 
 
@@ -366,3 +404,4 @@ que se comprime el directorio y se sube de esa manera.
 - [GREL](https://openrefine.org/docs/manual/grelfunctions)
 - [Schema.org](https://schema.org/)
 - [RDF extension](https://github.com/stkenny/grefine-rdf-extension)
+- [Wikidata](https://datos.gob.es/es/blog/wikidata-una-base-de-datos-de-conocimiento-libre-y-abierto#:~:text=%C2%BFQu%C3%A9%20es%20wikidata%3F,datos%20de%20otros%20repositorios%20digitales.)
