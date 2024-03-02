@@ -385,12 +385,12 @@ reconciliar a partir de la columna **CIUDAD** como se muestra a continuación.
 
 Una vez completado el proceso de reconciliación, se puede visualizar el resultado obtenido. Para ello se selecciona la 
 función **Edit column -> Add column based on this column** en la columna **CIUDAD**. Dentro de las opciones para crear 
-la columna, se indica que el resultado debe ser de la forma "http://www.wikidate.org/entity/ + cell.recon.match.id" y 
+la columna, se indica que el resultado debe ser de la forma "http://www.wikidata.org/entity/ + cell.recon.match.id" y 
 que el nombre de la columna es **CIUDAD-URI**. En este caso, tras aplicar la reconciliación junto con wikidata, 
-el resultado final es: "http://www.wikidate.org/entity/Q2807".
+el resultado final es: "http://www.wikidata.org/entity/Q2807".
 
 Para que el proceso de reconciliación se haya realizado correctamente toda la columna **CIUDAD-URI** debe tener el mismo 
-valor, ese valor es "http://www.wikidate.org/entity/Q2807". Se comprueba que así es por lo que la reconciliación se ha 
+valor, ese valor es "http://www.wikidata.org/entity/Q2807". Se comprueba que así es por lo que la reconciliación se ha 
 realizado correctamente.
 
 Al haber generado una columna más (**CIUDAD-URI**), se agrega una nueva propiedad nueva para esta columna. Se define la 
