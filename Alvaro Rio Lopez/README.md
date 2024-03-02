@@ -320,7 +320,7 @@ Para continuar con la construcción del esqueleto RDF presionamos la opción **R
 las herramientas necesarias para completar nuestro esqueleto:
 
 
-<img width="400" height="300" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/edit_skeleton_empty.JPG">
+<img width="450" height="300" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/edit_skeleton_empty.JPG">
 
 Lo primero que se debe hacer es añadir los prefijos que se van a necesitar, estos prefijos han sido definidos en el 
 apartado 2.4. En este caso son:
@@ -352,7 +352,7 @@ Por último, se deben añadir propiedades a los recursos. Como ya hemos menciona
 propiedades, las basadas en la ontología que se está creando llamada **onto** y la ontología **schema**. Después de 
 todos estos pasos, el esqueleto se ve de la siguiente manera:
 
-<img width="400" height="300" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/skeleton.png">
+<img width="450" height="300" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/skeleton.png">
 
 Una vez aplicado todo esto se descarga el RDF tanto en formato Turtle como en formato RDF/XML desde la opción "Export", 
 que genera dos archivos, **202309detalle-csv.rdf** y **202309detalle-csv.ttl**. Estos archivos se encuentran en DataGenerate.zip.
@@ -374,16 +374,16 @@ etc (información que se obtiene de los datos con el esqueleto RDF generado).
 El proceso de enlazado se puede hacer desde la herramienta OpenRefine. Se selecciona la columna **CIUDAD** y posteriormente,
 se selecciona la funcionalidad **Reconcile -> Start reconciling...**. Lo que despliega la siguiente ventana:
 
-<img width="400" height="300" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/reconcile.JPG">
+<img width="450" height="300" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/reconcile.JPG">
 
 En este caso se puede seleccionar la opción "Wikidata reconci.link (en)" y no es necesario añadir un nuevo servicio de 
 reconciliación. Esta reconciliación asociará nuestro campo **CIUDAD** a través de [Wikidata](https://datos.gob.es/es/blog/wikidata-una-base-de-datos-de-conocimiento-libre-y-abierto#:~:text=%C2%BFQu%C3%A9%20es%20wikidata%3F,datos%20de%20otros%20repositorios%20digitales.). 
 Una vez seleccionada la opción "Wikidata reconci.link (en)", aparecen todas las posibles opciones para 
 reconciliar a partir de la columna **CIUDAD** como se muestra a continuación.
 
-<img width="400" height="300" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/reconcile_ciudad.JPG">
+<img width="450" height="300" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/reconcile_ciudad.JPG">
 
-Una vez completado el proceso de reconciliación, se puede visualizar el resultado obtenido, para ello se selecciona la 
+Una vez completado el proceso de reconciliación, se puede visualizar el resultado obtenido. Para ello se selecciona la 
 función **Edit column -> Add column based on this column** en la columna **CIUDAD**. Dentro de las opciones para crear 
 la columna, se indica que el resultado debe ser de la forma "http://www.wikidate.org/entity/ + cell.recon.match.id" y 
 que el nombre de la columna es **CIUDAD-URI**. En este caso, tras aplicar la reconciliación junto con wikidata, 
@@ -393,11 +393,44 @@ Para que el proceso de reconciliación se haya realizado correctamente toda la c
 valor, ese valor es "http://www.wikidate.org/entity/Q2807". Se comprueba que así es por lo que la reconciliación se ha 
 realizado correctamente.
 
+Al haber generado una columna más (**CIUDAD-URI**), se agrega una nueva propiedad nueva para esta columna. Se define la 
+clase a través de "schema:city" y, con la propiedad "owl:sameAS". Hacer esto permite conectar la instancia "Madrid" de 
+Wikidata con nuestra instancia "Madrid", la cual se encuentra en la columna **CIUDAD-URI**. Todo este proceso se hace 
+desde la ventana de **Edit RDF skeleton** como se muestra a continuación:
+
+<img width="450" height="300" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/municipio_uri.JPG">
 
 
+### 2.7 Publicación
 
+Una vez completado este proceso se actualiza el esqueleto RDF y se actualizan los archivos almacenados en "DataGenerate.zip".
+En el archivo zip se encuentra el archivo RDF/XML y el archivo Turtle con el esqueleto RDF actualizado tras haber añadido
+la nueva propiedad y la nueva clase. Como se ha explicado previamente, el directorio se encuentra comprimido en formato
+zip, ya que, ambos archivos (.ttl y .rdf) superan el tamaño de 100.00 MB y se produce un error al querer subirlos al
+repositorio sin comprimir.
 
+Para continuar la publicación correcta de los datos vamos a usar la herramienta [datahub.io](https://datahub.io/). Tras 
+investigar su funcionamiento, se descubre que la forma correcta de publicar los datos es desde [old.datahub.io](https://old.datahub.io/).
+Por lo que, se crea un usuario y se presiona la opción "Publish data for free":
 
+<img width="450" height="300" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/old_datahub.JPG">
+
+Al hacer eso nos aparecen los pasos a seguir para publicar los datos:
+
+<img width="450" height="300" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/datahub_steps.JPG">
+
+Al intentar generar un ticket solicitando la creación de una nueva organización se genera un bucle infinito y no se es capaz
+de solicitar dicha creación. Es por eso que la solución que se plantea es mantener los datos públicos en este repositorio,
+concretamente en el directorio [FinalProject](https://github.com/alvaro-rio/WebSemanticaCurso20232024/tree/main/Alvaro%20Rio%20Lopez/FinalProject).
+
+Es obvio que no es la solución deseada, ya que, aunque los datos son públicos, no son fáciles de encontrar ni cumplen la 
+funcionalidad que se busca de ellos. El objetivo deseado sería poder dejarlos públicos en el repositorio 
+[datahub.io](https://datahub.io/) lo que permitiría que el dataset este visible y se pueda pintar en la nube de 
+datos enlazados abiertos.
+
+## 3. Aplicación y explotación
+
+## 4. Conclusiones
 
 ## 5. Bibliografía
 - [Origen de los datos: Ayuntamiento de Madrid](https://datos.madrid.es/portal/site/egob/menuitem.c05c1f754a33a9fbe4b2e4b284f1a5a0/?vgnextoid=fb9a498a6bdb9410VgnVCM1000000b205a0aRCRD&vgnextchannel=374512b9ace9f310VgnVCM100000171f5a0aRCRD&vgnextfmt=default) Datos de Septiembre 2023
@@ -405,3 +438,12 @@ realizado correctamente.
 - [Schema.org](https://schema.org/)
 - [RDF extension](https://github.com/stkenny/grefine-rdf-extension)
 - [Wikidata](https://datos.gob.es/es/blog/wikidata-una-base-de-datos-de-conocimiento-libre-y-abierto#:~:text=%C2%BFQu%C3%A9%20es%20wikidata%3F,datos%20de%20otros%20repositorios%20digitales.)
+- [Datahub.io](https://datahub.io/)
+- [Old.datahub.io](https://old.datahub.io/)
+
+
+
+
+
+
+
