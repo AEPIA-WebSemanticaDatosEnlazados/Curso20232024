@@ -195,6 +195,41 @@ datos tienen una métrica ETRS89. Lo mismo ocurre con https://www.w3.org/2003/01
 
 #### Implementación de la ontología
 
+La implementación de la ontología se realizará en el apartado 2.5 con la ayuda de la herramienta OpenRefine.
+
+
+#### Evaluación de la ontología
+
+Para la evaluación de la ontología se utiliza la herramienta [OOPS!](https://oops.linkeddata.es/index.jsp). Esta 
+herramienta permite escribir la ontología, en su formato rdf, directamente en la web proporcionando la evaluación de la 
+misma. Se realiza esto una primera vez y se obtiene el siguiente resultado:
+
+<img width="873" height="713" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/oops1.JPG">
+
+Se analizan cada uno de los pitfalls y se solucionan de la siguiente manera:
+
+1. Se define la URI "http://multas-circulacion.es/ayuntamientomadrid/ontology/multa#Multa" como tipo rdfs:Class.
+   
+   <img width="129" height="73" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/class.JPG">
+   
+2. Se añade un nuevo tipo llamado "owl:Ontology".
+3. Se añade el prefijo base, teniendo como URI "http://multas-circulacion.es/ayuntamientomadrid/resource/".
+
+   <img width="450" height="300" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/prefijos.JPG">
+
+Una vez realizados estos tres cambios en el esqueleto RDF se vuelve a evaluar la ontología, añadiendo el archivo rdf 
+como texto plano a la herramienta [OOPS!](https://oops.linkeddata.es/index.jsp). Se obtienen los siguientes resultados:
+
+<img width="805" height="182" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/oops2.JPG">
+
+Se continúa investigando como solucionar el pitfall de la licencia. Para poder solucionarlo hay que hacer una modificación 
+de los metadatos. No se consigue realizar, por lo tanto, se especifica lo siguiente:
+
+Tanto los datos como la ontología misma publicada en este repositorio público tiene una licencia CC BY 4.0, dando todos 
+los créditos necesarios al [Ayuntamiento de Madrid](https://www.madrid.es/portal/site/munimadrid) por ser la fuente de 
+todos los datos utilizados para este proyecto.
+
+
 
 
 
@@ -430,6 +465,15 @@ datos enlazados abiertos.
 
 ## 3. Aplicación y explotación
 
+Ir a C:\apache-jena-fuseki-5.0.0-rc1 
+en el cmd y ejecutar
+fuseki-server --update --mem /dataset
+
+Luego en el navegador ir a http://localhost:3030/ o el puerto que ponga
+
+Subir los datos, estan en D:\Escritorio\WebSemantica\DataGenerate es el .ttl
+
+
 ## 4. Conclusiones
 
 ## 5. Bibliografía
@@ -440,6 +484,7 @@ datos enlazados abiertos.
 - [Wikidata](https://datos.gob.es/es/blog/wikidata-una-base-de-datos-de-conocimiento-libre-y-abierto#:~:text=%C2%BFQu%C3%A9%20es%20wikidata%3F,datos%20de%20otros%20repositorios%20digitales.)
 - [Datahub.io](https://datahub.io/)
 - [Old.datahub.io](https://old.datahub.io/)
+- [OOPS!](https://oops.linkeddata.es/index.jsp)
 
 
 
