@@ -197,7 +197,6 @@ datos tienen una métrica ETRS89. Lo mismo ocurre con https://www.w3.org/2003/01
 
 La implementación de la ontología se realizará en el apartado 2.5 con la ayuda de la herramienta OpenRefine.
 
-
 #### Evaluación de la ontología
 
 Para la evaluación de la ontología se utiliza la herramienta [OOPS!](https://oops.linkeddata.es/index.jsp). Esta 
@@ -229,7 +228,8 @@ Tanto los datos como la ontología misma publicada en este repositorio público 
 los créditos necesarios al [Ayuntamiento de Madrid](https://www.madrid.es/portal/site/munimadrid) por ser la fuente de 
 todos los datos utilizados para este proyecto.
 
-
+Una vez terminada la evaluación, se modifican los archivos que se encuentran en [DataGenerate.zip](https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/DataGenerate.zip),
+ya que, debido a la evaluación, se ha modificado el esqueleto RDF para así mejorarlo.
 
 
 
@@ -465,14 +465,136 @@ datos enlazados abiertos.
 
 ## 3. Aplicación y explotación
 
-Ir a C:\apache-jena-fuseki-5.0.0-rc1 
-en el cmd y ejecutar
-fuseki-server --update --mem /dataset
+Una vez llegado a este punto, los datos que se encontraban en formato csv en un inicio, han sido transformados a formato
+rdf y han sido correctamente enlazados. El siguiente paso es el uso de estos datos y la explotación de los mismos.
 
-Luego en el navegador ir a http://localhost:3030/ o el puerto que ponga
+Para ello se van a realizar consultas de [SPARQL](https://datascience.recursos.uoc.edu/es/sparql/#:~:text=SPARQL%20es%20un%20lenguaje%20para,los%20elementos%20y%20sus%20relaciones). 
+Estas consultas se van a realizar en [Apache Jena Fuseki](https://jena.apache.org/index.html). Fuseki proporciona un 
+punto de acceso centralizado para ejecutar consultas SPARQL y actualizar conjuntos de datos RDF a través de la web. 
+Estas consultas generan como respuestas archivos csv con los datos generados a partir de la query SPARQL.
 
-Subir los datos, estan en D:\Escritorio\WebSemantica\DataGenerate es el .ttl
+Es importante matizar que, el archivo rdf que se sube a [Apache Jena Fuseki](https://jena.apache.org/index.html), no es
+el archivo completo descargado de OpenRefine. Esto es debido al tamaño del archivo, [Apache Jena Fuseki](https://jena.apache.org/index.html) 
+no permite archivos tan grandes por lo que, aunque los csv de respuesta no son completos, si permite ver las posibles 
+aplicaciones y querys que se pueden generar.
 
+A continuación se muestran algunos ejemplos de querys SPARQL. Los csv de respuesta se encuentran en [CsvQuerys](https://github.com/alvaro-rio/WebSemanticaCurso20232024/tree/main/Alvaro%20Rio%20Lopez/CsvQuerys).
+
+
+* Consulta 1: Obtener todas las multas que tienen calificación "MUYGRAVE":
+```sparql
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX onto: <http://multas-circulacion.es/ayuntamientomadrid/ontology/multa#>
+PREFIX schema: <http://schema.org/>
+
+SELECT ?multa ?rating ?place ?date ?monetaryAmount ?descuento ?denunciante ?causa ?coordenadas ?city
+WHERE {
+    ?multa a onto:Multa ;
+        schema:rating ?rating ;
+        schema:place ?place ;
+        schema:date ?date ;
+        schema:monetaryAmount ?monetaryAmount ;
+        onto:hasDescuento "SI";
+        onto:hasDenunciante ?denunciante ;
+        onto:hasCausa ?causa ;
+        onto:hasCoordenadas ?coordenadas ;
+        schema:city ?city .
+}
+```
+
+* Consulta 2: Obtener todas las multas en unas coordenadas concretas:
+```sparql
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX onto: <http://multas-circulacion.es/ayuntamientomadrid/ontology/multa#>
+PREFIX schema: <http://schema.org/>
+
+SELECT ?multa ?rating ?place ?date ?monetaryAmount ?descuento ?denunciante ?causa ?coordenadas ?city
+WHERE {
+    ?multa a onto:Multa ;
+        schema:rating ?rating ;
+        schema:place ?place ;
+        schema:date ?date ;
+        schema:monetaryAmount ?monetaryAmount ;
+        onto:hasDenunciante ?denunciante ;
+        onto:hasCausa ?causa ;
+        onto:hasCoordenadas ?coordenadas ;
+        onto:hasCoordenadas "(4405.00,44798.75)" ;
+        schema:city ?city .
+}
+```
+
+* Consulta 3: Obtener todas las multas con importe mayor a 200€ y que sean de calificación "GRAVE":
+```sparql
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX onto: <http://multas-circulacion.es/ayuntamientomadrid/ontology/multa#>
+PREFIX schema: <http://schema.org/>
+
+SELECT ?multa ?rating ?place ?date ?monetaryAmount ?descuento ?denunciante ?causa ?coordenadas ?city
+WHERE {
+    ?multa a onto:Multa ;
+        schema:rating ?rating ;
+        schema:place ?place ;
+        schema:date ?date ;
+        schema:monetaryAmount ?monetaryAmount ;
+        onto:hasDenunciante ?denunciante ;
+        onto:hasCausa ?causa ;
+        onto:hasCoordenadas ?coordenadas ;
+        schema:city ?city .
+    FILTER (?monetaryAmount > 200 && ?rating = "GRAVE")
+}
+```
+
+
+* Consulta 4: Obtener todos los lugares donde se han puesto multas:
+```sparql
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX onto: <http://multas-circulacion.es/ayuntamientomadrid/ontology/multa#>
+PREFIX schema: <http://schema.org/>
+
+SELECT DISTINCT ?place
+WHERE {
+  ?multa a onto:Multa ;
+        schema:place ?place .
+}
+```
+
+* Consulta 5: Obtener número de multas puestas por cada tipo de denunciante:
+```sparql
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX onto: <http://multas-circulacion.es/ayuntamientomadrid/ontology/multa#>
+PREFIX schema: <http://schema.org/>
+
+SELECT ?denunciante (COUNT(?denunciante) as ?count)
+WHERE {
+  ?multa a onto:Multa ;
+        onto:hasDenunciante ?denunciante .
+}
+GROUP BY ?denunciante
+```
+Estas querys muestran ejemplos sobre un número ilimitado de información que se puede obtener a partir de los datos enlazados.
+Por ejemplo, el ayuntamiento de madrid puede utilizar estos datos para ver en que lugares se comenten mayor número de 
+infracciones, o las más graves, para así poder mejorar esos lugares o poner mayor vigilancia. 
+
+Otro ejemplo sería utilizar las coordenadas que ya conocemos de las multas para así poder geo localizarlas y observar en
+que lugares no hay ningún tipo de vigilancia y, a lo mejor, es necesario añadir.
+
+En resumen, el aprovechamiento de los datos enlazados ofrece oportunidades significativas para mejorar la calidad de 
+vida en entornos urbanos mediante una gestión más inteligente y centrada en los ciudadanos.
 
 ## 4. Conclusiones
 
@@ -485,6 +607,7 @@ Subir los datos, estan en D:\Escritorio\WebSemantica\DataGenerate es el .ttl
 - [Datahub.io](https://datahub.io/)
 - [Old.datahub.io](https://old.datahub.io/)
 - [OOPS!](https://oops.linkeddata.es/index.jsp)
+- [SPARQL](https://datascience.recursos.uoc.edu/es/sparql/#:~:text=SPARQL%20es%20un%20lenguaje%20para,los%20elementos%20y%20sus%20relaciones)
 
 
 
