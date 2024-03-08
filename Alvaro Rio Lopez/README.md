@@ -18,10 +18,14 @@ Indice del trabajo:
 
 ## 1. Introducción
 
-Del catálogo de datos publicado en el [Portal web del Ayuntamiento de Madrid](https://www.madrid.es/portal/site/munimadrid), 
-se han seleccionado datos en relación con las multas de circulación tramitadas por el ayuntamiento de Madrid en el último mes. 
-Este trabajo tiene como objetivo la transformación de estos datos (.csv) en datos enlazados, para ello se aplicarán los 
-conocimientos estudiados durante el curso. 
+La gestión eficiente de la información relacionada con las multas de circulación es un aspecto crucial para garantizar 
+la seguridad vial y mejorar la movilidad en entornos urbanos. En este contexto, el presente trabajo se centra en la 
+transformación de datos sobre las multas de circulación publicadas en el [Portal web del Ayuntamiento de Madrid](https://www.madrid.es/portal/site/munimadrid),
+con el objetivo de convertir esta información en datos enlazados estructurados y significativos. Esta iniciativa no solo busca cumplir con 
+los estándares de la web semántica, sino también aprovechar al máximo el potencial de los datos enlazados para mejorar 
+la toma de decisiones y la planificación urbana en beneficio de los ciudadanos. A través de un proceso riguroso de 
+análisis, desarrollo de vocabulario y enlazado de datos, se busca proporcionar una visión integral y detallada de las 
+infracciones de tráfico en la ciudad, sentando las bases para una gestión más inteligente y centrada en la ciudadanía.
 
 ## 2. Proceso de transformación
 
@@ -597,6 +601,21 @@ En resumen, el aprovechamiento de los datos enlazados ofrece oportunidades signi
 vida en entornos urbanos mediante una gestión más inteligente y centrada en los ciudadanos.
 
 ## 4. Conclusiones
+
+Este proyecto me ha permitido entender a nivel práctico lo que son los datos enlazados y me ha permitido utilizar y
+aprender una serie de herramientas de gran utilidad en este ámbito. Además, me ha hecho entender la utilidad real que 
+tienen los datos enlazados y la web semántica y toda la investigación que queda por hacer para mejorar y hacer crecer 
+esta rama del software.
+
+En conclusión, el proceso de transformación de datos relacionados con las multas de circulación tramitadas por el 
+Ayuntamiento de Madrid ha sido fundamental para convertir información en bruto en datos enlazados significativos y 
+útiles. A través de la selección de la fuente de datos, el análisis detallado, el desarrollo de vocabulario, el 
+enlazado de información y la publicación de los resultados, se ha logrado crear un sistema escalable y compatible con 
+herramientas como Open Refine. Este trabajo no solo ha permitido obtener información valiosa sobre las multas de 
+circulación, sino que también ha demostrado el potencial de los datos enlazados para mejorar la gestión urbana y 
+la calidad de vida de los ciudadanos. En resumen, la aplicación de conceptos de web semántica y datos enlazados ha 
+abierto nuevas oportunidades para la optimización y la inteligencia en la gestión de la circulación en entornos urbanos.
+
 
 ## 5. Bibliografía
 - [Origen de los datos: Ayuntamiento de Madrid](https://datos.madrid.es/portal/site/egob/menuitem.c05c1f754a33a9fbe4b2e4b284f1a5a0/?vgnextoid=fb9a498a6bdb9410VgnVCM1000000b205a0aRCRD&vgnextchannel=374512b9ace9f310VgnVCM100000171f5a0aRCRD&vgnextfmt=default) Datos de Septiembre 2023
