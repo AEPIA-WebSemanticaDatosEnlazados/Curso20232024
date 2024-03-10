@@ -223,7 +223,7 @@ Se analizan cada uno de los pitfalls y se solucionan de la siguiente manera:
 Una vez realizados estos tres cambios en el esqueleto RDF se vuelve a evaluar la ontología, añadiendo el archivo rdf 
 como texto plano a la herramienta [OOPS!](https://oops.linkeddata.es/index.jsp). Se obtienen los siguientes resultados:
 
-<img width="805" height="182" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/oops2.JPG">
+<img width="604" height="137" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/oops2.JPG">
 
 Se continúa investigando como solucionar el pitfall de la licencia, llegando a la conclusión de que la solución es una 
 modificación de los metadatos. No se consigue realizar, por lo tanto, se especifica lo siguiente:
@@ -311,9 +311,9 @@ Para solucionar este problema, se hace uso de la función "Cluster and edit", fu
 diferencias que encontramos en las columnas LUGAR y HECHO_BOL. Se selecciona **Edit cells -> Cluster and edit...** y se 
 despliegan las siguientes ventanas:
 
-<img width="764" height="475" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/lugares.JPG">
+<img width="623" height="398" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/lugares.JPG">
 
-<img width="747" height="477" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/hecho-bol.JPG">
+<img width="623" height="398" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/hecho-bol.JPG">
 
 Se seleccionan todas las opciones posibles y se presiona en "Merge selected & re-cluster", unificando así las diferencias
 mencionadas.
@@ -411,14 +411,14 @@ etc (información que se obtiene de los datos con el esqueleto RDF generado).
 El proceso de enlazado se puede hacer desde la herramienta OpenRefine. Se selecciona la columna **CIUDAD** y posteriormente,
 se selecciona la funcionalidad **Reconcile -> Start reconciling...**, lo que despliega la siguiente ventana:
 
-<img width="671" height="436" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/reconcile.JPG">
+<img width="560" height="364" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/reconcile.JPG">
 
 En este caso se puede seleccionar la opción "Wikidata reconci.link (en)", no siendo necesario añadir un nuevo servicio de 
 reconciliación. Esta reconciliación asociará nuestro campo **CIUDAD** a través de [Wikidata](https://datos.gob.es/es/blog/wikidata-una-base-de-datos-de-conocimiento-libre-y-abierto#:~:text=%C2%BFQu%C3%A9%20es%20wikidata%3F,datos%20de%20otros%20repositorios%20digitales.). 
 Una vez seleccionada la opción "Wikidata reconci.link (en)", aparecen todas las posibles opciones para 
 reconciliar a partir de la columna **CIUDAD**, como se muestra a continuación.
 
-<img width="673" height="439" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/reconcile_ciudad.JPG">
+<img width="560" height="364" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/reconcile_ciudad.JPG">
 
 Una vez completado el proceso de reconciliación, se puede visualizar el resultado obtenido. Para ello se selecciona la 
 función **Edit column -> Add column based on this column** en la columna **CIUDAD**. Dentro de las opciones para crear 
