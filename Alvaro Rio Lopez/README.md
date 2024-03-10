@@ -207,7 +207,7 @@ Para la evaluación de la ontología se utiliza la herramienta [OOPS!](https://o
 herramienta permite escribir la ontología, en su formato rdf, directamente en la web, proporcionando la evaluación de la 
 misma. Se realiza esto una primera vez y se obtiene el siguiente resultado:
 
-<img width="873" height="713" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/oops1.JPG">
+<img width="698" height="570" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/oops1.JPG">
 
 Se analizan cada uno de los pitfalls y se solucionan de la siguiente manera:
 
@@ -218,7 +218,7 @@ Se analizan cada uno de los pitfalls y se solucionan de la siguiente manera:
 2. Se añade un nuevo tipo llamado "owl:Ontology".
 3. Se añade el prefijo base, teniendo como URI "http://multas-circulacion.es/ayuntamientomadrid/resource/".
 
-   <img width="450" height="300" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/prefijos.JPG">
+   <img width="315" height="210" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/prefijos.JPG">
 
 Una vez realizados estos tres cambios en el esqueleto RDF se vuelve a evaluar la ontología, añadiendo el archivo rdf 
 como texto plano a la herramienta [OOPS!](https://oops.linkeddata.es/index.jsp). Se obtienen los siguientes resultados:
@@ -311,9 +311,9 @@ Para solucionar este problema, se hace uso de la función "Cluster and edit", fu
 diferencias que encontramos en las columnas LUGAR y HECHO_BOL. Se selecciona **Edit cells -> Cluster and edit...** y se 
 despliegan las siguientes ventanas:
 
-<img width="994" height="633" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/lugares.JPG">
+<img width="764" height="475" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/lugares.JPG">
 
-<img width="996" height="636" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/hecho-bol.JPG">
+<img width="747" height="477" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/hecho-bol.JPG">
 
 Se seleccionan todas las opciones posibles y se presiona en "Merge selected & re-cluster", unificando así las diferencias
 mencionadas.
@@ -357,7 +357,7 @@ Para continuar con la construcción del esqueleto RDF presionamos la opción **R
 las herramientas necesarias para completar nuestro esqueleto:
 
 
-<img width="639" height="431" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/edit_skeleton_empty.JPG">
+<img width="479" height="323" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/edit_skeleton_empty.JPG">
 
 Lo primero que se debe hacer es añadir los prefijos que se van a necesitar, que han sido definidos en el 
 apartado 2.4. En este caso son:
@@ -411,14 +411,14 @@ etc (información que se obtiene de los datos con el esqueleto RDF generado).
 El proceso de enlazado se puede hacer desde la herramienta OpenRefine. Se selecciona la columna **CIUDAD** y posteriormente,
 se selecciona la funcionalidad **Reconcile -> Start reconciling...**, lo que despliega la siguiente ventana:
 
-<img width="783" height="509" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/reconcile.JPG">
+<img width="671" height="436" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/reconcile.JPG">
 
 En este caso se puede seleccionar la opción "Wikidata reconci.link (en)", no siendo necesario añadir un nuevo servicio de 
 reconciliación. Esta reconciliación asociará nuestro campo **CIUDAD** a través de [Wikidata](https://datos.gob.es/es/blog/wikidata-una-base-de-datos-de-conocimiento-libre-y-abierto#:~:text=%C2%BFQu%C3%A9%20es%20wikidata%3F,datos%20de%20otros%20repositorios%20digitales.). 
 Una vez seleccionada la opción "Wikidata reconci.link (en)", aparecen todas las posibles opciones para 
 reconciliar a partir de la columna **CIUDAD**, como se muestra a continuación.
 
-<img width="897" height="585" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/reconcile_ciudad.JPG">
+<img width="673" height="439" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/reconcile_ciudad.JPG">
 
 Una vez completado el proceso de reconciliación, se puede visualizar el resultado obtenido. Para ello se selecciona la 
 función **Edit column -> Add column based on this column** en la columna **CIUDAD**. Dentro de las opciones para crear 
@@ -449,11 +449,11 @@ Para continuar la publicación correcta de los datos vamos a usar la herramienta
 investigar su funcionamiento, se descubre que la forma correcta de publicar los datos es desde [old.datahub.io](https://old.datahub.io/).
 Por lo que, se crea un usuario y se presiona la opción "Publish data for free":
 
-<img width="1082" height="769" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/old_datahub.JPG">
+<img width="676" height="481" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/old_datahub.JPG">
 
 Al hacer eso aparecen los pasos a seguir para publicar los datos:
 
-<img width="736" height="355" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/datahub_steps.JPG">
+<img width="552" height="266" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/datahub_steps.JPG">
 
 Al intentar generar un ticket solicitando la creación de una nueva organización se genera un bucle infinito y no se es capaz
 de solicitar dicha creación. Es por eso que la solución que se plantea es mantener los datos públicos en este repositorio,
