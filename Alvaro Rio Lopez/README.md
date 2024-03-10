@@ -160,7 +160,7 @@ términos son los siguientes:
 A continuación, se muestra un primer esquema con la estructura de nuestra ontología. Este esquema, para el que se han 
 utilizado los términos definidos previamente, aclara las relaciones que debe haber entre dichos términos
 
-<img width="600" height="300" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/estructura.JPG">
+<img width="963" height="426" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/estructura.JPG">
 
 Se puede observar que la multa tiene una calificación, la cual puede ser muy grave, grave o leve; un lugar; unas 
 coordenadas, que constan de longitud y latitud; un importe, al cual se le puede haber aplicado un descuento o no; una 
@@ -285,14 +285,14 @@ estructura igual que un date.
 
 Cabe destacar que, al no tener información del día en el que se produjo la infracción, todas las fechas indican el día 01.
 
-<img width="80" height="200" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/fechas.JPG">
+<img width="92" height="224" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/fechas.JPG">
 
 
 **3.** Las columnas IMP_BOL, PUNTOS, VEL_LIMITE, VEL_CIRCULA, son números, pero en los datos originales se encuentran en 
 formato texto. Es por ello que se selecciona la opción **Edit cells -> Common transforms -> To number** consiguiendo así
 que estas columnas pasen a ser números.
 
-<img width="800" height="200" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/numbers.JPG">
+<img width="1309" height="307" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/numbers.JPG">
 
 **4.** Se añade una columna nueva llamada **CIUDAD**. El objetivo de añadir
 esta nueva columna es poder asociar nuestros datos, es decir, nuestras multas, al resto de elementos que encontramos en 
@@ -311,9 +311,9 @@ Para solucionar este problema, se hace uso de la función "Cluster and edit", fu
 diferencias que encontramos en las columnas LUGAR y HECHO_BOL. Se selecciona **Edit cells -> Cluster and edit...** y se 
 despliegan las siguientes ventanas:
 
-<img width="550" height="300" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/lugares.JPG">
+<img width="994" height="633" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/lugares.JPG">
 
-<img width="550" height="300" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/hecho-bol.JPG">
+<img width="996" height="636" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/hecho-bol.JPG">
 
 Se seleccionan todas las opciones posibles y se presiona en "Merge selected & re-cluster", unificando así las diferencias
 mencionadas.
@@ -343,7 +343,7 @@ final del texto. Esto se realiza en las columnas CALIFICACION, LUGAR, DENUNCIANT
 
 Una vez aplicados todos estos cambios, los datos están completos y tienen la siguiente estructura:
 
-<img width="800" height="300" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/datos_final.JPG">
+<img width="1092" height="328" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/datos_final.JPG">
 
 El siguiente paso es construir el RDF, para lo que se deben añadir los distintos prefijos. Todo esto ha sido posible gracias
 a la extensión de "RDF extension", en este caso la versión 1.4.0. La instalación de dicha extensión es sencilla, desde la
@@ -357,7 +357,7 @@ Para continuar con la construcción del esqueleto RDF presionamos la opción **R
 las herramientas necesarias para completar nuestro esqueleto:
 
 
-<img width="450" height="300" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/edit_skeleton_empty.JPG">
+<img width="639" height="431" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/edit_skeleton_empty.JPG">
 
 Lo primero que se debe hacer es añadir los prefijos que se van a necesitar, que han sido definidos en el 
 apartado 2.4. En este caso son:
@@ -389,7 +389,7 @@ Por último, se deben añadir propiedades a los recursos. Como ya ha sido mencio
 propiedades, las basadas en la ontología que se está creando, llamada **onto** y la ontología **schema**. Después de 
 todos estos pasos, el esqueleto se ve de la siguiente manera:
 
-<img width="450" height="300" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/skeleton.png">
+<img width="641" height="435" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/skeleton.png">
 
 Una vez aplicado todo esto se descarga el RDF tanto en formato Turtle como en formato RDF/XML desde la opción "Export", 
 que genera dos archivos, **202309detalle-csv.rdf** y **202309detalle-csv.ttl**. Estos archivos se encuentran en DataGenerate.zip.
@@ -411,14 +411,14 @@ etc (información que se obtiene de los datos con el esqueleto RDF generado).
 El proceso de enlazado se puede hacer desde la herramienta OpenRefine. Se selecciona la columna **CIUDAD** y posteriormente,
 se selecciona la funcionalidad **Reconcile -> Start reconciling...**, lo que despliega la siguiente ventana:
 
-<img width="450" height="300" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/reconcile.JPG">
+<img width="783" height="509" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/reconcile.JPG">
 
 En este caso se puede seleccionar la opción "Wikidata reconci.link (en)", no siendo necesario añadir un nuevo servicio de 
 reconciliación. Esta reconciliación asociará nuestro campo **CIUDAD** a través de [Wikidata](https://datos.gob.es/es/blog/wikidata-una-base-de-datos-de-conocimiento-libre-y-abierto#:~:text=%C2%BFQu%C3%A9%20es%20wikidata%3F,datos%20de%20otros%20repositorios%20digitales.). 
 Una vez seleccionada la opción "Wikidata reconci.link (en)", aparecen todas las posibles opciones para 
 reconciliar a partir de la columna **CIUDAD**, como se muestra a continuación.
 
-<img width="450" height="300" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/reconcile_ciudad.JPG">
+<img width="897" height="585" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/reconcile_ciudad.JPG">
 
 Una vez completado el proceso de reconciliación, se puede visualizar el resultado obtenido. Para ello se selecciona la 
 función **Edit column -> Add column based on this column** en la columna **CIUDAD**. Dentro de las opciones para crear 
@@ -435,7 +435,7 @@ clase a través de "schema:city" y, con la propiedad "owl:sameAS". Hacer esto pe
 Wikidata con nuestra instancia "Madrid", la cual se encuentra en la columna **CIUDAD-URI**. Todo este proceso se hace 
 desde la ventana de **Edit RDF skeleton** como se muestra a continuación:
 
-<img width="450" height="300" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/municipio_uri.JPG">
+<img width="490" height="355" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/municipio_uri.JPG">
 
 
 ### 2.7 Publicación
@@ -449,11 +449,11 @@ Para continuar la publicación correcta de los datos vamos a usar la herramienta
 investigar su funcionamiento, se descubre que la forma correcta de publicar los datos es desde [old.datahub.io](https://old.datahub.io/).
 Por lo que, se crea un usuario y se presiona la opción "Publish data for free":
 
-<img width="450" height="300" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/old_datahub.JPG">
+<img width="1082" height="769" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/old_datahub.JPG">
 
 Al hacer eso aparecen los pasos a seguir para publicar los datos:
 
-<img width="450" height="300" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/datahub_steps.JPG">
+<img width="736" height="355" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/datahub_steps.JPG">
 
 Al intentar generar un ticket solicitando la creación de una nueva organización se genera un bucle infinito y no se es capaz
 de solicitar dicha creación. Es por eso que la solución que se plantea es mantener los datos públicos en este repositorio,
