@@ -311,9 +311,9 @@ Para solucionar este problema, se hace uso de la función "Cluster and edit", fu
 diferencias que encontramos en las columnas LUGAR y HECHO_BOL. Se selecciona **Edit cells -> Cluster and edit...** y se 
 despliegan las siguientes ventanas:
 
-<img width="623" height="398" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/lugares.JPG">
+<img width="436" height="278" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/lugares.JPG">
 
-<img width="623" height="398" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/hecho-bol.JPG">
+<img width="436" height="278" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/hecho-bol.JPG">
 
 Se seleccionan todas las opciones posibles y se presiona en "Merge selected & re-cluster", unificando así las diferencias
 mencionadas.
@@ -379,7 +379,7 @@ Para continuar y poder definir las URIs, se selecciona la opción "(Row index) U
 utilidad a la columna **id** (la cual ha sido añadida a los datos como se explica en el apartado anterior). Se selecciona la
 columna **id** y se especifica el valor que debe tener la expresión, tal y como se ve en la siguiente imagen:
 
-<img width="350" height="300" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/uri.JPG">
+<img width="380" height="300" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/uri.JPG">
 
 Esto asegura unas URIs únicas para cada recurso, que presentan la siguiente estructura:
 
@@ -453,7 +453,7 @@ Por lo que, se crea un usuario y se presiona la opción "Publish data for free":
 
 Al hacer eso aparecen los pasos a seguir para publicar los datos:
 
-<img width="552" height="266" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/datahub_steps.JPG">
+<img width="460" height="222" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/datahub_steps.JPG">
 
 Al intentar generar un ticket solicitando la creación de una nueva organización se genera un bucle infinito y no se es capaz
 de solicitar dicha creación. Es por eso que la solución que se plantea es mantener los datos públicos en este repositorio,
