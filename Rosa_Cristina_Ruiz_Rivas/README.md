@@ -53,7 +53,7 @@ Patrón para términos ontólogicos: http://culture.linkedata.es/lov/ontology/Ev
 Patrón para individuos: http://culture.linkedata.es/lov/resource/<resource_type>/<resource_name>
 
 - **Desarrollo del vocabulario** 
-Se extraen los términos identificados a partir del esquema y los datos. Se busca en LOV los conceptos que mejor encajen con nuestro proyecto. Se debe reutilizar la mayor cantidad de conceptos en función de los sinónimos, adaptados a los términos de nuestro vocabulario. Para ello se deben mirar con detenimiento los filtros del vocabulario de https://lov.linkeddata.es/dataset/lov/vocabs.
+Se extraen los términos identificados a partir del esquema y los datos. Se busca en linkedata los conceptos que mejor encajen con nuestro proyecto. Se debe reutilizar la mayor cantidad de conceptos en función de los sinónimos, adaptados a los términos de nuestro vocabulario. Para ello se deben mirar con detenimiento los filtros del vocabulario de https://lov.linkeddata.es/dataset/lov/vocabs.
 
 A partir de un sujeto se establecen las relaciones. Nos podemos basar en la clase CivicStructure. En función de los datos proporcionados y el RDF que los soporta en formato Turtle, el sujeto más apropiado es Event. Según los conceptos que nos planteamos se deben definir las siguientes clases como se explica en el siguiente apartado.
 La ontología se encuentra en la ruta para términos ontólogicos.
@@ -65,7 +65,8 @@ Preguntas de competencia funcionales:
 ¿Cual es la dirección y en qué ciudad?
 
 Con ello los datos individuales se recogen en ID-EVENTO que será único para cada evento y similar al uprn, TITULO, LARGA-DURACION, FECHA, FECHA-FIN, HORA, DIRECCION, DISTRITO-INSTALACION, BARRIO-INSTALACION, CIUDAD, CÓDIGO-POSTAL-INSTALACIÓN, COORDENADA-X, COORDENADA-Y.
-    - **Creación de una ontología**
+    
+- ***Creación de una ontología***
     Se parte de las tripletas con sus sujetos propiedades y objetos. La Semántica Ontológica es una teoría del significado que tiene como base una ontología, un generador de conocimiento a partir de los textos que se analizan y un generador de lenguaje basado en una representación concreta del significado. La ontología o base de conocimiento es una forma de entender el dominio de los eventos culturales de Madrid.
 
 - **Proceso de transformación**
@@ -74,9 +75,9 @@ Se emplea OpenRefine para realizar un cluster a partir de Facet y eliminar los I
 
 Con ello se edita el esqueleto o esquema de RDF en OpenRefine, en función del desarrollo del vocabulario.
 Se usa TITULO como URI con grel "Event/"+value. Es un lenguaje funcional.
-Se define la propiedad hasID a partir del prefijo onto que define la ontología. Se asocia al ID_EVENTO único de tipo texto. TITULO sería el sujeto, hasID sería el predicado e ID-EVENTO el objeto o la clase. A partir de la búsqueda de LOV se define la semántica. En LOV seleccionamos las propiedades a partir de schema. 
+Se define la propiedad hasID a partir del prefijo onto que define la ontología. Se asocia al ID_EVENTO único de tipo texto. TITULO sería el sujeto, hasID sería el predicado e ID-EVENTO el objeto o la clase. A partir de la búsqueda de linkeddata se define la semántica más apropiada al vocabulario planteado. 
 
-Las propiedades fueron buscadas con detenimiento y seleccionadas en http://schema.org a partir de LOV y en dbpedia.owl.
+Las propiedades fueron buscadas con detenimiento y seleccionadas en http://schema.org a partir de linkeddata y en dbpedia.owl.
 A continuación se exponen las propiedades y los conceptos más relevantes aplicables a nuestro conjuntos de datos, tras filtrarlos por relevancia. Se transforma el esqueleto :
 - schema:isAccesibleForFREE -> GRATUITO: Nos indica la gratuidad del evento, que es contenido booleano.
 - schema:duration -> LARGA-DURACION: Duración del evento diaria o semanal, que es contenido booleano.
@@ -88,7 +89,7 @@ A continuación se exponen las propiedades y los conceptos más relevantes aplic
 - dbpedia-owl:district -> DISTRITO-INSTALACION: Distrito donde se ubica la instalación donde se realiza el evento.
 - schema:longitude -> COORDENADA-X: localización en dirección este y oeste del recinto donde se ubica el evento.
 - schema:latitude -> COORDENADA-Y:localización en dirección norte y sur del recinto donde se ubica el evento.
-El barrio de la instalación se borra tras el proceso de linkado por no ser barrios conocidos y no encontrarse en LOV, el vocabulario adecuado para los mismos.
+El barrio de la instalación se borra tras el proceso de linkado por no ser barrios conocidos y no encontrarse en linkedata, el vocabulario adecuado para los mismos.
 
 - **Enlazado de datos**
 Dentro de nuestro dataset transformado, se identifica la clase Madrid cuyos datos pueden ser enlazados. Consiste en encontrar qué conjuntos de datos contienen instancias. Se emplea Openrefine para llevar acabo el enlazado. Se busca un dataset disponible y bien documentado para que se generen datos entrantes. Se ejecuta un servicio de reconciliación dbpedia.es basado en SPARQL endpoint dentro de OpenRefine tanto en origen como en destino.
@@ -113,7 +114,9 @@ Pueden distribuirse bajo la licencia CC BY-SA 4.0.
 
  En esta solución se añade el servicio de reconciliación basado en SPARQL endpoint llamado DBPedia.es con es.dbpedia.org/sparql. SPARQL es un lenguaje de consulta sobre RDFs, soportado por las APIs. Permite combinar en la misma consulta elementos pertenecientes a los datos y al esquema. Permite a los usuarios hacer consultas usando SPARQL. Permite hacer consultas sobre propiedades de un recurso. En este proyecto se usa la propiedad onto: hasID. La consulta que resuelve es: "Partiendo del sujeto formado por la URI con el título del evento, dime si la ontología tiene un identificador de evento para cada uno de los eventos".
 
- Así se establece un patrón de búsqueda sobre el grafo RDF. Con ello se accede al identificador de cada evento, como se ve en el fichero Turtle de final de proyecto. Además se accede al vocabulario, una vez se han acoplado los datos a la estructura planteada, de cada evento de Madrid, a partir de schema. Se enlazan con el dataset de destino wikidata. Ofrece al usuario final información precisa del precio del evento, la duración, la fecha, la localización y la dirección. 
+ Así se establece un patrón de búsqueda sobre el grafo RDF. Con ello se accede al identificador de cada evento, como se ve en el fichero Turtle Agenda-eventos-culturales-final.ttl. Además se accede al vocabulario, una vez se han acoplado los datos a la estructura planteada, de cada evento de Madrid, a partir de schema. Se enlazan con el dataset de destino wikidata. Ofrece al usuario final información precisa del precio del evento, la duración, la fecha, la localización y la dirección. 
+
+La ontología se implementa en RDF en el fichero Agenda-eventos-culturales-final.rdf. Nos aporta un conjunto de conceptos y clases en una estructura jerárquica en torno al dominio de evento, que es la clase principal, que se disgrega en las clases gratuito, duración, fecha en que empieza, fecha en que termina, localización, descripción y ciudad. A partir de estos conceptos se generan individuos que serán instancias de cada una de estas clases dentro del nivel de datos.
 
 
 - **Conclusiones**: Tras lo anterior, se ofrece una sección de conclusiones y lecciones aprendidas durante el desarrollo del proyecto final, a modo de resumen sobre todo el proceso realizado en la práctica. Los contenidos de web semántica y datos enlazados nos lleva a construir este proyecto de eventos de madrid y una ontología en base a la misma a partir del sujeto evento. Ha sido una ardua tarea entre localizar las bases de datos, transformarlos a la semántica adecuada y enlazar las distintas bases de datos. Se adaptan los datos de munimadrid, se analizan la licencia y la fuente de datos, se transforman para adecuarlos a los patrones y rutas para términos ontológicos e individuos buscando la ontología más apropiada.
