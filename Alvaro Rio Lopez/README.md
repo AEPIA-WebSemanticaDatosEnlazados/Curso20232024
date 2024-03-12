@@ -225,8 +225,11 @@ como texto plano a la herramienta [OOPS!](https://oops.linkeddata.es/index.jsp).
 
 <img width="604" height="137" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/oops2.JPG">
 
-Se continúa investigando como solucionar el pitfall de la licencia, llegando a la conclusión de que la solución es una 
-modificación de los metadatos. No se consigue realizar, por lo tanto, se especifica lo siguiente:
+Se continúa investigando como solucionar el pitfall de la licencia y, tras investigar en distintos foros, se descubre 
+que, la recomendación de reparación proporcionada por [OOPS!](https://oops.linkeddata.es/index.jsp)
+es incluir una declaración que contenga la información de la licencia utilizando cualquiera de las siguientes 
+propiedades: dc:rights, dcterms:rights, dcterms:license, c:license o xhv:license. Se implementa dicha solución 
+(probando todas las posibles soluciones dadas), pero el pitfall de la licencia continua, por lo tanto, se especifica lo siguiente:
 
 Los datos y la ontología contenidos en este repositorio público están bajo la licencia CC BY 4.0, reconociendo 
 debidamente al [Ayuntamiento de Madrid](https://www.madrid.es/portal/site/munimadrid) como la fuente primaria de todos 
