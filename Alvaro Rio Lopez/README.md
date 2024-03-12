@@ -1,6 +1,6 @@
 # **Multas de circulación**
 
-Índice:
+## Índice:
 
 1. Introducción
 2. Proceso de transformación:
