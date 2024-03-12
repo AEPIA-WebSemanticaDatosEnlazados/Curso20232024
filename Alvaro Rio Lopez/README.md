@@ -395,7 +395,7 @@ que genera dos archivos, **202309detalle-csv.rdf** y **202309detalle-csv.ttl**. 
 
 Se habría preferido crear un directorio (al igual que existe Images, Dataset, etc.) pero no ha sido posible por el tamaño
 de los archivos, ya que en el archivo .rdf, se encuentran más de 3.200.000 líneas en el documento. Cuando se intenta 
-hacer un push salta un error, ya que los archivos superan los 100.00 MB, razón por la que se comprime el directorio y se sube de esa manera.
+hacer un push salta un error, debido a que los archivos superan los 100.00 MB, razón por la que se comprime el directorio y se sube de esa manera.
 
 ### 2.6 Enlazado
 
