@@ -36,9 +36,9 @@ Este portal está dedicado a promover el acceso a los datos del gobierno municip
 para atraer y servir a la ciudadanía.
 
 Dichos datos se definen como un conjunto de datos que va incorporando todas las multas de circulación que el Ayuntamiento 
-de Madrid tramita cada mes, con todo el detalle posible sobre cada una de ellas que permite la legislación de protección de datos. 
+de Madrid tramita cada mes, con todo el detalle posible sobre cada una de ellas, lo que permite la legislación de protección de datos. 
 Se incluye información sobre la infracción cometida, su gravedad o el lugar donde se denunció. La información se ajusta a los datos 
-existentes en el momento de la publicación, sin prejuzgar el resultado final de la tramitación del expediente sancionador, 
+existentes en el momento de la publicación, sin tener en cuenta el resultado final de la tramitación del expediente sancionador, 
 como consecuencia de reclamaciones y/ o recursos de las personas denunciadas.
 
 Los datos descargados se encuentran en formato .csv y se encuentran en la carpeta [Dataset](https://github.com/alvaro-rio/WebSemanticaCurso20232024/tree/main/Alvaro%20Rio%20Lopez/Dataset).
@@ -53,7 +53,7 @@ Los datos descargados se encuentran en formato .csv y se encuentran en la carpet
    * 5 Deben conservarse, no alterarse ni suprimirse los metadatos sobre la fecha de actualización y las condiciones de reutilización aplicables incluidos, en su caso, en el documento puesto a disposición para su reutilización.
    * 6 En caso de información anonimizada por protección de datos personales u otros motivos, está expresamente prohibido realizar labores de re-identificación de personas a partir de estos datos y otras fuentes de datos e información posibles, pasadas, actuales o futuras.
 
-Es por ello que, como se indican en los puntos 1 y 2, la obtención de los datos es citada en la bibliografía de este documento 
+Es por ello que, como se indica en los puntos 1 y 2, la obtención de los datos es citada en la bibliografía de este documento 
 indicando su origen y su fecha de obtención. Para mayor detalle sobre las condiciones de uso se puede revisar la web 
 [Condiciones generales para la modalidad general de puesta a disposición de los documentos reutilizables del Ayuntamiento de Madrid](https://datos.madrid.es/portal/site/egob/menuitem.3efdb29b813ad8241e830cc2a8a409a0/?vgnextoid=108804d4aab90410VgnVCM100000171f5a0aRCRD&vgnextchannel=b4c412b9ace9f310VgnVCM100000171f5a0aRCRD&vgnextfmt=default)
 
@@ -98,7 +98,7 @@ cambio y '/' para los datos dinámicos:
 
 ### 2.4 Desarrollo del vocabulario
 
-Como hemos visto en clase, el desarrollo de un vocabulario consta de los siguientes pasos:
+Como se ha visto en clase, el desarrollo de un vocabulario consta de los siguientes pasos:
 
 * 1 - Definición de requisitos
 * 2 - Extracción de términos
@@ -128,7 +128,7 @@ Los requisitos funcionales son obtenidos haciendo Preguntas de Competencia, en e
 | PC4                     | ¿Importe económico de la multa?                          |
 | PC5                     | ¿Se aplicó descuento a la multa?                         |
 | PC6                     | ¿Puntos retirados al conductor?                          |
-| PC7                     | ¿Quien denunció la infracción?                           |
+| PC7                     | ¿Quién denunció la infracción?                           |
 | PC8                     | ¿Causa de la multa?                                      |
 | PC9                     | ¿Velocidad límite de la vía?                             |
 | PC10                    | ¿Velocidad de circulación del infractor?                 |
@@ -143,15 +143,15 @@ términos son los siguientes:
 | Términos             | Descripción                                                               |
 |----------------------|---------------------------------------------------------------------------|
 | Calificación         | Calificación asignada a la infracción.                                    |
-| Lugar                | Indicar la calle de madrid donde se produjo la infracción.                |
+| Lugar                | Indicar la calle de Madrid donde se produjo la infracción.                |
 | Fecha                | Hora, mes y año en el que se produjo la infracción.                       |
 | Importe              | Cantidad económica que debe pagar el infractor.                           |
-| Descuento            | Indicativo de si se aplico descuento al importe o no.                     |
+| Descuento            | Indicativo de si se aplicó descuento al importe o no.                     |
 | Puntos               | Número de puntos retirados del carnet de conducir del infractor.          |
-| Denunciante          | Quien o que elemento pone la multa.                                       |
+| Denunciante          | Quién o qué elemento pone la multa.                                       |
 | Causa multa          | Pequeña descripción de porque se produjo la multa.                        |
-| Velocidad límite     | Velocidad máxima permitida en la via en la que se sanciona la infracción. |
-| Velocidad infracción | Velocidad a la que circulaba el vehiculo infractor.                       |
+| Velocidad límite     | Velocidad máxima permitida en la vía en la que se sanciona la infracción. |
+| Velocidad infracción | Velocidad a la que circulaba el vehículo infractor.                       |
 | Coordenadas          | Coordenadas geográficas donde se produjo la infracción.                   |
 
 
@@ -295,7 +295,7 @@ que estas columnas pasen a ser números.
 <img width="1309" height="307" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/numbers.JPG">
 
 **4.** Se añade una columna nueva llamada **CIUDAD**. El objetivo de añadir
-esta nueva columna es poder asociar nuestros datos, es decir, nuestras multas, al resto de elementos que encontramos en 
+esta nueva columna es poder asociar los datos que están siendo tratados, es decir, las multas, al resto de elementos que encontramos en 
 la red. Esta columna usa https://schema.org/city, por lo que es una conexión directa a otros posibles datos de la red.
 Se vuelve a seleccionar **Edit column -> Add column based on this column** y, en este caso con el lenguaje GREL, se ejecuta:
 ```python
@@ -337,9 +337,8 @@ Se obtiene así la nueva columna con ambas coordenadas con el formato: (4419.57,
 return value.strip()
 ```
 
-El objetivo de este código es aplicarle la función **strip()** de python a todos los textos para así evitar ensuciar el
-esqueleto. El objetivo de esta función es eliminar los espacios en blanco que se encuentren en el principio y/o en el 
-final del texto. Esto se realiza en las columnas CALIFICACION, LUGAR, DENUNCIANTE, HECHO-BOL, COORDENADA-X y COORDENADA-Y.
+El objetivo de este código evitar ensuciar el esqueleto, para lo que se aplica la función **strip()** de python a todos los textos, logrando la eliminación de los espacios en blanco
+que se encuentren en el principio y/o el final del texto. Esto se realiza en las columnas CALIFICACION, LUGAR, DENUNCIANTE, HECHO-BOL, COORDENADA-X y COORDENADA-Y.
 
 Una vez aplicados todos estos cambios, los datos están completos y tienen la siguiente estructura:
 
@@ -391,7 +390,7 @@ todos estos pasos, el esqueleto se ve de la siguiente manera:
 
 <img width="641" height="435" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/skeleton.png">
 
-Una vez aplicado todo esto se descarga el RDF tanto en formato Turtle como en formato RDF/XML desde la opción "Export", 
+Una vez aplicado todo esto, se descarga el RDF tanto en formato Turtle como en formato RDF/XML desde la opción "Export", 
 que genera dos archivos, **202309detalle-csv.rdf** y **202309detalle-csv.ttl**. Estos archivos se encuentran en DataGenerate.zip.
 
 Se habría preferido crear un directorio (al igual que existe Images, Dataset, etc.) pero no ha sido posible por el tamaño
@@ -414,7 +413,7 @@ se selecciona la funcionalidad **Reconcile -> Start reconciling...**, lo que des
 <img width="560" height="364" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/reconcile.JPG">
 
 En este caso se puede seleccionar la opción "Wikidata reconci.link (en)", no siendo necesario añadir un nuevo servicio de 
-reconciliación. Esta reconciliación asociará nuestro campo **CIUDAD** a través de [Wikidata](https://datos.gob.es/es/blog/wikidata-una-base-de-datos-de-conocimiento-libre-y-abierto#:~:text=%C2%BFQu%C3%A9%20es%20wikidata%3F,datos%20de%20otros%20repositorios%20digitales.). 
+reconciliación. Esta reconciliación asociará el campo **CIUDAD** a través de [Wikidata](https://datos.gob.es/es/blog/wikidata-una-base-de-datos-de-conocimiento-libre-y-abierto#:~:text=%C2%BFQu%C3%A9%20es%20wikidata%3F,datos%20de%20otros%20repositorios%20digitales.). 
 Una vez seleccionada la opción "Wikidata reconci.link (en)", aparecen todas las posibles opciones para 
 reconciliar a partir de la columna **CIUDAD**, como se muestra a continuación.
 
@@ -427,7 +426,7 @@ que el nombre de la columna es **CIUDAD-URI**. En este caso, tras aplicar la rec
 el resultado final es: "http://www.wikidata.org/entity/Q2807".
 
 Para que el proceso de reconciliación se haya realizado correctamente toda la columna **CIUDAD-URI** debe tener el mismo 
-valor, que es "http://www.wikidata.org/entity/Q2807". Se comprueba que así es por lo que la reconciliación se ha 
+valor, que es "http://www.wikidata.org/entity/Q2807". Se comprueba que así es, por lo que la reconciliación se ha 
 realizado correctamente.
 
 Al haber generado una columna más (**CIUDAD-URI**), se agrega una nueva propiedad nueva para esta columna. Se define la 
@@ -447,7 +446,7 @@ zip, ya que, ambos archivos (.ttl y .rdf) superan el tamaño de 100.00 MB.
 
 Para continuar la publicación correcta de los datos vamos a usar la herramienta [datahub.io](https://datahub.io/). Tras 
 investigar su funcionamiento, se descubre que la forma correcta de publicar los datos es desde [old.datahub.io](https://old.datahub.io/).
-Por lo que, se crea un usuario y se presiona la opción "Publish data for free":
+Por lo que se crea un usuario y se presiona la opción "Publish data for free":
 
 <img width="676" height="481" alt="image" src="https://github.com/alvaro-rio/WebSemanticaCurso20232024/blob/main/Alvaro%20Rio%20Lopez/Images/old_datahub.JPG">
 
