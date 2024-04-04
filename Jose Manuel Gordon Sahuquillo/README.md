@@ -1,8 +1,8 @@
 # Memoria del proyecto final
 
-*Asignatura:* Web Semántica y Datos Enlazados.
+**Asignatura:** Web Semántica y Datos Enlazados.
 
-*Autor:* Jose Manuel Gordon Sahuquillo
+**Autor:** Jose Manuel Gordon Sahuquillo
 
 ### Índice
 * 1 - Introducción.
