@@ -27,7 +27,7 @@ Este documento presenta la memoria del proyecto final correspondiente a la asign
 
 La Web Semántica y los Datos Enlazados son conceptos que están estrechamente relacionados, ya que ambos están enfocados en optimizar la organización y presentación de la información en la web con el objetivo de hacerla más accesible y comprensible para las máquinas y las personas.
 
-El propósito de este trabajo es aplicar los diversos conocimientos adquiridos a lo largo del curso con el objetivo de cumplir los objetivos mencionados anteriormente. Para ello, se ha seleccionado el conjunto de datos "Resumen de escolarización 2023" el cual almacena registros de escolarización por sexo, etapa educativa, centro, idioma, regimen, municipio, provincia de los distintos centros educativos que existen en la Comunidad Valenciana. 
+El propósito de este trabajo es aplicar los diversos conocimientos adquiridos a lo largo del curso con el objetivo de cumplir los objetivos mencionados anteriormente. Para ello, se ha seleccionado el conjunto de datos "Resumen de escolarización 2023" el cual almacena registros de escolarización por sexo, etapa educativa, centro, idioma, regimen, municipio y provincia de los distintos centros educativos que existen en la Comunidad Valenciana. 
 
 Siguiendo las metodologías establecidas en el curso, se llevará a cabo la transformación de estos datos en un conjunto de datos enlazados, lo que nos permitirá aprovechar al máximo su potencial y facilitará su integración, consulta y análisis en diversos contextos y aplicaciones.
 
