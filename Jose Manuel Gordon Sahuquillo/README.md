@@ -42,31 +42,10 @@ Continuaremos el trabajo hablando de la fase de enlazado, donde se describirá e
 
 Por último, hablaremos de la fase de publicación, donde se estudiará la conveniencia de realizar este proceso.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ## 2.1 - Selección de la fuente de datos.
+Los datos que se han seleccionado para la transformación provienen del portal de datos abiertos de la Generalitat Valenciana. En concreto, se han seleccionado los siguientes datos: https://dadesobertes.gva.es/es/dataset/edu-alu-gen-2023. Estos datos corresponden al resumen de escolarización del año 2023.
+
+Es un dataset interesante, ya que permite visualizar un resumen detallado de la distribución por sexos en cada centro educativo en las diferentes etapas educativas. Además, proporciona otro tipo de información útil, como la ubicación de cada centro educativo, el régimen y tipo jurídico al que están adscritos y el programa lingüístico al que están adscritos.
 
 
 
