@@ -47,45 +47,39 @@ Los datos que se han seleccionado para la transformación provienen del portal d
 
 Es un dataset interesante, ya que permite visualizar un resumen detallado de la distribución por sexos en cada centro educativo en las diferentes etapas educativas. Además, proporciona otro tipo de información útil, como la ubicación de cada centro educativo, el régimen y tipo jurídico al que están adscritos y el programa lingüístico al que están adscritos.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ## 2.2 - Análisis de los datos.
+(Análisis de los datos, explicando que tipo de datos se manejan, su formato, tipos de valores, y en general cualquier aspecto relevante para su transformación y explotación. Este análisis debe incluir la licencia de origen de los datos y la justificación de la licencia a usar en los datos transformados.)
 
+En primer lugar empezaremos analizando la licencia que tiene el conjunto de datos de origen. Como podemos ver en la web de datos abiertos, nos encontramos con una licencia tipo "Creative Commons Attribution" o lo que es lo mismo, una licencia CC BY 4.0. Esta licencia permite la modificación, redistribución y reutilización de los datos, incluso con fines comerciales, siempre y cuando se reconozca expresamente la autoría original de los datos que en este caso corresponde a la Conselleria de Educación, Universidades y Empleo de la Generalitat Valenciana.
 
+Dado el carácter del proyecto y teniendo en cuenta que el objetivo final es crear un modelo que pueda ser reutilizable por otras personas considero que la licencia resultante del proyecto tiene que ser también CC BY 4.0, ya que así podemos permitir a otras personas compartir, usar y trabajar sobre el proyecto de forma libre, pero dejando patente la autoría del proyecto.
 
+El siguiente paso es realizar un análisis exploratorio de los datos que componen el dataset. Para ello usaremos la herramienta Open Refine. Vemos que el conjunto de datos de origen tiene un total de 18461 registros que se encuentran distribuidos en 23 campos, los cuales son:
 
-
-
-
-
-
-
-
-
-
+| Campo    | Tipo de dato | Descripción   |
+|-----------|------|----------|
+| _id | int | Es el campo clave que identifica al registro de la tabla.|
+| CURSO_ACAD | int | Hace referencia al curso escolar del registro.|
+| COD_CENTRO | int| Es un identificador único que identifica al centro educativo.|
+| NOM_CENTRO | String| Es un campo que hace referencia al nombre del centro educativo. |
+| REG_JUR | String | Este campo está compuesto por tres letras, que son la abreviatura del régimen jurídico al que está adscrito el centro educativo.|
+| COD_TIPO | Char| En este campo tenemos un carácter que especifica el tipo de centro educativo que es.|
+| DESC_TIPO_ES | String | Este campo nos indica en castellano el tipo de enseñanza que da el centro educativo.|
+| DESC_TIPO_VA | String |Este campo nos indica en valenciano el tipo de enseñanza que da el centro educativo. |
+| LOCALIDAD | String | Este campo nos indica en qué localidad se encuentra el centro educativo. |
+| COD_MUN | int | Es el número del código de municipio donde se encuentra el centro educativo.|
+| NOM_MUN_OF | String | Este campo hace referencia a los nombres oficiales aceptados para el municipio en castellano y valenciano.|
+| NOM_PROV_ES | String | Indica el nombre de la provincia en castellano.|
+| NOM_PROV_VA | String |  Indica el nombre de la provincia en valenciano.|
+| COD_ENSE | int | Hace referencia al código de enseñanza que tiene el centro.|
+| DESC_ENSE_ES | String |Es una descripción de la enseñanza en castellano.|
+| DESC_ENSE_VA | String |Es una descripción de la enseñanza en valenciano.|
+| COD_CURSO | int | Indica el curso que hace referencia el registro.|
+| IDIOMA | String | Hace referencia al programa lingüístico que está suscrito.|
+| MUJERES | int | Indica el total de mujeres matriculadas en el centro educativo en ese curso en concreto. |
+| HOMBRES | int | Indica el total de hombres matriculados en el centro educativo en ese curso en concreto.|
+| OTROS | int | Indica el total de personas sin género definido matriculadas en el centro educativo en ese curso en concreto.|
+| TOTAL_MATRICULACIONES | int | Indica el total de personas matriculadas en el centro en ese curso en concreto.|
 
 
 
