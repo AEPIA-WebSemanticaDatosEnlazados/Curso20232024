@@ -54,35 +54,60 @@ En primer lugar empezaremos analizando la licencia que tiene el conjunto de dato
 
 Dado el carácter del proyecto y teniendo en cuenta que el objetivo final es crear un modelo que pueda ser reutilizable por otras personas considero que la licencia resultante del proyecto tiene que ser también CC BY 4.0, ya que así podemos permitir a otras personas compartir, usar y trabajar sobre el proyecto de forma libre, pero dejando patente la autoría del proyecto.
 
-El siguiente paso es realizar un análisis exploratorio de los datos que componen el dataset. Para ello usaremos la herramienta Open Refine. Vemos que el conjunto de datos de origen tiene un total de 18461 registros que se encuentran distribuidos en 23 campos, los cuales son:
+El siguiente paso es realizar un análisis exploratorio de los datos que componen el dataset. Para ello usaremos la herramienta Open Refine. Vemos que el conjunto de datos de origen tiene un total de 18461 registros que se encuentran distribuidos en 23 campos, los cuales los podemos describir de la siguiente forma:
 
-| Campo    | Tipo de dato | Descripción   |
+| Campo    | Tipo de dato | Descripción del campo   |
 |-----------|------|----------|
-| _id | int | Es el campo clave que identifica al registro de la tabla.|
-| CURSO_ACAD | int | Hace referencia al curso escolar del registro.|
-| COD_CENTRO | int| Es un identificador único que identifica al centro educativo.|
-| NOM_CENTRO | String| Es un campo que hace referencia al nombre del centro educativo. |
-| REG_JUR | String | Este campo está compuesto por tres letras, que son la abreviatura del régimen jurídico al que está adscrito el centro educativo.|
-| COD_TIPO | Char| En este campo tenemos un carácter que especifica el tipo de centro educativo que es.|
-| DESC_TIPO_ES | String | Este campo nos indica en castellano el tipo de enseñanza que da el centro educativo.|
-| DESC_TIPO_VA | String |Este campo nos indica en valenciano el tipo de enseñanza que da el centro educativo. |
-| LOCALIDAD | String | Este campo nos indica en qué localidad se encuentra el centro educativo. |
-| COD_MUN | int | Es el número del código de municipio donde se encuentra el centro educativo.|
-| NOM_MUN_OF | String | Este campo hace referencia a los nombres oficiales aceptados para el municipio en castellano y valenciano.|
-| NOM_PROV_ES | String | Indica el nombre de la provincia en castellano.|
-| NOM_PROV_VA | String |  Indica el nombre de la provincia en valenciano.|
-| COD_ENSE | int | Hace referencia al código de enseñanza que tiene el centro.|
-| DESC_ENSE_ES | String |Es una descripción de la enseñanza en castellano.|
-| DESC_ENSE_VA | String |Es una descripción de la enseñanza en valenciano.|
-| COD_CURSO | int | Indica el curso que hace referencia el registro.|
-| IDIOMA | String | Hace referencia al programa lingüístico que está suscrito.|
-| MUJERES | int | Indica el total de mujeres matriculadas en el centro educativo en ese curso en concreto. |
-| HOMBRES | int | Indica el total de hombres matriculados en el centro educativo en ese curso en concreto.|
-| OTROS | int | Indica el total de personas sin género definido matriculadas en el centro educativo en ese curso en concreto.|
-| TOTAL_MATRICULACIONES | int | Indica el total de personas matriculadas en el centro en ese curso en concreto.|
+| _id | numeric | Es el campo clave que identifica al registro de la tabla.|
+| CURSO_ACAD | numeric | Hace referencia al curso escolar del registro.|
+| COD_CENTRO | numeric | Es un identificador único que identifica al centro educativo.|
+| NOM_CENTRO | text | Es un campo que hace referencia al nombre del centro educativo. |
+| REG_JUR | text | Este campo está compuesto por tres letras, que son la abreviatura del régimen jurídico al que está adscrito el centro educativo.|
+| COD_TIPO | text | En este campo tenemos un carácter que especifica el tipo de centro educativo que es.|
+| DESC_TIPO_ES | text | Este campo nos indica en castellano el tipo de enseñanza que da el centro educativo.|
+| DESC_TIPO_VA | text | Este campo nos indica en valenciano el tipo de enseñanza que da el centro educativo. |
+| LOCALIDAD | text | Este campo nos indica en qué localidad se encuentra el centro educativo. |
+| COD_MUN | numeric | Es el número del código de municipio donde se encuentra el centro educativo.|
+| NOM_MUN_OF | text | Este campo hace referencia a los nombres oficiales aceptados para el municipio en castellano y valenciano.|
+| COD_PROV | numeric | Indica el número del código de la provincia.|
+| NOM_PROV_ES | text | Indica el nombre de la provincia en castellano.|
+| NOM_PROV_VA | text |  Indica el nombre de la provincia en valenciano.|
+| COD_ENSE | numeric | Hace referencia al código de enseñanza que tiene el centro.|
+| DESC_ENSE_ES | text |Es una descripción de la enseñanza en castellano.|
+| DESC_ENSE_VA | text |Es una descripción de la enseñanza en valenciano.|
+| COD_CURSO | numeric | Indica el curso que hace referencia el registro.|
+| IDIOMA | text | Hace referencia al programa lingüístico que está suscrito.|
+| MUJERES | numeric | Indica el total de mujeres matriculadas en el centro educativo en ese curso en concreto. |
+| HOMBRES | numeric | Indica el total de hombres matriculados en el centro educativo en ese curso en concreto.|
+| OTROS | numeric | Indica el total de personas sin género definido matriculadas en el centro educativo en ese curso en concreto.|
+| TOTAL_MATRICULACIONES | numeric | Indica el total de personas matriculadas en el centro en ese curso en concreto.|
 
+En cuanto a la composición de los datos propiamente dicha tenemos los siguientes valores:
+* **_id:** Tenemos un campo único que tiene valores en un rango de [1, ..., 18461].
+* **CURSO_ACAD:** Únicamente tenemos el valor de [2023], ya que el fichero corresponde a ese año.
+* **COD_CENTRO:** Los valores siguen un patrón para su formación, ya que todos empiezan por 12 si son de la provincia de Castellón, 30 si son de la provincia de Alicante o 46 si son de la provincia de Valencia. El resto de la numeración es un código que asigna la Conselleria.
+* **NOM_CENTRO:** Toma alguno de los 1620 nombres diferentes que tienen los centros de la Comunitat Valenciana.
+* **REG_JUR:** Puede tomar los valores de [N/A, PRI y PUB].
+* **COD_TIPO:** Puede tomar los valores de [C, I, O, P].
+* **DESC_TIPO_ES:** Puede tomar los valores de [CONCERTADO, OTROS, PRIVADO, PÚBLICO].
+* **DESC_TIPO_VA:** Puede tomar los valores de [ALTRES, CONCERTAT, PRIVAT, PÚBLIC].
+* **LOCALIDAD:** Toma alguna de las 439 localidades que componen la Comunitat Valenciana desde [ADEMUZ, ..., ZUCAINA]
+* **COD_MUN:** Puede tomar alguno de los 382 códigos de municipio existentes. Siguen el patrón de que los que empiezan por 12 si corresponden a la provincia de Castellón, 30 si son de la provincia de Alicante o 46 si son de la provincia de Valencia.
+* **NOM_MUN_OF:** Toma alguna de las 439 localidades que componen la Comunitat Valenciana desde [ADEMUZ, ..., ZUCAINA]
+* **COD_PROV:** Toma los valores de 12 si corresponden a la provincia de Castellón, 30 si son de la provincia de Alicante o 46 si son de la provincia de Valencia.
+* **NOM_PROV_ES:** Toma los valores de [ALICANTE/ALACANT, CASTELLÓN/CASTELLÓ, VALENCIA/VALÈNCIA]. Este campo no está formado de forma correcta, ya que únicamente debería tener los valores de la izquierda de la barra.
+* **NOM_PROV_VA:** Toma los valores de [ALICANTE/ALACANT, CASTELLÓN/CASTELLÓ, VALENCIA/VALÈNCIA]. Este campo no está formado de forma correcta, ya que únicamente debería tener los valores de la derecha de la barra.
+* **COD_ENSE:** Toma los valores de [1, 2, 3, 4, 18].
+* **DESC_ENSE_ES:** Toma los valores de [BACHILLERATO, EDUCACIÓN ESPECIAL, EDUCACIÓN INFANTIL, EDUCACIÓN PRIMARIA, EDUCACIÓN SECUNDARIA OBLIGATORIA].
+* **DESC_ENSE_VA:** Toma los valores de [BATXILLERAT, EDUCACIÓ ESPECIAL, EDUCACIÓ INFANTIL, EDUCACIÓ PRIMÀRIA, EDUCACIÓ SECUNDÀRIA OBLIGÀTORIA].
+* **COD_CURSO:** Toma alguno de los 40 valores diferentes que corresponden al tipo de estudio, ESO, INF, PRI, BAC. Este dato se combina con el número que indica el nivel.
+* **IDIOMA:** Toma los valores de [DESCONOCIDO, INGLÉS-EXPERIMENTAL, PROGRAMA DE EDUCACIÓN PLURILINGÜE E INTERCULTURAL, SIN CATALOGACIÓN]
+* **MUJERES:** Toma valores entre [0, ..., 134].
+* **HOMBRES:** Toma valores entre [0, ..., 149].
+* **OTROS:** Solo tiene el valor de [0]
+* **TOTAL_MATRICULACIONES:** Toma valores entre [1, ..., 267].
 
-
+Como se puede ver no hay valores nulos en el conjunto de datos, ni valores erróneos. Únicamente se deberían hacer algunas mínimas modificaciones en las columnas NOM_PROV_ES y NOM_PROV_VA. También existen algunas columnas que podríamos eliminar por redundantes. Esta estrategia la abordaremos más adelante.
 
 
 
