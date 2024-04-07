@@ -27,9 +27,10 @@ Este documento presenta la memoria del proyecto final correspondiente a la asign
 
 La Web Semántica y los Datos Enlazados son conceptos que están estrechamente relacionados, ya que ambos están enfocados en optimizar la organización y presentación de la información en la web con el objetivo de hacerla más accesible y comprensible para las máquinas y las personas.
 
-El propósito de este trabajo es aplicar los diversos conocimientos adquiridos a lo largo del curso con el objetivo de cumplir los objetivos mencionados anteriormente. Para ello, se ha seleccionado el conjunto de datos "Resumen de escolarización 2023" el cual almacena registros de escolarización por sexo, etapa educativa, centro, idioma, regimen, municipio y provincia de los distintos centros educativos que existen en la Comunidad Valenciana. 
+El propósito de este trabajo es aplicar los diversos conocimientos adquiridos a lo largo del curso con el objetivo de cumplir los objetivos mencionados anteriormente. Para ello, se ha seleccionado el conjunto de datos "Resumen de escolarización 2023" el cual almacena registros de escolarización por sexo, etapa educativa, centro, idioma, regimen, municipio y provincia de los distintos centros educativos que existen en la Comunidad Valenciana.
 
 Siguiendo las metodologías establecidas en el curso, se llevará a cabo la transformación de estos datos en un conjunto de datos enlazados, lo que nos permitirá aprovechar al máximo su potencial y facilitará su integración, consulta y análisis en diversos contextos y aplicaciones.
+
 
 ## 2 - Proceso de transformación.
 Los siguientes apartados tienen como objetivo describir todo el proceso de transformación de los datos. En primer lugar, se empezará tratando el proceso de selección de la fuente de datos, donde se elegirá una fuente que nos permita completar correctamente este proyecto. Una vez elegida la fuente, pasaremos a realizar un análisis de los datos con el objetivo de comprender su estructura y su contenido.
@@ -45,7 +46,7 @@ Por último, hablaremos de la fase de publicación, donde se estudiará la conve
 ## 2.1 - Selección de la fuente de datos.
 Los datos que se han seleccionado para la transformación provienen del portal de datos abiertos de la Generalitat Valenciana. En concreto, se han seleccionado los siguientes datos: https://dadesobertes.gva.es/es/dataset/edu-alu-gen-2023. Estos datos corresponden al resumen de escolarización del año 2023.
 
-Es un dataset interesante, ya que permite visualizar un resumen detallado de la distribución por sexos en cada centro educativo en las diferentes etapas educativas. Además, proporciona otro tipo de información útil, como la ubicación de cada centro educativo, el régimen y tipo jurídico al que están adscritos y el programa lingüístico al que están adscritos.
+Es un dataset interesante, ya que es un escenario real que permite visualizar un resumen detallado de la distribución por sexos en cada centro educativo en las diferentes etapas educativas. Además, proporciona otro tipo de información útil, como la ubicación de cada centro educativo, el régimen y tipo jurídico al que están adscritos y el programa lingüístico al que están adscritos.
 
 ## 2.2 - Análisis de los datos.
 (Análisis de los datos, explicando que tipo de datos se manejan, su formato, tipos de valores, y en general cualquier aspecto relevante para su transformación y explotación. Este análisis debe incluir la licencia de origen de los datos y la justificación de la licencia a usar en los datos transformados.)
@@ -108,20 +109,28 @@ En cuanto a la composición de los datos propiamente dicha tenemos los siguiente
 * **TOTAL_MATRICULACIONES:** Toma valores entre [1, ..., 267].
 
 Como se puede ver no hay valores nulos en el conjunto de datos, ni valores erróneos. Únicamente se deberían hacer algunas mínimas modificaciones en las columnas NOM_PROV_ES y NOM_PROV_VA. También existen algunas columnas que podríamos eliminar por redundantes. Esta estrategia la abordaremos más adelante.
-
-
-
-
-
-
-
-
+En cuanto al identificador único, podemos concluir el análisis diciendo que únicamente el campo "_id" nos servirá para poder identificar inequívocamente un único registro, ya que los demás candidatos que podríamos tener están repetidos y no sería correcto seleccionarlos. Este campo será renombrado a centro_id.
 
 
 ## 2.3 - Estrategia de nombrado.
+En este apartado definiremos cual será la estrategia de nombrado para nuestros recursos. En primer lugar tenemos que elegir la forma de las URIs, definiendo el uso que daremos a # y /. 
 
+En nuestro caso, se ha decidido que usaremos la almohadilla (#) para los términos ontológicos y la barra inclinada (/) para los individuos.
 
+El siguiente paso es elegir el dominio que usaremos. En nuestro caso, la aplicación del dominio va a ser a únicamente a nivel teórico, ya que no se dispone de la propiedad de ese dominio. En este caso la elección del dominio es la siguiente:
+* **Dominio:** http://escolarizacion.gva.es/
 
+A continuación. una vez se ha definido el dominio continuaremos definiendo la ruta que deben seguir las URIs en tal caso se realizará de la siguiente forma:
+
+* **Ruta para términos ontológicos:** http://escolarizacion.gva.es/2023/ontology/centro#
+* **Ruta para individuos:** http://escolarizacion.gva.es/2023/resource/
+
+El siguiente paso es la elección de los patrones para los diferentes elementos de interés. En tal caso se seguirá el siguiente patrón:
+
+* **Patrón para términos ontológicos:** http://escolarizacion.gva.es/2023/ontology/centro#<term_name>. En este caso <term_name>  hará referencia a los distintos términos ontológicos que existan.
+
+* **Patrón para individuos:** http://escolarizacion.gva.es/2023/resource/<resource_type>/<resource_id>. En este caso <resource_type> hará referencia a un tipo de recurso existente, mientras que <resource_id> es el identificador único del recurso.
+ 
 
 
 
