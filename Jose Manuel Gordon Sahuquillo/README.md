@@ -12,27 +12,12 @@
   * [2.3 - Estrategia de nombrado](#23---estrategia-de-nombrado)
   * [2.4 - Desarrollo del vocabulario](#24---desarrollo-del-vocabulario)
     * [2.4.1 - Especificación de los requisitos a satisfacer](#241---especificación-de-los-requisitos-a-satisfacer)
-    * [2.4.2 - Construcción de un glosario de términos](#242---construcción-de-un-glosario-de-términos)
+    * [2.4.2 - Construcción de un glosario de términos](#242---construcción-de-un-glosario-de-términos) 
     * [2.4.3 - Búsqueda de sinónimos](#243---búsqueda-de-sinónimos)
     * [2.4.4 - Organización y estructuración de la información para el establecimiento de un modelo inicial](#244---organización-y-estructuración-de-la-información-para-el-establecimiento-de-un-modelo-inicial)
     * [2.4.5 - Búsqueda y selección de ontologías para su reutilización](#245---búsqueda-y-selección-de-ontologías-para-su-reutilización)
     * [2.4.6 - Implementación de la ontología](#246---implementación-de-la-ontología)
     * [2.4.7 - Evaluación de la ontología](#247---evaluación-de-la-ontología)
-  * [2.5 - Proceso de transformación](#25---proceso-de-transformación)
-  * [2.6 - Enlazado](#26---enlazado)
-  * [2.7 - Publicación](#27---publicación)
-* [3 - Aplicación y explotación](#3---aplicación-y-explotación)
-* [4 - Conclusiones](#4---conclusiones)
-* [5 - Bibliografía](#5---bibliografía)
-
-
-### Índice
-* [1 - Introducción.](#1---introducción)
-* [2 - Proceso de transformación](#2---proceso-de-transformación)
-  * [2.1 - Selección de la fuente de datos](#21---selección-de-la-fuente-de-datos)
-  * [2.2 - Análisis de los datos](#22---análisis-de-los-datos)
-  * [2.3 - Estrategia de nombrado](#23---estrategia-de-nombrado)
-  * [2.4 - Desarrollo del vocabulario](#24---desarrollo-del-vocabulario)
   * [2.5 - Proceso de transformación](#25---proceso-de-transformación)
   * [2.6 - Enlazado](#26---enlazado)
   * [2.7 - Publicación](#27---publicación)
@@ -181,17 +166,17 @@ Para el proceso del desarrollo se han seguido los siguientes pasos según se est
 
 ## 2.4.1 - Especificación de los requisitos a satisfacer.
 Este apartado tiene como objetivo establecer cuáles son los requisitos funcionales y no funcionales que la ontología debe cumplir para un correcto funcionamiento. Empezaremos definiendo los requisitos no funcionales, los cuales son:
-* Reaprovechamiento de otras ontologías ya existentes.
+* Reaprovecar otras ontologías ya existentes.
 * Utilizar un vocabulario soportado por el programa OpenRefine.
 * Permitir la interoperabilidad entre diferentes sistemas.
 * Garantizar la escalabilidad de la ontología.
 
-## 2.4.2. Construcción de un glosario de términos.
-## 2.4.3. Búsqueda de sinónimos.
-## 2.4.4. Organización y estructuración de la información para el establecimiento de un modelo inicial.
-## 2.4.5. Búsqueda y selección de ontologías para su reutilización.
-## 2.4.6. Implementación de la ontología.
-## 2.4.7. Evaluación de la ontología.
+## 2.4.2 - Construcción de un glosario de términos.
+## 2.4.3 - Búsqueda de sinónimos.
+## 2.4.4 - Organización y estructuración de la información para el establecimiento de un modelo inicial.
+## 2.4.5 - Búsqueda y selección de ontologías para su reutilización.
+## 2.4.6 - Implementación de la ontología.
+## 2.4.7 - Evaluación de la ontología.
 
 
 
@@ -349,7 +334,6 @@ Este apartado tiene como objetivo establecer cuáles son los requisitos funciona
 
 
 ## 5 - Bibliografía.
-
 
 
 
