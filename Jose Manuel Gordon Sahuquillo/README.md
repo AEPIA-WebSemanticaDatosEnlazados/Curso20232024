@@ -1,1 +1,377 @@
+# Memoria del proyecto final
+
+**Asignatura:** Web Semántica y Datos Enlazados.
+
+**Autor:** Jose Manuel Gordon Sahuquillo
+
+### Índice
+* [1 - Introducción.](#1---introducción)
+* [2 - Proceso de transformación](#2---proceso-de-transformación)
+  * [2.1 - Selección de la fuente de datos](#21---selección-de-la-fuente-de-datos)
+  * [2.2 - Análisis de los datos](#22---análisis-de-los-datos)
+  * [2.3 - Estrategia de nombrado](#23---estrategia-de-nombrado)
+  * [2.4 - Desarrollo del vocabulario](#24---desarrollo-del-vocabulario)
+    * [2.4.1 - Especificación de los requisitos a satisfacer](#241---especificación-de-los-requisitos-a-satisfacer)
+    * [2.4.2 - Construcción de un glosario de términos](#242---construcción-de-un-glosario-de-términos)
+    * [2.4.3 - Búsqueda de sinónimos](#243---búsqueda-de-sinónimos)
+    * [2.4.4 - Organización y estructuración de la información para el establecimiento de un modelo inicial](#244---organización-y-estructuración-de-la-información-para-el-establecimiento-de-un-modelo-inicial)
+    * [2.4.5 - Búsqueda y selección de ontologías para su reutilización](#245---búsqueda-y-selección-de-ontologías-para-su-reutilización)
+    * [2.4.6 - Implementación de la ontología](#246---implementación-de-la-ontología)
+    * [2.4.7 - Evaluación de la ontología](#247---evaluación-de-la-ontología)
+  * [2.5 - Proceso de transformación](#25---proceso-de-transformación)
+  * [2.6 - Enlazado](#26---enlazado)
+  * [2.7 - Publicación](#27---publicación)
+* [3 - Aplicación y explotación](#3---aplicación-y-explotación)
+* [4 - Conclusiones](#4---conclusiones)
+* [5 - Bibliografía](#5---bibliografía)
+
+
+### Índice
+* [1 - Introducción.](#1---introducción)
+* [2 - Proceso de transformación](#2---proceso-de-transformación)
+  * [2.1 - Selección de la fuente de datos](#21---selección-de-la-fuente-de-datos)
+  * [2.2 - Análisis de los datos](#22---análisis-de-los-datos)
+  * [2.3 - Estrategia de nombrado](#23---estrategia-de-nombrado)
+  * [2.4 - Desarrollo del vocabulario](#24---desarrollo-del-vocabulario)
+  * [2.5 - Proceso de transformación](#25---proceso-de-transformación)
+  * [2.6 - Enlazado](#26---enlazado)
+  * [2.7 - Publicación](#27---publicación)
+* [3 - Aplicación y explotación](#3---aplicación-y-explotación)
+* [4 - Conclusiones](#4---conclusiones)
+* [5 - Bibliografía](#5---bibliografía)
+
+  
+
+
+## 1 - Introducción.
+Este documento presenta la memoria del proyecto final correspondiente a la asignatura de Web Semántica y Datos Enlazados del Máster Universitario en Investigación en Inteligencia Artificial.
+
+La Web Semántica y los Datos Enlazados son conceptos que están estrechamente relacionados, ya que ambos están enfocados en optimizar la organización y presentación de la información en la web con el objetivo de hacerla más accesible y comprensible para las máquinas y las personas.
+
+El propósito de este trabajo es aplicar los diversos conocimientos adquiridos a lo largo del curso con el objetivo de cumplir los objetivos mencionados anteriormente. Para ello, se ha seleccionado el conjunto de datos "Centros docentes de la Comunitat Valenciana" el cual almacena los registros correspondientes a los centros docentes públicos, privados concertados y privados que existen en la Comunidad Valenciana de educación infantil, primaria, especial, secundaria, bachillerato, formación profesional, educación para personas adultas, enseñanzas de régimen especial(escuelas oficiales de idiomas, música y danza, artes plásticas y diseño, arte dramático y enseñanzas deportivas) y sistemas extranjeros.
+
+Siguiendo las metodologías establecidas en el curso, se llevará a cabo la transformación de estos datos en un conjunto de datos enlazados, lo que nos permitirá aprovechar al máximo su potencial y facilitará su integración, consulta y análisis en diversos contextos y aplicaciones.
+
+## 2 - Proceso de transformación.
+Los siguientes apartados tienen como objetivo describir todo el proceso de transformación de los datos. En primer lugar, se empezará tratando el proceso de selección de la fuente de datos, donde se elegirá una fuente que nos permita completar correctamente este proyecto. Una vez elegida la fuente, pasaremos a realizar un análisis de los datos con el objetivo de comprender su estructura y su contenido.
+
+Una vez completadas las dos primeras fases, pasaremos a la estrategia de nombrado, donde se indicará la estrategia que se va a seguir para el desarrollo del proyecto. Posteriormente, pasaremos al desarrollo del vocabulario, donde se definirán los términos y relaciones.
+
+Tras las fases anteriores, donde se establecerán las bases del proyecto, se iniciará el proceso de transformación, donde se procederá a hacer una limpieza de los datos y prepararlos correctamente para que se puedan explotar adecuadamente.
+
+Continuaremos el trabajo hablando de la fase de enlazado, donde se describirá el proceso que se ha llevado a cabo para enlazar los datos.
+
+Por último, hablaremos de la fase de publicación, donde se estudiará la conveniencia de realizar este proceso.
+
+## 2.1 - Selección de la fuente de datos.
+Los datos que se han seleccionado para la transformación provienen del portal de datos abiertos de la Generalitat Valenciana. En concreto, se han seleccionado los siguientes datos: https://dadesobertes.gva.es/es/dataset/edu-centros.
+
+La selección de este dataset se ha basado principalmente en los siguientes motivos:
+* Es un dataset que representa un escenario real.
+* Los datos son públicos y accesibles.
+* Es un conjunto de datos actualizado y con una frecuencia de actualización semanal.
+* Son datos relevantes para el conjunto de la población.
+
+Por estos motivos se ha elegido este conjunto de datos por encima de otros que existen disponibles en la web de datos abiertos de la Generalitat Valenciana, ya que es un conjunto de datos que permitirá generar unos datos útiles.
+
+## 2.2 - Análisis de los datos.
+En primer lugar empezaremos analizando la licencia que tiene el conjunto de datos de origen. Como podemos ver en la web de datos abiertos, nos encontramos con una licencia tipo "Creative Commons Attribution" o lo que es lo mismo, una licencia CC BY 4.0. Esta licencia permite la modificación, redistribución y reutilización de los datos, incluso con fines comerciales, siempre y cuando se reconozca expresamente la autoría original de los datos que en este caso corresponde a la Conselleria de Educación, Universidades y Empleo de la Generalitat Valenciana.
+
+Dado el carácter del proyecto y teniendo en cuenta que el objetivo final es crear un modelo que pueda ser reutilizable por otras personas considero que la licencia resultante del proyecto tiene que ser también CC BY 4.0, ya que así podemos permitir a otras personas compartir, usar y trabajar sobre el proyecto de forma libre, pero dejando patente la autoría del proyecto.
+
+El siguiente paso es realizar un análisis exploratorio de los datos que componen el dataset. Para ello usaremos la herramienta Open Refine. Vemos que el conjunto de datos de origen tiene un total de 3773 registros que se encuentran distribuidos en 23 campos, los cuales los podemos describir de la siguiente forma:
+
+| Campo    | Tipo de dato | Descripción del campo   |
+|-----------|------|----------|
+| CODIGO | numeric | Es un identificador único que identifica al centro docente.|
+| DENOMINACION_GENERICA_ES | text | Hace referencia al tipo de centro docente en castellano.|
+| DENOMINACION_GENERICA_VAL | text | Hace referencia al tipo de centro docente en valenciano.|
+| DENOMINACION_ESPECIFICA | text | Es el nombre del centro propiamente dicho |
+| DENOMINACION | text | Es un campo que junta la  denominación genérica del centro con "DENOMINACION_ESPECIFICA". |
+| REGIMEN | text | Este campo es la abreviatura del régimen jurídico al que está adscrito el centro docente.|
+| TIPO_VIA | text | Indica el tipo de vía donde se encuentra el centro docente. |
+| DIRECCION | text | Indica la dirección donde se encuentra el centro docente. |
+| NUMERO | text | Indica el numero correspondiente a la dirección del centro docente. |
+| CODIGO_POSTAL | numeric | Indica el código postal donde se encuentra el centro docente.|
+| LOCALIDAD | text | Este campo nos indica en qué localidad se encuentra el centro. |
+| PROVINCIA | text | Indica el nombre de la provincia.|
+| TELEFONO | numeric | Indica el número de teléfono del centro educativo.|
+| FAX | numeric | Indica el número del fax del centro educativo.|
+| COD_EDIFICACION | numeric | Indica el código de edificación.|
+| LONGITUD | numeric | Indica la coordenada correspondiente a la longitud.|
+| LATITUD | numeric | Indica la coordenada correspondiente a la latitud.|
+| TITULARIDAD | text | Indica la titularidad del centro docente.|
+| CIF | text | Indica el CIF centro docente.|
+| COMARCA | text | Indica la comarca en la que se encuentra el centro docente.|
+| URL_ES | text | Nos indica la dirección web del centro docente que contiene toda su información en castellano.|
+| URL_VA | text | Nos indica la dirección web del centro docente que contiene toda su información en valenciano.|
+
+En cuanto a la composición de los datos propiamente dicha tenemos los siguientes valores:
+* **CODIGO:** Existen 3773 valores diferentes, siendo estos valores únicos que siguen un patrón específico para su formación, ya que todos empiezan por 12 si son de la provincia de Castellón, 03 si son de la provincia de Alicante o 46 si son de la provincia de Valencia. El resto de la numeración es un código que asigna la Conselleria.
+* **DENOMINACION_GENERICA_ES:** Hace referencia a alguno de los 71 tipos de denominación que puede tomar el centro. Hay valores entre [CENTRO ADMINISTRATIVO, ..., UNIVERSIDAD]. Estos datos están en valenciano.
+* **DENOMINACION_GENERICA_VAL:** Tiene el mismo tipo de datos que "DENOMINACION_GENERICA_ES" pero en este caso está escrito en valenciano.
+* **DENOMINACION_ESPECIFICA:** Hay un total de 3234 nombres diferentes, que van desde [AGENCIA VALENCIAN DE TURISMO, ..., UV - ESCUELA UNIVERSITARIA DE MAGISTERIO AUSIAS MARCH]
+* **DENOMINACION:** En este caso tenemos los mismo valores que en caso anterior.
+* **REGIMEN:** Puede tomar los valores de [OTROS, PRIV, PRIV. CONC. y PÚB].
+* **TIPO_VIA:** Hay 34 valores diferentes, los cuales pueden estar comprendidos entre [ALBEREDA, ..., URBANITZACIÓ]. Estos datos están únicamente en valenciano.
+* **DIRECCION:** Existen 2508 valores diferentes. Puede tomar valores entre [1 DE MAIG, ...,ZURBARÁN (RESIDENCIAL LA LOMA)]. Existen también valores como "." y "Desconocido".
+* **NUMERO:** Existen 290 valores diferentes. En algunos casos el valor es únicamente numérico y en otros se acompaña de letras. También tenemos valores "S/N", "s/n" y otros en blanco.
+* **CODIGO_POSTAL:** Tenemos 502 valores diferentes. Los dos primeros dígitos son el código de la provincia, así que si empiezan por 12 son de la provincia de Castellón, 03 si son de la provincia de Alicante o 46 si son de la provincia de Valencia. Las tres cifras restantes indican la zona postal.
+* **LOCALIDAD:** Toma alguno de los 472 nombres en valenciano de localidades que tienen centros docentes en la Comunitat Valenciana. El rango se encuentra desde [ADEMUZ, ..., ZUCAINA]. Existiendo dos valores en blanco. 
+* **PROVINCIA:** Toma los valores en castellano y valenciano de las provincias de la Comunitat Valenciana con el rango [ALICANTE/ALACANT, CASTELLÓN/CASTELLÓ, VALENCIA/VALÈNCIA]. Existen dos valores en blanco.
+* **TELEFONO:** Existen 3563 registros diferentes. En este caso tenemos tanto teléfonos fijos, como móviles. Incluyendo 75 registros en blanco.
+* **FAX:** Existen 747 registros diferentes. En este caso tenemos 2972 registros en blanco.
+* **COD_EDIFICACION:** Toma los valores de [1, 2]. Incluye 85 valores en blanco.
+* **LONGITUD:** Existen 3588 valores diferentes en un rango [-0.00166, ..., 0.479343]. Existen 86 valores en blanco.
+* **LATITUD:** Existen 3595 valores diferentes en un rango [37.856986, ..., 40.644417]. Existen 86 valores en blanco.
+* **TITULARIDAD:** Toma los valores de [GENERALITAT VALENCIANA, NO CONSTA, PRIVADA]. Existen 9 valores en blanco.
+* **CIF:** Existen 3302 valores diferentes. Nos encontramos con 90 valores que tienen como registro "-1".
+* **URL_ES:** Existen 3373 valores diferentes. Todos empiezan con el formato "https://www.ceice.gva.es/web/centros-docentes/ficha-centro?codi=xxxxxx". Donde "xxxxxx" hace referencia al número del centro educativo. Siendo este enlace para centros en castellano.
+* **URL_VA:** Existen 3373 valores diferentes. Todos empiezan con el formato "https://www.ceice.gva.es/va/web/centros-docentes/ficha-centro?codi=xxxxxx". Donde "xxxxxx" hace referencia al número del centro educativo. Siendo este enlace para centros en valenciano.
+
+Como se puede ver, en este caso tenemos algunos campos en blanco que se deberán revisar más adelante. También será interesante corregir los datos donde aparecen valores tipo "-1" o valores iguales como "S/N" y "s/n". 
+
+También habrá que revisar las direcciones web asociadas a los centros, ya que el formato de este cambió y esas web ya no existen como tal.
+
+En general el dataset es bastante completo y tiene muchos datos interesantes que pueden ser de utilidad para transformar en datos enlazados. Los errores se corregirán más adelante en la fase de transformación de los datos.
+
+En cuanto al identificador único, podemos concluir el análisis diciendo que el campo "CODIGO" nos servirá para poder identificar inequívocamente cada centro de forma individual, ya que estos registros son únicos.
+
+## 2.3 - Estrategia de nombrado.
+En este apartado definiremos cual será la estrategia de nombrado para nuestros recursos. En primer lugar tenemos que elegir la forma de las URIs, definiendo el uso que daremos a # y /. 
+
+En nuestro caso, se ha decidido que usaremos la almohadilla (#) para los términos ontológicos y la barra inclinada (/) para los individuos.
+
+El siguiente paso es elegir el dominio que usaremos. En nuestro caso, la aplicación del dominio va a ser a únicamente a nivel teórico, ya que no se dispone de la propiedad de ese dominio. En este caso la elección del dominio es la siguiente:
+* **Dominio:** http://edu.gva.es/
+
+A continuación. una vez se ha definido el dominio continuaremos definiendo la ruta que deben seguir las URIs en tal caso se realizará de la siguiente forma:
+
+* **Ruta para términos ontológicos:** http://edu.gva.es/ontology/centro#
+* **Ruta para individuos:** http://edu.gva.es/resource/
+
+El siguiente paso es la elección de los patrones para los diferentes elementos de interés. En tal caso se seguirá el siguiente patrón:
+
+* **Patrón para términos ontológicos:** http://edu.gva.es/ontology/centro#<term_name>. En este caso <term_name>  hará referencia a los distintos términos ontológicos que existan.
+
+* **Patrón para individuos:** http://edu.gva.es/resource/<resource_type>/<resource_id>. En este caso <resource_type> hará referencia a un tipo de recurso existente, mientras que <resource_id> es el identificador único del recurso.
+ 
+ 
+## 2.4 - Desarrollo del vocabulario.
+Viendo el contenido del conjunto de datos que hemos seleccionado, la mejor columna para establecer las relaciones corresponde a los campos de la columna "CODIGO". Esto se debe a que los datos de esta columna son únicos y no se repiten en ningún otro registro. A partir de esta columna se han ido relacionando el resto de los datos que se disponen de los centros educativos (Denominación, régimen, dirección, número, código postal, etc.)
+
+Para el proceso del desarrollo se han seguido los siguientes pasos según se establece en la temario del curso:
+
+1. Especificar los requisitos que se deben satisfacer:
+  * Funcionales.
+  * No funcionales.
+2. Construir un glosario de términos apoyados en:
+  * Preguntas de competencia.
+  * Los datos y su esquema.
+  * Consulta de fuentes expertas.
+3. Búsqueda de sinónimos de los términos del glosario.
+4. Organizar y estructura la información para establecer un modelo inicial siguiendo los siguientes pasos:
+  * Identificar dominios y conceptos claves.
+  * Establecer jerarquías.
+  * Definir relaciones entre elementos.
+  * Identificar reglas, axiomas, etc.
+5. Búsqueda y selección de ontologías que se puedan reutilizar.
+6. Implementación de la ontología en un lenguaje de representación de ontologías.
+7. Evaluación de la ontología.
+
+## 2.4.1 - Especificación de los requisitos a satisfacer.
+Este apartado tiene como objetivo establecer cuáles son los requisitos funcionales y no funcionales que la ontología debe cumplir para un correcto funcionamiento. Empezaremos definiendo los requisitos no funcionales, los cuales son:
+* Reaprovechamiento de otras ontologías ya existentes.
+* Utilizar un vocabulario soportado por el programa OpenRefine.
+* Permitir la interoperabilidad entre diferentes sistemas.
+* Garantizar la escalabilidad de la ontología.
+
+## 2.4.2. Construcción de un glosario de términos.
+## 2.4.3. Búsqueda de sinónimos.
+## 2.4.4. Organización y estructuración de la información para el establecimiento de un modelo inicial.
+## 2.4.5. Búsqueda y selección de ontologías para su reutilización.
+## 2.4.6. Implementación de la ontología.
+## 2.4.7. Evaluación de la ontología.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## 2.5 - Proceso de transformación.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## 2.6 - Enlazado.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## 2.7 - Publicación.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## 3 - Aplicación y explotación.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## 4 - Conclusiones.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## 5 - Bibliografía.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
