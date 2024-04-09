@@ -206,7 +206,7 @@ En base a la definición de preguntas de competencia que se han realizado en el 
 ## 2.4.3 - Organización y estructuración de la información para el establecimiento de un modelo inicial.
 En base a los términos del apartado anterior y al esquema inicial se crea el siguiente mapa inicial que permite representar conceptualmente la ontología.
 
-![Mapa Conceptual](/Imagenes/Mapa Conceptual.png)
+![Mapa Conceptual](./Imagenes/Mapa_conceptual.png)
 
 ## 2.4.4 - Búsqueda y selección de ontologías para su reutilización.
 En el siguiente apartado se buscarán diferentes ontologías que puedan ser reutilizadas. En concreto se ha preparado la siguiente tabla para mostrar claramente el trabajo realizado que se ha basado principalmente en https://schema.org/ y en https://www.w3.org.
