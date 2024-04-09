@@ -13,11 +13,8 @@
   * [2.4 - Desarrollo del vocabulario](#24---desarrollo-del-vocabulario)
     * [2.4.1 - Especificación de los requisitos a satisfacer](#241---especificación-de-los-requisitos-a-satisfacer)
     * [2.4.2 - Construcción de un glosario de términos](#242---construcción-de-un-glosario-de-términos) 
-    * [2.4.3 - Búsqueda de sinónimos](#243---búsqueda-de-sinónimos)
-    * [2.4.4 - Organización y estructuración de la información para el establecimiento de un modelo inicial](#244---organización-y-estructuración-de-la-información-para-el-establecimiento-de-un-modelo-inicial)
-    * [2.4.5 - Búsqueda y selección de ontologías para su reutilización](#245---búsqueda-y-selección-de-ontologías-para-su-reutilización)
-    * [2.4.6 - Implementación de la ontología](#246---implementación-de-la-ontología)
-    * [2.4.7 - Evaluación de la ontología](#247---evaluación-de-la-ontología)
+    * [2.4.3 - Organización y estructuración de la información para el establecimiento de un modelo inicial](#243---organización-y-estructuración-de-la-información-para-el-establecimiento-de-un-modelo-inicial)
+    * [2.4.4 - Búsqueda y selección de ontologías para su reutilización](#244---búsqueda-y-selección-de-ontologías-para-su-reutilización)
   * [2.5 - Proceso de transformación](#25---proceso-de-transformación)
   * [2.6 - Enlazado](#26---enlazado)
   * [2.7 - Publicación](#27---publicación)
@@ -26,7 +23,6 @@
 * [5 - Bibliografía](#5---bibliografía)
 
   
-
 
 ## 1 - Introducción.
 Este documento presenta la memoria del proyecto final correspondiente a la asignatura de Web Semántica y Datos Enlazados del Máster Universitario en Investigación en Inteligencia Artificial.
@@ -161,51 +157,83 @@ Para el proceso del desarrollo se han seguido los siguientes pasos según se est
   * Definir relaciones entre elementos.
   * Identificar reglas, axiomas, etc.
 5. Búsqueda y selección de ontologías que se puedan reutilizar.
-6. Implementación de la ontología en un lenguaje de representación de ontologías.
-7. Evaluación de la ontología.
 
 ## 2.4.1 - Especificación de los requisitos a satisfacer.
 Este apartado tiene como objetivo establecer cuáles son los requisitos funcionales y no funcionales que la ontología debe cumplir para un correcto funcionamiento. Empezaremos definiendo los requisitos no funcionales, los cuales son:
-* Reaprovecar otras ontologías ya existentes.
+* Reaprovechamiento de otras ontologías ya existentes.
 * Utilizar un vocabulario soportado por el programa OpenRefine.
 * Permitir la interoperabilidad entre diferentes sistemas.
 * Garantizar la escalabilidad de la ontología.
 
+En cuanto a los requisitos funcionales los obtendremos a través de las siguientes preguntas de competencia: 
+
+| Código    | Pregunta|
+|-----------|------|
+| PC.1   | ¿Cuál es el código del centro?                                  |
+| PC.2   | ¿Qué nombre tiene el centro?                                    |
+| PC.3   | ¿Qué etapa educativa cubre el centro?                           |
+| PC.4   | ¿Qué régimen jurídico tiene el centro?                          |
+| PC.5   | ¿Quién ostenta la titularidad del centro?                       |
+| PC.6   | ¿Cuál es el CIF del centro?                                     |
+| PC.7   | ¿Cuál es la dirección completa del centro?                      |
+| PC.8   | ¿En qué localidad se encuentra el centro?                        |
+| PC.9   | ¿Cuál es la provincia del centro?                               |
+| PC.10  | ¿En qué comarca se encuentra el centro?                          |
+| PC.11  | ¿Cuáles son los medios de contacto que existen con el centro?    |
+| PC.12  | ¿Cuál es la ubicación geográfica del centro? 
+
 ## 2.4.2 - Construcción de un glosario de términos.
-## 2.4.3 - Búsqueda de sinónimos.
-## 2.4.4 - Organización y estructuración de la información para el establecimiento de un modelo inicial.
-## 2.4.5 - Búsqueda y selección de ontologías para su reutilización.
-## 2.4.6 - Implementación de la ontología.
-## 2.4.7 - Evaluación de la ontología.
+En base a la definición de preguntas de competencia que se han realizado en el apartado anterior podemos definir el siguiente glosario de términos.
+| Término    | Definición |
+|-----------|------|
+| Código | Es el código numérico que identifica al centro | 
+| Nombre del centro | Es el nombre del centro educativo |
+| Etapa educativa | Indica la etapa educativo que cubre el centro |
+| Régimen jurídico | Es el régimen jurídico del centro |
+| Titularidad | Indica la titularidad del centro |
+| CIF | Indica el CIF del centro |
+| Dirección | Indica la dirección del centro |
+| Código postal | Indica el código postal del centro |
+| Localidad | Indica la localidad del centro |
+| Provincia | Indica la provincia del centro |
+| Comarca | Indica la comarca del centro |
+| Teléfono | Indica el teléfono del centro |
+| Fax | Indica el fax del centro |
+| Web | Indica la web del centro |
+| Longitud | Indica la coordenada de longitud del centro  |
+| Latitud | Indica la coordenada de latitud del centro |
 
+## 2.4.3 - Organización y estructuración de la información para el establecimiento de un modelo inicial.
+En base a los términos del apartado anterior y al esquema inicial se crea el siguiente mapa inicial que permite representar conceptualmente la ontología.
 
+![Mapa Conceptual](Imagenes/Mapa Conceptual.png)
 
+## 2.4.4 - Búsqueda y selección de ontologías para su reutilización.
+En el siguiente apartado se buscarán diferentes ontologías que puedan ser reutilizadas. En concreto se ha preparado la siguiente tabla para mostrar claramente el trabajo realizado que se ha basado principalmente en https://schema.org/ y en https://www.w3.org.
 
+| Término    | URI |
+|-----------|------|
+| Código | https://schema.org/hasCredential | 
+| Nombre del centro | https://schema.org/legalName |
+| Etapa educativa | https://schema.org/additionalType |
+| Régimen jurídico | https://www.w3.org/ns/org#purpose |
+| Titularidad | https://schema.org/funder |
+| CIF | https://schema.org/taxID |
+| Dirección | https://schema.org/address |
+| Código postal | https://schema.org/postalCode |
+| Localidad | https://schema.org/Place |
+| Provincia | https://schema.org/Place |
+| Comarca | https://schema.org/Place |
+| Teléfono | https://schema.org/telephone |
+| Fax | https://schema.org/faxNumber |
+| Web | https://schema.org/WebPage |
+| Longitud | https://schema.org/longitude  |
+| Latitud | https://schema.org/latitude |
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Se puede ver en la tabla que ha sido posible encontrar ontologías ya existentes que con su reutilización nos permitiría cubrir todas las necesidades que se han desarrollado anteriormente.
 
 
 ## 2.5 - Proceso de transformación.
-
-
 
 
 
@@ -253,11 +281,7 @@ Este apartado tiene como objetivo establecer cuáles son los requisitos funciona
 
 
 
-
-
 ## 2.7 - Publicación.
-
-
 
 
 
@@ -305,8 +329,6 @@ Este apartado tiene como objetivo establecer cuáles son los requisitos funciona
 
 
 
-
-
 ## 4 - Conclusiones.
 
 
@@ -331,9 +353,9 @@ Este apartado tiene como objetivo establecer cuáles son los requisitos funciona
 
 
 
-
-
 ## 5 - Bibliografía.
+
+
 
 
 
