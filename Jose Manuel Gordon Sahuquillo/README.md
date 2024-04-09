@@ -186,8 +186,8 @@ En base a la definición de preguntas de competencia que se han realizado en el 
 | Término    | Definición |
 |-----------|------|
 | Código | Es el código numérico que identifica al centro | 
-| Nombre del centro | Es el nombre del centro educativo |
-| Etapa educativa | Indica la etapa educativo que cubre el centro |
+| Denominación | Es el nombre completo del centro educativo |
+| Tipo | Indica el tipo de enseñanza que proporciona el centro |
 | Régimen jurídico | Es el régimen jurídico del centro |
 | Titularidad | Indica la titularidad del centro |
 | CIF | Indica el CIF del centro |
@@ -205,14 +205,16 @@ En base a la definición de preguntas de competencia que se han realizado en el 
 ## 2.4.3 - Organización y estructuración de la información para el establecimiento de un modelo inicial.
 En base a los términos del apartado anterior y al esquema inicial se crea el siguiente mapa inicial que permite representar conceptualmente la ontología.
 
+![Mapa conceptual](./Imagenes/Mapa_conceptual.png)
+
 ## 2.4.4 - Búsqueda y selección de ontologías para su reutilización.
 En el siguiente apartado se buscarán diferentes ontologías que puedan ser reutilizadas. En concreto se ha preparado la siguiente tabla para mostrar claramente el trabajo realizado que se ha basado principalmente en https://schema.org/ y en https://www.w3.org.
 
 | Término    | URI |
 |-----------|------|
-| Código | https://schema.org/hasCredential | 
-| Nombre del centro | https://schema.org/legalName |
-| Etapa educativa | https://schema.org/additionalType |
+| Código| https://schema.org/hasCredential | 
+| Denominación | https://schema.org/legalName |
+| Tipo | https://schema.org/additionalType |
 | Régimen jurídico | https://www.w3.org/ns/org#purpose |
 | Titularidad | https://schema.org/funder |
 | CIF | https://schema.org/taxID |
@@ -229,34 +231,141 @@ En el siguiente apartado se buscarán diferentes ontologías que puedan ser reut
 
 Se puede ver en la tabla que ha sido posible encontrar ontologías ya existentes que con su reutilización nos permitiría cubrir todas las necesidades que se han desarrollado anteriormente.
 
-
 ## 2.5 - Proceso de transformación.
+En este apartado gracias a la herramienta de OpenRefine se van a realizar diferentes transformaciones en los datos originales con el objetivo de adecuarlos a los requisitos que se han establecido en el punto anterior. En concreto se realizaron los siguientes cambios:
 
+* Las columnas "DENOMINACION_GENERICA_ES" y "DENOMINACION_GENERICA_VAL" contienen la misma información, pero una se encuentra en castellano y la otra en valenciano. La decisión respecto a estas columnas es eliminar "DENOMINACION_GENERICA_VAL" y transformar la columna de "DENOMINACION_GENERICA_ES" en "TIPO".
 
+* Las columnas "DENOMINACION_ESPECIFICA" y "DENOMINACION" contienen exactamente la misma información. Tras revisar un fichero de centros que existe de 2020 esto no es correcto, ya que "DENOMINACION_ESPECIFICA" debería incluir solo el nombre del centro, mientras que "DENOMINACION" corresponde a la combinación del "Tipo centro" + "DENOMINACION_ESPECIFICA". Por ejemplo, si revisamos el primer caso que es "CEIP LA RAMBLA", en la  columna "DENOMINACION_ESPECIFICA" debería aparecer solo "LA RAMBLA", ya que "CEIP" son las siglas de colegio de educación infantil y primaria. Se ha puesto este error en conocimiento de las personas responsables del fichero y su respuesta es que los datos salen de una vista que les proporcionó la Conselleria de Educación. Visto que no aporta nada a la ontología esta duplicidad se ha optado por eliminar una y dejar únicamente "DENOMINACION". 
+También mediante una expresión GREL se van a modificar ciertos datos para unificarlos, ya que dentro de las columnas se puede ver valores como por ejemplo "CENTRE PRIVAT" y "CENTRO PRIVADO", así que se va a dar consistencia a los siguientes datos:
 
+| Datos originales    | Datos modificados |
+|-----------|------|
+| CENTRE | CENTRO | 
+| PRIVAT  | PRIVADO |
+| PÚBLIC   | PÚBLICO |
+| ENSENYAMENTS ESPORTIUS  | ENSEÑANZAS DEPORTIVAS |
+| ESTRANGER   | EXTRANJERO |
+| DANSA    | DANZA |
+| PROFESSIONALS     | PROFESIONALES |
+| INTEGRAT      | INTEGRADO |
+| CICLE       | CICLO |
+| ESCOLA | ESCUELA |
+| IDIOMES  | IDIOMAS |
+| D'ARTS ESCÈNIQUES  | DE ARTES ESCÉNICAS |
 
+Para ello usaremos la siguiente expresión:
+```grel
+value.replace("CENTRE", "CENTRO")
+     .replace("PRIVAT", "PRIVADO")
+     .replace("PÚBLIC", "PÚBLICO")
+     .replace("ENSENYAMENTS ESPORTIUS", "ENSEÑANZAS DEPORTIVAS")
+     .replace("ESTRANGER", "EXTRANJERO")
+     .replace("DANSA", "DANZA")
+     .replace("PROFESSIONALS", "PROFESIONALES")
+     .replace("INTEGRAT", "INTEGRADO")
+     .replace("CICLE", "CICLO")
+     .replace("ESCOLA", "ESCUELA")
+     .replace("IDIOMES", "IDIOMAS")
+     .replace("D'ARTS ESCÈNIQUES", "DE ARTES ESCÉNICAS")
+```
 
+* La columna "REGIMEN" se va a renombrar en "REGIMEN JURIDICO" para hacerla más comprensible. También se hará una modificación en su contenido mediante una expresión GREL, transformando el siguiente contenido: 
+| Datos originales    | Datos modificados |
+|-----------|------|
+| PRIV.| PRIVADO | 
+| PRIV. CONC. | PRIVADO CONCERTADO |
+| PÚB | PÚBLICO |
 
+La expresión para transformar los datos es la siguiente:
+```grel
+value.replace("PRIV. CONC.", "PRIVADO CONCERTADO")
+     .replace("PÚB.", "PÚBLICO")
+     .replace("PRIV.", "PRIVADO")
+```
 
+* El siguiente paso es la construcción de la dirección. Para ello nos vamos a valor de las columnas "TIPO_VIA", "DIRECCION" y "NUMERO", construyendo así una columna con los tres valores que sea la dirección completa con el número.
+En un primer lugar se va a modificar los datos de la columna "TIPO_VIA" para traducirlos al castellano. En concreto tendremos que hacer las siguientes modificaciones:
+| Abreviatura | Nombre en Castellano |
+|-------------|----------------------|
+| ALBAREDA    | ALAMEDA              |
+| AVINGUDA    | AVENIDA              |
+| BARRI       | BARRIO               |
+| BULEVARD    | BULEVAR              |
+| CAMÍ        | CAMINO               |
+| CARRER      | CALLE                |
+| COLÒNIA     | COLONIA              |
+| CONJUNT     | CONJUNTO             |
+| EDIFICI     | EDIFICIO             |
+| ESPLANADA   | EXPLANADA            |
+| GRAN VIA    | GRAN VÍA             |
+| GRUP        | GRUPO                |
+| LLOC        | LUGAR                |
+| PARC        | PARQUE               |
+| PARCEL.LA   | PARCELA              |
+| PASSATGE    | PASAJE               |
+| PASSEIG     | PASEO                |
+| PLAÇA       | PLAZA                |
+| POLÍGON     | POLÍGONO             |
+| PROLONGACIÓ | PROLONGACIÓN         |
+| PUJADA      | SUBIDA               |
+| TRAVESSIA   | TRAVESÍA             |
+| URBANITZACIÓ| URBANIZACIÓN         |
 
+Todo esto se hará mediante la siguiente expresión:
+```grel
+value.replace("ALBAREDA", "ALAMEDA")
+     .replace("AVINGUDA", "AVENIDA")
+     .replace("BARRI", "BARRIO")
+     .replace("BULEVARD", "BULEVAR")
+     .replace("CAMÍ", "CAMINO")
+     .replace("CARRER", "CALLE")
+     .replace("COLÒNIA", "COLONIA")
+     .replace("CONJUNT", "CONJUNTO")
+     .replace("EDIFICI", "EDIFICIO")
+     .replace("ESPLANADA", "EXPLANADA")
+     .replace("GRAN VIA", "GRAN VÍA")
+     .replace("GRUP", "GRUPO")
+     .replace("LLOC", "LUGAR")
+     .replace("PARC", "PARQUE")
+     .replace("PARCEL.LA", "PARCELA")
+     .replace("PASSATGE", "PASAJE")
+     .replace("PASSEIG", "PASEO")
+     .replace("PLAÇA", "PLAZA")
+     .replace("POLÍGON", "POLÍGONO")
+     .replace("PROLONGACIÓ", "PROLONGACIÓN")
+     .replace("PUJADA", "SUBIDA")
+     .replace("TRAVESSIA", "TRAVESÍA")
+     .replace("URBANITZACIÓ", "URBANIZACIÓN")
+```
 
+Posteriormente mediante una expresión GREL se va a modificar "s/n" para que sea "S/N" como el resto de los valores existentes. La expresión es la siguiente:
 
+```grel
+value.replace("s/n", "S/N")
+```
+Posteriormente se realizará la unión entre las tres columnas con un formato similar a : "TIPO VIA  DIRECCION, NUMERO". Para ello primero hacemos una unión de las primeras dos columnas, para posteriormente unir la tercera.
 
+* La columna "CODIGO_POSTAL" se va a renombrar a "CODIGO POSTAL".
 
+* La columna "LOCALIDAD" está toda en para indicar el nombre de las localidades, por lo que se eliminará y en el punto siguiente de enlazado se volverá a crear con los datos en castellano.
 
+* La columna "PROVINCIA" contiene en el mismo registro los valores de la provincia en castellano y en valenciano en un formato similar a "XXXX/XXXX". Se va a modificar esto mediante una expresión para eliminar todo lo que este a la derecha de la barra que es lo que está en valenciano.
+Para ello se usará la siguiente expresión GREL:
 
+```grel
+value.split("/")[0]
+```
 
+* La columna "COD_EDIFICACION" se va a eliminar entera, ya que no aporta nada al conjunto.
 
+* En cuanto a las columnas "URL_ES" y "URL_VA" se va a eliminar una para evitar duplicidades. También es necesario hacer una modificación vía expresión GREL, ya que la web que aparece en el conjunto no está enlazada correctamente, ya que aparece la expresión "www" y no es necesario para acceder a la web. En concreto se usará la siguiente expresión GREL:
 
-
-
-
-
-
+```grel
+value.replace("www.", "")           
+```
 
 ## 2.6 - Enlazado.
-
-
 
 
 
@@ -300,11 +409,7 @@ Se puede ver en la tabla que ha sido posible encontrar ontologías ya existentes
 
 
 
-
-
 ## 3 - Aplicación y explotación.
-
-
 
 
 
@@ -348,9 +453,9 @@ Se puede ver en la tabla que ha sido posible encontrar ontologías ya existentes
 
 
 
-
-
 ## 5 - Bibliografía.
+
+
 
 
 
