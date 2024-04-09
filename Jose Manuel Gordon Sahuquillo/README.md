@@ -150,13 +150,12 @@ Para el proceso del desarrollo se han seguido los siguientes pasos según se est
   * Preguntas de competencia.
   * Los datos y su esquema.
   * Consulta de fuentes expertas.
-3. Búsqueda de sinónimos de los términos del glosario.
-4. Organizar y estructura la información para establecer un modelo inicial siguiendo los siguientes pasos:
+3. Organizar y estructura la información para establecer un modelo inicial siguiendo los siguientes pasos:
   * Identificar dominios y conceptos claves.
   * Establecer jerarquías.
   * Definir relaciones entre elementos.
   * Identificar reglas, axiomas, etc.
-5. Búsqueda y selección de ontologías que se puedan reutilizar.
+4. Búsqueda y selección de ontologías que se puedan reutilizar.
 
 ## 2.4.1 - Especificación de los requisitos a satisfacer.
 Este apartado tiene como objetivo establecer cuáles son los requisitos funcionales y no funcionales que la ontología debe cumplir para un correcto funcionamiento. Empezaremos definiendo los requisitos no funcionales, los cuales son:
@@ -205,8 +204,6 @@ En base a la definición de preguntas de competencia que se han realizado en el 
 
 ## 2.4.3 - Organización y estructuración de la información para el establecimiento de un modelo inicial.
 En base a los términos del apartado anterior y al esquema inicial se crea el siguiente mapa inicial que permite representar conceptualmente la ontología.
-
-![Mapa Conceptual](./Imagenes/Mapa_conceptual.png)
 
 ## 2.4.4 - Búsqueda y selección de ontologías para su reutilización.
 En el siguiente apartado se buscarán diferentes ontologías que puedan ser reutilizadas. En concreto se ha preparado la siguiente tabla para mostrar claramente el trabajo realizado que se ha basado principalmente en https://schema.org/ y en https://www.w3.org.
