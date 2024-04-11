@@ -421,7 +421,7 @@ La instalación y configuración del programa no es una actividad relevante para
 
 Dentro del programa son múltiples las consultas que podemos hacer, para ver su uso veremos unas cuantas que pueden sernos de utilidad.
 
-* Consulta 1: Visualización de todos los datos disponibles en el fichero.
+* **Consulta 1:** Visualización de todos los datos disponibles en el fichero.
 Para esta consulta hemos lanzado la siguiente consulta SPARQL:
 
 ```grel
@@ -450,7 +450,7 @@ Podemos ver a continuación parte del resultado obtenido junto a la consulto:
 
 ![Consulta uno](./Imagenes/c1.PNG)
 
-* Consulta 2: Visualizar todos los centros educativos que pertenecen a la localidad de AGOST.
+* **Consulta 2:** Visualizar todos los centros educativos que pertenecen a la localidad de AGOST.
 Para ello lanzamos la siguiente columna:
 
 ```grel
@@ -480,7 +480,7 @@ Obteniendo la siguiente salida a la ejecución tal y como se puede ver:
 
 ![Consulta dos](./Imagenes/c2.PNG)
 
-* Consulta 3: Visualizar todos los centro que son de tipo "Centro privado formación profesional específica", los cuales su financiamiento es "Privado concertado".
+* **Consulta 3:** Visualizar todos los centro que son de tipo "Centro privado formación profesional específica", los cuales su financiamiento es "Privado concertado".
 
 Para ello lanzamos la siguiente consulta: 
 
@@ -530,3 +530,29 @@ Son múltiples las opciones que nos permiten la generación de datos enlazados, 
 * [vocabulario Schema.org](https://schema.org/)
 * [Documentación de Apache Jena Fuseki](https://jena.apache.org/documentation/fuseki2/)
 * [Ejemplos de consultas SPARQL en la biblioteca Cervantes ](https://data.cervantesvirtual.com/help)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
