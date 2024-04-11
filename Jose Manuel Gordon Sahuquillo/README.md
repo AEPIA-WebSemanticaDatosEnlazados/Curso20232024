@@ -410,97 +410,123 @@ También se ha añadido la columna "SUPERFICIE", ya que puede ser interesante pa
 Una vez hecho esto, volvemos a exportar el fichero RDF y lo añadimos a la carpeta RDF con el nombre "centros-docentes-de-la-comunitat-valenciana-enlazado.ttl"
 
 ## 2.7 - Publicación.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Se ha optado por la publicación de los datos en la misma plataforma donde se está publicando esta memoria, ya que es probable que fuera de este contexto no se entendiera la utilidad de los datos o el porqué de ellos. Se han subido los ficheros .ttl y .rfd bajo la licencia sé que se indicó en el punto "2.2 - Análisis de los datos.".
 
 ## 3 - Aplicación y explotación.
+Una vez finalizado todos los procesos anteriores, el último paso que vamos a hacer es el uso y explotación del conjunto de datos enlazados que hemos creados. 
 
+Para hacer estas pruebas vamos a valernos de la herramienta Apache Jena que hemos visto en el material de la asignatura, la cual es una herramienta muy útil que nos permitirá realizar consultas SPARQL. 
 
+La instalación y configuración del programa no es una actividad relevante para esta memoria, pero el proceso es muy sencillo, ya que únicamente hay que descomprimir el fichero que tenemos en su web y ejecutar el archivo "fuseki-server.bat". Posteriormente tendremos que acceder a la dirección del servidor que en nuestro caso es "http://localhost:3030/ y ya tendremos acceso al servidor.
 
+Dentro del programa son múltiples las consultas que podemos hacer, para ver su uso veremos unas cuantas que pueden sernos de utilidad.
 
+* Consulta 1: Visualización de todos los datos disponibles en el fichero.
+Para esta consulta hemos lanzado la siguiente consulta SPARQL:
 
+```grel
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX schema: <http://schema.org/>
 
+SELECT ?Codigo ?nombre ?tipo ?financiamiento ?direccion ?codigoPostal ?provincia ?comarca ?telefono ?web ?longitud ?latitud ?localidad
+WHERE {
+  ?Codigo rdf:type schema:branchCode ;
+            schema:legalName ?nombre ;
+            schema:additionalType ?tipo ;
+            schema:ownershipFundingInfo ?financiamiento ;
+            schema:address ?direccion ;
+            schema:postalCode ?codigoPostal ;
+            schema:Place ?provincia ;
+            schema:DefinedRegion ?comarca ;
+            schema:telephone ?telefono ;
+            schema:WebPage ?web ;
+            schema:longitude ?longitud ;
+            schema:latitude ?latitud ;
+            schema:City ?localidad .
+}      
+```
 
+Podemos ver a continuación parte del resultado obtenido junto a la consulto:
 
+![Consulta uno](./Imagenes/c1.PNG)
 
+* Consulta 2: Visualizar todos los centros educativos que pertenecen a la localidad de AGOST.
+Para ello lanzamos la siguiente columna:
 
+```grel
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX schema: <http://schema.org/>
 
+SELECT ?Codigo ?nombre ?tipo ?financiamiento ?direccion ?codigoPostal ?provincia ?comarca ?telefono ?web ?longitud ?latitud ?localidad
+WHERE {
+  ?Codigo rdf:type schema:branchCode ;
+            schema:legalName ?nombre ;
+            schema:additionalType ?tipo ;
+            schema:ownershipFundingInfo ?financiamiento ;
+            schema:address ?direccion ;
+            schema:postalCode ?codigoPostal ;
+            schema:Place ?provincia ;
+            schema:DefinedRegion ?comarca ;
+            schema:telephone ?telefono ;
+            schema:WebPage ?web ;
+            schema:longitude ?longitud ;
+            schema:latitude ?latitud ;
+            schema:City ?localidad .
+  
+ FILTER(?localidad = "AGOST")
+}
+```
+Obteniendo la siguiente salida a la ejecución tal y como se puede ver:
 
+![Consulta dos](./Imagenes/c2.PNG)
 
+* Consulta 3: Visualizar todos los centro que son de tipo "Centro privado formación profesional específica", los cuales su financiamiento es "Privado concertado".
 
+Para ello lanzamos la siguiente consulta: 
 
+```grel
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX schema: <http://schema.org/>
 
+SELECT ?Codigo ?nombre ?tipo ?financiamiento ?direccion ?codigoPostal ?provincia ?comarca ?telefono ?web ?longitud ?latitud ?localidad
+WHERE {
+  ?Codigo rdf:type schema:branchCode ;
+            schema:legalName ?nombre ;
+            schema:additionalType ?tipo ;
+            schema:ownershipFundingInfo ?financiamiento ;
+            schema:address ?direccion ;
+            schema:postalCode ?codigoPostal ;
+            schema:Place ?provincia ;
+            schema:DefinedRegion ?comarca ;
+            schema:telephone ?telefono ;
+            schema:WebPage ?web ;
+            schema:longitude ?longitud ;
+            schema:latitude ?latitud ;
+            schema:City ?localidad .
+  
+  FILTER(?tipo = "CENTRO PRIVADO FORMACIÓN PROFESIONAL ESPECÍFICA" && ?financiamiento = "PRIVADO CONCERTADO")
+}
+```
 
+Obteniendo la siguiente salida: 
 
+![Consulta tres](./Imagenes/c3.PNG)
 
+Como se puede ver, son múltiples los usos que se le pueden dar a las consultas SPARQL para extraer la información que necesitamos para la explotación de los datos. En este caso podemos ver como la forma de representación de los datos enlazados nos ha facilitado la visualización de estos.
 
 ## 4 - Conclusiones.
+Con el siguiente trabajo hemos podido realizar satisfactoriamente la tarea de elegir un CSV y transformarlo en datos enlazados que nos permita una explotación de los datos.
 
+El trabajo ha cumplido con todas las fases que se solicitaban en la memoria y a nivel personal ha sido muy enriquecedor, ya que ha permitido conocer y trabajar en todas las distintas fases que tiene el proceso de conversión de datos en datos enlazados.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Son múltiples las opciones que nos permiten la generación de datos enlazados, pero considero que ver como estos pueden enriquecerse para dotarlos de más usos me ha parecido muy interesante desde el punto de vista del uso de los datos, ya que puedes empezar con unos datos simples y acabar con un conjunto enriquecido que permita múltiples explotaciones.
 
 ## 5 - Bibliografía.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+* Material proporcionado de la asignatura Web semántica y datos enlazados.
+* [Portal de datos abiertos de la GVA](https://portaldadesobertes.gva.es/es)
+* [Introducción a Markdown](https://programminghistorian.org/es/lecciones/introduccion-a-markdown)
+* [Documentación de OpenRefine](https://openrefine.org/docs)
+* [Expresiones Grel de OpenRefine](https://openrefine.org/docs/manual/grelfunctions)
+* [vocabulario Schema.org](https://schema.org/)
+* [Documentación de Apache Jena Fuseki](https://jena.apache.org/documentation/fuseki2/)
+* [Ejemplos de consultas SPARQL en la biblioteca Cervantes ](https://data.cervantesvirtual.com/help)
