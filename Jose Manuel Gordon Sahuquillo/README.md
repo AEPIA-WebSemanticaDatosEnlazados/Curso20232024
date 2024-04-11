@@ -208,21 +208,21 @@ En base a los términos del apartado anterior y al esquema inicial se crea el si
 ![Mapa conceptual](./Imagenes/Mapa_conceptual.png)
 
 ## 2.4.4 - Búsqueda y selección de ontologías para su reutilización.
-En el siguiente apartado se buscarán diferentes ontologías que puedan ser reutilizadas. En concreto se ha preparado la siguiente tabla para mostrar claramente el trabajo realizado que se ha basado principalmente en https://schema.org/ y en https://www.w3.org.
+En el siguiente apartado se buscarán diferentes ontologías que puedan ser reutilizadas. En concreto se ha preparado la siguiente tabla para mostrar claramente el trabajo realizado que se ha basado completamente en términos de https://schema.org/.
 
 | Término    | URI |
 |-----------|------|
-| Código| https://schema.org/hasCredential | 
+| Código| https://schema.org/branchCode | 
 | Denominación | https://schema.org/legalName |
 | Tipo | https://schema.org/additionalType |
-| Régimen jurídico | https://www.w3.org/ns/org#purpose |
+| Régimen jurídico | https://schema.org/ownershipFundingInfo |
 | Titularidad | https://schema.org/funder |
 | CIF | https://schema.org/taxID |
 | Dirección | https://schema.org/address |
 | Código postal | https://schema.org/postalCode |
-| Localidad | https://schema.org/Place |
+| Localidad | https://schema.org/City |
 | Provincia | https://schema.org/Place |
-| Comarca | https://schema.org/Place |
+| Comarca | https://schema.org/DefinedRegion |
 | Teléfono | https://schema.org/telephone |
 | Fax | https://schema.org/faxNumber |
 | Web | https://schema.org/WebPage |
@@ -270,7 +270,7 @@ value.replace("CENTRE", "CENTRO")
      .replace("D'ARTS ESCÈNIQUES", "DE ARTES ESCÉNICAS")
 ```
 
-* La columna "REGIMEN" se va a renombrar en "REGIMEN JURIDICO" para hacerla más comprensible. También se hará una modificación en su contenido mediante una expresión GREL, transformando el siguiente contenido: 
+* La columna "REGIMEN" se va a renombrar en "FINANCIAMIENTO" para hacerla más comprensible de lo que pretende expresar esta columna. También se hará una modificación en su contenido mediante una expresión GREL, transformando el siguiente contenido: 
 | Datos originales    | Datos modificados |
 |-----------|------|
 | PRIV.| PRIVADO | 
@@ -348,8 +348,6 @@ Posteriormente se realizará la unión entre las tres columnas con un formato si
 
 * La columna "CODIGO_POSTAL" se va a renombrar a "CODIGO POSTAL".
 
-* La columna "LOCALIDAD" está toda en para indicar el nombre de las localidades, por lo que se eliminará y en el punto siguiente de enlazado se volverá a crear con los datos en castellano.
-
 * La columna "PROVINCIA" contiene en el mismo registro los valores de la provincia en castellano y en valenciano en un formato similar a "XXXX/XXXX". Se va a modificar esto mediante una expresión para eliminar todo lo que este a la derecha de la barra que es lo que está en valenciano.
 Para ello se usará la siguiente expresión GREL:
 
@@ -364,28 +362,46 @@ value.split("/")[0]
 ```grel
 value.replace("www.", "")           
 ```
+Una vez transformado el conjunto de datos, el siguiente paso es construir el RDF. Para ello nos valemos de la extensión que hemos visto en el temario llamada "RDF Extension", la cual podemos encontrar fácilmente en la web de OpenRefine.
+
+La instalación es muy sencilla y no se va a explicar en esta memoria ya que no es el propósito de este trabajo, además la misma página del autor te explica cómo hacer esta instalación que únicamente pasa por descomprimir el fichero descargado "rdf-extension-1.4.0" en una carpeta llamada extensions dentro del directorio.
+
+Tras hecho lo anterior, únicamente debemos acceder a través del botón que dice "RDF" y elegir la opción "Edit RDF skeleton". En primer lugar veremos una ventana en blanco como la que se muestra a continuación, que deberemos rellenar en base a lo aprendido en el temario de la materia.
+![Esquema blanco](./Imagenes/RDFblanco.PNG)
+
+En primer lugar debemos definir el apartado de la ontología en base a lo que definimos anteriormente en el punto "2.3 - Estrategia de nombrado". En nuestro caso definimos la ruta de la ontología como:
+```grel
+http://edu.gva.es/ontology/centro#          
+```
+También es necesario definir el prefijo de schema a través del menú, ya que por defecto no aparece. Únicamente tenemos que rellenar los siguientes datos:
+![Añadir prefijo](./Imagenes/addprefijo.PNG)
+
+Continuando con otras tareas necesarias, también se debe modificar el parámetro "Base URI", especificando la ruta del nombrado de individuos que también especificamos en el punto 2.3. 
+![Modificar URI](./Imagenes/BaseURI.PNG)
+
+Dicho esto, el siguiente paso es establecer las relaciones tal y como se expusieron en el punto "2.4.4 - Búsqueda y selección de ontologías para su reutilización.". Una vez añadidas todas el resultado es el que se ve a continuación:
+![Esquema hecho](./Imagenes/RDFCompleto.PNG)
+
+Por último, una vez realizado el proceso debemos exportar el RDF generado a formato Turtle a través de la opción de Exportar -> RDF as Turtle. Este archivo exportado será subido a la carpeta RDF disponible con el nombre "centros-docentes-de-la-comunitat-valenciana.ttl".
 
 ## 2.6 - Enlazado.
+En este caso ha sido difícil encontrar algún dato que nos aporte un enriquecimiento de los datos que disponemos, ya que estos por ellos mismos ya son bastante útiles para el fin que queríamos darles. Tras mucho pensar en que datos se podían usar, se decidió cotejar la columna "LOCALIDAD" ya que permitirá obtener un ejemplo similar al que se ve en los apuntes y puede aportar un extra de información adicional sobre la localidad que nos permita enriquecer nuestros datos.
 
+En este caso no vamos a añadir un servicio nuevo de reconciliación y nos vamos a valer del servicio "Wikidata reconci.link(es)" que viene ya configurado. Al lanzar el servicio de reconciliación nos aparecen los siguientes opciones: 
+![Servicio reconciliación](./Imagenes/emparejando1.PNG)
 
+En nuestro caso hemos seleccionado la opción 2 y hemos dejado que el proceso se complete. Una vez se ha completado se ha seleccionado la opción desde la columna "Editar columna -> Agregar columna basada en esta columna", añadiendo una nueva columna llamada "WIKI LOCALIDAD" a través de la siguiente expresión:
+```grel
+ "http://www.wikidata.org/entity/" + cell.recon.match.id        
+```
 
+Una vez finalice el proceso el siguiente paso es añadir la propiedad al esquema RDF que ya tenemos creado para enlazar los datos. Se hacen las siguientes modificaciones en el esquema para que recoja este hecho.
+![Esquema enlazado](./Imagenes/RDFenlazado.PNG)
 
+También se ha añadido la columna "SUPERFICIE", ya que puede ser interesante para algunas consultas. Quedando el esquema de RDF finalmente de la siguiente forma con todos los datos enlazados.
+![Esquema enlazado con la superficie](./Imagenes/RDFenlazadoValue.PNG)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Una vez hecho esto, volvemos a exportar el fichero RDF y lo añadimos a la carpeta RDF con el nombre "centros-docentes-de-la-comunitat-valenciana-enlazado.ttl"
 
 ## 2.7 - Publicación.
 
@@ -430,7 +446,6 @@ value.replace("www.", "")
 
 
 
-
 ## 4 - Conclusiones.
 
 
@@ -452,8 +467,8 @@ value.replace("www.", "")
 
 
 
-
 ## 5 - Bibliografía.
+
 
 
 
