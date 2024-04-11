@@ -374,12 +374,15 @@ En primer lugar debemos definir el apartado de la ontología en base a lo que de
 http://edu.gva.es/ontology/centro#          
 ```
 También es necesario definir el prefijo de schema a través del menú, ya que por defecto no aparece. Únicamente tenemos que rellenar los siguientes datos:
+
 ![Añadir prefijo](./Imagenes/addprefijo.PNG)
 
 Continuando con otras tareas necesarias, también se debe modificar el parámetro "Base URI", especificando la ruta del nombrado de individuos que también especificamos en el punto 2.3. 
+
 ![Modificar URI](./Imagenes/BaseURI.PNG)
 
 Dicho esto, el siguiente paso es establecer las relaciones tal y como se expusieron en el punto "2.4.4 - Búsqueda y selección de ontologías para su reutilización.". Una vez añadidas todas el resultado es el que se ve a continuación:
+
 ![Esquema hecho](./Imagenes/RDFCompleto.PNG)
 
 Por último, una vez realizado el proceso debemos exportar el RDF generado a formato Turtle a través de la opción de Exportar -> RDF as Turtle. Este archivo exportado será subido a la carpeta RDF disponible con el nombre "centros-docentes-de-la-comunitat-valenciana.ttl".
@@ -388,6 +391,7 @@ Por último, una vez realizado el proceso debemos exportar el RDF generado a for
 En este caso ha sido difícil encontrar algún dato que nos aporte un enriquecimiento de los datos que disponemos, ya que estos por ellos mismos ya son bastante útiles para el fin que queríamos darles. Tras mucho pensar en que datos se podían usar, se decidió cotejar la columna "LOCALIDAD" ya que permitirá obtener un ejemplo similar al que se ve en los apuntes y puede aportar un extra de información adicional sobre la localidad que nos permita enriquecer nuestros datos.
 
 En este caso no vamos a añadir un servicio nuevo de reconciliación y nos vamos a valer del servicio "Wikidata reconci.link(es)" que viene ya configurado. Al lanzar el servicio de reconciliación nos aparecen los siguientes opciones: 
+
 ![Servicio reconciliación](./Imagenes/emparejando1.PNG)
 
 En nuestro caso hemos seleccionado la opción 2 y hemos dejado que el proceso se complete. Una vez se ha completado se ha seleccionado la opción desde la columna "Editar columna -> Agregar columna basada en esta columna", añadiendo una nueva columna llamada "WIKI LOCALIDAD" a través de la siguiente expresión:
@@ -396,9 +400,11 @@ En nuestro caso hemos seleccionado la opción 2 y hemos dejado que el proceso se
 ```
 
 Una vez finalice el proceso el siguiente paso es añadir la propiedad al esquema RDF que ya tenemos creado para enlazar los datos. Se hacen las siguientes modificaciones en el esquema para que recoja este hecho.
+
 ![Esquema enlazado](./Imagenes/RDFenlazado.PNG)
 
 También se ha añadido la columna "SUPERFICIE", ya que puede ser interesante para algunas consultas. Quedando el esquema de RDF finalmente de la siguiente forma con todos los datos enlazados.
+
 ![Esquema enlazado con la superficie](./Imagenes/RDFenlazadoValue.PNG)
 
 Una vez hecho esto, volvemos a exportar el fichero RDF y lo añadimos a la carpeta RDF con el nombre "centros-docentes-de-la-comunitat-valenciana-enlazado.ttl"
