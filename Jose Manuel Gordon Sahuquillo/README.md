@@ -527,7 +527,7 @@ Son múltiples las opciones que nos permiten la generación de datos enlazados, 
 * [Introducción a Markdown](https://programminghistorian.org/es/lecciones/introduccion-a-markdown)
 * [Documentación de OpenRefine](https://openrefine.org/docs)
 * [Expresiones Grel de OpenRefine](https://openrefine.org/docs/manual/grelfunctions)
-* [vocabulario Schema.org](https://schema.org/)
+* [Schema.org](https://schema.org/)
 * [Documentación de Apache Jena Fuseki](https://jena.apache.org/documentation/fuseki2/)
 * [Ejemplos de consultas SPARQL en la biblioteca Cervantes ](https://data.cervantesvirtual.com/help)
 
