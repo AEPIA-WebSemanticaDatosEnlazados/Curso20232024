@@ -93,6 +93,7 @@ A continuación se exponen las propiedades y los conceptos más relevantes aplic
 - schema:address -> DIRECCION: Lugar donde se realiza el evento cultural que es contenido de tipo texto.
 - schema:City -> CIUDAD: Ciudad donde se realiza el evento cultural que es contenido de tipo texto.
 - dbpedia-owl:district -> DISTRITO-INSTALACION: Distrito donde se ubica la instalación donde se realiza el evento.
+- schema:postalCode -> CODIGO-POSTAL-INSTALACION: Código numérico que indica la denominación del distrito.
 - schema:longitude -> COORDENADA-X: localización en dirección este y oeste del recinto donde se ubica el evento.
 - schema:latitude -> COORDENADA-Y:localización en dirección norte y sur del recinto donde se ubica el evento.
 El barrio de la instalación se borra tras el proceso de linkado por no ser barrios conocidos y no encontrarse en linkedata, el vocabulario adecuado para los mismos.
