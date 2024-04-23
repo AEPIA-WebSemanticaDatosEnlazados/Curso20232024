@@ -101,7 +101,7 @@ En última instancia se cambiaron los nombres de los títulos de mayúsculas a m
 - value.replace('T', ' ')
 - value.replace('Z', ':00')
 
-![Titulos](img/titulos)
+![Titulos](img/titulos.png)
 
 ## 2.f Enlazado de datos
 
