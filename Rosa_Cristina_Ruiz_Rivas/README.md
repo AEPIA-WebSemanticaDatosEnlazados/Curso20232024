@@ -100,13 +100,15 @@ El barrio de la instalación se borra tras el proceso de linkado por no ser barr
 En última instancia se cambiaron los nombres de los títulos de mayúsculas a minúsculas, para adaptarlo a la consulta query SPARQL del apartado de aplicación y explotación. Posteriormente se han cambiado los formatos de las fechas, con grel.
 - value.replace('T', ' ')
 - value.replace('Z', ':00')
-![Titulos esquema](img/titulos)
+
+![Titulos](img/titulos)
 
 ## 2.f Enlazado de datos
 
 Dentro de nuestro dataset transformado, se identifica la clase Madrid cuyos datos pueden ser enlazados. Consiste en encontrar qué conjuntos de datos contienen instancias. Se emplea Openrefine para llevar acabo el enlazado. Se busca un dataset disponible y bien documentado para que se generen datos entrantes. Se ejecuta un servicio de reconciliación dbpedia.es basado en SPARQL endpoint dentro de OpenRefine tanto en origen como en destino.
 
 La columna elegida en origen es ciudad que se añade a partir de la dirección, en concreto a partir del barrio de la instalación. Existen 1001 instancias de valor Madrid. A partir de los identificadores de esta columna, se crea una única variable para todas las celdas idénticas, haciendo un auto-match con alta confianza. Se crea una nueva columna ciudadDataLinked, con los datos de wikidata, un dataset externo que habla de ciudades. En nuestro caso concreto se relaciona con Madrid.
+
 ![Reconciliacion](img/dataLinked.png)
 
 En ese momento reconciliamos con http://www.wikidata.org/wiki/Q2807, según se observa en la clase ciudadDataLinked.
@@ -144,6 +146,7 @@ WHERE{
 } 
 ```
 Se adjunta a continuación la salida del código.
+
 ![identificador de evento](img/hasID.png)
 
  Así se establece un patrón de búsqueda sobre el grafo RDF. Con ello se accede al identificador de cada evento, como se ve en el fichero Turtle Agenda-eventos-culturales-final.ttl. Además se accede al vocabulario, una vez se han acoplado los datos a la estructura planteada, de cada evento de Madrid, a partir de schema. Se enlazan con el dataset de salida. Ofrece al usuario final la información precisa del nombre de la instalación asociada al identificador del evento, la dirección y el patrón de individuos asociados a Madrid. Se muestra el código.
@@ -165,8 +168,8 @@ WHERE{
 } 
 ```
 Para resolver las preguntas de competencia funcionales se utilizan las querys SPARQL que hemos visto en la figura del recinto, la dirección y la ciudad.
-![ciudad](img/ciudadInstalacion.png)
 
+![ciudad](img/ciudadInstalacion.png)
 
 - ¿El evento cultural es gratuito? 
 ```
@@ -189,6 +192,7 @@ WHERE{
 } 
 ```
 Se observa en la siguiente figura los eventos que lo cumplen.
+
 ![gratuito](img/gratuito.png)
 
 - ¿Cual es la duración del evento? 
@@ -213,6 +217,7 @@ WHERE{
 } 
 ```
 Y su figura correspondiente:
+
 ![duracion](img/duracion.png)
 
 A continuación se muestran los que cumplen los dos últimos requisitos.
@@ -237,6 +242,7 @@ WHERE{
 } 
 ```
 En la figura se muestran los resultados de los eventos gratuitos con larga duración.
+
 ![gratuito duracion](img/gratuitoDuracion.png)
 
 La ontología se implementa en RDF en el fichero Agenda-eventos-culturales-final.rdf. Nos aporta un conjunto de conceptos y clases en una estructura jerárquica en torno al dominio de evento, que es la clase principal, que se disgrega en las clases gratuito, duración, fecha en que empieza, fecha en que termina, localización y ciudad. A partir de estos conceptos se generan individuos que serán instancias de cada una de estas clases dentro del nivel de datos.
