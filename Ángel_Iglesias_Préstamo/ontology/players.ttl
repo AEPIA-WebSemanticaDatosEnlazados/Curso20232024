@@ -90,18 +90,6 @@ schema:netWorth rdf:type owl:ObjectProperty ;
                     "Pierna dominante"@es .
 
 
-###  http://rdf.transfermarkt.com/ontology/player#position
-:position rdf:type owl:DatatypeProperty ;
-          rdfs:subPropertyOf owl:topDataProperty ;
-          rdfs:domain :Player ;
-          rdfs:range xsd:string ;
-          rdfs:comment "Posición que ocupa el jugador en el campo. Dentro de todas las parcelas del terreno de juego, el futbolista ocupará una de ellas. Donde deberá realizar toda una serie de tareas específicas: portería, defensa, mediocentro o delantero."@es ,
-                       "Position that the player occupies on the field. Within all the areas of the playing field, the footballer will occupy one of them. Where he must carry out a series of specific tasks: goalkeeper, defender, midfielder, or forward."@en ;
-          rdfs:label "Posición en el campo"@es ,
-                     "Position on the field"@en ;
-          rdfs:seeAlso "https://www.wikidata.org/wiki/Q4611891" .
-
-
 ###  https://schema.org/birthDate
 schema:birthDate rdf:type owl:DatatypeProperty ;
                  rdfs:subPropertyOf owl:topDataProperty ;
@@ -176,6 +164,18 @@ schema:name rdf:type owl:DatatypeProperty ;
                         schema:EmploymentAgency ,
                         schema:SportsTeam ;
             rdfs:range xsd:string .
+
+
+###  https://schema.org/roleName
+schema:roleName rdf:type owl:DatatypeProperty ;
+                rdfs:subPropertyOf owl:topDataProperty ;
+                rdfs:domain :Player ;
+                rdfs:range xsd:string ;
+                rdfs:comment "Posición que ocupa el jugador en el campo. Dentro de todas las parcelas del terreno de juego, el futbolista ocupará una de ellas. Donde deberá realizar toda una serie de tareas específicas: portería, defensa, mediocentro o delantero."@es ,
+                             "Position that the player occupies on the field. Within all the areas of the playing field, the footballer will occupy one of them. Where he must carry out a series of specific tasks: goalkeeper, defender, midfielder, or forward."@en ;
+                rdfs:label "Posición en el campo"@es ,
+                           "Position on the field"@en ;
+                rdfs:seeAlso "https://www.wikidata.org/wiki/Q4611891" .
 
 
 ###  https://schema.org/url

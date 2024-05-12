@@ -246,8 +246,8 @@ que satisfagan ambos propósitos.
 | -------- | ------------------------------------------ | ----- |
 | Jugador  |                                            |       |
 | Ciudad   | [https://schema.org/](https://schema.org/) | [City](https://schema.org/City) |
-| Equipo   | [https://schema.org/](https://schema.org/) | [Organization](https://schema.org/SportsTeam) |
-| División | [https://schema.org/](https://schema.org/) | [Organization](https://schema.org/SportsOrganization) |
+| Equipo   | [https://schema.org/](https://schema.org/) | [SportsTeam](https://schema.org/SportsTeam) |
+| División | [https://schema.org/](https://schema.org/) | [SportsOrganization](https://schema.org/SportsOrganization) |
 | Agente   | [https://schema.org/](https://schema.org/) | [EmploymentAgency](https://schema.org/EmploymentAgency) |
 | Coste    | [https://schema.org/](https://schema.org/) | [MonetaryAmount](https://schema.org/MonetaryAmount) |
 | Contrato | [https://schema.org/](https://schema.org/) | [Role](https://schema.org/Role) |
@@ -281,8 +281,8 @@ de implementar nuestra ontología.
 | Lugar de Nacimiento       | Jugador  | Ciudad            | [https://schema.org/](https://schema.org/) | [birthPlace](https://schema.org/birthPlace) |
 | Fecha de nacimiento       | Jugador  | `xsd:dateTime`    | [https://schema.org/](https://schema.org/) | [birthDate](https://schema.org/birthDate) |
 | Nacionalidad              | Jugador  | País              | [https://schema.org/](https://schema.org/) | [nationality](https://schema.org/nationality) |
-| Posición                  | Jugador  | `xsd:string`      |                                            |  |
-| Pierna buena              | Jugador  | `xsd:string`      |                                            |  |
+| Posición                  | Jugador  | `xsd:string`      | [https://schema.org/](https://schema.org/) | [roleName](https://schema.org/roleName) |
+| Pierna buena              | Jugador  | `xsd:string`      | [https://schema.org/](https://schema.org/) | [roleName](https://schema.org/roleName) |
 | Contacto                  | Jugador  | Agente            | [https://schema.org/](https://schema.org/) | [contactPoint](https://schema.org/contactPoint) |
 | Valor neto                | Jugador  | Coste             | [https://schema.org/](https://schema.org/) | [netWorth](https://schema.org/netWorth) |
 | Valor actual              | Coste    | `xsd:integer`     | [https://schema.org/](https://schema.org/) | [value](https://schema.org/value) |
@@ -295,6 +295,26 @@ de implementar nuestra ontología.
 
 #### Implementación de la ontología
 
+La implementación de la ontología se ha llevado a cabo utilizando Protegé,
+quizás la herramienta más usada a la hora de implementar ontologías. Ésta tiene
+un amplio soporte, y la cantidad de tutoriales que se pueden encontrar online
+es elevada. Además, ya había probado a usarla en el pasado. También es importante
+destacar que ésta soporta la exportación de la ontología en formatos comunes
+para poder ser usado en OpenRefine, por lo que satisfacemos el RNF.2. Para
+llevar a cabo la implementación se han seguido los siguientes pasos:
+
+1. *Uso de los términos ontológicos reutilizados*. En esta primera tarea, hemos
+  importado la ontología [schema.org/](https://schema.org/), y hemos hecho uso
+  de la clases [City](https://schema.org/City), [SportsTeam](https://schema.org/SportsTeam),
+  [SportsTeam](https://schema.org/SportsTeam), [SportsOrganization](https://schema.org/SportsOrganization),
+  [EmploymentAgency](https://schema.org/EmploymentAgency), [MonetaryAmount](https://schema.org/MonetaryAmount),
+  [Role](https://schema.org/Role) y [Country](https://schema.org/Country). Sin
+  embargo, hemos importado la ontología enteramente, ya que así conseguimos
+  mantener todos los términos y axiomas de la ontología que estamos importando,
+  y los podremos reusar o extender con nuevos axiomas y vincularlos con nuestros
+  términos introducidos. De esta manera, podemos hacer uso de todo el conocimiento
+  que presenta [schema.org/](https://schema.org/) para nuestro beneficio.
+2. *Implementación de los recursos introducidos para nuestro caso de uso*.
 
 
 #### Evaluación de la ontología
@@ -303,7 +323,86 @@ de implementar nuestra ontología.
 
 ### Proceso de transformación
 
+En este apartado se describen los pasos que se han seguido para obtener un
+conjunto de datos limpio -- pre-procesamiento -- y a su vez, para poder obtener
+los datos RDF finales.
 
+#### Pre-procesamiento
+
+Como sabemos, inicialmente, partimos de un conjunto de datos `.csv` que contiene
+un cierto ruido, así como columnas que no está formateadas apropiadamente. De
+esta manera, vamos a ir, columna por columna, indicándole a la herramienta
+OpenRefine, el formato de datos apropiado, y realizando procesos de limpieza.
+Inicilamente, cuando cargamos los datos en la herramienta, vamos a dejar las
+opciones por defecto para cargar datos `.csv`, siendo el separador la ocma, y
+almacenando los datos vacíos como `null`. Por el resto, le indicaremos que la
+primera columna es la cabecera.
+
+Una vez tenemos las 30.516 filas cargadas, vamos a proceder con el procesamiento
+más en concreto. Lo primero que vamos a hacer es eliminar aquellas que no son
+relevantes para nuestro interés. Hemos visto que la columna de `last_season`
+presenta muchas incongruencias, y no está actualizada correctamente. Además,
+tenemos la columna `contract_expiration_date` que nos muestra la fecha de
+finalización de su contrato. Sólo mediante dicha columna obtenemos más
+información de si el jugador está en activo o no. Por su parte, la columna
+`name` tambiñen se puede eliminar, ya que tenemos otras dos: `first_name` y 
+`last_name` que son respectivamente, el nombre y el primer apellido. De esta
+manera, con quedarnos con cualquiera de las dos opciones, es suficiente. Finalmente,
+podemos ver cómo hay dos columnas: `player_id` y `player_code` que sirven como
+identificadores. Aunque `player_code` parece tener más poder descriptivo, ya que
+se forma mediante el nombre y primer apellido del jugador separado por un guión,
+el problema es que esta forma no crea identificadores únicos, de hecho, se repite,
+así que no nos sirve, y vamos a prescidindir de dicha columna. El resto de
+columnas sí son relevantes para lo que queremos realizar. 
+
+Una vez hemos reducido apropiadamente el número de columnas a las necesarias,
+vamos a crear nuevas columnas en función de las ya existentes. Hemos visto que:
+
+- Algunas entradas de la columna `city_of_birth` presentan una separación por
+  comas donde se indica la región a la que pertenece la ciudad. Es por eso que
+  vamos a crear la columna `region_of_birth`. Para ello vamos a editar la
+  columna y a separarla en varias, usando la coma como separador. Haciendo
+  esto, obtenemos hasta tres nuevas columnas, ya que algunas definiciones de
+  ciudad incluyen definiciones de áreas territoriales del estilo:
+  `Ciudad, Provincia, Comunidad Autónoma`. Como la dispersión de las nuevas
+  variables es alta, la mayor parte de entradas son nulas, vamos a eliminarlas,
+  ya que no aportan demasiado al conjunto de datos resultado.
+- Crearemos una nueva variable `is_active` que nos indicará si el jugador tiene
+  un contrato en vigor o no. De esta manera, vamos a comprobar que
+  `contract_expiration_date` sea mayor que la fecha actual. En caso de que sea
+  nulo, diremos que el valor sea falso. Para ello, vamos a añadir una columna
+  basada en ésta, donde haremos la comparación: `if(isBlank(value), false, value > now())`.
+
+Ahora, debemos asegurarnos de que todas las columnas tienen el formato apropiado;
+esto es, las cadenas de caracteres se almacenan como texto, los números como
+números, etc. Una vez hemos hecho esto, vamos a comenzar con el proceso de
+limpieza de valores.
+
+Para ello vamos a, partiendo de todas las columnas de tipo texto, eliminar
+espacios al principio y al final de la cadena de caracteres, y a colpsar
+posibles espacios consecutivos. Además, vamos a establecer _title-case_ para
+todas aquellas columnas que hagan referencia a nombres, ciudades, etc. Para
+conseguir un formato uniforme y sintácticamente correcto.
+
+Ahora, vamos a eliminar el ruido, para ello, sabiendo que la única columna
+que presenta datos anómalos es `height`, vamos a eliminar todas las alturas
+inferiores a 159, ya que se presentan dos entradas con un valor de 18 centímetros
+de estatura. Para ello vamos a crear una transformación que aplique la siguiente
+operación: `if(value < 159, null, value)`.
+
+Una vez hemos hecho todo esto, la última operación que vamos a realizar es
+agrupar los términos semejantes, utilizando la operación `Cluster and edit...`
+para todas las columnas textuales.
+
+Ahora ya sabemos que nuestros datos están apropiadamente transformados y podemos
+comenzar con la siguiente fase de generación de datos RDF.
+
+#### Generación de RDF
+
+Cabe destacar que para la generación de RDF vamos a usar la extensión
+`rdf-transform`, ya que ésta es una versión renovada de `rdf-extension`. Que
+intenta mejorar la usabilidad de ésta. Para ello, vamos a implementar la
+ontología que diseñamos en Protegé.
 
 ### Enlazado con otras fuentes de datos
 
