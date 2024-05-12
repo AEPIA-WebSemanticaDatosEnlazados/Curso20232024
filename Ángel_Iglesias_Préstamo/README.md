@@ -414,7 +414,74 @@ comenzar con la siguiente fase de generación de datos RDF.
 Cabe destacar que para la generación de RDF vamos a usar la extensión
 `rdf-transform`, ya que ésta es una versión renovada de `rdf-extension`. Que
 intenta mejorar la usabilidad de ésta. Para ello, vamos a implementar la
-ontología que diseñamos en Protegé.
+ontología que diseñamos en Protegé usando OpenRefine. Para ello fuimos
+agregando las clases y propiedades de acuerdo con lo definido, con el objetivo
+de dar un soporte semántico al conjunto de datos original.
+
+El resultado de la generación de RDF para la primera fila del `.csv` es el
+siguiente:
+
+```turtle
+@prefix :       <http://rdf.transfermarkt.com/resource/> .
+@prefix onto:   <http://rdf.transfermarkt.com/ontology/player#> .
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+
+<http://rdf.transfermarkt.com/resource/EmploymentAgency/AsbwSportMarketing>
+        rdf:type     schema:EmploymentAgency;
+        schema:name  "Asbw Sport Marketing" .
+
+<http://rdf.transfermarkt.com/resource/Player/10>
+        rdf:type              onto:Player;
+        onto:goodLeg          "right";
+        onto:position         "Attack" , "Centre-Forward";
+        schema:birthDate      "1978-06-09T00:00Z"^^xsd:date;
+        schema:birthPlace     <http://rdf.transfermarkt.com/resource/City/Opole>;
+        schema:contactPoint   <http://rdf.transfermarkt.com/resource/EmploymentAgency/AsbwSportMarketing>;
+        schema:familyName     "Klose";
+        schema:givenName      "Miroslav";
+        schema:hasOccupation  <http://rdf.transfermarkt.com/resource/Role/10>;
+        schema:height         "184"^^xsd:int;
+        schema:identifier     "10"^^xsd:int;
+        schema:image          "https://img.a.transfermarkt.technology/portrait/header/10-1448468291.jpg?lm=1"^^xsd:anyURI;
+        schema:nationality    <http://rdf.transfermarkt.com/resource/Country/Germany>;
+        schema:netWorth       <http://rdf.transfermarkt.com/resource/MonetaryAmount/10>;
+        schema:url            "https://www.transfermarkt.co.uk/miroslav-klose/profil/spieler/10"^^xsd:anyURI .
+
+<http://rdf.transfermarkt.com/resource/Country/Poland>
+        rdf:type     schema:Country;
+        schema:name  "Poland" .
+
+<http://rdf.transfermarkt.com/resource/SportsOrganization/IT1>
+        rdf:type           schema:SportsOrganization;
+        schema:identifier  "IT1" .
+
+<http://rdf.transfermarkt.com/resource/Role/10>
+        rdf:type         schema:Role;
+        schema:roleName  "Centre-Forward" , "Attack" .
+
+<http://rdf.transfermarkt.com/resource/SportsTeam/398>
+        rdf:type           schema:SportsTeam;
+        schema:athlete     <http://rdf.transfermarkt.com/resource/Player/10>;
+        schema:identifier  "398"^^xsd:int;
+        schema:memberOf    <http://rdf.transfermarkt.com/resource/SportsOrganization/IT1>;
+        schema:name        "Società Sportiva Lazio S.P.A." .
+
+<http://rdf.transfermarkt.com/resource/Country/Germany>
+        rdf:type     schema:Country;
+        schema:name  "Germany" .
+
+<http://rdf.transfermarkt.com/resource/City/Opole>
+        rdf:type                 schema:City;
+        schema:containedInPlace  <http://rdf.transfermarkt.com/resource/Country/Poland>;
+        schema:name              "Opole" .
+
+<http://rdf.transfermarkt.com/resource/MonetaryAmount/10>
+        rdf:type         schema:MonetaryAmount;
+        schema:maxValue  "30000000";
+        schema:value     "1000000"^^xsd:int .
+```
 
 ### Enlazado con otras fuentes de datos
 
