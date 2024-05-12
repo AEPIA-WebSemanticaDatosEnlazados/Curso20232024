@@ -282,7 +282,7 @@ de implementar nuestra ontología.
 | Fecha de nacimiento       | Jugador  | `xsd:dateTime`    | [https://schema.org/](https://schema.org/) | [birthDate](https://schema.org/birthDate) |
 | Nacionalidad              | Jugador  | País              | [https://schema.org/](https://schema.org/) | [nationality](https://schema.org/nationality) |
 | Posición                  | Jugador  | `xsd:string`      | [https://schema.org/](https://schema.org/) | [roleName](https://schema.org/roleName) |
-| Pierna buena              | Jugador  | `xsd:string`      | [https://schema.org/](https://schema.org/) | [roleName](https://schema.org/roleName) |
+| Pierna buena              | Jugador  | `xsd:string`      |                                            |  |
 | Contacto                  | Jugador  | Agente            | [https://schema.org/](https://schema.org/) | [contactPoint](https://schema.org/contactPoint) |
 | Valor neto                | Jugador  | Coste             | [https://schema.org/](https://schema.org/) | [netWorth](https://schema.org/netWorth) |
 | Valor actual              | Coste    | `xsd:integer`     | [https://schema.org/](https://schema.org/) | [value](https://schema.org/value) |
@@ -314,8 +314,20 @@ llevar a cabo la implementación se han seguido los siguientes pasos:
   y los podremos reusar o extender con nuevos axiomas y vincularlos con nuestros
   términos introducidos. De esta manera, podemos hacer uso de todo el conocimiento
   que presenta [schema.org/](https://schema.org/) para nuestro beneficio.
-2. *Implementación de los recursos introducidos para nuestro caso de uso*.
+2. *Implementación de los recursos introducidos para nuestro caso de uso*. Como
+  hemos visto, existen una serie de términos y propiedades que no están soportadas
+  por [schema.org/](https://schema.org/). Es por eso que se ha llevado a cabo
+  la implementación de éstas manualmente en Protegé. A estos términos definidos
+  manualmente se les incluyen anotaciones adicionales para facilitar la
+  comprensión y mantenimiento de la ontologías. Éstas son: `rdfs:label`, que
+  describe el nombre del recurso, `rdfs:comment`, que explica el propósito del
+  término, y `rdfs:seeAlso`, que hace referencia a la página de Wikidata que
+  describe el término. Estas anotaciones se incluyen tanto en espaól, como en
+  inglés. Los términos definidos incluyen:
+    - [http://rdf.transfermarkt.com/ontology/player#Player]()
+    - [http://rdf.transfermarkt.com/ontology/player#goodLeg]()
 
+![Diseño de la ontología que estamos desarrollando](./img/WebSemantica-ontology.svg)
 
 #### Evaluación de la ontología
 
