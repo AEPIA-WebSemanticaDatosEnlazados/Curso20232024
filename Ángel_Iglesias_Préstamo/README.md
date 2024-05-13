@@ -53,6 +53,27 @@ RDF de [Transfermarkt](transfermarkt.com/).
 
 ### Análisis de los datos
 
+#### Análisis de la licencia de los datos
+
+La primera parte he sido ser capaz de determinar cuál es la licencia de los
+datos. Los datos se encuentran subidos a
+[Kaggle](https://www.kaggle.com/datasets/davidcariboo/player-scores), donde se
+especifica que la licencia de los mismos es
+[CC0: Public Domain](https://creativecommons.org/publicdomain/zero/1.0/).
+
+Analizando los términos legales de la licencia, se puede observar que ésta
+permite copiar, modificar, distribuir y realizar un trabajo, incluso con 
+fines comerciales, sin pedir permiso por esto. Se puede apreciar que esta
+licencia es muy flexible, y permite trabajar con estos datos sin ningún problema.
+Creo que lo justo, aún así, es retribuir al usuario de Kaggle
+[https://www.kaggle.com/davidcariboo](https://www.kaggle.com/davidcariboo) el
+crédito de la creación y publicación de los datos. Además, creo que lo justo es
+también hacer uso de la misma licencia para los datos resultados del trabajo
+descrito en este repositorio. En este mismo repositorio se pueden encontrar
+los términos legales de esta licencia.
+
+#### Análisis exploratorio del conjunto de datos
+
 El conjunto de datos original presenta la siguiente estructura:
 
 - `player_id`: identificador único del jugador en 
@@ -331,7 +352,19 @@ llevar a cabo la implementación se han seguido los siguientes pasos:
 
 #### Evaluación de la ontología
 
+Lo primero que he hecho ha sido comprobar que el código Turtle está correctamente
+formateado, para ello he usado un [validador de Turtle](http://ttl.summerofcode.be/),
+que ha devuelto un mensaje afirmativo sobre que la sintaxis es correcta.
 
+Para la evaluación de la ontología he utilizado la herramienta 
+[OOPS!](https://oops.linkeddata.es/), recomendada en la asignatura
+de Tecnologías Semánticas Avanzadas del máster. Esta herramienta nos permite
+evaluar nuestras ontologías detectando los errores más comunes cunado
+desarrollamos nuestras ontologías. Su uso me recuerda a algunos validadores
+web como [TAW](https://www.tawdis.net/). Para asegurarnos de que la ontología
+cumple unos mínimos de calidad, vamos a centrarnos en asegurar que los avisos
+etiquetados como _Critical_ e _Important_, están revisados, dejando sólo aquellos
+que sean _Minor_.
 
 ### Proceso de transformación
 
@@ -356,10 +389,7 @@ relevantes para nuestro interés. Hemos visto que la columna de `last_season`
 presenta muchas incongruencias, y no está actualizada correctamente. Además,
 tenemos la columna `contract_expiration_date` que nos muestra la fecha de
 finalización de su contrato. Sólo mediante dicha columna obtenemos más
-información de si el jugador está en activo o no. Por su parte, la columna
-`name` tambiñen se puede eliminar, ya que tenemos otras dos: `first_name` y 
-`last_name` que son respectivamente, el nombre y el primer apellido. De esta
-manera, con quedarnos con cualquiera de las dos opciones, es suficiente. Finalmente,
+información de si el jugador está en activo o no. Finalmente,
 podemos ver cómo hay dos columnas: `player_id` y `player_code` que sirven como
 identificadores. Aunque `player_code` parece tener más poder descriptivo, ya que
 se forma mediante el nombre y primer apellido del jugador separado por un guión,
@@ -418,12 +448,33 @@ ontología que diseñamos en Protegé usando OpenRefine. Para ello fuimos
 agregando las clases y propiedades de acuerdo con lo definido, con el objetivo
 de dar un soporte semántico al conjunto de datos original.
 
-El resultado de la generación de RDF para la primera fila del `.csv` es el
+### Enlazado con otras fuentes de datos
+
+Para el enlazado de los datos que hemos obtenido en el paso anterior, vamos a 
+utilizar la funcionalidad de _reconciliación_ de OpenRefine usando como servicio
+Wikidata. para ello, haremos uso de la columna `name`, para la reconciliación.
+Además, a través de  `date_of_birth`, que se corresponde con la propiedad
+[P569](https://www.wikidata.org/wiki/Property:P569) y `country_of_citizenship`,
+usando la propiedad [P27](https://www.wikidata.org/wiki/Property:P27), podemos
+enlazar cada jugador con una entidad de Wikidata. Además, haremos lo mismo para
+la columna `current_club_name`, para poder enlazar los equipos con la entidad
+correspondiente en Wikidata. Además, marcamos la opción de _auto-match_ para 
+intentar automatizar el proceso lo máximo posible.
+
+Tras esto, crearemos una columna nueva por cada proceso de reconciliación, que
+tomará el valor de la expresión [GREL](https://openrefine.org/docs/manual/grel):
+`"https://www.wikidata.org/wiki/" + cell.recon.best.id`. Además, modificaremos
+el esqueleto RDF para incorporar esta nueva información. Para ello, añadiremos
+la propiedad `owl:sameAs` a los nodos que representan los términos `Player` y
+`SportsTeam` para que se enlacen con la entidad correspondiente de Wikidata.
+
+El resultado final de la generación de RDF para la primera fila del `.csv` es el
 siguiente:
 
 ```turtle
 @prefix :       <http://rdf.transfermarkt.com/resource/> .
 @prefix onto:   <http://rdf.transfermarkt.com/ontology/player#> .
+@prefix owl:    <http://www.w3.org/2002/07/owl#> .
 @prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix schema: <https://schema.org/> .
 @prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
@@ -436,6 +487,7 @@ siguiente:
         rdf:type              onto:Player;
         onto:goodLeg          "right";
         onto:position         "Attack" , "Centre-Forward";
+        owl:sameAs            "https://www.wikidata.org/wiki/Q80471"^^xsd:anyURI;
         schema:birthDate      "1978-06-09T00:00Z"^^xsd:date;
         schema:birthPlace     <http://rdf.transfermarkt.com/resource/City/Opole>;
         schema:contactPoint   <http://rdf.transfermarkt.com/resource/EmploymentAgency/AsbwSportMarketing>;
@@ -463,6 +515,7 @@ siguiente:
 
 <http://rdf.transfermarkt.com/resource/SportsTeam/398>
         rdf:type           schema:SportsTeam;
+        owl:sameAs         "https://www.wikidata.org/wiki/Q2609"^^xsd:anyURI;
         schema:athlete     <http://rdf.transfermarkt.com/resource/Player/10>;
         schema:identifier  "398"^^xsd:int;
         schema:memberOf    <http://rdf.transfermarkt.com/resource/SportsOrganization/IT1>;
@@ -479,17 +532,19 @@ siguiente:
 
 <http://rdf.transfermarkt.com/resource/MonetaryAmount/10>
         rdf:type         schema:MonetaryAmount;
-        schema:maxValue  "30000000";
+        schema:maxValue  "30000000"^^xsd:int;
         schema:value     "1000000"^^xsd:int .
 ```
 
-### Enlazado con otras fuentes de datos
-
-
-
 ### Publicación de los datos
 
-
+Para la publicación de los datos se ha decidido hacer uso de 
+[Zenodo](https://zenodo.org/), un repositiorio de propósito general utilizado
+en el contexto de investigación para publicar, entre otras cosas, software,
+datasets, imágenes, entre otras. La licencia bajo la que se publica es
+[CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/legalcode), como
+vimos anteriormente. En este [repositorio](https://zenodo.org/records/11183947)
+se puede encontrar tantola ontología, como el conjunto de datos completo.
 
 ## Aplicación y explotación
 
@@ -499,5 +554,6 @@ siguiente:
 
 
 
-
 ## Referencias
+
+1. [https://media.ccc.de/v/wikidatacon2017-10020-openrefine_demo#t=815](https://media.ccc.de/v/wikidatacon2017-10020-openrefine_demo#t=815)
