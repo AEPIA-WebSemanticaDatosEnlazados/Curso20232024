@@ -1,0 +1,54 @@
+PREFIX : 		<http://rdf.transfermarkt.com/ontology/player#>
+PREFIX xsd:		<http://www.w3.org/2001/XMLSchema#>
+PREFIX schema:	<https://schema.org/>
+
+schema:SportsTeam {
+    schema:identifier   xsd:int                     ;
+    schema:name         xsd:string                  ;
+    schema:memberOf     @schema:SportsOrganization  ;
+    schema:athlete      @:Player
+}
+
+schema:SportsOrganization {
+    schema:identifier   xsd:string
+}
+
+:Player {
+    schema:identifier       xsd:int                     ;
+    schema:givenName        xsd:string                  ;
+    schema:familyName       xsd:string                  ;
+    schema:height           xsd:int                     ;
+    schema:birthDate        xsd:date                    ;
+    schema:image            xsd:anyURI                  ;
+    schema:url              xsd:anyURI                  ;
+    :goodLeg                xsd:string                  ;
+    schema:birthPlace       @schema:City                ;
+    schema:nationality      @schema:Country             ;
+    schema:hasOccupation    @schema:Role                ;
+    schema:netWorth         @schema:MonetaryAmount      ;
+    schema:contactPoint     @schema:EmploymentAgency
+}
+
+schema:City {
+    schema:name             xsd:string      	;
+    schema:containedInPlace @schema:Country*
+}
+
+schema:Country {
+    schema:name xsd:string
+}
+
+schema:Role {
+    schema:endDate  xsd:date		;
+  	schema:roleName	xsd:string*	;
+}
+
+schema:MonetaryAmount {
+    schema:value    xsd:int ;
+    schema:maxValue xsd:int ;
+    schema:currency xsd:string
+}
+
+schema:EmploymentAgency {
+    schema:name xsd:string
+}

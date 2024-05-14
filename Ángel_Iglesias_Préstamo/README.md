@@ -543,7 +543,7 @@ Para la publicación de los datos se ha decidido hacer uso de
 en el contexto de investigación para publicar, entre otras cosas, software,
 datasets, imágenes, entre otras. La licencia bajo la que se publica es
 [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/legalcode), como
-vimos anteriormente. En este [repositorio](https://zenodo.org/records/11183947)
+vimos anteriormente. En este [repositorio](https://zenodo.org/records/11190161)
 se puede encontrar tantola ontología, como el conjunto de datos completo.
 
 ## Aplicación y explotación

@@ -1,0 +1,6 @@
+<http://rdf.transfermarkt.com/resource/Player/31909> 				@ 	:Player				,
+<http://rdf.transfermarkt.com/resource/Role/31909> 				@ 	schema:Role			,
+<http://rdf.transfermarkt.com/resource/City/Greifswald> 			@ 	schema:City			,
+<http://rdf.transfermarkt.com/resource/Country/Germany> 			@ 	schema:Country			,
+<http://rdf.transfermarkt.com/resource/MonetaryAmount/31909> 			@ 	schema:MonetaryAmount		,
+<http://rdf.transfermarkt.com/resource/EmploymentAgency/Sports360Gmbh>		@	schema:EmploymentAgency
