@@ -191,10 +191,9 @@ caso de uso que nos compete.
 | PC.5  | ¿Dónde ha nacido (ciudad y país)?                                          |
 | PC.6  | ¿Cuál es su nacionalidad?                                                  |
 | PC.7  | ¿En qué posición juega?                                                    |
-| PC.8  | ¿Tiene contrato en vigor?                                                  |
-| PC.9  | ¿Quién es su agente?                                                       |
-| PC.10 | ¿Cuál es el valor del jugador en el mercado actual?                        |
-| PC.11 | ¿Cuál es el valor máximo que ha alcanzado el jugador?                      |
+| PC.8  | ¿Quién es su agente?                                                       |
+| PC.9  | ¿Cuál es el valor del jugador en el mercado actual?                        |
+| PC.10 | ¿Cuál es el valor máximo que ha alcanzado el jugador?                      |
 
 ##### Requisitos No Funcionales
 
@@ -548,7 +547,229 @@ se puede encontrar tantola ontología, como el conjunto de datos completo.
 
 ## Aplicación y explotación
 
+Para la explotación de los datos he decidido crear un _endpoint_ SPARQL con el
+archivo Turtle que hemos obtenido en los pasos anteriores. De esta manera,
+podemos realizar consultas sobre nuestros datos, y realizar algún tipo de
+análisis o exploración. En las siguientes piezas de código se muestran toda una
+serie de consultas que satisfacen las distintas preguntas de competencia que
+habíamos enumerado en el apartado de requisitos. Mediante
+[Apache Jena Fuseki](https://jena.apache.org/documentation/fuseki2/), podemos
+realizar esta tarea. A través del comando `fuseki-server --file=<FILE> /<NAME>`,
+podemos levantar un servidor Fuseki que nos permita realizar las consultas,
+y que está disponible en la ruta [http://localhost:3030/](http://localhost:3030/),
+a la que se puede acceder desde un navegador.
 
+![Captura del servidor Fuseki](img/Fuseki.png)
+
+La primera pregunta de competencia requiere obtener la información personal del
+jugador; esto son los atributos. Es decir, todas aquellas tripletas que tienen
+como sujeto un recurso del tipo `onto:Player` y que como objeto, tienen un
+literal. Para simplicidad,hemos decidido limitar el número de tripletas
+devueltas a un número fijo.
+
+```sparql
+PREFIX schema: <https://schema.org/>
+PREFIX rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX onto:   <http://rdf.transfermarkt.com/ontology/player#>
+
+SELECT *
+WHERE {
+	?s	rdf:type 				onto:Player	;
+			schema:givenName	?givenName	;
+			schema:familyName	?familyName	;
+			schema:birthDate	?birthDate	;
+			onto:goodLeg		?goodLeg	;
+			schema:height		?height		.
+}
+LIMIT 25
+```
+
+La segunda pregunta de competencia hace referencia a si el futbolista está en
+activo. Para ello, lo que hacemos es obtener la información del jugador,
+necesaria, e introducir una nueva columna que compruebe si la fecha de
+expiración del contrato es superior a la fecha actual.
+
+```sparql
+PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
+PREFIX schema:  <https://schema.org/>
+PREFIX rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX onto:    <http://rdf.transfermarkt.com/ontology/player#>
+
+SELECT ?givenName ?familyName ?isActive
+WHERE {
+	?s			rdf:type 				onto:Player	;
+				schema:givenName		?givenName	;
+				schema:familyName		?familyName	;
+				schema:hasOccupation	?occupation	.
+	?occupation	schema:endDate			?date		.
+	BIND(?date > xsd:date(now()) AS ?isActive)
+} 
+LIMIT 25
+```
+
+El tercer requisito es obtener la información del equipo en el que juega
+el futbolista. Para ello tenemos que acceder a dos tipos de recurso, por un
+lado el club, y por otro, los jugadores de dicho equipo.
+
+```sparql
+PREFIX schema:  <https://schema.org/>
+PREFIX rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX onto:    <http://rdf.transfermarkt.com/ontology/player#>
+
+SELECT ?givenName ?familyName ?teamName
+WHERE {
+    ?s		rdf:type 			schema:SportsTeam	;
+        	schema:name			?teamName			;
+       		schema:athlete		?player				.
+	?player	schema:givenName	?givenName			;
+         	schema:familyName	?familyName			.
+} 
+LIMIT 50
+```
+
+Ahora, realizaremos una consulta similar, y es identificar en qué liga se
+encuentra el equipo para el que juega el futbolista. Para ello necesitamos
+obtener la información de tres recursos, que se encuentra asociados de la
+siguiente manera: primero, el equipo, tiene atletas, y lo segundo, el equipo
+pertenece a una liga. A través de estas tripeltas podemos relacionar al jugador
+con una liga.
+
+```sparql
+PREFIX schema: <https://schema.org/>
+PREFIX rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX onto:   <http://rdf.transfermarkt.com/ontology/player#>
+
+SELECT ?givenName ?familyName ?leagueID
+WHERE {
+    ?s		rdf:type 			schema:SportsTeam	;
+        	schema:memberOf		?league				;
+       		schema:athlete		?player				.
+  	?league	schema:identifier	?leagueID		    .
+	?player	schema:givenName	?givenName		    ;
+         	schema:familyName	?familyName		    .
+} 
+LIMIT 25
+```
+
+Ahora vamos a descubrir el lugar y país de nacimiento de los futbolistas. Para
+ello debemos, primeramente, identificar los recursos que son futbolistas.
+Después, buscamos su lugar de nacimiento y obtenemos su nombre. El lugar
+nacimiento está contenido en un lugar que es el país de nacimiento del
+jugador.
+
+```sparql
+PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
+PREFIX schema:  <https://schema.org/>
+PREFIX rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX onto:    <http://rdf.transfermarkt.com/ontology/player#>
+
+SELECT ?givenName ?familyName ?birthPlaceName ?countryName
+WHERE {
+	?player		rdf:type 				onto:Player		;
+				schema:givenName		?givenName		;
+         		schema:familyName		?familyName		;
+          		schema:birthPlace		?birthPlace		.
+  	?birthPlace	schema:name				?birthPlaceName	;
+               	schema:containedInPlace	?country		.
+  	?country	schema:name				?countryName	.
+           
+} 
+LIMIT 25
+```
+
+La siguiente consulta nos requiere de un proceso similar, pero en lugar de
+obtener el lugar de nacimiento, queremos saber la nacionalidad del futbolista.
+Es interesante mostrar esto junto con la información que obtuvimos anteriormente.
+Para ello, extenderemos la consulta anterior, y verificaremos si el país
+de nacimiento es el mismo que la nacionalidad. Esto puede ocurrir ya que,
+a veces, los futbolistas juegan para selecciones diferentes a las de su país
+de origen.
+
+```sparql
+PREFIX xsd: 	<http://www.w3.org/2001/XMLSchema#>
+PREFIX schema:	<https://schema.org/>
+PREFIX rdf:   	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX onto:   	<http://rdf.transfermarkt.com/ontology/player#>
+
+SELECT ?givenName ?familyName ?countryName ?nationalityName ?isSameNationalityCountry
+WHERE {
+	?player			rdf:type 				onto:Player			;
+					schema:givenName		?givenName			;
+         			schema:familyName		?familyName			;
+          			schema:birthPlace		?birthPlace			;
+					schema:nationality		?nationality		.
+  	?birthPlace		schema:name				?birthPlaceName		;
+               		schema:containedInPlace	?country			.
+  	?country		schema:name				?countryName		.
+  	?nationality	schema:name				?nationalityName	. 
+  BIND((?nationalityName = ?countryName) as ?isSameNationalityCountry)
+} 
+LIMIT 25
+```
+
+Ahora, queremos saber en qué posición juegan los futbolistas. Para ello, sólo
+tenemos que verificar el nombre del rol que ocupa el jugador en el equipo.
+
+```sparql
+PREFIX xsd:    <http://www.w3.org/2001/XMLSchema#>
+PREFIX schema: <https://schema.org/>
+PREFIX rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX onto:   <http://rdf.transfermarkt.com/ontology/player#>
+
+SELECT ?givenName ?familyName ?role
+WHERE {
+	?player		schema:givenName		?givenName	;
+         		schema:familyName		?familyName	;
+          		schema:hasOccupation	?occupation	.
+  	?occupation	schema:roleName			?role		.
+}
+LIMIT 25
+```
+
+Ahora, queremos saber el nombre del agente que representa al jugador. Para ello
+tenemos que acceder al objeto de la tripleta cuya propiedad es
+`schema:contactPoint`, dicho objeto será sujeto de una relación del tipo
+`schema:name` que nos dirá la información que queremos saber.
+
+```sparql
+PREFIX xsd: 	<http://www.w3.org/2001/XMLSchema#>
+PREFIX schema: 	<https://schema.org/>
+PREFIX rdf:    	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX onto:   	<http://rdf.transfermarkt.com/ontology/player#>
+
+SELECT ?givenName ?familyName ?agentName
+WHERE {
+	?player	schema:givenName	?givenName	;
+         	schema:familyName	?familyName	;
+          	schema:contactPoint	?agent		.
+  	?agent	schema:name			?agentName	.
+           
+}
+LIMIT 25
+```
+
+Finalmente, vamos a responder a las dos últimas preguntas de competencia, que
+precisan de saber el valor actual, y máximo, que ha alcanzado el jugador en
+el mercado. Para ello necesitamos acceder al recurso al que apunta la relación
+del tipo `schema:netWorth`.
+
+```sparql
+PREFIX xsd: 	<http://www.w3.org/2001/XMLSchema#>
+PREFIX schema: 	<https://schema.org/>
+PREFIX rdf:    	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX onto:   	<http://rdf.transfermarkt.com/ontology/player#>
+
+SELECT ?givenName ?familyName ?value ?maxValue
+WHERE {
+	?player		schema:givenName	?givenName	;
+         		schema:familyName	?familyName	;
+          		schema:netWorth		?netWorth	.
+  	?netWorth	schema:value		?value		;
+             	schema:maxValue		?maxValue	;
+           
+}
+LIMIT 25
+```
 
 ## Conclusiones
 
