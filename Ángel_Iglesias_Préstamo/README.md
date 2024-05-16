@@ -568,18 +568,18 @@ literal. Para simplicidad,hemos decidido limitar el número de tripletas
 devueltas a un número fijo.
 
 ```sparql
-PREFIX schema: <https://schema.org/>
-PREFIX rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX onto:   <http://rdf.transfermarkt.com/ontology/player#>
+PREFIX schema:	<https://schema.org/>
+PREFIX rdf:		<http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX onto:	<http://rdf.transfermarkt.com/ontology/player#>
 
 SELECT *
 WHERE {
-	?s	rdf:type 				onto:Player	;
-			schema:givenName	?givenName	;
-			schema:familyName	?familyName	;
-			schema:birthDate	?birthDate	;
-			onto:goodLeg		?goodLeg	;
-			schema:height		?height		.
+	?s	rdf:type			onto:Player	;
+		schema:givenName	?givenName	;
+		schema:familyName	?familyName	;
+		schema:birthDate	?birthDate	;
+		onto:goodLeg		?goodLeg	;
+		schema:height		?height		.
 }
 LIMIT 25
 ```
@@ -590,14 +590,14 @@ necesaria, e introducir una nueva columna que compruebe si la fecha de
 expiración del contrato es superior a la fecha actual.
 
 ```sparql
-PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
-PREFIX schema:  <https://schema.org/>
-PREFIX rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX onto:    <http://rdf.transfermarkt.com/ontology/player#>
+PREFIX xsd:		<http://www.w3.org/2001/XMLSchema#>
+PREFIX schema:	<https://schema.org/>
+PREFIX rdf:		<http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX onto:	<http://rdf.transfermarkt.com/ontology/player#>
 
 SELECT ?givenName ?familyName ?isActive
 WHERE {
-	?s			rdf:type 				onto:Player	;
+	?s			rdf:type				onto:Player	;
 				schema:givenName		?givenName	;
 				schema:familyName		?familyName	;
 				schema:hasOccupation	?occupation	.
@@ -612,9 +612,9 @@ el futbolista. Para ello tenemos que acceder a dos tipos de recurso, por un
 lado el club, y por otro, los jugadores de dicho equipo.
 
 ```sparql
-PREFIX schema:  <https://schema.org/>
-PREFIX rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX onto:    <http://rdf.transfermarkt.com/ontology/player#>
+PREFIX schema:	<https://schema.org/>
+PREFIX rdf:		<http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX onto:	<http://rdf.transfermarkt.com/ontology/player#>
 
 SELECT ?givenName ?familyName ?teamName
 WHERE {
@@ -635,9 +635,9 @@ pertenece a una liga. A través de estas tripeltas podemos relacionar al jugador
 con una liga.
 
 ```sparql
-PREFIX schema: <https://schema.org/>
-PREFIX rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX onto:   <http://rdf.transfermarkt.com/ontology/player#>
+PREFIX schema:	<https://schema.org/>
+PREFIX rdf:		<http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX onto:	<http://rdf.transfermarkt.com/ontology/player#>
 
 SELECT ?givenName ?familyName ?leagueID
 WHERE {
@@ -658,10 +658,10 @@ nacimiento está contenido en un lugar que es el país de nacimiento del
 jugador.
 
 ```sparql
-PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
-PREFIX schema:  <https://schema.org/>
-PREFIX rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX onto:    <http://rdf.transfermarkt.com/ontology/player#>
+PREFIX xsd:		<http://www.w3.org/2001/XMLSchema#>
+PREFIX schema:	<https://schema.org/>
+PREFIX rdf:		<http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX onto:	<http://rdf.transfermarkt.com/ontology/player#>
 
 SELECT ?givenName ?familyName ?birthPlaceName ?countryName
 WHERE {
@@ -686,10 +686,10 @@ a veces, los futbolistas juegan para selecciones diferentes a las de su país
 de origen.
 
 ```sparql
-PREFIX xsd: 	<http://www.w3.org/2001/XMLSchema#>
+PREFIX xsd:		<http://www.w3.org/2001/XMLSchema#>
 PREFIX schema:	<https://schema.org/>
-PREFIX rdf:   	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX onto:   	<http://rdf.transfermarkt.com/ontology/player#>
+PREFIX rdf:		<http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX onto:	<http://rdf.transfermarkt.com/ontology/player#>
 
 SELECT ?givenName ?familyName ?countryName ?nationalityName ?isSameNationalityCountry
 WHERE {
@@ -711,10 +711,10 @@ Ahora, queremos saber en qué posición juegan los futbolistas. Para ello, sólo
 tenemos que verificar el nombre del rol que ocupa el jugador en el equipo.
 
 ```sparql
-PREFIX xsd:    <http://www.w3.org/2001/XMLSchema#>
-PREFIX schema: <https://schema.org/>
-PREFIX rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX onto:   <http://rdf.transfermarkt.com/ontology/player#>
+PREFIX xsd:		<http://www.w3.org/2001/XMLSchema#>
+PREFIX schema:	<https://schema.org/>
+PREFIX rdf:		<http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX onto:	<http://rdf.transfermarkt.com/ontology/player#>
 
 SELECT ?givenName ?familyName ?role
 WHERE {
@@ -732,18 +732,17 @@ tenemos que acceder al objeto de la tripleta cuya propiedad es
 `schema:name` que nos dirá la información que queremos saber.
 
 ```sparql
-PREFIX xsd: 	<http://www.w3.org/2001/XMLSchema#>
-PREFIX schema: 	<https://schema.org/>
-PREFIX rdf:    	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX onto:   	<http://rdf.transfermarkt.com/ontology/player#>
+PREFIX xsd:		<http://www.w3.org/2001/XMLSchema#>
+PREFIX schema:	<https://schema.org/>
+PREFIX rdf:		<http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX onto:	<http://rdf.transfermarkt.com/ontology/player#>
 
 SELECT ?givenName ?familyName ?agentName
 WHERE {
 	?player	schema:givenName	?givenName	;
          	schema:familyName	?familyName	;
           	schema:contactPoint	?agent		.
-  	?agent	schema:name			?agentName	.
-           
+	?agent	schema:name			?agentName	.
 }
 LIMIT 25
 ```
@@ -754,18 +753,18 @@ el mercado. Para ello necesitamos acceder al recurso al que apunta la relación
 del tipo `schema:netWorth`.
 
 ```sparql
-PREFIX xsd: 	<http://www.w3.org/2001/XMLSchema#>
-PREFIX schema: 	<https://schema.org/>
-PREFIX rdf:    	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX onto:   	<http://rdf.transfermarkt.com/ontology/player#>
+PREFIX xsd:		<http://www.w3.org/2001/XMLSchema#>
+PREFIX schema:	<https://schema.org/>
+PREFIX rdf:		<http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX onto:	<http://rdf.transfermarkt.com/ontology/player#>
 
 SELECT ?givenName ?familyName ?value ?maxValue
 WHERE {
 	?player		schema:givenName	?givenName	;
-         		schema:familyName	?familyName	;
-          		schema:netWorth		?netWorth	.
+				schema:familyName	?familyName	;
+				schema:netWorth		?netWorth	.
   	?netWorth	schema:value		?value		;
-             	schema:maxValue		?maxValue	;
+				schema:maxValue		?maxValue	;
            
 }
 LIMIT 25
