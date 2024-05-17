@@ -855,6 +855,17 @@ metodologías empleadas en el contexto de la Web Semántica. Además, he publica
 mis resultados en abierto, tratando de fomentar el código abierto, así como 
 aportar a la comunidad, en la medida de lo posible.
 
+Más allá de eso, considero que este trabajo ha sido muy útil para terminar de
+comprender los conceptos que se plantean en la parte teórica de la asignatura.
+De esta manera, creo que ahora tengo una visión, como mencioné, del ciclo de
+vida de los datos datos enlazados.
+
 ## Referencias
 
 1. [https://media.ccc.de/v/wikidatacon2017-10020-openrefine_demo#t=815](https://media.ccc.de/v/wikidatacon2017-10020-openrefine_demo#t=815)
+2. [https://protegeproject.github.io/protege/](https://protegeproject.github.io/protege/)
+3. [https://openrefine.org/docs](https://openrefine.org/docs)
+4. [https://www.w3.org/TR/rdf-sparql-query/](https://www.w3.org/TR/rdf-sparql-query/)
+5. [https://shex.io/](https://shex.io/)
+6. [https://www.w3.org/TR/shacl/](https://www.w3.org/TR/shacl/)
+7. [https://book.validatingrdf.com/](https://book.validatingrdf.com/)

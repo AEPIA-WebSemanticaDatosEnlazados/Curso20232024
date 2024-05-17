@@ -38,6 +38,7 @@ ggplot() +
     position = 'dodge'
   ) +
   theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) +
+  ggtitle("Número de datos faltantes por cada variable del conjunto de datos") +
   xlab("Column") +
   ylab("# of NAs")
 
@@ -49,4 +50,5 @@ ggplot(datos, aes(y = height_in_cm)) +
     axis.text.x=element_blank(),
     axis.ticks.x=element_blank()
   ) +
+  ggtitle("Datos anómalos para la variable Altura") +
   ylab("Height (in cm.)")
