@@ -6,6 +6,32 @@
 ---
 
 ## Tabla de contenidos
+- [Memoria del Proyecto final](#memoria-del-proyecto-final)
+  - [Tabla de contenidos](#tabla-de-contenidos)
+  - [Introducción](#introducción)
+  - [Proceso de transformación](#proceso-de-transformación)
+    - [Selección de la fuente de datos](#selección-de-la-fuente-de-datos)
+    - [Análisis de los datos](#análisis-de-los-datos)
+      - [Análisis de la licencia de los datos](#análisis-de-la-licencia-de-los-datos)
+      - [Análisis exploratorio del conjunto de datos](#análisis-exploratorio-del-conjunto-de-datos)
+    - [Estrategia de nombrado de recursos](#estrategia-de-nombrado-de-recursos)
+    - [Desarrollo de la ontología](#desarrollo-de-la-ontología)
+      - [Especificación de requisitos](#especificación-de-requisitos)
+        - [Requisitos Funcionales](#requisitos-funcionales)
+        - [Requisitos No Funcionales](#requisitos-no-funcionales)
+      - [Extracción de términos](#extracción-de-términos)
+      - [Elaboración de la conceptualización](#elaboración-de-la-conceptualización)
+      - [Búsqueda y selección de ontologías](#búsqueda-y-selección-de-ontologías)
+      - [Implementación de la ontología](#implementación-de-la-ontología)
+      - [Evaluación de la ontología](#evaluación-de-la-ontología)
+    - [Proceso de transformación](#proceso-de-transformación-1)
+      - [Pre-procesamiento](#pre-procesamiento)
+      - [Generación de RDF](#generación-de-rdf)
+    - [Enlazado con otras fuentes de datos](#enlazado-con-otras-fuentes-de-datos)
+    - [Publicación de los datos](#publicación-de-los-datos)
+  - [Aplicación y explotación](#aplicación-y-explotación)
+  - [Conclusiones](#conclusiones)
+  - [Referencias](#referencias)
 
 ---
 
@@ -74,6 +100,9 @@ los términos legales de esta licencia.
 
 #### Análisis exploratorio del conjunto de datos
 
+![Gráfica que muestra el número de datos faltantes](img/Fig-1.png)
+![Gráfica que muestra los datos anómalos en la variable altura](img/Fig-2.png)
+
 El conjunto de datos original presenta la siguiente estructura:
 
 - `player_id`: identificador único del jugador en 
@@ -106,9 +135,9 @@ El conjunto de datos original presenta la siguiente estructura:
   i.e.: *Left Winger*, *Centre Back*...
 - `position`: línea en el campo en la que juega: _Portería_, _Defensa_,
   _Centro del campo_ o _Delantero_. Variable discreta que puede tomar 4 valores.
-- `foot`: pierna dominante. Variable binaria: *Left* o *Right*. Siendo la clase
-  mayoritaria la segunda. También presenta un alto porcentaje de datos
-  faltantes: 12%.
+- `foot`: pierna dominante. Variable discreta que puede tomar como valores:
+  *Left*, *Right* o *Both*. Siendo la clase mayoritaria la segunda. También
+  presenta un alto porcentaje de datos faltantes: 12%.
 - `height_in_cm`: altura en centímetros.
 - `contract_expiration_date`: fecha de expiración del último contrato con un
   club. Formato de fecha: `YYYY-MM-DD`. Toma valores desde el año 2023 hasta
