@@ -102,7 +102,21 @@ los términos legales de esta licencia.
 
 #### Análisis exploratorio del conjunto de datos
 
+Para la realización del análisis exploratorio he decidido cargar el *dataset*
+inicial en R, de tal manera que podamos mostrar los dos tipos de problemas que
+queremos solucionar. Lo primero, ser conscientes de los datos faltantes que
+se presentan en el conjunto de datos. Viendo una distribución por variables de
+éste rasgo.
+
 ![Gráfica que muestra el número de datos faltantes](img/Fig-1.png)
+
+Posteriormente, a través de la función `summary`, podemos ver la distribución
+por valores de las distintas variables. De acuerdo con esto, podemos conocer
+el dominio de éstas, así como los percentiles. De acuerdo con el resultado de la
+ejecución, la única variable que peresentan unos valores anómalos o *outliers*,
+es la variable `height_in_cm`, que presentan algunos registros de altura con
+valor 18 centímetros. Estos valores habrá que gestionarlos apropiadamente.
+
 ![Gráfica que muestra los datos anómalos en la variable altura](img/Fig-2.png)
 
 El conjunto de datos original presenta la siguiente estructura:
@@ -115,7 +129,8 @@ El conjunto de datos original presenta la siguiente estructura:
 - `last_name`: primer apellido del jugador. Es una cadena de caracter con alta
    cardinalidad.
 - `name`: nombre completo; esto es, nombre y primer apellido. Se produce mediante
-  la combinación de las dos variables anteriores.
+  la combinación de las dos variables anteriores. Esto nos indica que quizás
+  sea una variable redundante.
 - `last_season`: última temporada en activo. Es una variable nuérica que comienza
   en 2012 y termina en la campaña inmediatamente anterior a la presente.
   Encontramos que este campo contiene datos erróneos.
@@ -123,7 +138,10 @@ El conjunto de datos original presenta la siguiente estructura:
   Puede tomar valores numéricos mayores que cero.
 - `player_code`: código de jugador usando en la URL de
   [Transfermarkt](transfermarkt.com/). Se produce mediante la combinación del
-  nombre y apellido, en minúsculas, separado por guión.
+  nombre y apellido, en minúsculas, separado por guión. Si bien esta variable
+  puede servir como identificador, el problema es que ésta puede no ser única
+  para parejas de variables `first_name` y `last_name` que sean iguales; es
+  decir, en el caso de que dos futbolistas tengan el mismo nombre y apellido.
 - `country_of_birth`: país de nacimiento. Toma como valor el nombre, en inglés,
   del país. Es por tanto, una cadena de caracteres.
 - `city_of_birth`: ciudad de nacimiento. Toma como valor el nombre, en inglés,
@@ -828,7 +846,14 @@ sx validate --data=players.ttl --schema players.shexc --shapemap players.sm
 
 ## Conclusiones
 
-
+Este proyecto ha sido el resultado de la necesidad de crear una base de datos
+RDF para el caso de uso de [Transfermarkt](transfermarkt.com/). En éste trabajo
+he creado -- por primera vez -- datos enlazados desde cero. Por lo tanto, he
+aprendido el ciclo de vida completo de generación, transformación y explotación
+de estos. Esto me da una visión general de las herramientas, técnicas y
+metodologías empleadas en el contexto de la Web Semántica. Además, he publicado
+mis resultados en abierto, tratando de fomentar el código abierto, así como 
+aportar a la comunidad, en la medida de lo posible.
 
 ## Referencias
 
