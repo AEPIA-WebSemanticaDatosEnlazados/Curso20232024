@@ -30,6 +30,8 @@
     - [Enlazado con otras fuentes de datos](#enlazado-con-otras-fuentes-de-datos)
     - [Publicación de los datos](#publicación-de-los-datos)
   - [Aplicación y explotación](#aplicación-y-explotación)
+    - [Preguntas de competencia](#preguntas-de-competencia)
+    - [Validación de los datos generados](#validación-de-los-datos-generados)
   - [Conclusiones](#conclusiones)
   - [Referencias](#referencias)
 
@@ -576,6 +578,8 @@ se puede encontrar tantola ontología, como el conjunto de datos completo.
 
 ## Aplicación y explotación
 
+### Preguntas de competencia
+
 Para la explotación de los datos he decidido crear un _endpoint_ SPARQL con el
 archivo Turtle que hemos obtenido en los pasos anteriores. De esta manera,
 podemos realizar consultas sobre nuestros datos, y realizar algún tipo de
@@ -792,6 +796,35 @@ WHERE {
 }
 LIMIT 25
 ```
+
+### Validación de los datos generados
+
+Finalmente, lo último que vamos a hacer en lo referente a la aplicación y
+explotación de los datos que hemos generado en el presente proyecto, es realizar
+un proceso de validación de los datos RDF que hemos generado. Esto se consigue
+mediante la creación de esquemas que modelen los datos que hemos creado. Dicho
+de otro modo, queremos asegurar la calidad de los datos que hemos generado,
+pudiendo asegurar subconjuntos del grafo original que tienen la forma que
+esperamos. Esto nos permite mejorar la interoperabilidad de los datos. Así pues,
+podemos hacer uso de cualquiera, ShEx ([Shape Expressions](https://shex.io/)) o
+SHACL ([Shapes Constraint Language](https://www.w3.org/TR/shacl/)), para validar
+nuestros datos. Si bien SHACL es el estándar del W3C, he decidido usar ShEx
+porque es el lenguaje con el que más familiarizado estoy. De todos modos, para
+nuestro prpósito, el uso de cualquiera de ellos es equivalente.
+
+De esta manera, he hecho uso de la herramienta
+[`shapes-rs`](https://github.com/weso/shapes-rs) para la validación de los datos.
+Mediante la definición de una Shape, podemos modelar el grafo de conocimiento
+que hemos diseñado. Esto se consigue mediante la definición de restricciones.
+Además, deberemos definir un `shapemap`, donde se indica qué `Shapes` queremos
+validar. En la carpeta `/shex` se encuentra un ejemplo de esto. Para la ejecución
+de la herramienta se han seguido los siguientes pasos:
+
+```
+sx validate --data=players.ttl --schema players.shexc --shapemap players.sm
+```
+
+![Resultado de la validación de la Shape Expression](img/shex.png)
 
 ## Conclusiones
 
