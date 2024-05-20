@@ -1,0 +1,286 @@
+@prefix : <http://rdf.transfermarkt.com/ontology/player#> .
+@prefix ns: <http://creativecommons.org/ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@base <http://rdf.transfermarkt.com/ontology/player#> .
+
+<http://rdf.transfermarkt.com/ontology/player#> rdf:type owl:Ontology ;
+                                                 ns:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
+                                                 rdfs:comment "Ontology that models the most relevant aspects of dumps extracted from Transfermarkt"@en ,
+                                                              "Ontología que modela los aspectos más relevantes de dumps extraidos de Transfermarkt"@es ;
+                                                 rdfs:label "Football Player Ontology"@en ,
+                                                            "Ontología de futbolistas"@es ;
+                                                 rdfs:seeAlso "https://www.transfermarkt.com/"^^xsd:anyURI .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://creativecommons.org/ns#license
+ns:license rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://schema.org/athlete
+schema:athlete rdf:type owl:ObjectProperty ;
+               rdfs:domain schema:SportsTeam ;
+               rdfs:range :Player ;
+               rdfs:isDefinedBy schema:athlete .
+
+
+###  https://schema.org/birthPlace
+schema:birthPlace rdf:type owl:ObjectProperty ;
+                  rdfs:domain :Player ;
+                  rdfs:range schema:City ;
+                  rdfs:isDefinedBy schema:birthPlace .
+
+
+###  https://schema.org/contactPoint
+schema:contactPoint rdf:type owl:ObjectProperty ;
+                    rdfs:domain :Player ;
+                    rdfs:range schema:EmploymentAgency ;
+                    rdfs:isDefinedBy schema:contactPoint .
+
+
+###  https://schema.org/containedInPlace
+schema:containedInPlace rdf:type owl:ObjectProperty ;
+                        rdfs:domain schema:City ;
+                        rdfs:range schema:Country ;
+                        rdfs:isDefinedBy schema:containedInPlace .
+
+
+###  https://schema.org/hasOccupation
+schema:hasOccupation rdf:type owl:ObjectProperty ;
+                     rdfs:domain :Player ;
+                     rdfs:range schema:Role ;
+                     rdfs:isDefinedBy schema:hasOccupation .
+
+
+###  https://schema.org/memberOf
+schema:memberOf rdf:type owl:ObjectProperty ;
+                rdfs:domain schema:SportsTeam ;
+                rdfs:range schema:SportsOrganization ;
+                rdfs:isDefinedBy schema:memberOf .
+
+
+###  https://schema.org/nationality
+schema:nationality rdf:type owl:ObjectProperty ;
+                   rdfs:domain :Player ;
+                   rdfs:range schema:Country ;
+                   rdfs:isDefinedBy schema:nationality .
+
+
+###  https://schema.org/netWorth
+schema:netWorth rdf:type owl:ObjectProperty ;
+                rdfs:domain :Player ;
+                rdfs:range schema:MonetaryAmount ;
+                rdfs:isDefinedBy schema:netWorth .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://rdf.transfermarkt.com/ontology/player#goodLeg
+:goodLeg rdf:type owl:DatatypeProperty ;
+         rdfs:domain :Player ;
+         rdfs:range xsd:string ;
+         rdfs:comment "Pierna dominante del jugador; esto es, pierna con la que el jugador tiene un rendimiento superior. De esta manera, el jugador realizará la mayor parte de sus acciones con dicha pierna. Esta puede ser: izquierda o derecha"@es ,
+                      "The dominant leg of the player; that is, the leg with which the player has superior performance. In this way, the player will carry out most of their actions with said leg. This can be: left or right"@en ;
+         rdfs:label "Dominant leg"@en ,
+                    "Pierna dominante"@es .
+
+
+###  https://schema.org/birthDate
+schema:birthDate rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :Player ;
+                 rdfs:range xsd:dateTime ;
+                 rdfs:isDefinedBy schema:birthDate .
+
+
+###  https://schema.org/currency
+schema:currency rdf:type owl:DatatypeProperty ;
+                rdfs:domain schema:MonetaryAmount ;
+                rdfs:range xsd:string ;
+                rdfs:isDefinedBy schema:currency .
+
+
+###  https://schema.org/endDate
+schema:endDate rdf:type owl:DatatypeProperty ;
+               rdfs:domain schema:Role ;
+               rdfs:range xsd:dateTime ;
+               rdfs:isDefinedBy schema:endDate .
+
+
+###  https://schema.org/familyName
+schema:familyName rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :Player ;
+                  rdfs:range xsd:string ;
+                  rdfs:isDefinedBy schema:familyName .
+
+
+###  https://schema.org/givenName
+schema:givenName rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :Player ;
+                 rdfs:range xsd:string ;
+                 rdfs:isDefinedBy schema:givenName .
+
+
+###  https://schema.org/height
+schema:height rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Player ;
+              rdfs:range xsd:integer ;
+              rdfs:isDefinedBy schema:height .
+
+
+###  https://schema.org/identifier
+schema:identifier rdf:type owl:DatatypeProperty ;
+                  rdfs:domain [ rdf:type owl:Class ;
+                                owl:unionOf ( :Player
+                                              schema:SportsOrganization
+                                            )
+                              ] ;
+                  rdfs:range [ rdf:type rdfs:Datatype ;
+                               owl:unionOf ( xsd:integer
+                                             xsd:string
+                                           )
+                             ] ;
+                  rdfs:isDefinedBy schema:identifier .
+
+
+###  https://schema.org/image
+schema:image rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Player ;
+             rdfs:range xsd:anyURI ;
+             rdfs:isDefinedBy schema:image .
+
+
+###  https://schema.org/maxValue
+schema:maxValue rdf:type owl:DatatypeProperty ;
+                rdfs:domain schema:MonetaryAmount ;
+                rdfs:range xsd:integer ;
+                rdfs:isDefinedBy schema:maxValue .
+
+
+###  https://schema.org/name
+schema:name rdf:type owl:DatatypeProperty ;
+            rdfs:domain [ rdf:type owl:Class ;
+                          owl:unionOf ( schema:Place
+                                        schema:EmploymentAgency
+                                        schema:SportsTeam
+                                      )
+                        ] ;
+            rdfs:range xsd:string ;
+            rdfs:isDefinedBy schema:name .
+
+
+###  https://schema.org/roleName
+schema:roleName rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Player ;
+                rdfs:range xsd:string ;
+                rdfs:comment "Posición que ocupa el jugador en el campo. Dentro de todas las parcelas del terreno de juego, el futbolista ocupará una de ellas. Donde deberá realizar toda una serie de tareas específicas: portería, defensa, mediocentro o delantero."@es ,
+                             "Position that the player occupies on the field. Within all the areas of the playing field, the footballer will occupy one of them. Where he must carry out a series of specific tasks: goalkeeper, defender, midfielder, or forward."@en ;
+                rdfs:isDefinedBy schema:roleName ;
+                rdfs:label "Posición en el campo"@es ,
+                           "Position on the field"@en ;
+                rdfs:seeAlso "https://www.wikidata.org/wiki/Q4611891" .
+
+
+###  https://schema.org/url
+schema:url rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Player ;
+           rdfs:range xsd:anyURI ;
+           rdfs:isDefinedBy schema:url .
+
+
+###  https://schema.org/value
+schema:value rdf:type owl:DatatypeProperty ;
+             rdfs:domain schema:MonetaryAmount ;
+             rdfs:range xsd:int ;
+             rdfs:isDefinedBy schema:value .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://rdf.transfermarkt.com/ontology/player#Player
+:Player rdf:type owl:Class ;
+        rdfs:subClassOf schema:Person ;
+        rdfs:comment "Person that plays or has played professionally football"@en ,
+                     "Persona que juega o ha jugado profesionalmente a fútbol"@es ;
+        rdfs:label "Football Player"@en ,
+                   "Jugador de Fútbol"@es ;
+        rdfs:seeAlso "https://www.wikidata.org/wiki/Q937857"^^xsd:anyURI .
+
+
+###  https://schema.org/City
+schema:City rdf:type owl:Class ;
+            rdfs:subClassOf schema:Place ;
+            owl:disjointWith schema:Country ;
+            rdfs:isDefinedBy schema:City .
+
+
+###  https://schema.org/Country
+schema:Country rdf:type owl:Class ;
+               rdfs:subClassOf schema:Place ;
+               rdfs:isDefinedBy schema:Country .
+
+
+###  https://schema.org/EmploymentAgency
+schema:EmploymentAgency rdf:type owl:Class ;
+                        rdfs:subClassOf schema:Organization ;
+                        rdfs:isDefinedBy schema:EmploymentAgency .
+
+
+###  https://schema.org/MonetaryAmount
+schema:MonetaryAmount rdf:type owl:Class ;
+                      rdfs:isDefinedBy schema:Place .
+
+
+###  https://schema.org/Organization
+schema:Organization rdf:type owl:Class ;
+                    rdfs:isDefinedBy schema:Organization .
+
+
+###  https://schema.org/Patient
+schema:Patient rdf:type owl:Class ;
+               rdfs:subClassOf schema:Person ;
+               rdfs:isDefinedBy schema:Patient .
+
+
+###  https://schema.org/Person
+schema:Person rdf:type owl:Class ;
+              rdfs:isDefinedBy schema:Person .
+
+
+###  https://schema.org/Place
+schema:Place rdf:type owl:Class ;
+             rdfs:isDefinedBy schema:Place .
+
+
+###  https://schema.org/Role
+schema:Role rdf:type owl:Class ;
+            rdfs:isDefinedBy schema:Role .
+
+
+###  https://schema.org/SportsOrganization
+schema:SportsOrganization rdf:type owl:Class ;
+                          rdfs:subClassOf schema:Organization ;
+                          rdfs:isDefinedBy schema:SportsOrganization .
+
+
+###  https://schema.org/SportsTeam
+schema:SportsTeam rdf:type owl:Class ;
+                  rdfs:subClassOf schema:SportsOrganization ;
+                  rdfs:isDefinedBy schema:SportsTeam .
+
+
+###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi
